@@ -1,0 +1,100 @@
+import "platform:/plugin/com.sysord.mad.emf/model/mad.ecore"
+import "platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore"
+
+
+//================================
+// Concrete widgets declaration
+//================================
+
+Widget type {
+	name:LIST category:SINGLE_SELECT_WIDGET
+	label:"Embedded List"
+	custom widget:com.sysord.mad.ui.swt.widget.custom.ListSingleSelectWidget
+	from plugin com.sysord.mad.ui
+}
+
+Widget type {
+	name: PICKLIST category:MULTI_SELECT_WIDGET
+	label:"Embedded PickList"
+	custom widget:com.sysord.mad.ui.swt.widget.custom.PickListWidget
+	from plugin com.sysord.mad.ui
+}
+
+Widget type {
+	name: POPUP_PICKLIST category:MULTI_SELECT_WIDGET
+	label:"Popup PickList"
+	custom widget:com.sysord.mad.ui.swt.widget.custom.DialogPickListWidget
+	from plugin com.sysord.mad.ui
+}
+
+Widget type {
+	name: POPUP_LIST category:SINGLE_SELECT_WIDGET
+	label:"Popup List"
+	custom widget:com.sysord.mad.ui.swt.widget.custom.DialogListWidget
+	from plugin com.sysord.mad.ui
+}
+
+Widget type {
+	name: GOOGLE_MAP category:OUTPUTTEXT_WIDGET
+	label:"Google Map"
+	custom widget:com.sysord.mad.ui.swt.widget.custom.GoogleMapWidget
+	from plugin com.sysord.mad.ui
+}
+
+Widget type {
+	name: HTML_LINK category:OUTPUTTEXT_WIDGET
+	label:"Html link"
+	custom widget:com.sysord.mad.ui.swt.widget.custom.HyperlinkWidget
+	from plugin com.sysord.mad.ui
+}
+
+//=============================
+// Query evaluators declaration
+//=============================
+
+Query Evaluator {
+	language id: OCL
+	label:"Ocl evaluator"
+	Evaluator Class: com.sysord.mad.evaluator.impl.ocl.OCLQueryEvaluator
+		from plugin com.sysord.mad.core
+	description:"Default Query Evaluator"
+}
+
+Query Evaluator {
+	language id: MAD
+	label:"MAD evaluator"
+	Evaluator Class: com.sysord.mad.evaluator.impl.mad.MadEvaluator
+		from plugin com.sysord.mad.core
+}
+
+Query Evaluator {
+	language id: MODEL_EXTENSION
+	label:"MODEL_EXTENSION evaluator"
+	Evaluator Class:com.sysord.mad.evaluator.impl.modelExtension.ModelExtensionEvaluator
+		from plugin com.sysord.mad.core
+}
+ 
+
+//====================
+// Reusable Command
+//====================
+Common Command REMOVE_ELEMENT_COMMAND {
+	ITEM_COMMAND "Remove item"
+	action: language:MAD "REMOVE_ITEM()"
+}
+
+Common Command DELETE_ELEMENT_COMMAND {
+	ITEM_COMMAND "Delete item"
+	action: language:MAD "DELETE()"
+}
+
+Common Command MOVE_UP_ELEMENT_COMMAND {
+	ITEM_COMMAND "Up"
+	action: language:MAD "MOVE_UP()"
+}
+
+Common Command MOVE_DOWN_ELEMENT_COMMAND {
+	ITEM_COMMAND "Down" 
+	action: language:MAD "MOVE_DOWN()"
+}
+

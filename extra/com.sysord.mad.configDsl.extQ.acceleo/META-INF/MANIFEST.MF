@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: ExtQAcceleo
+Bundle-SymbolicName: com.sysord.mad.configDsl.extQ.acceleo;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.sysord.mad.configdsl.extq.acceleo.ExtQAcceleoActivator
+Bundle-Vendor: SYSORD
+Require-Bundle: org.eclipse.core.runtime,
+ com.sysord.mad.configDsl;bundle-version="1.0.0",
+ org.eclipse.acceleo.model;bundle-version="3.2.2",
+ org.eclipse.ocl;bundle-version="3.1.0",
+ com.sysord.mad.configDsl.extQManager;bundle-version="1.0.0",
+ com.sysord.acceleo.tools;bundle-version="1.0.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
+Export-Package: com.sysord.mad.configdsl.extq.acceleo

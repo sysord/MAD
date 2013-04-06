@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
+	<classpathentry excluding="com/sysord/mad/model/provider/impl/UMLExtensionManager.java|com/sysord/mad/model/provider/impl/UMLExtensionModelSynchronizer.java|com/sysord/mad/model/provider/impl/UMLExtensionModelSynchronizerFactory.java|com/sysord/mad/evaluator/impl/madUml/MadUmlEvaluatorV1.java|com/sysord/mad/evaluator/impl/madUml/MadUmlEvaluator.java|com/sysord/mad/evaluator/impl/QueryEvaluationServiceImplV1.java|com/sysord/mad/evaluator/impl/mad/MadEvaluatorV1.java|com/sysord/mad/evaluator/impl/modelExtension/ModelExtensionEvaluatorV1.java" kind="src" path="src"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

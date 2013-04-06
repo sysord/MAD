@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<plugin>
+
+    <extension
+            point="org.eclipse.ui.editors">
+        <editor
+            class="com.sysord.mad.configuration.ui.MadConfigDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
+            contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
+            default="true"
+            extensions="mad"
+            id="com.sysord.mad.configuration.MadConfigDsl"
+            name="MadConfigDsl Editor">
+        </editor>
+    </extension>
+    <extension
+        point="org.eclipse.ui.handlers">
+        <handler
+            class="com.sysord.mad.configuration.ui.MadConfigDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclarationHandler"
+            commandId="org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclaration">
+            <activeWhen>
+                <reference
+                    definitionId="com.sysord.mad.configuration.MadConfigDsl.Editor.opened">
+                </reference>
+            </activeWhen>
+        </handler>
+        <handler
+            class="com.sysord.mad.configuration.ui.MadConfigDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.handler.ValidateActionHandler"
+            commandId="com.sysord.mad.configuration.MadConfigDsl.validate">
+         <activeWhen>
+            <reference
+                    definitionId="com.sysord.mad.configuration.MadConfigDsl.Editor.opened">
+            </reference>
+         </activeWhen>
+      </handler>
+    </extension>
+    <extension point="org.eclipse.core.expressions.definitions">
+        <definition id="com.sysord.mad.configuration.MadConfigDsl.Editor.opened">
+            <and>
+                <reference definitionId="isActiveEditorAnInstanceOfXtextEditor"/>
+                <with variable="activeEditor">
+                    <test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName" 
+                        value="com.sysord.mad.configuration.MadConfigDsl" 
+                        forcePluginActivation="true"/>
+                </with>        
+            </and>
+        </definition>
+    </extension>
+    <extension
+            point="org.eclipse.ui.preferencePages">
+        <page
+            class="com.sysord.mad.configuration.ui.MadConfigDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+            id="com.sysord.mad.configuration.MadConfigDsl"
+            name="MadConfigDsl">
+            <keywordReference id="com.sysord.mad.configuration.ui.keyword_MadConfigDsl"/>
+        </page>
+        <page
+            category="com.sysord.mad.configuration.MadConfigDsl"
+            class="com.sysord.mad.configuration.ui.MadConfigDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.syntaxcoloring.SyntaxColoringPreferencePage"
+            id="com.sysord.mad.configuration.MadConfigDsl.coloring"
+            name="Syntax Coloring">
+            <keywordReference id="com.sysord.mad.configuration.ui.keyword_MadConfigDsl"/>
+        </page>
+        <page
+            category="com.sysord.mad.configuration.MadConfigDsl"
+            class="com.sysord.mad.configuration.ui.MadConfigDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.templates.XtextTemplatePreferencePage"
+            id="com.sysord.mad.configuration.MadConfigDsl.templates"
+            name="Templates">
+            <keywordReference id="com.sysord.mad.configuration.ui.keyword_MadConfigDsl"/>
+        </page>
+    </extension>
+    <extension
+            point="org.eclipse.ui.propertyPages">
+        <page
+            class="com.sysord.mad.configuration.ui.MadConfigDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+            id="com.sysord.mad.configuration.MadConfigDsl"
+            name="MadConfigDsl">
+            <keywordReference id="com.sysord.mad.configuration.ui.keyword_MadConfigDsl"/>
+            <enabledWhen>
+	            <adapt type="org.eclipse.core.resources.IProject"/>
+			</enabledWhen>
+	        <filter name="projectNature" value="org.eclipse.xtext.ui.shared.xtextNature"/>
+        </page>
+    </extension>
+    <extension
+        point="org.eclipse.ui.keywords">
+        <keyword
+            id="com.sysord.mad.configuration.ui.keyword_MadConfigDsl"
+            label="MadConfigDsl"/>
+    </extension>
+    <extension
+         point="org.eclipse.ui.commands">
+      <command
+            description="Trigger expensive validation"
+            id="com.sysord.mad.configuration.MadConfigDsl.validate"
+            name="Validate">
+      </command>
+    </extension>
+    <extension point="org.eclipse.ui.menus">
+        <menuContribution
+            locationURI="popup:#TextEditorContext?after=group.edit">
+             <command
+                 commandId="com.sysord.mad.configuration.MadConfigDsl.validate"
+                 style="push"
+                 tooltip="Trigger expensive validation">
+            <visibleWhen checkEnabled="false">
+                <reference
+                    definitionId="com.sysord.mad.configuration.MadConfigDsl.Editor.opened">
+                </reference>
+            </visibleWhen>
+         </command>  
+         </menuContribution>
+    </extension>
+    <extension point="org.eclipse.ui.menus">
+		<menuContribution locationURI="popup:#TextEditorContext?endof=group.find">
+			<command commandId="org.eclipse.xtext.ui.editor.FindReferences">
+				<visibleWhen checkEnabled="false">
+                	<reference definitionId="com.sysord.mad.configuration.MadConfigDsl.Editor.opened">
+                	</reference>
+            	</visibleWhen>
+			</command>
+		</menuContribution>
+	</extension>
+	<extension point="org.eclipse.ui.handlers">
+	    <handler
+            class="com.sysord.mad.configuration.ui.MadConfigDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.findrefs.FindReferencesHandler"
+            commandId="org.eclipse.xtext.ui.editor.FindReferences">
+            <activeWhen>
+                <reference
+                    definitionId="com.sysord.mad.configuration.MadConfigDsl.Editor.opened">
+                </reference>
+            </activeWhen>
+        </handler>
+    </extension>   
+
+<!-- adding resource factories -->
+
+	<extension
+		point="org.eclipse.emf.ecore.extension_parser">
+		<parser
+			class="com.sysord.mad.configuration.ui.MadConfigDslExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
+			type="mad">
+		</parser>
+	</extension>
+	<extension point="org.eclipse.xtext.extension_resourceServiceProvider">
+        <resourceServiceProvider
+            class="com.sysord.mad.configuration.ui.MadConfigDslExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
+            uriExtension="mad">
+        </resourceServiceProvider>
+    </extension>
+
+
+    <!-- marker definitions for com.sysord.mad.configuration.MadConfigDsl -->
+    <extension
+            id="madconfigdsl.check.fast"
+            name="MadConfigDsl Problem"
+            point="org.eclipse.core.resources.markers">
+        <super type="org.eclipse.xtext.ui.check.fast"/>
+        <persistent value="true"/>
+    </extension>
+    <extension
+            id="madconfigdsl.check.normal"
+            name="MadConfigDsl Problem"
+            point="org.eclipse.core.resources.markers">
+        <super type="org.eclipse.xtext.ui.check.normal"/>
+        <persistent value="true"/>
+    </extension>
+    <extension
+            id="madconfigdsl.check.expensive"
+            name="MadConfigDsl Problem"
+            point="org.eclipse.core.resources.markers">
+        <super type="org.eclipse.xtext.ui.check.expensive"/>
+        <persistent value="true"/>
+    </extension>
+
+   <extension
+         point="org.eclipse.xtext.builder.participant">
+      <participant
+            class="com.sysord.mad.configuration.ui.MadConfigDslExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant">
+      </participant>
+   </extension>
+   <extension
+            point="org.eclipse.ui.preferencePages">
+        <page
+            category="com.sysord.mad.configuration.MadConfigDsl"
+            class="com.sysord.mad.configuration.ui.MadConfigDslExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
+            id="com.sysord.mad.configuration.MadConfigDsl.compiler.preferencePage"
+            name="Compiler">
+            <keywordReference id="com.sysord.mad.configuration.ui.keyword_MadConfigDsl"/>
+        </page>
+    </extension>
+    <extension
+            point="org.eclipse.ui.propertyPages">
+        <page
+            category="com.sysord.mad.configuration.MadConfigDsl"
+            class="com.sysord.mad.configuration.ui.MadConfigDslExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
+            id="com.sysord.mad.configuration.MadConfigDsl.compiler.propertyPage"
+            name="Compiler">
+            <keywordReference id="com.sysord.mad.configuration.ui.keyword_MadConfigDsl"/>
+            <enabledWhen>
+	            <adapt type="org.eclipse.core.resources.IProject"/>
+			</enabledWhen>
+	        <filter name="projectNature" value="org.eclipse.xtext.ui.shared.xtextNature"/>
+        </page>
+    </extension>
+
+	<!-- Quick Outline -->
+	<extension
+		point="org.eclipse.ui.handlers">
+		<handler 
+			class="com.sysord.mad.configuration.ui.MadConfigDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.outline.quickoutline.ShowQuickOutlineActionHandler"
+			commandId="org.eclipse.xtext.ui.editor.outline.QuickOutline">
+			<activeWhen>
+				<reference
+					definitionId="com.sysord.mad.configuration.MadConfigDsl.Editor.opened">
+				</reference>
+			</activeWhen>
+		</handler>
+	</extension>
+	<extension
+		point="org.eclipse.ui.commands">
+		<command
+			description="Open the quick outline."
+			id="org.eclipse.xtext.ui.editor.outline.QuickOutline"
+			name="Quick Outline">
+		</command>
+	</extension>
+	<extension point="org.eclipse.ui.menus">
+		<menuContribution
+			locationURI="popup:#TextEditorContext?after=group.open">
+			<command commandId="org.eclipse.xtext.ui.editor.outline.QuickOutline"
+				style="push"
+				tooltip="Open Quick Outline">
+				<visibleWhen checkEnabled="false">
+					<reference definitionId="com.sysord.mad.configuration.MadConfigDsl.Editor.opened"/>
+				</visibleWhen>
+			</command>
+		</menuContribution>
+	</extension>
+    <!-- quickfix marker resolution generator for com.sysord.mad.configuration.MadConfigDsl -->
+    <extension
+            point="org.eclipse.ui.ide.markerResolution">
+        <markerResolutionGenerator
+            class="com.sysord.mad.configuration.ui.MadConfigDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+            markerType="com.sysord.mad.configuration.ui.madconfigdsl.check.fast">
+            <attribute
+                name="FIXABLE_KEY"
+                value="true">
+            </attribute>
+        </markerResolutionGenerator>
+        <markerResolutionGenerator
+            class="com.sysord.mad.configuration.ui.MadConfigDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+            markerType="com.sysord.mad.configuration.ui.madconfigdsl.check.normal">
+            <attribute
+                name="FIXABLE_KEY"
+                value="true">
+            </attribute>
+        </markerResolutionGenerator>
+        <markerResolutionGenerator
+            class="com.sysord.mad.configuration.ui.MadConfigDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+            markerType="com.sysord.mad.configuration.ui.madconfigdsl.check.expensive">
+            <attribute
+                name="FIXABLE_KEY"
+                value="true">
+            </attribute>
+        </markerResolutionGenerator>
+    </extension>
+   	<!-- Rename Refactoring -->
+	<extension point="org.eclipse.ui.handlers">
+		<handler 
+			class="com.sysord.mad.configuration.ui.MadConfigDslExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.IRenameElementHandler"
+			commandId="org.eclipse.xtext.ui.refactoring.RenameElement">
+			<activeWhen>
+				<reference
+					definitionId="com.sysord.mad.configuration.MadConfigDsl.Editor.opened">
+				</reference>
+			</activeWhen>
+		</handler>
+	</extension>
+    <extension point="org.eclipse.ui.menus">
+         <menuContribution
+            locationURI="popup:#TextEditorContext?after=group.edit">
+         <command commandId="org.eclipse.xtext.ui.refactoring.RenameElement"
+               style="push">
+            <visibleWhen checkEnabled="false">
+               <reference
+                     definitionId="com.sysord.mad.configuration.MadConfigDsl.Editor.opened">
+               </reference>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+   <extension point="org.eclipse.ui.preferencePages">
+	    <page
+	        category="com.sysord.mad.configuration.MadConfigDsl"
+	        class="com.sysord.mad.configuration.ui.MadConfigDslExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.RefactoringPreferencePage"
+	        id="com.sysord.mad.configuration.MadConfigDsl.refactoring"
+	        name="Refactoring">
+	        <keywordReference id="com.sysord.mad.configuration.ui.keyword_MadConfigDsl"/>
+	    </page>
+	</extension>
+
+  <extension point="org.eclipse.compare.contentViewers">
+    <viewer id="com.sysord.mad.configuration.MadConfigDsl.compare.contentViewers"
+            class="com.sysord.mad.configuration.ui.MadConfigDslExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+            extensions="mad">
+    </viewer>
+  </extension>
+  <extension point="org.eclipse.compare.contentMergeViewers">
+    <viewer id="com.sysord.mad.configuration.MadConfigDsl.compare.contentMergeViewers"
+            class="com.sysord.mad.configuration.ui.MadConfigDslExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+            extensions="mad" label="MadConfigDsl Compare">
+     </viewer>
+  </extension>
+  <extension point="org.eclipse.ui.editors.documentProviders">
+    <provider id="com.sysord.mad.configuration.MadConfigDsl.editors.documentProviders"
+            class="com.sysord.mad.configuration.ui.MadConfigDslExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
+            extensions="mad">
+    </provider>
+  </extension>
+
+</plugin>

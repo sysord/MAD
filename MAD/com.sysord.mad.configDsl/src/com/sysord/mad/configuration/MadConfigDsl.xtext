@@ -1,0 +1,439 @@
+grammar com.sysord.mad.configuration.MadConfigDsl hidden(WS, ML_COMMENT, SL_COMMENT)
+
+generate madConfigDsl "http://www.sysord.com/mad/configuration/MadConfigDsl"
+
+import "http://www.eclipse.org/emf/2002/Ecore" as metamodel
+
+
+
+MADConfiguration:
+	imports += Import*
+	configElements += MADConfigElement*
+; 
+
+
+MADConfigElement:
+	LayerMdsl | ForeignModelMdsl | XtextLanguageDescriptorMdsl | QueryEvaluatorMdsl | QueryDeclaration | WidgetType | UITabMdsl | 
+	CommandDeclaration | TypeConfigurationMdsl | TextMacro | I18NBundleMdsl | IconDescriptorMdsl
+;
+
+
+Import :
+'import' importURI=STRING; // feature must be named importURI
+
+
+ClassDescriptorMdsl:
+	ClassName = ID ('from plugin' pluginId=ID)?
+;
+
+PropertyTypeMdsl:
+	name = ID 'label:'label = STRING //('ref:' ref = [metamodel::EObject])?
+;
+
+PropertyMdsl:
+	propertyName = [PropertyTypeMdsl | ID] '=' propertyValue = PropertyValueMdsl
+;
+
+PropertyValueMdsl:
+	fragments += PropValueExprFragment ('+' fragments += PropValueExprFragment)*
+;
+
+PropValueExprFragment:
+	LiteraPropValueExprFragment | TextMacroRef
+;
+
+LiteraPropValueExprFragment:
+	value = STRING
+;
+
+
+//-----------------------------
+// Icons declaration
+//-----------------------------
+IconDescriptorMdsl:
+	'Use icon' name=ID  ('description:' description = STRING)?
+	 ('location:' bundleDescriptor = ClassDescriptorMdsl | 'URI:' bundleUri=STRING)
+;
+
+//-----------------------------
+//I18N Bundle declaration
+//-----------------------------
+I18NBundleMdsl:
+	'Use I18N Bundle' name=ID  ('description:' description = STRING)?
+	 ('location:' bundleDescriptor = ClassDescriptorMdsl | 'URI:' bundleUri=STRING)
+;
+
+//-----------------------------
+//Foreign model declaration
+//-----------------------------
+
+ForeignModelMdsl:
+	'Foreign Model' '{'
+	'model type:' name = ID
+	'label:'label = STRING
+	('description:' description = STRING)?
+	provider = ModelProviderMdsl
+	('synchronizer factory' ':' synchronizerFactoryClass = ClassDescriptorMdsl)?	//implementation for synchronize master model. (master model listener).
+	('extension manager' ':' extensionManagerClass = ClassDescriptorMdsl)? //implementation for provide master model extensions using MAD_EXTENSION Queries
+	(dslReference =  XtextLanguageReference)?
+	('model locator:' relocatorQuery = Query)?
+	'}'	
+;
+
+ModelProviderMdsl:
+	URIModelProviderMdsl | URIExtensionModelProviderMdsl | CustomModelProviderMdsl
+;
+
+URIExtensionModelProviderMdsl:
+	'Uri Extension:' uriExtension = STRING //extension string
+;
+
+URIModelProviderMdsl:
+	'Model Uri:' modelUri= STRING //model uri
+;
+
+CustomModelProviderMdsl:
+	'Provider Class:' classDescriptor = ClassDescriptorMdsl ("parameters:" parameters+= STRING ("," parameters+= STRING)?)? 
+;
+
+//-----------------------------
+//XText languages declaration
+//-----------------------------
+XtextLanguageDescriptorMdsl:
+'Xtext DSL:' name=ID  'language Id:' languageId=ID  'from bundle:' bundleId=ID 'with activator:' activatorClassName=ID
+;
+
+XtextLanguageReference:
+'DSL:' xtextLanguageDescriptor = [XtextLanguageDescriptorMdsl | ID]	
+;
+
+
+//-----------------------------
+//Query evaluator declaration
+//-----------------------------
+QueryEvaluatorMdsl:
+	'Query Evaluator' '{'
+	'language id:' name = ID
+	'label:'label = STRING
+	'Evaluator' 'Class:' classDescriptor = ClassDescriptorMdsl
+	('query Properties type:' queryPropertiesTypes += PropertyTypeMdsl (',' queryPropertiesTypes += PropertyTypeMdsl)* )?
+	('external query provider:' extQServiceClassDescriptor = ClassDescriptorMdsl)?
+	('description:' description = STRING)?
+	'}'
+;
+
+//-------------------------------
+//Concrete Widget declaration
+//------------------------------
+WidgetType:
+	'Widget type' '{'
+	'name:' name = ID
+	'category:' category= WIDGET_CATEGORY_MDSL
+	'label:'label = STRING
+	'custom widget:'  classDescriptor = ClassDescriptorMdsl
+	('description:' description = STRING)?
+	'}'
+;
+
+
+//-----------------------------
+//UI Tab declaration
+//-----------------------------
+UITabMdsl:
+	'UI' 'Tab' '{'
+	'id:' name = ID
+	(i18NLabel?='I18N')? 'label:' labelFormatExpr = FormatExpr
+	('description:' description = STRING)?
+	'}'
+;
+
+//-----------------------------
+//Layers declaration
+//-----------------------------
+LayerMdsl:
+	'Layer' name = ID '{'
+	(i18NLabel?='I18N')? 'label:' labelFormatExpr = FormatExpr
+	('description:' description = STRING)?	
+		('Sub' 'layers' '{' 
+			subLayers += LayerMdsl* 
+		'}')?
+	
+	'}'
+;
+
+
+//----------------------------------
+// Model element type configuration
+//----------------------------------
+TypeConfigurationMdsl:
+	(defaultConfiguration?='DEFAULT')? 'Configuration' name=ID ('for' type = [metamodel::EClass |ID])? '{'	
+	((i18NLabelProvider?='I18N')? 'label provider:' labelProviderExpression = FormatExpr)? //default label provider for the element
+	(useExplicitExtends ?='extends:' superConfigurations += [TypeConfigurationMdsl] (',' superConfigurations += [TypeConfigurationMdsl])* )?
+	'template:' 
+		templateElements += TypeConfigurationTemplateElement*		
+	
+	(layoutDefined?='layout:' 
+		layoutElements += [WidgetConfigurationMdsl]*
+	)?
+	 
+	'}'	
+;
+
+TypeConfigurationTemplateElement:
+	WidgetConfigurationMdsl | IncludeTemplateElementMdsl
+;
+
+//-------------------------------
+// Template configuration elements
+//-------------------------------
+IncludeTemplateElementMdsl:
+	'include widget:' name = ID 
+	'source template:' refIncludedTemplate = [TypeConfigurationMdsl] 
+	'value:' valueQuery = QueryUsage
+;
+
+
+//-------------------------------
+// Value converter configuration
+//-------------------------------
+enum VALUE_CONVERTER_CATEGORY_MDSL:
+	DATE | DATETIME | INTEGER | FLOAT | DOUBLE | XTEXT
+;
+
+ValueConverter:
+	BasicTypeValueConverter | QueryBasedValueConverter
+;
+
+QueryBasedValueConverter:
+	'Query' converterQuery = QueryUsage
+;
+
+BasicTypeValueConverter:
+	category = VALUE_CONVERTER_CATEGORY_MDSL (':' configuration=STRING)?
+;
+
+
+//-----------------------
+// Widget configuration
+//-----------------------
+
+enum WIDGET_CATEGORY_MDSL:
+	OUTPUTTEXT_WIDGET | NAVIGATION_WIDGET |
+	TEXT_WIDGET | BOOL_WIDGET | DATE_WIDGET | NUMBER_WIDGET | SINGLE_SELECT_WIDGET | MULTI_SELECT_WIDGET | XTEXT_EDITOR | XTEXT_TEXT_EDITOR | FLEXIBLE_WIDGET 
+;
+
+
+
+WidgetConfigurationMdsl:
+	'widget:' name = ID
+	('description:' description = STRING)? 
+	('tab:' uiTab = [UITabMdsl])?
+	('layers:' layers += [LayerMdsl | ID] (',' layers += [LayerMdsl | ID])* )?
+	(i18NLabel?='I18N')? 'label:' label = FormatExpr
+	'type:' widgetCategory = WIDGET_CATEGORY_MDSL (':' widgetType = [WidgetType])? (dslReference = XtextLanguageReference)?
+	//flexible template for flexible widget, target template for navigation widget
+	( ('flexible template:' | 'target template:') flexibleTemplate = [TypeConfigurationMdsl | ID])? 
+	//conditionnal expression
+	(('visible when:' visibilityQuery = Query)? & ('editable when:' editableQuery = Query)?) 
+	('value:' valueQuery = QueryUsage)? //mandatory for input widgets only
+	('valueConverter:' valueConverter = ValueConverter)? 
+	('validators:' validators += ValidatorMdsl*)?
+	((i18NFormat?='I18N')? 'format:' valueFormat = FormatExpr)? 	
+	('candidates:' candidatesQuery = QueryUsage)?
+	((i18NItemLabel?='I18N')? 'item label:' itemLabelExpression = FormatExpr)?
+	('commands:' commands += Command (',' commands += Command)*)?
+;
+
+ValidatorMdsl:
+	'validation rule:' validationQuery = QueryUsage 
+	(i18NMessage?='I18N')? 'Error message:' errorMessageExpr = FormatExpr	
+;
+
+//===============================
+//	         COMMAND
+//===============================
+
+enum COMMAND_CATEGORY_MDSL:
+	UPDATE_COMMAND | GLOBAL_COMMAND | ITEM_COMMAND 
+;
+
+Command returns CommandMdsl:
+	CommandDefinitionMdsl | CommandRefMdsl
+;
+
+//----------------------
+// Command declaration
+//----------------------
+CommandDeclaration:
+	'Common Command' name = ID '{' ('label:' label=STRING)? ('description:' description = STRING)?  definition = CommandDefinitionMdsl '}'
+;
+
+//-------------------
+// Command definition
+//-------------------
+CommandDefinitionMdsl:
+	category=COMMAND_CATEGORY_MDSL 
+		(i18NLabel?='I18N')? label = FormatExpr 
+		('icon:' icon = [IconDescriptorMdsl])?
+		'action:' action = Query 
+		 ('on success:' onActionSuccessUICommands += UICommandMdsl*)?
+		 ('on error:' onActionErrorUICommands += UICommandMdsl*)?
+;
+
+//-------------------
+// Command reference
+//-------------------
+CommandRefMdsl:
+	referenced = [CommandDeclaration | ID] ('('(i18NLabelOverride ?='I18N')? labelOverride = FormatExpr ')')?
+;
+
+//--------------
+//UI Commands
+//--------------
+UICommandMdsl:
+	ReloadWidgetsUICommand | ReloadViewUICommand | DisplayViewUICommand
+;
+
+DisplayViewUICommand:
+	'Display view' ('for' target = QueryUsage)?
+;
+
+ReloadViewUICommand:
+	{ReloadViewUICommand}
+	'Reload' 'view'
+;
+
+
+ReloadWidgetsUICommand:
+	'Reload' 'widgets:' widgetsToReload += [WidgetConfigurationMdsl]*
+;
+
+
+//=============================
+//	        QUERY
+//=============================
+
+//------------------
+// Query usage
+//------------------
+QueryUsage:
+	Query | QueryChain
+;
+
+Query returns QueryMdsl:
+	QueryDefinitionMdsl | QueryRefMdsl 
+;
+
+
+//------------------
+// Query declaration
+//------------------
+enum QUERY_OPTIMISATION_LEVEL:
+	 NONE | VIEW | CONTEXT
+;
+
+QueryDeclaration:
+	'Common Query' name=ID '{' ('label:' label=STRING)? ('description:' description=STRING)? definition = QueryDefinitionMdsl '}' 
+	
+;
+
+//------------------
+// Query definition
+//------------------
+QueryDefinitionMdsl:
+	('language:' evaluator = [QueryEvaluatorMdsl])? 
+		('foreign model:'foreignModel = [ForeignModelMdsl])? 
+		('context locator:' contextLocator=STRING)?   
+		(query = QueryBody | externalQueryCall = ExternalQueryCallMdsl) (':' returnType = [metamodel::EClassifier | ID])?
+		('properties:' properties += PropertyMdsl (',' properties += PropertyMdsl)* )?
+		('Optimisation:' optimisationLevel = QUERY_OPTIMISATION_LEVEL)?
+;
+
+
+
+
+QueryFragment:
+	LiteralQueryFragment | TextMacroRef
+;
+
+LiteralQueryFragment:
+	value = STRING
+;
+
+
+QueryBody:
+	fragments += QueryFragment ('+' fragments += QueryFragment)*
+;
+
+//------------------
+// Query reference
+//------------------
+QueryRefMdsl:
+	referenced = [QueryDeclaration | ID]
+;
+
+//---------------------------
+// External Query reference
+//---------------------------
+ExternalQueryCallMdsl:
+	'call' externalQuery = [metamodel::EObject | ID] '()'
+;
+
+
+//------------------
+// Query chain
+//------------------
+QueryChain:
+	'Query Chain' '{' queries += Query+ (',' queries += Query)* '}'
+;
+
+//=============================
+//	   FORMAT EXPRESSIONS
+//=============================
+FormatExpr:
+	fragments += FormatExprFragment ('+' fragments += FormatExprFragment)*
+;
+
+FormatExprFragment:
+	LiteralFormatExprFragment | TextMacroRef
+;
+
+LiteralFormatExprFragment:
+	value = STRING
+;
+
+//===============
+//	   MACROS
+//===============
+
+TextMacro:
+	'Macro:' name = ID '{'
+	('label:' label=STRING)? ('description:' description=STRING)?
+	'value:' macroValue = STRING
+	'}'
+;
+
+TextMacroRef:
+	'#' referenced = [TextMacro]
+;
+
+
+//-------------------------------------------------------------------------------
+// Terminals: redefine ID as FQN for avoiding lexer keyword/identifier confusion
+//-------------------------------------------------------------------------------
+terminal INT returns metamodel::EInt: ('0'..'9')+;
+terminal STRING	: 
+			'"' ( '\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\') | !('\\'|'"') )* '"' |
+			"'" ( '\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\') | !('\\'|"'") )* "'"
+		; 
+terminal ML_COMMENT	: '/*' -> '*/';
+terminal SL_COMMENT 	: '//' !('\n'|'\r')* ('\r'? '\n')?;
+
+terminal WS			: (' '|'\t'|'\r'|'\n')+;
+
+terminal ANY_OTHER: .;
+
+terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')* ('.' '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*)*;
+
+
+

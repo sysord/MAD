@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright (c) 2013 Sysord.&#xA;&#xA;All rights reserved. This program and the accompanying materials&#xA;are made available under the terms of the Eclipse Public License v1.0&#xA;which accompanies this distribution, and is available at&#xA;http://www.eclipse.org/legal/epl-v10.html&#xA;&#xA;Contributors:&#xA;    Sysord - initial API and implementation"
+    modelDirectory="/com.sysord.mad.demo.tinylibrary/src" modelPluginID="com.sysord.mad.demo.tinylibrary"
+    modelName="Tinylibrary" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
+    copyrightFields="false">
+  <foreignModel>tinylibrary.ecore</foreignModel>
+  <genPackages prefix="Tinylibrary" basePackage="com.sysord.mad.demo" disposableProviderFactory="true"
+      ecorePackage="tinylibrary.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="tinylibrary.ecore#//BookCategory">
+      <genEnumLiterals ecoreEnumLiteral="tinylibrary.ecore#//BookCategory/Mystery"/>
+      <genEnumLiterals ecoreEnumLiteral="tinylibrary.ecore#//BookCategory/ScienceFiction"/>
+      <genEnumLiterals ecoreEnumLiteral="tinylibrary.ecore#//BookCategory/Biography"/>
+      <genEnumLiterals ecoreEnumLiteral="tinylibrary.ecore#//BookCategory/Computing"/>
+    </genEnums>
+    <genClasses ecoreClass="tinylibrary.ecore#//Library">
+      <genFeatures property="None" children="true" createChild="true" propertyCategory=""
+          ecoreFeature="ecore:EReference tinylibrary.ecore#//Library/books"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tinylibrary.ecore#//Library/employees"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference tinylibrary.ecore#//Library/writers"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="tinylibrary.ecore#//Person">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tinylibrary.ecore#//Person/firstName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tinylibrary.ecore#//Person/lastName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tinylibrary.ecore#//Person/name"/>
+    </genClasses>
+    <genClasses ecoreClass="tinylibrary.ecore#//Writer">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tinylibrary.ecore#//Writer/books"/>
+    </genClasses>
+    <genClasses ecoreClass="tinylibrary.ecore#//Employee">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tinylibrary.ecore#//Employee/manager"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tinylibrary.ecore#//Employee/managed"/>
+    </genClasses>
+    <genClasses ecoreClass="tinylibrary.ecore#//Book" labelFeature="#//tinylibrary/Book/title">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tinylibrary.ecore#//Book/isbn"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tinylibrary.ecore#//Book/title"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tinylibrary.ecore#//Book/category"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference tinylibrary.ecore#//Book/authors"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tinylibrary.ecore#//Book/pages"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tinylibrary.ecore#//Book/published"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute tinylibrary.ecore#//Book/damaged"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

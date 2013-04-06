@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel="stylesheet" type="text/css" href="../../css/style.css" />
+<title>Reference - Evaluators</title>
+</head>
+
+<body>
+	<h1>Evaluators</h1>
+	<p>
+		The <strong>Evaluators</strong> are responsible of the queries evaluations. They are referenced
+		with an ID that must be specified as a language ID when writing queries.<br />
+		All Evaluators must implements the interface <span class="highlight">QueryEvaluator</span>.
+	</p>
+
+	<a name="evaluatorDeclaration"></a>
+	<h2>Evaluator Declaration</h2>
+	<p>
+		The evaluators must be declared in the configuration by indicating their bundle symbolic name
+		and their class qualified name.
+	</p>
+	<p>
+		<u>Example</u> : Declaration of the <strong>OCL evaluator</strong>
+	</p>
+	<pre>
+	<span class="keyword">Query Evaluator</span> {
+	    <span class="keyword">language id:</span> OCL
+	    <span class="keyword">label:</span> <span class="string">"Ocl evaluator"</span>
+	    <span class="keyword">Evaluator Class:</span> com.sysord.mad.evaluator.impl.ocl.OCLQueryEvaluator
+	        <span class="keyword">from plugin</span> com.sysord.mad.core
+	    <span class="keyword">description:</span> <span class="string">"Default Query Evaluator"</span>
+	}</pre>
+
+	<a name="outOfTheBox"></a>
+	<h2>Out of the Box</h2>
+	<p>
+		The default MAD configuration provided by the core plugin registers several evaluators already implemented :
+	</p>
+	<table>
+		<thead>
+			<tr>
+				<th>Evaluator</th>
+				<th>Language ID</th>
+				<th>Description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>OCL</td>
+				<td><span class="code">OCL</span></td>
+				<td>Evaluator for OCL queries.</td>
+			</tr>
+			<tr>
+				<td>Acceleo</td>
+				<td><span class="code">Acceleo</span></td>
+				<td>Evaluator for Acceleo queries referenced in <strong>emtl</strong> files.</td>
+			</tr>
+			<tr>
+				<td>MAD</td>
+				<td><span class="code">MAD</span></td>
+				<td>Evaluator with helpful queries for modifying EMF models.</td>
+			</tr>
+			<tr>
+				<td>Model Extension</td>
+				<td><span class="code">MODEL_EXTENSION</span></td>
+				<td>Evaluator for model extensions.</td>
+			</tr>
+		</tbody>
+	</table>
+
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright (c) 2013 Sysord.&#xA;&#xA;All rights reserved. This program and the accompanying materials&#xA;are made available under the terms of the Eclipse Public License v1.0&#xA;which accompanies this distribution, and is available at&#xA;http://www.eclipse.org/legal/epl-v10.html&#xA;&#xA;Contributors:&#xA;    Sysord - initial API and implementation"
+    modelDirectory="/com.sysord.mad.emf/src" modelPluginID="com.sysord.mad.emf" modelName="Mad"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
+    usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore">
+  <foreignModel>mad.ecore</foreignModel>
+  <genPackages prefix="Mad" basePackage="com.sysord" disposableProviderFactory="true"
+      ecorePackage="mad.ecore#/">
+    <genClasses ecoreClass="mad.ecore#//Root">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mad.ecore#//Root/madElement"/>
+    </genClasses>
+    <genClasses ecoreClass="mad.ecore#//MadAttribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mad.ecore#//MadAttribute/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mad.ecore#//MadAttribute/valueFeature"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mad.ecore#//MadAttribute/valueOwner"/>
+      <genOperations ecoreOperation="mad.ecore#//MadAttribute/getAttributeValue"/>
+    </genClasses>
+    <genClasses ecoreClass="mad.ecore#//MadStringAttribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mad.ecore#//MadStringAttribute/value"/>
+    </genClasses>
+    <genClasses ecoreClass="mad.ecore#//MadBooleanAttribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mad.ecore#//MadBooleanAttribute/value"/>
+    </genClasses>
+    <genClasses ecoreClass="mad.ecore#//MadEnumAttribute">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mad.ecore#//MadEnumAttribute/value"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mad.ecore#//MadEnumAttribute/candidates"/>
+    </genClasses>
+    <genClasses ecoreClass="mad.ecore#//MadSingleObjectAttribute">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mad.ecore#//MadSingleObjectAttribute/value"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mad.ecore#//MadSingleObjectAttribute/candidates"/>
+    </genClasses>
+    <genClasses ecoreClass="mad.ecore#//MadMultiObjectAttribute">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mad.ecore#//MadMultiObjectAttribute/value"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mad.ecore#//MadMultiObjectAttribute/candidates"/>
+    </genClasses>
+    <genClasses ecoreClass="mad.ecore#//MadCollection">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mad.ecore#//MadCollection/items"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mad.ecore#//MadCollection/itemType"/>
+    </genClasses>
+    <genClasses ecoreClass="mad.ecore#//MadElement"/>
+  </genPackages>
+</genmodel:GenModel>

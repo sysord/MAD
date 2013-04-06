@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+ <copyright>
+ </copyright>
+
+ $Id$
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <package
+            uri="http://www.sysord.com/mad"
+            class="com.sysord.mad.MadPackage"
+            genModel="model/mad.genmodel"/>
+   </extension>
+
+</plugin>

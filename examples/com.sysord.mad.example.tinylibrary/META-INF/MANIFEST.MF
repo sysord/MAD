@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %Bundle-Name
+Bundle-SymbolicName: com.sysord.mad.example.tinylibrary;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.sysord.mad.example.tinylibrary.Activator
+Bundle-Vendor: Sysord
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ com.sysord.eclipse.tools;bundle-version="1.0.0",
+ com.sysord.mad.core;bundle-version="1.0.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy

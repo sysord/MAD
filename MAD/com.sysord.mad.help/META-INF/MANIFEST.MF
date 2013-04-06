@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: MAD Help
+Bundle-SymbolicName: com.sysord.mad.help;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.sysord.mad.help.MADHelpPlugin
+Bundle-Vendor: SYSORD
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.help;bundle-version="3.5.100"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy

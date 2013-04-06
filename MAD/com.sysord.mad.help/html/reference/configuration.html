@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel="stylesheet" type="text/css" href="../../css/style.css" />
+<title>Reference - Configuration</title>
+</head>
+
+<body>
+	<h1>Configuration</h1>
+	<p>
+		A configuration is for an <strong>EObject</strong> defined in an imported metamodel.
+	</p>
+	<p>
+		<u>Example</u> : Configuration for the <strong>UML Model</strong> element
+	</p>
+	<pre>
+	<span class="comment">// The UML metamodel must be imported</span>
+	<span class="keyword">import</span> <span class="string">"platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore"</span>
+	
+	<span class="comment">// Declaration of a configuration for the UML Model element</span>
+	<span class="keyword">Configuration</span> MODEL <span class="keyword">for</span> uml.Model {
+	}</pre>
+	
+	<a name="labelProvider"></a>
+	<h2>Label Provider</h2>
+	<p>
+		A Label Provider can be defined for a configuration and will provide the <strong>expression</strong>
+		to evaluate to obtain its corresponding label.
+	</p>
+	<p>
+		<u>Example</u> : Label provider for the <strong>UML Model element</strong>
+	</p>
+	<pre>
+	<span class="keyword">Configuration</span> MODEL <span class="keyword">for</span> uml.Model {
+	    <span class="comment">// Query &quot;[name]&quot; will be evaluted for the Model element</span>
+	    <span class="keyword">label provider:</span> <span class="string">&quot;[name]&quot;</span>
+	}</pre>
+	
+	<a name="inheritance"></a>
+	<h2>Inheritance</h2>
+	<p>
+		There are two kinds of inheritance in the MAD configuration :
+	</p>
+	<ul>
+		<li>Implicit Inheritance</li>
+		<li>Explicit Inheritance</li>
+	</ul>
+	<p>
+		The <strong>implicit inheritance</strong> is defined by the inheritance of the metamodel elements.
+		For example, in UML, the <strong>Model</strong> element inherits from <strong>NamedElement</strong>.
+		So, if we create a configuration for the <span class="highlight">NamedElement</span>, then the configuration
+		for the <span class="highlight">Model</span> element will inherit from it.
+	</p>
+	<p>
+		The <strong>explicit inheritance</strong> is used to inherit the widget's configurations that correspond
+		to the element even if in the metamodel the two elements are not in the same hierarchy.<br />
+		The explicit inheritance is specified with the keyword <span class="keyword">extends</span>
+		before the definition of the <em>template</em>.
+	</p>
+	
+	<a name="template"></a>
+	<h2>Template</h2>
+	<p>
+		The <strong>Template</strong> is the ensemble of the widgets' configurations for the configured
+		element.<br />
+		All configurations <strong>must have</strong> a template, even if it's empty.
+	</p>
+	<p>
+		<u>Example</u> : Template for the <strong>UML Model</strong> element
+	</p>
+	<pre>
+	<span class="keyword">Configuration</span> MODEL <span class="keyword">for</span> uml.Model {
+	    <span class="comment">// Optional label provider</span>
+	    <span class="keyword">label provider:</span> <span class="string">&quot;Model : [name]&quot;</span>
+	
+	    <span class="comment">// Beginning of the template</span>
+	    <span class="keyword">template:</span>
+	
+	    <span class="comment">// Widget for editing the model's name</span>
+	    <span class="keyword">widget:</span> Name
+	    <span class="keyword">label:</span> <span class="string">&quot;Name&quot;</span>
+	    <span class="keyword">type:</span> <span class="keyword">TEXT_WIDGET</span>
+	    <span class="keyword">value:</span> <span class="string">&quot;name&quot;</span>
+	}</pre>
+	
+	<a name="layout"></a>
+	<h2>&laquo; Layout &raquo;</h2>
+	<p>
+		With the inheritance system, sometimes, there are to much widgets or they are not in the order we want.
+		The layout system used by the MAD configuration, will set the order of the widgets and the ones that must
+		be showed.
+	</p>
+	<p>
+		<u>Example</u> TODO : EXEMPLE DE CONFIGURATION AVEC UTILISATION DES LAYOUTS
+	</p>
+
+	<a name="defaultConfiguration"></a>
+	<h2>Default Configuration</h2>
+	<p>
+		MAD allows to define several configurations for the same element and takes the first one found
+		if there is no explicit indication.
+		<br />
+		To define a configuration as the default one to use when there is an ambiguity, the keyword
+		<span class="keyword">DEFAULT</span> must be placed before the <span class="keyword">Configuration</span>
+		keyword.
+	</p>
+	<p>
+		<u>Example</u> : Two configurations for the <strong>Class</strong> element with the second defined as default
+	</p>
+	<pre>
+	<span class="comment">// Configuration for a Class element with its name, abstract and leaf properties</span>
+	<span class="keyword">Configuration</span> CLASS <span class="keyword">for</span> uml.Class {
+	    <span class="keyword">template:</span>
+	
+	    <span class="keyword">widget:</span> Name
+	    <span class="keyword">label:</span> <span class="string">&quot;Name&quot;</span>
+	    <span class="keyword">type:</span> <span class="keyword">TEXT_WIDGET</span>
+	    <span class="keyword">value:</span> <span class="string">&quot;name&quot;</span>
+
+	    <span class="keyword">widget:</span> Abstract
+	    <span class="keyword">label:</span> <span class="string">&quot;Is Abstract&quot;</span>
+	    <span class="keyword">type:</span> <span class="keyword">BOOL_WIDGET</span>
+	    <span class="keyword">value:</span> <span class="string">&quot;isAbstract&quot;</span>
+
+	    <span class="keyword">widget:</span> Final
+	    <span class="keyword">label:</span> <span class="string">&quot;Is Final&quot;</span>
+	    <span class="keyword">type:</span> <span class="keyword">BOOL_WIDGET</span>
+	    <span class="keyword">value:</span> <span class="string">&quot;isLeaf&quot;</span>
+	}
+	
+	<span class="comment">// Default configuration for a Class element with only its name</span>
+	<span class="keyword">DEFAULT Configuration</span> CLASS_SHORTER <span class="keyword">for</span> uml.Class {
+	    <span class="keyword">template:</span>
+	
+	    <span class="keyword">widget:</span> Name
+	    <span class="keyword">label:</span> <span class="string">&quot;Name&quot;</span>
+	    <span class="keyword">type:</span> <span class="keyword">TEXT_WIDGET</span>
+	    <span class="keyword">value:</span> <span class="string">&quot;name&quot;</span>
+	}</pre>
+	
+	
+</body>
+</html>

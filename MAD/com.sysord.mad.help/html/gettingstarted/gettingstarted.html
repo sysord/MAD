@@ -1,0 +1,412 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel="stylesheet" type="text/css" href="../../css/style.css" />
+<title>Reference - Getting Started</title>
+</head>
+
+<body>
+	<h1>Getting Started</h1>
+	
+	<p>
+		This getting started will show you how to create and use a simple MAD configuration
+		for editing the properties of elements of an Ecore metamodel.
+	</p>
+
+	<a name="prepareEnvironment"></a>
+	<h2>Prepare Environment</h2>
+
+	<p>
+		Create a new EMF Project : File &gt; New &gt; Project... &gt; <strong>Empty EMF Project</strong>
+	</p>
+	<p class="imgTuto">
+	<img alt="newEMFProject" src="../../images/01_newEMFProject.png"/>
+	</p>
+	
+	<p>
+		Create a new Ecore Model named <strong>Library.ecore</strong> inside this project :
+		File &gt; New &gt; Other... &gt; <strong>Ecore Model</strong>
+	</p>
+	<p class="imgTuto">
+		<img alt="newEcoreModel" src="../../images/03_newEMFModel.png"/>
+	</p>
+	<p class="imgTuto">
+		<img alt="newEcoreModel" src="../../images/04_newEMFModel_2.png"/>
+	</p>
+	<p class="imgTuto">
+		<img alt="newEcoreModel" src="../../images/05_newEMFModel_3.png"/>
+	</p>
+	
+	<p>
+		Create a new General Project named <strong>com.sysord.mad.gettingstarted.ecoreconfig</strong> :
+		File &gt; New &gt; Project... &gt; <strong>Project</strong>
+	</p>
+	<p class="imgTuto">
+		<img alt="newGeneralProject" src="../../images/06_newGeneralProject.png"/>
+	</p>
+	<p class="imgTuto">
+		<img alt="newGeneralProject" src="../../images/07_newGeneralProject_2.png"/>
+	</p>
+	
+	<p>
+		Create a new <strong>MAD Configuration file</strong> named <strong>gettingstarted.mad</strong>
+		inside this project and choose the <strong>Ecore metamodel</strong> :
+		File &gt; New &gt; Other... &gt; <strong>MAD Configuration File</strong>
+	</p>
+	<p class="imgTuto">
+		<img alt="newMadConfigurationFile" src="../../images/08_newMADConfigurationFile.png">
+	</p>
+	<p class="imgTuto">
+		<img alt="newMadConfigurationFile" src="../../images/09_newMADConfigurationFile_2.png">
+	</p>
+	<p class="imgTuto">
+		<img alt="newMadConfigurationFile" src="../../images/10_newMADConfigurationFile_3.png">
+	</p>
+	<p class="imgTuto">
+		<img alt="newMadConfigurationFile" src="../../images/11_newMADConfigurationFile_4.png">
+	</p>
+	<p>
+		When a dialog asks you to add the Xtext nature to the project, answer <strong>Yes</strong>.
+	</p>
+	<p class="imgTuto">
+		<img alt="newMadConfigurationFile" src="../../images/12_newMADConfigurationFile_5.png">
+	</p>
+	
+	<p>
+		The MAD configuration have to be referenced in the preferences :
+		Window &gt; Preferences &gt; <strong>MAD</strong><br />
+		Click on <span class="highlight">Workspace...</span>, choose the configuration
+		file previously created <span class="highlight">gettingstarted.mad</span>, and Ok.
+	</p>
+	<p class="imgTuto">
+		<img alt="addConfigInPreferences" src="../../images/13_addConfigInPreferences.png">
+	</p>
+	
+	<p>
+		Now open the <strong>MAD View</strong> :
+		Window &gt; Show View &gt; Other... &gt; <strong>MAD View</strong>
+	</p>
+	<p class="imgTuto">
+		<img alt="showMADView" src="../../images/13_1_showMADView.png">
+	</p>
+	
+	<a name="firstConfiguration"></a>
+	<h2>First Configuration</h2>
+	<p>
+		Now we have our environment prepared, we are going to create the MAD configuration for editing
+		the properties of the previously created Ecore metamodel.<br />
+		So, open the <span class="code">Library.ecore</span> metamodel and select the package.
+		As you can see nothing happens, it's normal,
+		we have not created any configuration for the <span class="code">EPackage</span> element.
+	</p>
+	<p>
+		Open the <span class="code">gettingstarted.mad</span> file and copy this code into it :
+	</p>
+	<pre>
+	<span class="comment">// Configuration for EPackage elements</span>
+	<span class="keyword">Configuration</span> EPACKAGE <span class="keyword">for</span> ecore.EPackage {
+	    <span class="keyword">template:</span>
+	
+	    <span class="keyword">widget:</span> Name
+	    <span class="keyword">label:</span> <span class="string">"Name"</span>
+	    <span class="keyword">type: TEXT_WIDGET</span>
+	    <span class="keyword">value:</span> <span class="string">"name"</span>
+	}</pre>
+	<p>
+		This configuration will allow us to edit the name of the <span class="code">EPackage</span> element.
+		Click on the <em>refresh</em> button
+		on the <span class="highlight">MAD View</span> or select again the package in your metamodel.
+		You should have now a form for editing the selected <span class="code">EPackage</span>'s name.
+	</p>
+	<p class="imgTuto">
+		<img alt="editPackageName" src="../../images/14_EPackageName.png" />
+	</p>
+	<p>
+		Set the name <em>library</em> (press <span class="code">Enter</span> to validate or
+		leave the textbox), the metamodel should be updated.
+	</p>
+	<p>
+		You can do the same for the <span class="code">NsPrefix</span> and <span class="code">NsURI</span>
+		of the <span class="code">EPackage</span> :
+	</p>
+	<pre>
+	<span class="comment">// Configuration for EPackage elements</span>
+	<span class="keyword">Configuration</span> EPACKAGE <span class="keyword">for</span> ecore.EPackage {
+	    <span class="keyword">template:</span>
+	
+	    <span class="keyword">widget:</span> Name
+	    <span class="keyword">label:</span> <span class="string">"Name"</span>
+	    <span class="keyword">type: TEXT_WIDGET</span>
+	    <span class="keyword">value:</span> <span class="string">"name"</span>
+	
+	    <span class="keyword">widget:</span> NsPrefix
+	    <span class="keyword">label:</span> <span class="string">"Ns Prefix"</span>
+	    <span class="keyword">type: TEXT_WIDGET</span>
+	    <span class="keyword">value:</span> <span class="string">"nsPrefix"</span>
+	
+	    <span class="keyword">widget:</span> NsURI
+	    <span class="keyword">label:</span> <span class="string">"Ns URI"</span>
+	    <span class="keyword">type: TEXT_WIDGET</span>
+	    <span class="keyword">value:</span> <span class="string">"nsURI"</span>
+	}</pre>
+	<p class="imgTuto">
+		<img alt="editPackageProperties" src="../../images/15_EPackageProperties.png" />
+	</p>
+	
+	<p>
+		Create three new <span class="code">EClass</span> in the library package :
+		<span class="code">Library</span>, <span class="code">Book</span> and <span class="code">Writer</span>.<br />
+		We would like to edit the name of these <span class="code">EClass</span>. Easy you'll say,
+		we just have to add a widget
+		for the name in the <span class="code">EClass</span> configuration. That's a solution, but not the ideal one.
+	</p>
+	<p>
+		In the <span class="highlight">Ecore</span> metamodel all the elements with a name inherit
+		from the <span class="code">ENamedElement</span>,
+		and MAD uses the metamodel inheritance to create the configurations.<br />
+		We are going to create a configuration for the <span class="code">ENamedElement</span> and all the
+		configurations of elements which inherit from <span class="code">ENamedElement</span> will
+		display the name widget.
+	</p>
+	<pre>
+	<span class="comment">// Configuration for ENamedElement elements</span>
+	<span class="keyword">Configuration</span> ENAMED_ELEMENT <span class="keyword">for</span> ecore.ENamedElement {
+	    <span class="keyword">template:</span>
+	
+	    <span class="keyword">widget:</span> Name
+	    <span class="keyword">label:</span> <span class="string">"Name"</span>
+	    <span class="keyword">type: TEXT_WIDGET</span>
+	    <span class="keyword">value:</span> <span class="string">"name"</span>
+	}
+	
+	<span class="comment">// Configuration for EPackage elements</span>
+	<span class="keyword">Configuration</span> EPACKAGE <span class="keyword">for</span> ecore.EPackage {
+	    <span class="keyword">template:</span>
+	
+	    <span class="keyword">widget:</span> NsPrefix
+	    <span class="keyword">label:</span> <span class="string">"Ns Prefix"</span>
+	    <span class="keyword">type: TEXT_WIDGET</span>
+	    <span class="keyword">value:</span> <span class="string">"nsPrefix"</span>
+	
+	    <span class="keyword">widget:</span> NsURI
+	    <span class="keyword">label:</span> <span class="string">"Ns URI"</span>
+	    <span class="keyword">type: TEXT_WIDGET</span>
+	    <span class="keyword">value:</span> <span class="string">"nsURI"</span>
+	}
+	
+	<span class="comment">// Configuration for EClass elements</span>
+	<span class="keyword">Configuration</span> ECLASS <span class="keyword">for</span> ecore.EClass {
+	    <span class="keyword">template:</span>
+	}</pre>
+	<p>
+		You certainly noticed that the <span class="code">EClass</span> configuration is empty.
+		Actually, MAD does not display
+		a view for an element if there is no configuration for it, even if a configuration exists for
+		a super-implementation like <span class="code">ENamedElement</span> here.
+	</p>
+	<p class="imgTuto">
+		<img alt="eClassName" src="../../images/15_1_EClassName.png">
+	</p>
+	<p>
+		Add two references to the <span class="code">Library EClass</span> :
+		<span class="code">books</span> and <span class="code">writers</span>, and create an empty configuration
+		for the <span class="code">EReference</span> element as follow :
+	</p>
+	<pre>
+	<span class="comment">// Configuration for EReference elements</span>
+	<span class="keyword">Configuration</span> EREFERENCE <span class="keyword">for</span> ecore.EReference {
+	    <span class="keyword">template:</span>
+	
+	}</pre>
+	<p>
+		This configuration allows us to edit the name of the reference. But we also want to edit
+		the type of the reference. To do it we have to add a widget for editing the <span class="code">eType</span>
+		property of the reference.<br />
+		The <span class="code">eType</span> property is inherited from the <span class="code">ETypedElement</span>.<br />
+		This property can accept all the <span class="code">EClass</span> defined in our metamodel.
+		To obtain these <span class="code">EClass</span>
+		and propose them to the widget we can access to the root element of our metamodel
+		and get all the elements with the <span class="code">EClass</span> type. To do this, there is an operation
+		included in the OCL evaluator called <span class="code">eAllContents(filter)</span> usable on any
+		<span class="code">EObject</span>.
+	</p>
+	<pre>
+	<span class="comment">// Configuration for ETypedElement elements</span>
+	<span class="keyword">Configuration</span> ETYPED_ELEMENT <span class="keyword">for</span> ecore.ETypedElement {
+	    <span class="keyword">template:</span>
+	
+	    <span class="keyword">widget:</span> Type
+	    <span class="keyword">label:</span> <span class="string">"Type"</span>
+	    <span class="keyword">type: SINGLE_SELECT_WIDGET</span>
+	    <span class="keyword">value:</span> <span class="string">"eType"</span>
+	    <span class="keyword">candidates:</span> <span class="string">"$MODEL.eAllContents(EClass)"</span>
+	}</pre>
+	<p class="imgTuto">
+		<img alt="eReferenceEType" src="../../images/16_EReferenceEType.png">
+	</p>
+	
+	<p>
+		These two references should be set as <em>containment</em>, so add the following configuration
+		to display a widget for editing the containment state of <span class="code">EReference</span>s.
+	</p>
+	<pre>
+	<span class="comment">// Configuration for EReference elements</span>
+	<span class="keyword">Configuration</span> EREFERENCE <span class="keyword">for</span> ecore.EReference {
+	    <span class="keyword">template:</span>
+	
+	    <span class="keyword">widget:</span> Containment
+	    <span class="keyword">label:</span> <span class="string">"Containment"</span>
+	    <span class="keyword">type: BOOL_WIDGET</span>
+	    <span class="keyword">value:</span> <span class="string">"containment"</span>
+	}</pre>
+	<p class="imgTuto">
+		<img alt="eReferenceContainment" src="../../images/17_EReferenceContainment.png">
+	</p>
+	
+	<p>
+		These two references should also have a multiplicity of <span class="code">0..*</span>.
+		Add the following widgets into the <span class="code">ETypedElement</span> configuration
+		for editing the <span class="code">lower</span> and <span class="code">upper</span> bounds of a
+		<span class="code">ETypedElement</span>.
+		(<span class="code">EReference</span> inherits from <span class="code">ETypedElement</span>)
+	</p>
+	<pre>
+	<span class="comment">// Configuration for ETypedElement elements</span>
+	<span class="keyword">Configuration</span> ETYPED_ELEMENT <span class="keyword">for</span> ecore.ETypedElement {
+	    <span class="keyword">template:</span>
+	
+	    <span class="keyword">widget:</span> Type
+	    <span class="keyword">label:</span> <span class="string">"Type"</span>
+	    <span class="keyword">type: SINGLE_SELECT_WIDGET</span>
+	    <span class="keyword">value:</span> <span class="string">"eType"</span>
+	    <span class="keyword">candidates:</span> <span class="string">"$MODEL.eAllContents(EClass)"</span>
+	
+	    <span class="keyword">widget:</span> LowerBound
+	    <span class="keyword">label:</span> <span class="string">"Lower Bound"</span>
+	    <span class="keyword">type: NUMBER_WIDGET</span>
+	    <span class="keyword">value:</span> <span class="string">"lowerBound"</span>
+	
+	    <span class="keyword">widget:</span> UpperBound
+	    <span class="keyword">label:</span> <span class="string">"Upper Bound"</span>
+	    <span class="keyword">type: NUMBER_WIDGET</span>
+	    <span class="keyword">value:</span> <span class="string">"upperBound"</span>
+	}</pre>
+	<p class="imgTuto">
+		<img alt="eReferenceMultiplicity" src="../../images/18_EReferenceMultiplicity.png">
+	</p>
+	
+	<p>
+		As you can see, the <span class="code">lower</span> and <span class="code">upper</span> bounds 
+		widgets are located before the containment widget.
+		If you want to re-organize the display order you have to use the <span class="code">layout</span> as follow :
+	</p>
+	<pre>
+	<span class="comment">// Configuration for EReference elements</span>
+	<span class="keyword">Configuration</span> EREFERENCE <span class="keyword">for</span> ecore.EReference {
+	    <span class="keyword">template:</span>
+	
+	    <span class="keyword">widget:</span> Containment
+	    <span class="keyword">label:</span> <span class="string">"Containment"</span>
+	    <span class="keyword">type: BOOL_WIDGET</span>
+	    <span class="keyword">value:</span> <span class="string">"containment"</span>
+	    
+	    <span class="keyword">layout:</span> Name Type Containment LowerBound UpperBound
+	}</pre>
+	<p class="imgTuto">
+		<img alt="eReferenceLayout" src="../../images/19_EReferenceLayout.png">
+	</p>
+	
+	<p>
+		Add the attribute <span class="code">isbn</span> to the <span class="code">Book EClass</span>.
+		You can see that the proposed types are not what
+		it should be for attributes. MAD allows to override widgets configurations.<br />
+		Create a widget <span class="code">Type</span> for the <span class="code">EAttribute</span>
+		configuration as follow :
+	</p>
+	<pre>
+	<span class="comment">// Configuration for EAttribute elements</span>
+	<span class="keyword">Configuration</span> EATTRIBUTE <span class="keyword">for</span> ecore.EAttribute {
+	    <span class="keyword">template:</span>
+	
+	    <span class="keyword">widget:</span> Type
+	    <span class="keyword">label:</span> <span class="string">"Type"</span>
+	    <span class="keyword">type: SINGLE_SELECT_WIDGET</span>
+	    <span class="keyword">value:</span> <span class="string">"eType"</span>
+	    <span class="keyword">candidates:</span> <span class="string">"metamodelClassifiers(EDataType)"</span>
+	}</pre>
+	<p>
+		The query <span class="code">metamodelClassifiers</span> is an operation defined in the OCL evaluator
+		and returns all the <em>classifiers</em> of the metamodel of an <span class="code">EObject</span>,
+		Ecore metamodel here. This operation
+		accepts an <span class="code">EClassifier</span> as filter and for this query we want only
+		<span class="code">EDataType</span> classifiers.
+	</p>
+	<p class="imgTuto">
+		<img alt="eAttributeEType" src="../../images/20_EAttributeEType.png">
+	</p>
+	
+	<p>
+		You can see the list of <span class="code">EDataType</span> is quite large. It's possible to change
+		the graphical representation of the <span class="keyword">SINGLE_SELECT_WIDGET</span> with an other one more
+		appropriate for displaying large lists of elements.<br />
+		There is already a set of custom widgets in the base MAD configuration provided by the core
+		plugin. To use them you have to import this configuration :
+	</p>
+	<pre>
+	<span class="keyword">import</span> <span class="string">"platform:/plugin/com.sysord.mad.core/model/config.mad"</span></pre>
+	<p>
+		Now specify to the <span class="keyword">SINGLE_SELECT_WIDGET</span> you want to use a <em>popup list</em>.
+	</p>
+	<pre>
+	<span class="keyword">type: SINGLE_SELECT_WIDGET</span>:POPUP_LIST</pre>
+	<p>
+		This will display a non editable textbox containing the selected value and a
+		button which open a dialog with the list of the selectable elements.
+	</p>
+	<p class="imgTuto">
+		<img alt="eAttributeETypePopup" src="../../images/21_EAttributeETypePOPUP.png">
+	</p>
+	
+	<p>
+		Add the references <span class="code">books</span> and <span class="code">authors</span> on
+		respectively <span class="code">Writer</span> and <span class="code">Book</span>. We would like
+		these references to be <em>bidirectional</em> so we need to edit the <span class="code">eOpposite</span>
+		property.<br />
+		Don't forget to add the <span class="code">Opposite</span> widget in the layout, else the widget won't
+		be visible.
+	</p>
+	<pre>
+	<span class="comment">// Configuration for EReference elements</span>
+	<span class="keyword">Configuration</span> EREFERENCE <span class="keyword">for</span> ecore.EReference {
+	    <span class="keyword">template:</span>
+	
+	    <span class="keyword">widget:</span> Containment
+	    <span class="keyword">label:</span> <span class="string">"Containment"</span>
+	    <span class="keyword">type: BOOL_WIDGET</span>
+	    <span class="keyword">value:</span> <span class="string">"containment"</span>
+	
+	    <span class="keyword">widget:</span> Opposite
+	    <span class="keyword">label:</span> <span class="string">"Opposite"</span>
+	    <span class="keyword">type: SINGLE_SELECT_WIDGET</span>
+	    <span class="keyword">value:</span> <span class="string">"eOpposite"</span>
+	    <span class="keyword">candidates:</span> <span class="string">"eType.oclAsType(EClass).eAllReferences-&gt;select(eType = $CONTEXT.eContainer())"</span>
+	    
+	    <span class="keyword">layout:</span> Name Type Containment <strong>Opposite</strong> LowerBound UpperBound
+	}</pre>
+	<p>
+		The query for obtaining the <em>candidates</em> uses the <span class="code">eType</span> of the reference,
+		if this eType is not set, the query will fail.<br />
+		To prevent that we add a visibility condition to the widget :
+	</p>
+	<pre>
+	<span class="keyword">widget:</span> Opposite
+	<span class="keyword">label:</span> <span class="string">"Opposite"</span>
+	<span class="keyword">type: SINGLE_SELECT_WIDGET</span>
+	<span class="keyword">visible when:</span> <span class="string">"not eType.oclIsUndefined() and eType.oclIsKindOf(EClass)"</span>
+	<span class="keyword">value:</span> <span class="string">"eOpposite"</span>
+	<span class="keyword">candidates:</span> <span class="string">"eType.oclAsType(EClass).eAllReferences-&gt;select(eType = $CONTEXT.eContainer())"</span></pre>
+	
+	
+</body>
+</html>

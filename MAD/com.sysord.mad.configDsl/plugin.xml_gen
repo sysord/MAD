@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<plugin>
+
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package 
+       uri = "http://www.sysord.com/mad/configuration/MadConfigDsl" 
+       class = "com.sysord.mad.configuration.madConfigDsl.MadConfigDslPackage"
+       genModel = "com/sysord/mad/configuration/MadConfigDsl.genmodel" /> 
+	
+  </extension>
+
+
+
+
+</plugin>

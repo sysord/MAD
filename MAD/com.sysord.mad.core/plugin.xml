@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="com.sysord.mad.core.madExtension" name="madExtension" schema="schema/com.sysord.mad.core.madExtension.exsd"/>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            class="com.sysord.mad.core.preferences.MadPreferencePage"
+            id="com.sysord.mad.preferences"
+            name="MAD">
+      </page>
+      <page
+            category="com.sysord.mad.preferences"
+            class="com.sysord.mad.core.preferences.LoggerPreferencePage"
+            id="com.sysord.mad.preferences.logger"
+            name="Logger">
+      </page>
+      <page
+            category="com.sysord.mad.preferences"
+            class="com.sysord.mad.core.preferences.MiscPreferencePage"
+            id="com.sysord.mad.preferences.misc"
+            name="Misc">
+      </page>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="com.sysord.mad.core.preferences.MadPreferencesInitializer">
+      </initializer>
+   </extension>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <category
+            id="com.sysord.mad.category"
+            name="MAD">
+      </category>
+      <wizard
+            category="com.sysord.mad.category"
+            class="com.sysord.mad.core.wizard.NewMADFileWizard"
+            hasPages="true"
+            icon="resources/newmadfile.gif"
+            id="com.sysord.mad.wizard.madfile"
+            name="MAD Configuration File">
+         <description>
+            Create a new MAD configuration file
+         </description>
+      </wizard>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="*">
+         <newWizardShortcut
+               id="com.sysord.mad.wizard.madfile">
+         </newWizardShortcut>
+      </perspectiveExtension>
+   </extension>
+
+</plugin>

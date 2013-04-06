@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="com.sysord.mad.core.madExtension">
+      <module
+            class="com.sysord.mad.core.SWTMadModule">
+      </module>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            id="com.sysord.mad.madCategory"
+            name="MAD">
+      </category>
+      <view
+            category="com.sysord.mad.madCategory"
+            class="com.sysord.mad.ui.MAD"
+            icon="resources/logocube_16.png"
+            id="com.sysord.mad.view"
+            name="MAD View"
+            restorable="true">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="fr.obeo.dsl.viewpoint.ui.tools.perspective.modeling">
+         <view
+               id="com.sysord.mad.view"
+               minimized="false"
+               relationship="stack">
+         </view>
+         <viewShortcut
+               id="com.sysord.mad.view">
+         </viewShortcut>
+      </perspectiveExtension>
+   </extension>
+
+</plugin>

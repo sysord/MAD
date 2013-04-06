@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Function Parser
+Bundle-SymbolicName: com.sysord.mad.functionparser;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.sysord.mad.functionparser.FunctionParserActivator
+Bundle-Vendor: SYSORD
+Require-Bundle: org.eclipse.core.runtime
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: libs/antlr-3.2.jar,
+ .
+Export-Package: com.sysord.mad.functionparser

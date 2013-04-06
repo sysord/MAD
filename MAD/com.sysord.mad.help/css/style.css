@@ -1,0 +1,144 @@
+@CHARSET "UTF-8";
+
+body {
+	padding: 25px;
+	font-size: 1em;
+	font-family: Ubuntu, Arial, sans-serif;
+	tab-size: 4;
+	-webkit-tab-size: 4;
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+}
+
+h1 {
+	color: #213760;
+	border-bottom: 1px solid #CCCCCC;
+	font-size: 2.5em;
+}
+
+h2 {
+	font-size: 2em;
+	color: #535C63;
+	background-image: url("images/yellowsquare.png");
+	background-position: 0px 4px;
+	background-repeat: no-repeat;
+	padding-left: 40px;
+	height: 50px;
+}
+
+h3 {
+	font-size: 1.5em;
+	color: #E09E17;
+	background-image: url("images/greysquare.png");
+	background-repeat: no-repeat;
+	padding-left: 40px;
+	margin-left: 30px;
+	height: 48px;
+}
+
+h4 {
+	font-size: 1.25em;
+	color: black;
+	font-style: italic;
+}
+
+h5 {
+	font-size: 1em;
+	color: black;
+	text-decoration: underline;
+}
+
+p {
+	color: #333333;
+	font-size: 1em;
+}
+
+pre {
+	font-family: "DejaVu Sans Mono", "Courier New";
+	font-size: 0.9em;
+	border: 1px solid #CCCCCC;
+	background-color: #EFEFEF;
+	padding: 10px;
+}
+
+a {
+	text-decoration: none;
+	color: #2222FF;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+.highlight {
+	color: black !important;
+}
+
+.strike {
+	text-decoration: line-through;
+}
+
+table, tr, td, th {
+	border: 1px solid #CCCCCC;
+}
+
+td, th {
+	padding: 7px;
+}
+
+/*
+ * Lists
+ */
+
+ul {
+	list-style-image: url("images/pucelist.gif");
+	list-style-position: outside;
+}
+
+ul li, ol li {
+	margin-bottom: 7px;
+}
+
+.imgTuto {
+	text-align: center;
+}
+
+/*
+ * Java code
+ */
+
+.javadoc {
+	font-family: "DejaVu Sans Mono", "Courier New";
+	color: #3F5FBF;
+}
+
+.comment {
+	font-family: "DejaVu Sans Mono", "Courier New";
+	color: #3F7F5F;
+}
+
+.keyword {
+	font-family: "DejaVu Sans Mono", "Courier New";
+	color: #7F0055;
+	font-weight: bold;
+}
+
+.annotation {
+	font-family: "DejaVu Sans Mono", "Courier New";
+	color: #666666;
+}
+
+.string {
+	font-family: "DejaVu Sans Mono", "Courier New";
+	color: #0000C0;
+}
+
+.code {
+	font-family: "DejaVu Sans Mono", "Courier New";
+	color: black;
+}
+
+
+
+
+

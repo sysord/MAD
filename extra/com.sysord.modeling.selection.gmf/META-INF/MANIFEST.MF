@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Gef Selection Contributor
+Bundle-SymbolicName: com.sysord.modeling.selection.gmf;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.sysord.modeling.selection.gmf.GmfSelectionActivator
+Bundle-Vendor: SYSORD
+Require-Bundle: org.eclipse.core.runtime,
+ com.sysord.modeling.modelselection;bundle-version="1.0.0",
+ org.eclipse.emf.ecore;bundle-version="2.7.0",
+ org.eclipse.gef;bundle-version="3.7.2",
+ org.eclipse.gmf.runtime.diagram.ui;bundle-version="1.5.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
+Export-Package: com.sysord.modeling.selection.gmf

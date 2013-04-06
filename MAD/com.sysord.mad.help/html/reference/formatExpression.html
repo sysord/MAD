@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel="stylesheet" type="text/css" href="../../css/style.css" />
+<title>Reference - Format Expression</title>
+</head>
+
+<body>
+	<h1>Format Expression</h1>
+	<p>
+		<strong>Format Expressions</strong> are used for all the labels definable in the MAD configuration.
+	</p>
+	<p>
+		A <span class="highlight">Format Expression</span> is a string expression which can contain queries that will
+		be evaluated for the context element.<br />
+		To define a query inside a format expression, the query must be put between
+		<strong><span class="code">[ ]</span></strong>.
+	</p>
+	<p>
+		<u>Example</u> : Format expression of the <strong>UML NamedElement</strong> label provider
+	</p>
+	<pre>
+	<span class="keyword">Configuration</span> NamedElement <span class="keyword">for</span> uml.NamedElement {
+	    <span class="comment">// Will provide the string "Element : " with the name of the NamedElement</span>
+	    <span class="keyword">label provider:</span> <span class="string">&quot;Element : [name]&quot;</span>
+	
+	    <span class="keyword">template:</span>
+	    <span class="comment">// [...]</span>
+	}</pre>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <category
+            id="com.sysord.mad.example.tinylibrary.category"
+            name="%category.name"
+            parentCategory="org.eclipse.ui.Examples">
+      </category>
+      <wizard
+            canFinishEarly="false"
+            category="org.eclipse.ui.Examples/com.sysord.mad.example.tinylibrary.category"
+            class="com.sysord.mad.example.tinylibrary.wizard.TinylibraryWizard"
+            hasPages="true"
+            icon="resources/book_16.png"
+            id="com.sysord.mad.example.tinylibrary.wizard"
+            name="%wizard.name"
+            project="true">
+         <description>
+            Create the MAD Tiny Library example project.
+         </description>
+      </wizard>
+   </extension>
+</plugin>

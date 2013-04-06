@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel="stylesheet" type="text/css" href="../../css/style.css" />
+<title>Reference - Layers</title>
+</head>
+
+<body>
+	<h1>Layers</h1>
+	<p>
+	The layers allow you to collect and select the widgets that you want to display depending
+	on a particular theme. These are useful as they allow you to gather the widgets with information
+	from the same domain. These layers are stackable and hierarchical. They allow you to refine the view
+	according to the user's requirements.
+	</p>
+	
+	<a name="declaration"></a>
+	<h2>Declaration</h2>
+	<p>
+		Declaration of a <strong>layer</strong> <span class="code">LAYER_ID</span>.
+	</p>
+	<pre>
+	<span class="keyword">Layer</span> LAYER_ID {
+	    <span class="keyword">label:</span> <span class="string">"LAYER_LABEL"</span>
+	}</pre>
+	<p>
+		Declaration of a <strong>sub-layer</strong> <span class="code">SUB_ID</span>
+		in the <span class="code">LAYER_ID</span>.
+	</p>
+	<pre>
+	<span class="keyword">Layer</span> LAYER_ID {
+	    <span class="keyword">label:</span> <span class="string">"LAYER LABEL"</span>
+	    <span class="keyword">Sub layers</span> {
+	        <span class="keyword">Layer</span> SUB_ID {
+	            <span class="keyword">label:</span> <span class="string">"SUB LAYER LABEL"</span>
+	        }
+	        <span class="comment">// Add other layers here</span>
+	    }
+	}</pre>
+	
+	<a name="usage"></a>
+	<h2>Usage</h2>
+	<p>
+		Specify the layer(s) into which the widget will be showed. If no layers is specified, the widget
+		will be always visible.
+	</p>
+	<pre>
+	<span class="comment">// ...</span>
+	
+	<span class="comment">// Widget visible only in layers SUB_ID and OTHER_LAYER_ID</span>
+	<span class="keyword">widget:</span> WidgetId
+	<span class="keyword">layers:</span> LAYER_ID.SUB_ID, OTHER_LAYER_ID
+	
+	<span class="comment">// ...</span></pre>
+	
+</body>
+</html>

@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/com.sysord.mad.configDsl/src-gen"
+    editDirectory="/com.sysord.mad.configDsl.edit/src" editorDirectory="/com.sysord.mad.configDsl.editor/src"
+    modelPluginID="com.sysord.mad.configDsl" forceOverwrite="true" modelName="MadConfigDsl"
+    updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="com.sysord.mad.configDsl.edit"
+    editorPluginID="com.sysord.mad.configDsl.editor" runtimeVersion="2.7">
+  <genPackages prefix="MadConfigDsl" basePackage="com.sysord.mad.configuration" disposableProviderFactory="true"
+      ecorePackage="MadConfigDsl.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="MadConfigDsl.ecore#//VALUE_CONVERTER_CATEGORY_MDSL">
+      <genEnumLiterals ecoreEnumLiteral="MadConfigDsl.ecore#//VALUE_CONVERTER_CATEGORY_MDSL/DATE"/>
+      <genEnumLiterals ecoreEnumLiteral="MadConfigDsl.ecore#//VALUE_CONVERTER_CATEGORY_MDSL/DATETIME"/>
+      <genEnumLiterals ecoreEnumLiteral="MadConfigDsl.ecore#//VALUE_CONVERTER_CATEGORY_MDSL/INTEGER"/>
+      <genEnumLiterals ecoreEnumLiteral="MadConfigDsl.ecore#//VALUE_CONVERTER_CATEGORY_MDSL/FLOAT"/>
+      <genEnumLiterals ecoreEnumLiteral="MadConfigDsl.ecore#//VALUE_CONVERTER_CATEGORY_MDSL/DOUBLE"/>
+      <genEnumLiterals ecoreEnumLiteral="MadConfigDsl.ecore#//VALUE_CONVERTER_CATEGORY_MDSL/XTEXT"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="MadConfigDsl.ecore#//WIDGET_CATEGORY_MDSL">
+      <genEnumLiterals ecoreEnumLiteral="MadConfigDsl.ecore#//WIDGET_CATEGORY_MDSL/OUTPUTTEXT_WIDGET"/>
+      <genEnumLiterals ecoreEnumLiteral="MadConfigDsl.ecore#//WIDGET_CATEGORY_MDSL/NAVIGATION_WIDGET"/>
+      <genEnumLiterals ecoreEnumLiteral="MadConfigDsl.ecore#//WIDGET_CATEGORY_MDSL/TEXT_WIDGET"/>
+      <genEnumLiterals ecoreEnumLiteral="MadConfigDsl.ecore#//WIDGET_CATEGORY_MDSL/BOOL_WIDGET"/>
+      <genEnumLiterals ecoreEnumLiteral="MadConfigDsl.ecore#//WIDGET_CATEGORY_MDSL/DATE_WIDGET"/>
+      <genEnumLiterals ecoreEnumLiteral="MadConfigDsl.ecore#//WIDGET_CATEGORY_MDSL/NUMBER_WIDGET"/>
+      <genEnumLiterals ecoreEnumLiteral="MadConfigDsl.ecore#//WIDGET_CATEGORY_MDSL/SINGLE_SELECT_WIDGET"/>
+      <genEnumLiterals ecoreEnumLiteral="MadConfigDsl.ecore#//WIDGET_CATEGORY_MDSL/MULTI_SELECT_WIDGET"/>
+      <genEnumLiterals ecoreEnumLiteral="MadConfigDsl.ecore#//WIDGET_CATEGORY_MDSL/XTEXT_EDITOR"/>
+      <genEnumLiterals ecoreEnumLiteral="MadConfigDsl.ecore#//WIDGET_CATEGORY_MDSL/XTEXT_TEXT_EDITOR"/>
+      <genEnumLiterals ecoreEnumLiteral="MadConfigDsl.ecore#//WIDGET_CATEGORY_MDSL/FLEXIBLE_WIDGET"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="MadConfigDsl.ecore#//COMMAND_CATEGORY_MDSL">
+      <genEnumLiterals ecoreEnumLiteral="MadConfigDsl.ecore#//COMMAND_CATEGORY_MDSL/UPDATE_COMMAND"/>
+      <genEnumLiterals ecoreEnumLiteral="MadConfigDsl.ecore#//COMMAND_CATEGORY_MDSL/GLOBAL_COMMAND"/>
+      <genEnumLiterals ecoreEnumLiteral="MadConfigDsl.ecore#//COMMAND_CATEGORY_MDSL/ITEM_COMMAND"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="MadConfigDsl.ecore#//QUERY_OPTIMISATION_LEVEL">
+      <genEnumLiterals ecoreEnumLiteral="MadConfigDsl.ecore#//QUERY_OPTIMISATION_LEVEL/NONE"/>
+      <genEnumLiterals ecoreEnumLiteral="MadConfigDsl.ecore#//QUERY_OPTIMISATION_LEVEL/VIEW"/>
+      <genEnumLiterals ecoreEnumLiteral="MadConfigDsl.ecore#//QUERY_OPTIMISATION_LEVEL/CONTEXT"/>
+    </genEnums>
+    <genClasses ecoreClass="MadConfigDsl.ecore#//MADConfiguration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//MADConfiguration/imports"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//MADConfiguration/configElements"/>
+    </genClasses>
+    <genClasses ecoreClass="MadConfigDsl.ecore#//MADConfigElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//MADConfigElement/name"/>
+    </genClasses>
+    <genClasses ecoreClass="MadConfigDsl.ecore#//Import">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//Import/importURI"/>
+    </genClasses>
+    <genClasses ecoreClass="MadConfigDsl.ecore#//ClassDescriptorMdsl">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//ClassDescriptorMdsl/ClassName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//ClassDescriptorMdsl/pluginId"/>
+    </genClasses>
+    <genClasses ecoreClass="MadConfigDsl.ecore#//PropertyTypeMdsl">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//PropertyTypeMdsl/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//PropertyTypeMdsl/label"/>
+    </genClasses>
+    <genClasses ecoreClass="MadConfigDsl.ecore#//PropertyMdsl">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//PropertyMdsl/propertyName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//PropertyMdsl/propertyValue"/>
+    </genClasses>
+    <genClasses ecoreClass="MadConfigDsl.ecore#//PropertyValueMdsl">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//PropertyValueMdsl/fragments"/>
+    </genClasses>
+    <genClasses ecoreClass="MadConfigDsl.ecore#//PropValueExprFragment"/>
+    <genClasses ecoreClass="MadConfigDsl.ecore#//LiteraPropValueExprFragment">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//LiteraPropValueExprFragment/value"/>
+    </genClasses>
+    <genClasses ecoreClass="MadConfigDsl.ecore#//IconDescriptorMdsl">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//IconDescriptorMdsl/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//IconDescriptorMdsl/bundleDescriptor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//IconDescriptorMdsl/bundleUri"/>
+    </genClasses>
+    <genClasses ecoreClass="MadConfigDsl.ecore#//I18NBundleMdsl">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//I18NBundleMdsl/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//I18NBundleMdsl/bundleDescriptor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//I18NBundleMdsl/bundleUri"/>
+    </genClasses>
+    <genClasses ecoreClass="MadConfigDsl.ecore#//ForeignModelMdsl">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//ForeignModelMdsl/label"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//ForeignModelMdsl/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//ForeignModelMdsl/provider"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//ForeignModelMdsl/synchronizerFactoryClass"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//ForeignModelMdsl/extensionManagerClass"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//ForeignModelMdsl/dslReference"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//ForeignModelMdsl/relocatorQuery"/>
+    </genClasses>
+    <genClasses ecoreClass="MadConfigDsl.ecore#//ModelProviderMdsl"/>
+    <genClasses ecoreClass="MadConfigDsl.ecore#//URIExtensionModelProviderMdsl">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//URIExtensionModelProviderMdsl/uriExtension"/>
+    </genClasses>
+    <genClasses ecoreClass="MadConfigDsl.ecore#//URIModelProviderMdsl">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//URIModelProviderMdsl/modelUri"/>
+    </genClasses>
+    <genClasses ecoreClass="MadConfigDsl.ecore#//CustomModelProviderMdsl">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//CustomModelProviderMdsl/classDescriptor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//CustomModelProviderMdsl/parameters"/>
+    </genClasses>
+    <genClasses ecoreClass="MadConfigDsl.ecore#//XtextLanguageDescriptorMdsl">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//XtextLanguageDescriptorMdsl/languageId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//XtextLanguageDescriptorMdsl/bundleId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//XtextLanguageDescriptorMdsl/activatorClassName"/>
+    </genClasses>
+    <genClasses ecoreClass="MadConfigDsl.ecore#//XtextLanguageReference">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//XtextLanguageReference/xtextLanguageDescriptor"/>
+    </genClasses>
+    <genClasses ecoreClass="MadConfigDsl.ecore#//QueryEvaluatorMdsl">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//QueryEvaluatorMdsl/label"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//QueryEvaluatorMdsl/classDescriptor"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//QueryEvaluatorMdsl/queryPropertiesTypes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//QueryEvaluatorMdsl/extQServiceClassDescriptor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//QueryEvaluatorMdsl/description"/>
+    </genClasses>
+    <genClasses ecoreClass="MadConfigDsl.ecore#//WidgetType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//WidgetType/category"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//WidgetType/label"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//WidgetType/classDescriptor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//WidgetType/description"/>
+    </genClasses>
+    <genClasses ecoreClass="MadConfigDsl.ecore#//UITabMdsl">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//UITabMdsl/i18NLabel"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//UITabMdsl/labelFormatExpr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//UITabMdsl/description"/>
+    </genClasses>
+    <genClasses ecoreClass="MadConfigDsl.ecore#//LayerMdsl">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//LayerMdsl/i18NLabel"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//LayerMdsl/labelFormatExpr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//LayerMdsl/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//LayerMdsl/subLayers"/>
+    </genClasses>
+    <genClasses ecoreClass="MadConfigDsl.ecore#//TypeConfigurationMdsl">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//TypeConfigurationMdsl/defaultConfiguration"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//TypeConfigurationMdsl/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//TypeConfigurationMdsl/i18NLabelProvider"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//TypeConfigurationMdsl/labelProviderExpression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//TypeConfigurationMdsl/useExplicitExtends"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//TypeConfigurationMdsl/superConfigurations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//TypeConfigurationMdsl/templateElements"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//TypeConfigurationMdsl/layoutDefined"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//TypeConfigurationMdsl/layoutElements"/>
+    </genClasses>
+    <genClasses ecoreClass="MadConfigDsl.ecore#//TypeConfigurationTemplateElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//TypeConfigurationTemplateElement/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//TypeConfigurationTemplateElement/valueQuery"/>
+    </genClasses>
+    <genClasses ecoreClass="MadConfigDsl.ecore#//IncludeTemplateElementMdsl">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//IncludeTemplateElementMdsl/refIncludedTemplate"/>
+    </genClasses>
+    <genClasses ecoreClass="MadConfigDsl.ecore#//ValueConverter"/>
+    <genClasses ecoreClass="MadConfigDsl.ecore#//QueryBasedValueConverter">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//QueryBasedValueConverter/converterQuery"/>
+    </genClasses>
+    <genClasses ecoreClass="MadConfigDsl.ecore#//BasicTypeValueConverter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//BasicTypeValueConverter/category"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//BasicTypeValueConverter/configuration"/>
+    </genClasses>
+    <genClasses ecoreClass="MadConfigDsl.ecore#//WidgetConfigurationMdsl">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//WidgetConfigurationMdsl/description"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//WidgetConfigurationMdsl/uiTab"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//WidgetConfigurationMdsl/layers"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//WidgetConfigurationMdsl/i18NLabel"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//WidgetConfigurationMdsl/label"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//WidgetConfigurationMdsl/widgetCategory"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//WidgetConfigurationMdsl/widgetType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//WidgetConfigurationMdsl/dslReference"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//WidgetConfigurationMdsl/flexibleTemplate"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//WidgetConfigurationMdsl/visibilityQuery"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//WidgetConfigurationMdsl/editableQuery"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//WidgetConfigurationMdsl/valueConverter"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//WidgetConfigurationMdsl/validators"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//WidgetConfigurationMdsl/i18NFormat"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//WidgetConfigurationMdsl/valueFormat"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//WidgetConfigurationMdsl/candidatesQuery"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//WidgetConfigurationMdsl/i18NItemLabel"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//WidgetConfigurationMdsl/itemLabelExpression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//WidgetConfigurationMdsl/commands"/>
+    </genClasses>
+    <genClasses ecoreClass="MadConfigDsl.ecore#//ValidatorMdsl">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//ValidatorMdsl/validationQuery"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//ValidatorMdsl/i18NMessage"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//ValidatorMdsl/errorMessageExpr"/>
+    </genClasses>
+    <genClasses ecoreClass="MadConfigDsl.ecore#//CommandMdsl"/>
+    <genClasses ecoreClass="MadConfigDsl.ecore#//CommandDeclaration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//CommandDeclaration/label"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//CommandDeclaration/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//CommandDeclaration/definition"/>
+    </genClasses>
+    <genClasses ecoreClass="MadConfigDsl.ecore#//CommandDefinitionMdsl">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//CommandDefinitionMdsl/category"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//CommandDefinitionMdsl/i18NLabel"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//CommandDefinitionMdsl/label"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//CommandDefinitionMdsl/icon"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//CommandDefinitionMdsl/action"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//CommandDefinitionMdsl/onActionSuccessUICommands"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//CommandDefinitionMdsl/onActionErrorUICommands"/>
+    </genClasses>
+    <genClasses ecoreClass="MadConfigDsl.ecore#//CommandRefMdsl">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//CommandRefMdsl/referenced"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//CommandRefMdsl/i18NLabelOverride"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//CommandRefMdsl/labelOverride"/>
+    </genClasses>
+    <genClasses ecoreClass="MadConfigDsl.ecore#//UICommandMdsl"/>
+    <genClasses ecoreClass="MadConfigDsl.ecore#//DisplayViewUICommand">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//DisplayViewUICommand/target"/>
+    </genClasses>
+    <genClasses ecoreClass="MadConfigDsl.ecore#//ReloadViewUICommand"/>
+    <genClasses ecoreClass="MadConfigDsl.ecore#//ReloadWidgetsUICommand">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//ReloadWidgetsUICommand/widgetsToReload"/>
+    </genClasses>
+    <genClasses ecoreClass="MadConfigDsl.ecore#//QueryUsage"/>
+    <genClasses ecoreClass="MadConfigDsl.ecore#//QueryMdsl"/>
+    <genClasses ecoreClass="MadConfigDsl.ecore#//QueryDeclaration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//QueryDeclaration/label"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//QueryDeclaration/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//QueryDeclaration/definition"/>
+    </genClasses>
+    <genClasses ecoreClass="MadConfigDsl.ecore#//QueryDefinitionMdsl">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//QueryDefinitionMdsl/evaluator"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//QueryDefinitionMdsl/foreignModel"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//QueryDefinitionMdsl/contextLocator"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//QueryDefinitionMdsl/query"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//QueryDefinitionMdsl/externalQueryCall"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//QueryDefinitionMdsl/returnType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//QueryDefinitionMdsl/properties"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//QueryDefinitionMdsl/optimisationLevel"/>
+    </genClasses>
+    <genClasses ecoreClass="MadConfigDsl.ecore#//QueryFragment"/>
+    <genClasses ecoreClass="MadConfigDsl.ecore#//LiteralQueryFragment">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//LiteralQueryFragment/value"/>
+    </genClasses>
+    <genClasses ecoreClass="MadConfigDsl.ecore#//QueryBody">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//QueryBody/fragments"/>
+    </genClasses>
+    <genClasses ecoreClass="MadConfigDsl.ecore#//QueryRefMdsl">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//QueryRefMdsl/referenced"/>
+    </genClasses>
+    <genClasses ecoreClass="MadConfigDsl.ecore#//ExternalQueryCallMdsl">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//ExternalQueryCallMdsl/externalQuery"/>
+    </genClasses>
+    <genClasses ecoreClass="MadConfigDsl.ecore#//QueryChain">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//QueryChain/queries"/>
+    </genClasses>
+    <genClasses ecoreClass="MadConfigDsl.ecore#//FormatExpr">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//FormatExpr/fragments"/>
+    </genClasses>
+    <genClasses ecoreClass="MadConfigDsl.ecore#//FormatExprFragment"/>
+    <genClasses ecoreClass="MadConfigDsl.ecore#//LiteralFormatExprFragment">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//LiteralFormatExprFragment/value"/>
+    </genClasses>
+    <genClasses ecoreClass="MadConfigDsl.ecore#//TextMacro">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//TextMacro/label"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//TextMacro/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//TextMacro/macroValue"/>
+    </genClasses>
+    <genClasses ecoreClass="MadConfigDsl.ecore#//TextMacroRef">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//TextMacroRef/referenced"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

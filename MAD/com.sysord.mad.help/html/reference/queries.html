@@ -1,0 +1,164 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel="stylesheet" type="text/css" href="../../css/style.css" />
+<title>Reference - Queries</title>
+</head>
+
+<body>
+	<h1>Queries</h1>
+	<p>
+		MAD uses queries for exploring and modifying EMF models.<br />
+		A query is <strong>for a specified language</strong> and its corresponding evaluator, if no language is
+		specified then <strong>OCL is the default evaluator</strong>.
+	</p>
+	
+	<a name="elementaryQuery"></a>
+	<h2>Elementary Query</h2>
+	<p>
+	A simple MAD query contains the body of the query in the form of a string. The language identifier must be
+	provided if the query is not written in OCL.
+	</p>
+	<p>
+		<u>Example</u> : Query for obtaining the name of an <strong>UML NamedElement</strong> with OCL
+	</p>
+	<pre>
+	<span class="comment">// The language here is not necessary because OCL is the default language</span>
+	<span class="keyword">language:</span> OCL <span class="string">&quot;name&quot;</span></pre>
+	<p>
+		<u>Example</u> : Query for obtaining all the classes of an <strong>UML Model</strong> with OCL
+	</p>
+	<pre>
+	<span class="comment">// The Model is the context</span>
+	<span class="string">&quot;allOwnedElements()-&gt;select(oclIsTypeOf(Class))&quot;</span></pre>
+	
+	<a name="subQuery"></a>
+	<h2>Sub Query</h2>
+	<p>
+		A main query can include sub-queries which are written <strong>between square brackets</strong>.
+		The evaluator starts by evaluating the sub-queries from the context; the results obtained are
+		injected into the main query in order to replace the sub-queries.
+	</p>
+	<p>
+		<u>Example</u>
+	</p>
+	<pre>
+	<span class="comment">/*
+	 * The first 'pages' refers to the books in the iteration.
+	 * '[pages]' is evaluated before the iteration and corresponds to the number of pages of the book.
+	 */</span>
+	<span class="string">&quot;eContainer().oclAsType(Library).books-&gt;select(pages &gt; <strong>[pages]</strong>)-&gt;isEmpty()&quot;</span></pre>
+	
+	<a name="queryChain"></a>
+	<h2>Query Chain</h2>
+	<p>
+		The MAD query is made up of a list of organised elementary queries. The queries are evaluated one after
+		another, the result of a query determining the context for evaluating the next.
+	</p>
+	<p>
+		<u>Example</u>
+	</p>
+	<pre>
+	<span class="keyword">Query Chain</span> {
+	    <span class="comment">// First query, with OCL</span>
+	    <span class="string">&quot;books-&gt;last()&quot;</span>,
+	    <span class="comment">// Second query, with Acceleo</span>
+	    <span class="keyword">language:</span> ACCELEO <span class="keyword">call</span> authorMultiBook(),
+	    <span class="comment">// Last query with OCL</span>
+	    <span class="string">&quot;first()&quot;</span>
+	}</pre>
+	
+	<a name="contextualVariables"></a>
+	<h2>Contextual Variables</h2>
+	<p>
+		In order to simplify writing queries and make them more explicit, a set of predefined variables are available.
+		These variables, set by MAD before the evaluation, allow us to access the view context, the value of the edited
+		element and other contextual information.
+	</p>
+	<p>
+		When used, each of these variables must be prefixed with the character <span class="code">$</span>.
+	</p>
+	<table>
+		<thead>
+			<tr>
+				<th>Variable</th>
+				<th>Scope</th>
+				<th>Format Expression<sup style="color: red;">*</sup></th>
+				<th>Description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><span class="code">MODEL</span></td>
+				<td style="text-align: center">Always</td>
+				<td style="text-align: center">Yes<br />All</td>
+				<td>The root element of the model of the context element</td>
+			</tr>
+			<tr>
+				<td><span class="code">CONTEXT</span></td>
+				<td style="text-align: center">Always</td>
+				<td style="text-align: center">Yes<br />All</td>
+				<td>The context element</td>
+			</tr>
+			<tr>
+				<td><span class="code">FMODEL</span></td>
+				<td style="text-align: center">Relocation</td>
+				<td style="text-align: center">No</td>
+				<td>The root element of the foreign model during a relocation</td>
+			</tr>
+			<tr>
+				<td><span class="code">RCONTEXT</span></td>
+				<td style="text-align: center">Relocation</td>
+				<td style="text-align: center">No</td>
+				<td>The context of the relocation</td>
+			</tr>
+			<tr>
+				<td><span class="code">RESULT</span></td>
+				<td style="text-align: center">Commands</td>
+				<td style="text-align: center">No</td>
+				<td>The result of a command</td>
+			</tr>
+			<tr>
+				<td><span class="code">VALUE</span></td>
+				<td style="text-align: center">OutputWidget queries<br />InputWidget queries</td>
+				<td style="text-align: center">Yes<br />Format expressions on widgets</td>
+				<td>Value of the widget referencing the query</td>
+			</tr>
+			<tr>
+				<td><span class="code">UIVALUE</span></td>
+				<td style="text-align: center">Validation</td>
+				<td style="text-align: center">No</td>
+				<td>The value of the graphical widget (string in a textbox for example)</td>
+			</tr>
+		</tbody>
+	</table>
+	<p style="font-size: 0.9em;">
+		<sup style="color: red;">*</sup> <em>Indicates if the contextual variable is usable in format expressions</em>
+	</p>
+	<a name="queryDeclaration"></a>
+	<h2>Common Query Declaration</h2>
+	<p>
+		Queries that are used several times can be declared once in the configuration and reused after.
+	</p>
+	<p>
+		<u>Example</u> : Declaration of the query for obtaining the name of an <strong>UML NamedElement</strong>
+	</p>
+	<pre>
+	<span class="keyword">Common Query</span> Query_Name {
+	    <span class="keyword">language:</span> OCL <span class="comment">// Can be omitted with OCL</span>
+	    <span class="string">&quot;name&quot;</span>
+	}
+	
+	<span class="comment">// Configuration for the UML Class element</span>
+	<span class="keyword">Configuration</span> CLASS <span class="keyword">for</span> uml.Class {
+	    <span class="keyword">template:</span>
+	    
+	    <span class="keyword">widget:</span> Name
+	    <span class="keyword">label:</span> <span class="string">&quot;Name&quot;</span>
+	    <span class="keyword">type: TEXT_WIDGET</span>
+	    <span class="keyword">value:</span> Query_Name <span class="comment">// Usage of the declared query</span>
+	}</pre>
+	
+</body>
+</html>

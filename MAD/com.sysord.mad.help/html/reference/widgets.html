@@ -1,0 +1,213 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel="stylesheet" type="text/css" href="../../css/style.css" />
+<title>Reference - Widgets</title>
+</head>
+
+<body>
+	<h1>Widgets</h1>
+
+<!--
+**********************************************************************************
+************************    WIDGET CATEGORIES    *********************************
+**********************************************************************************
+-->
+
+	<a name="widgetCategories"></a>
+	<h2>Widget Categories</h2>
+
+
+	<a name="outputWidget"></a>
+	<h3>Output Text Widget</h3>
+	<p>
+		Widget for displaying <strong>read-only values</strong>, the default implementation is a non editable textbox.
+	</p>
+
+	<a name="textWidget"></a>
+	<h3>Text Widget</h3>
+	<p>
+		Widget for editing <strong>string values</strong>, the default implementation is a textbox.
+	</p>
+
+	<a name="booleanWidget"></a>
+	<h3>Boolean Widget</h3>
+	<p>
+		Widget for editing <strong>boolean values</strong>, the default implementation is a checkbox.
+	</p>
+
+	<a name="numberWidget"></a>
+	<h3>Number Widget</h3>
+	<p>
+		Widget for editing <strong>number values</strong> (Integer, Double, ...), the default implementation is
+		a textbox.
+	</p>
+
+	<a name="dateWidget"></a>
+	<h3>Date Widget</h3>
+	<p>
+		Widget for editing <strong>date values</strong>, the default implementation is a textbox.
+	</p>
+
+	<a name="singleSelectWidget"></a>
+	<h3>Single Select Widget</h3>
+	<p>
+		Widget for choosing a <strong>single value</strong> among several candidates proposed by a query.
+		The default implementation is a combo.
+	</p>
+
+	<a name="multiSelectWidget"></a>
+	<h3>Multi Select Widget</h3>
+	<p>
+		Widget for choosing <strong>multiple values</strong> among several candidates proposed by a query.
+		The default implementation is list.
+	</p>
+
+	<a name="navigationWidget"></a>
+	<h3>Navigation Widget</h3>
+	<p>
+		Widget proposing candidates for which it's possible to <strong>navigate toward them</strong>.
+	</p>
+
+	<a name="flexibleWidget"></a>
+	<h3>Flexible Widget</h3>
+	<p>
+		Widget for displaying a <strong>list of elements</strong> in function of their own configuration.
+	</p>
+
+	<a name="xtextEditor"></a>
+	<h3>Xtext Editor</h3>
+	<p>
+		Widget for editing <strong>DSL elements</strong> with an embedded Xtext editor.
+	</p>
+
+
+<!--
+**********************************************************************************
+***************************    CUSTOM WIDGETS    *********************************
+**********************************************************************************
+-->
+
+	<a name="customWidgets"></a>
+	<h2>Custom Widgets</h2>
+	<p>
+		New Widget implementations can be added to the configuration by specifying their bundle and
+		class qualified name.<br />
+		All custom widgets are for a specified category of widget
+		(see <a href="#widgetCategories">Widget Categories</a>).
+	</p>
+	
+
+	<a name="declaration"></a>
+	<h3>Declaration</h3>
+	<p>
+		To use a custom widget in a configuration, it must be defined by indicating its <strong>name</strong>,
+		<strong>category</strong>, <strong>label</strong>, <strong>class qualified name</strong>
+		and <strong>bundle symbolic name</strong>.
+	</p>
+	<pre>
+	<span class="keyword">Widget type</span> {
+	    <span class="keyword">name:</span> GOOGLE_MAP
+	    <span class="keyword">category: OUTPUTTEXT_WIDGET</span>
+	    <span class="keyword">label:</span> <span class="string">&quot;Google Map&quot;</span>
+	    <span class="keyword">custom widget:</span> com.sysord.mad.ui.swt.widget.custom.GoogleMapWidget
+	    <span class="keyword">from plugin</span> com.sysord.mad.ui
+	}</pre>
+	<p>
+		The configuration provided with the MAD core plugin already defines some useful custom widgets.
+	</p>
+
+	<a name="list"></a>
+	<h3>List</h3>
+	<p>
+		This is a single select widget implemented by an embedded list.
+	</p>
+	<p>
+		<u>Example</u> : Widget for the <span class="highlight">category</span> property on a book.
+	</p>
+	<pre>
+	<span class="keyword">widget:</span> Category
+	<span class="keyword">label:</span> <span class="string">&quot;Category&quot;</span>
+	<span class="keyword">type: SINGLE_SELECT_WIDGET</span>:List
+	<span class="keyword">value:</span> <span class="string">&quot;category&quot;</span>
+	<span class="keyword">candidates:</span> <span class="string">&quot;BookCategory.allInstances()&quot;</span></pre>
+
+	<a name="picklist"></a>
+	<h3>Picklist</h3>
+	<p>
+		This is a multi select widget implemented by an embedded picklist.
+	</p>
+	<p>
+		<u>Example</u> : Widget for the property <span class="highlight">authors</span> of a book
+	</p>
+	<pre>
+	<span class="keyword">widget:</span> Author
+	<span class="keyword">label:</span> <span class="string">&quot;Author&quot;</span>
+	<span class="keyword">type: MULTI_SELECT_WIDGET</span>:Picklist
+	<span class="keyword">value:</span> <span class="string">&quot;authors&quot;</span>
+	<span class="keyword">candidates:</span> <span class="string">&quot;rootContainer().oclAsType(Library).writers&quot;</span></pre>
+
+	<a name="popupList"></a>
+	<h3>Popup List</h3>
+	<p>
+		This is a single select widget implemented by a non editable textbox and a popup with a list.
+	</p>
+	<p>
+		<u>Example</u> : Widget for the <span class="highlight">category</span> property on a book.
+	</p>
+	<pre>
+	<span class="keyword">widget:</span> Category
+	<span class="keyword">label:</span> <span class="string">&quot;Category&quot;</span>
+	<span class="keyword">type: SINGLE_SELECT_WIDGET</span>:PopupList
+	<span class="keyword">value:</span> <span class="string">&quot;category&quot;</span>
+	<span class="keyword">candidates:</span> <span class="string">&quot;BookCategory.allInstances()&quot;</span></pre>
+	
+
+	<a name="popupPicklist"></a>
+	<h3>Popup Picklist</h3>
+	<p>
+		This is a multi select widget implemented by a non editable textbox and a popup with a picklist.
+	</p>
+	<p>
+		<u>Example</u> : Widget for the property <span class="highlight">authors</span> of a book
+	</p>
+	<pre>
+	<span class="keyword">widget:</span> Author
+	<span class="keyword">label:</span> <span class="string">&quot;Author&quot;</span>
+	<span class="keyword">type: MULTI_SELECT_WIDGET</span>:PopupPicklist
+	<span class="keyword">value:</span> <span class="string">&quot;authors&quot;</span>
+	<span class="keyword">candidates:</span> <span class="string">&quot;rootContainer().oclAsType(Library).writers&quot;</span></pre>
+
+	<a name="htmlLink"></a>
+	<h3>HTML Link</h3>
+	<p>
+		This is an output text widget implemented by an hyperlink.
+	</p>
+	<p>
+		<u>Example</u> : Widget displaying a hyperlink
+	</p>
+	<pre>
+	<span class="keyword">widget:</span> Link
+	<span class="keyword">label:</span> <span class="string">&quot;Link&quot;</span>
+	<span class="keyword">type: OUTPUT_TEXT_WIDGET</span>:HTML_LINK
+	<span class="keyword">value:</span> <span class="string">&quot;'http://www.sysord.com'&quot;</span></pre>
+
+	<a name="googleMap"></a>
+	<h3>Google Map</h3>
+	<p>
+		This is an output text widget using a string with coordinates for displaying a google map.
+	</p>
+	<p>
+		<u>Example</u>
+	</p>
+	<pre>
+	<span class="keyword">widget:</span> Map
+	<span class="keyword">label:</span> <span class="string">&quot;Google Map&quot;</span>
+	<span class="keyword">type: OUTPUT_TEXT_WIDGET</span>:GOOGLE_MAP
+	<span class="comment">// Latitude : 43.975275, Longitude : 2.992272, zoom : 14</span>
+	<span class="keyword">value:</span> <span class="string">&quot;'43.975275::2.992272::14'&quot;</span></pre>
+
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel="stylesheet" type="text/css" href="../../css/style.css" />
+<title>Reference - Imports</title>
+</head>
+
+<body>
+	<h1>Imports</h1>
+	
+	<p>
+		To use EMF metamodels or other MAD configurations, the configuration must import
+		its dependencies.<br/>
+		The import instruction is done with the keyword <span class="keyword">import</span>
+		at the beginning of the file and a string representing the URI of the file to import.
+	</p>
+	
+	<a name="metamodels"></a>
+	<h2>Metamodels</h2>
+	<p>
+		An EMF metamodel can be imported with an URI of its <strong>ecore</strong> file.
+	</p>
+	<p>
+		<u>Example</u> : Import of the <strong>UML metamodel</strong>
+	</p>
+	<pre>
+	<span class="keyword">import</span> <span class="string">&quot;platform:/plugin/org.eclipse.uml2.uml/model/UML.ecore&quot;</span></pre>
+	
+	<a name="configurationFiles"></a>
+	<h2>MAD Configuration files</h2>
+	<p>
+		The MAD configuration can also import other <strong>MAD configuration files</strong>.
+	</p>
+	<p>
+		<u>Example</u> : Import of the provided <strong>config.mad</strong>
+	</p>
+	<pre>
+	<span class="keyword">import</span> <span class="string">&quot;platform:/plugin/com.sysord.mad.core/model/config.mad&quot;</span></pre>
+
+</body>
+</html>

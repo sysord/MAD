@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?NLS TYPE="org.eclipse.help.toc"?>
+
+<toc label="Reference" link_to="toc.xml#reference">
+   <topic href="html/reference/imports.html" label="Imports">
+      <topic href="html/reference/imports.html#metamodels" label="Metamodels">
+      </topic>
+      <topic href="html/reference/imports.html#configurationFiles" label="MAD Configuration files">
+      </topic>
+   </topic>
+   <topic href="html/reference/configuration.html" label="Configuration">
+      <topic href="html/reference/configuration.html#labelProvider" label="Label Provider">
+      </topic>
+      <topic href="html/reference/configuration.html#inheritance" label="Inheritance">
+      </topic>
+      <topic href="html/reference/configuration.html#template" label="Template">
+      </topic>
+      <topic href="html/reference/configuration.html#layout" label="Layout">
+      </topic>
+      <topic href="html/reference/configuration.html#defaultConfiguration" label="Default configuration">
+      </topic>
+   </topic>
+   <topic href="html/reference/widgets.html" label="Widgets">
+      <topic href="html/reference/widgets.html#widgetCategories" label="Widget Categories">
+         <topic href="html/reference/widgets.html#outputWidget" label="Output Text Widget">
+         </topic>
+         <topic href="html/reference/widgets.html#textWidget" label="Text Widget">
+         </topic>
+         <topic href="html/reference/widgets.html#booleanWidget" label="Boolean Widget">
+         </topic>
+         <topic href="html/reference/widgets.html#numberWidget" label="Number Widget">
+         </topic>
+         <topic href="html/reference/widgets.html#dateWidget" label="Date Widget">
+         </topic>
+         <topic href="html/reference/widgets.html#singleSelectWidget" label="Single Select Widget">
+         </topic>
+         <topic href="html/reference/widgets.html#multiSelectWidget" label="Multi Select Widget">
+         </topic>
+         <topic href="html/reference/widgets.html#navigationWidget" label="Navigation Widget">
+         </topic>
+         <topic href="html/reference/widgets.html#flexibleWidget" label="Flexible Widget">
+         </topic>
+         <topic href="html/reference/widgets.html#xtextEditor" label="Xtext Editor">
+         </topic>
+      </topic>
+      <topic href="html/reference/widgets.html#customWidgets" label="Custom Widgets">
+         <topic href="html/reference/widgets.html#declaration" label="Declaration">
+         </topic>
+         <topic href="html/reference/widgets.html#list" label="List">
+         </topic>
+         <topic href="html/reference/widgets.html#picklist" label="Picklist">
+         </topic>
+         <topic href="html/reference/widgets.html#popupList" label="Popup List">
+         </topic>
+         <topic href="html/reference/widgets.html#popupPicklist" label="Popup Picklist">
+         </topic>
+         <topic href="html/reference/widgets.html#htmlLink" label="HTML Link">
+         </topic>
+         <topic href="html/reference/widgets.html#googleMap" label="Google Map">
+         </topic>
+         <anchor id="customWidgets"/>
+      </topic>
+      <topic label="Display Conditions">
+      </topic>
+   </topic>
+   <topic href="html/reference/formatExpression.html" label="Format Expression">
+   </topic>
+   <topic href="html/reference/tabs.html" label="UI Tabs">
+      <topic href="html/reference/tabs.html#declaration" label="Declaration">
+      </topic>
+      <topic href="html/reference/tabs.html#usage" label="Usage">
+      </topic>
+   </topic>
+   <topic href="html/reference/layers.html" label="Layers">
+      <topic href="html/reference/layers.html#declaration" label="Declaration">
+      </topic>
+      <topic href="html/reference/layers.html#usage" label="Usage">
+      </topic>
+   </topic>
+   <topic href="html/reference/queries.html" label="Queries">
+      <topic href="html/reference/queries.html#elementaryQuery" label="Elementary Query">
+      </topic>
+      <topic href="html/reference/queries.html#subQuery" label="Sub Query">
+      </topic>
+      <topic href="html/reference/queries.html#queryChain" label="Query Chain">
+      </topic>
+      <topic href="html/reference/queries.html#contextualVariables" label="Contextual Variables">
+      </topic>
+      <topic href="html/reference/queries.html#queryDeclaration" label="Common Query Declaration">
+      </topic>
+   </topic>
+   <topic href="html/reference/evaluators.html" label="Evaluators">
+      <topic href="html/reference/evaluators.html#evaluatorDeclaration" label="Evaluator Declaration">
+      </topic>
+      <topic href="html/reference/evaluators.html#outOfTheBox" label="Out of the box">
+      </topic>
+      <anchor id="evaluators"/>
+   </topic>
+</toc>
