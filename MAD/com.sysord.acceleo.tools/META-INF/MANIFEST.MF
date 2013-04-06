@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Acceleo Tools
+Bundle-SymbolicName: com.sysord.acceleo.tools;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.sysord.acceleo.tools.AcceleoToolsPlugin
+Bundle-Vendor: SYSORD
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.acceleo.ide.ui;bundle-version="3.2.2";visibility:=reexport,
+ org.eclipse.acceleo.parser;bundle-version="3.2.2";visibility:=reexport,
+ com.sysord.eclipse.tools;bundle-version="1.0.0",
+ org.eclipse.acceleo.model;bundle-version="3.2.2";visibility:=reexport,
+ org.eclipse.acceleo.common;bundle-version="3.2.2";visibility:=reexport,
+ org.eclipse.ocl.ecore;bundle-version="3.1.2";visibility:=reexport,
+ com.sysord.emf.tools;bundle-version="1.0.0";visibility:=reexport
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
+Export-Package: com.sysord.acceleo.tools,
+ com.sysord.acceleo.tools.module,
+ com.sysord.acceleo.tools.module.emitter

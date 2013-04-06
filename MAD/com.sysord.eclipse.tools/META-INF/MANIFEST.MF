@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Eclipse Tools
+Bundle-SymbolicName: com.sysord.eclipse.tools;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.sysord.eclipse.tools.EclipseToolsPlugin
+Bundle-Vendor: SYSORD
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.core.resources;bundle-version="3.7.101";visibility:=reexport,
+ org.eclipse.ui.console;bundle-version="3.5.100";visibility:=reexport,
+ org.eclipse.ui.forms;bundle-version="3.5.101";visibility:=reexport,
+ org.eclipse.ui.ide;bundle-version="3.7.0";visibility:=reexport,
+ org.eclipse.jdt.core;bundle-version="3.7.3"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy
+Export-Package: com.sysord.eclipse.tools,
+ com.sysord.eclipse.tools.collection,
+ com.sysord.eclipse.tools.diagnostic,
+ com.sysord.eclipse.tools.io,
+ com.sysord.eclipse.tools.jface.preference,
+ com.sysord.eclipse.tools.nls,
+ com.sysord.eclipse.tools.runtime,
+ com.sysord.eclipse.tools.swt,
+ com.sysord.eclipse.tools.swt.widget,
+ com.sysord.eclipse.tools.wizard
