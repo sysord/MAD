@@ -1,2 +1,2 @@
-antlr_core_mark_generated_resources_as_derived=false
+antlr_core_mark_generated_resources_as_derived=true
 eclipse.preferences.version=1
