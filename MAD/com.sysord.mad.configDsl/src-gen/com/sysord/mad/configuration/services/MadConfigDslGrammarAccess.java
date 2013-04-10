@@ -2119,37 +2119,38 @@ public class MadConfigDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cCategoryAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cCategoryCOMMAND_CATEGORY_MDSLEnumRuleCall_0_0 = (RuleCall)cCategoryAssignment_0.eContents().get(0);
-		private final Assignment cI18NLabelAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final Keyword cI18NLabelI18NKeyword_1_0 = (Keyword)cI18NLabelAssignment_1.eContents().get(0);
-		private final Assignment cLabelAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cLabelFormatExprParserRuleCall_2_0 = (RuleCall)cLabelAssignment_2.eContents().get(0);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cIconKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cIconAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final CrossReference cIconIconDescriptorMdslCrossReference_3_1_0 = (CrossReference)cIconAssignment_3_1.eContents().get(0);
-		private final RuleCall cIconIconDescriptorMdslIDTerminalRuleCall_3_1_0_1 = (RuleCall)cIconIconDescriptorMdslCrossReference_3_1_0.eContents().get(1);
-		private final Keyword cActionKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cActionAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cActionQueryParserRuleCall_5_0 = (RuleCall)cActionAssignment_5.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Assignment cI18NLabelAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
+		private final Keyword cI18NLabelI18NKeyword_1_0_0 = (Keyword)cI18NLabelAssignment_1_0.eContents().get(0);
+		private final Assignment cLabelAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cLabelFormatExprParserRuleCall_1_1_0 = (RuleCall)cLabelAssignment_1_1.eContents().get(0);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cIconKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cIconAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final CrossReference cIconIconDescriptorMdslCrossReference_2_1_0 = (CrossReference)cIconAssignment_2_1.eContents().get(0);
+		private final RuleCall cIconIconDescriptorMdslIDTerminalRuleCall_2_1_0_1 = (RuleCall)cIconIconDescriptorMdslCrossReference_2_1_0.eContents().get(1);
+		private final Keyword cActionKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cActionAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cActionQueryParserRuleCall_4_0 = (RuleCall)cActionAssignment_4.eContents().get(0);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cOnSuccessKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cOnActionSuccessUICommandsAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cOnActionSuccessUICommandsUICommandMdslParserRuleCall_5_1_0 = (RuleCall)cOnActionSuccessUICommandsAssignment_5_1.eContents().get(0);
 		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
-		private final Keyword cOnSuccessKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
-		private final Assignment cOnActionSuccessUICommandsAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
-		private final RuleCall cOnActionSuccessUICommandsUICommandMdslParserRuleCall_6_1_0 = (RuleCall)cOnActionSuccessUICommandsAssignment_6_1.eContents().get(0);
-		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
-		private final Keyword cOnErrorKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
-		private final Assignment cOnActionErrorUICommandsAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
-		private final RuleCall cOnActionErrorUICommandsUICommandMdslParserRuleCall_7_1_0 = (RuleCall)cOnActionErrorUICommandsAssignment_7_1.eContents().get(0);
+		private final Keyword cOnErrorKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Assignment cOnActionErrorUICommandsAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
+		private final RuleCall cOnActionErrorUICommandsUICommandMdslParserRuleCall_6_1_0 = (RuleCall)cOnActionErrorUICommandsAssignment_6_1.eContents().get(0);
 		
 		////-------------------
 		//// Command definition
 		////-------------------
 		//CommandDefinitionMdsl:
-		//	category=COMMAND_CATEGORY_MDSL i18NLabel?="I18N"? label=FormatExpr ("icon:" icon=[IconDescriptorMdsl])? "action:"
+		//	category=COMMAND_CATEGORY_MDSL (i18NLabel?="I18N"? label=FormatExpr)? ("icon:" icon=[IconDescriptorMdsl])? "action:"
 		//	action=Query ("on success:" onActionSuccessUICommands+=UICommandMdsl*)? ("on error:"
 		//	onActionErrorUICommands+=UICommandMdsl*)?;
 		public ParserRule getRule() { return rule; }
 
-		//category=COMMAND_CATEGORY_MDSL i18NLabel?="I18N"? label=FormatExpr ("icon:" icon=[IconDescriptorMdsl])? "action:"
+		//category=COMMAND_CATEGORY_MDSL (i18NLabel?="I18N"? label=FormatExpr)? ("icon:" icon=[IconDescriptorMdsl])? "action:"
 		//action=Query ("on success:" onActionSuccessUICommands+=UICommandMdsl*)? ("on error:"
 		//onActionErrorUICommands+=UICommandMdsl*)?
 		public Group getGroup() { return cGroup; }
@@ -2160,65 +2161,68 @@ public class MadConfigDslGrammarAccess extends AbstractGrammarElementFinder {
 		//COMMAND_CATEGORY_MDSL
 		public RuleCall getCategoryCOMMAND_CATEGORY_MDSLEnumRuleCall_0_0() { return cCategoryCOMMAND_CATEGORY_MDSLEnumRuleCall_0_0; }
 
+		//(i18NLabel?="I18N"? label=FormatExpr)?
+		public Group getGroup_1() { return cGroup_1; }
+
 		//i18NLabel?="I18N"?
-		public Assignment getI18NLabelAssignment_1() { return cI18NLabelAssignment_1; }
+		public Assignment getI18NLabelAssignment_1_0() { return cI18NLabelAssignment_1_0; }
 
 		//"I18N"
-		public Keyword getI18NLabelI18NKeyword_1_0() { return cI18NLabelI18NKeyword_1_0; }
+		public Keyword getI18NLabelI18NKeyword_1_0_0() { return cI18NLabelI18NKeyword_1_0_0; }
 
 		//label=FormatExpr
-		public Assignment getLabelAssignment_2() { return cLabelAssignment_2; }
+		public Assignment getLabelAssignment_1_1() { return cLabelAssignment_1_1; }
 
 		//FormatExpr
-		public RuleCall getLabelFormatExprParserRuleCall_2_0() { return cLabelFormatExprParserRuleCall_2_0; }
+		public RuleCall getLabelFormatExprParserRuleCall_1_1_0() { return cLabelFormatExprParserRuleCall_1_1_0; }
 
 		//("icon:" icon=[IconDescriptorMdsl])?
-		public Group getGroup_3() { return cGroup_3; }
+		public Group getGroup_2() { return cGroup_2; }
 
 		//"icon:"
-		public Keyword getIconKeyword_3_0() { return cIconKeyword_3_0; }
+		public Keyword getIconKeyword_2_0() { return cIconKeyword_2_0; }
 
 		//icon=[IconDescriptorMdsl]
-		public Assignment getIconAssignment_3_1() { return cIconAssignment_3_1; }
+		public Assignment getIconAssignment_2_1() { return cIconAssignment_2_1; }
 
 		//[IconDescriptorMdsl]
-		public CrossReference getIconIconDescriptorMdslCrossReference_3_1_0() { return cIconIconDescriptorMdslCrossReference_3_1_0; }
+		public CrossReference getIconIconDescriptorMdslCrossReference_2_1_0() { return cIconIconDescriptorMdslCrossReference_2_1_0; }
 
 		//ID
-		public RuleCall getIconIconDescriptorMdslIDTerminalRuleCall_3_1_0_1() { return cIconIconDescriptorMdslIDTerminalRuleCall_3_1_0_1; }
+		public RuleCall getIconIconDescriptorMdslIDTerminalRuleCall_2_1_0_1() { return cIconIconDescriptorMdslIDTerminalRuleCall_2_1_0_1; }
 
 		//"action:"
-		public Keyword getActionKeyword_4() { return cActionKeyword_4; }
+		public Keyword getActionKeyword_3() { return cActionKeyword_3; }
 
 		//action=Query
-		public Assignment getActionAssignment_5() { return cActionAssignment_5; }
+		public Assignment getActionAssignment_4() { return cActionAssignment_4; }
 
 		//Query
-		public RuleCall getActionQueryParserRuleCall_5_0() { return cActionQueryParserRuleCall_5_0; }
+		public RuleCall getActionQueryParserRuleCall_4_0() { return cActionQueryParserRuleCall_4_0; }
 
 		//("on success:" onActionSuccessUICommands+=UICommandMdsl*)?
-		public Group getGroup_6() { return cGroup_6; }
+		public Group getGroup_5() { return cGroup_5; }
 
 		//"on success:"
-		public Keyword getOnSuccessKeyword_6_0() { return cOnSuccessKeyword_6_0; }
+		public Keyword getOnSuccessKeyword_5_0() { return cOnSuccessKeyword_5_0; }
 
 		//onActionSuccessUICommands+=UICommandMdsl*
-		public Assignment getOnActionSuccessUICommandsAssignment_6_1() { return cOnActionSuccessUICommandsAssignment_6_1; }
+		public Assignment getOnActionSuccessUICommandsAssignment_5_1() { return cOnActionSuccessUICommandsAssignment_5_1; }
 
 		//UICommandMdsl
-		public RuleCall getOnActionSuccessUICommandsUICommandMdslParserRuleCall_6_1_0() { return cOnActionSuccessUICommandsUICommandMdslParserRuleCall_6_1_0; }
+		public RuleCall getOnActionSuccessUICommandsUICommandMdslParserRuleCall_5_1_0() { return cOnActionSuccessUICommandsUICommandMdslParserRuleCall_5_1_0; }
 
 		//("on error:" onActionErrorUICommands+=UICommandMdsl*)?
-		public Group getGroup_7() { return cGroup_7; }
+		public Group getGroup_6() { return cGroup_6; }
 
 		//"on error:"
-		public Keyword getOnErrorKeyword_7_0() { return cOnErrorKeyword_7_0; }
+		public Keyword getOnErrorKeyword_6_0() { return cOnErrorKeyword_6_0; }
 
 		//onActionErrorUICommands+=UICommandMdsl*
-		public Assignment getOnActionErrorUICommandsAssignment_7_1() { return cOnActionErrorUICommandsAssignment_7_1; }
+		public Assignment getOnActionErrorUICommandsAssignment_6_1() { return cOnActionErrorUICommandsAssignment_6_1; }
 
 		//UICommandMdsl
-		public RuleCall getOnActionErrorUICommandsUICommandMdslParserRuleCall_7_1_0() { return cOnActionErrorUICommandsUICommandMdslParserRuleCall_7_1_0; }
+		public RuleCall getOnActionErrorUICommandsUICommandMdslParserRuleCall_6_1_0() { return cOnActionErrorUICommandsUICommandMdslParserRuleCall_6_1_0; }
 	}
 
 	public class CommandRefMdslElements extends AbstractParserRuleElementFinder {
@@ -3807,7 +3811,7 @@ public class MadConfigDslGrammarAccess extends AbstractGrammarElementFinder {
 	//// Command definition
 	////-------------------
 	//CommandDefinitionMdsl:
-	//	category=COMMAND_CATEGORY_MDSL i18NLabel?="I18N"? label=FormatExpr ("icon:" icon=[IconDescriptorMdsl])? "action:"
+	//	category=COMMAND_CATEGORY_MDSL (i18NLabel?="I18N"? label=FormatExpr)? ("icon:" icon=[IconDescriptorMdsl])? "action:"
 	//	action=Query ("on success:" onActionSuccessUICommands+=UICommandMdsl*)? ("on error:"
 	//	onActionErrorUICommands+=UICommandMdsl*)?;
 	public CommandDefinitionMdslElements getCommandDefinitionMdslAccess() {

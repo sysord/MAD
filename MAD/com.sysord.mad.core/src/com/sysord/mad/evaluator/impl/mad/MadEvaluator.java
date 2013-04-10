@@ -27,6 +27,7 @@ import com.sysord.mad.evaluator.impl.QueryEvaluatorUtil;
 import com.sysord.mad.functionparser.FunctionProcessingException;
 import com.sysord.mad.mao.ValuedSemanticElement.ACCESS_CATEGORY;
 
+
 public class MadEvaluator extends AbstractQueryEvaluator {
 	
 	public static final String MAD__LANGUAGE_ID = "MAD";
@@ -121,12 +122,10 @@ public class MadEvaluator extends AbstractQueryEvaluator {
 	
 	
 	protected <T> T processMadQueryEvaluation(QueryEvaluationContext evaluationContext, String funcName, List<Object> functionArguments) throws QueryEvaluatorException{
-
 		
 		if(MAD_VALUE.equals(funcName)){
 			return process_MAD_VALUE((EObject)evaluationContext.getContextObject(), functionArguments);
 		}		
-
 		
 		throw queryEvaluatorException(funcName,"Unknow MAD_EVALUATOR function.");
 	}

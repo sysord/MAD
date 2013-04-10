@@ -317,7 +317,7 @@ public class LoadWidgetValueVisitor extends AbstractWidgetVisitor<Boolean> {
 			if(widgetConfigMdsl.getItemLabelExpression() != null){
 				candidateLabel = formatValue(candValue, widgetConfigMdsl.getItemLabelExpression());
 			}else{
-				candidateLabel = getItemLabel((EObject) candValue, widget);
+				candidateLabel = getItemLabel(candValue, widget);
 			}
 
 			//Convert candidate (from EEnumLiteral to Enum)
@@ -347,18 +347,22 @@ public class LoadWidgetValueVisitor extends AbstractWidgetVisitor<Boolean> {
 	 * @param element
 	 * @return label 
 	 */
-	protected String getItemLabel(EObject contextElement, Widget<?> widget){
+	protected String getItemLabel(Object contextElement, Widget<?> widget){
 		String label = null;
 		if(contextElement == null){
 			return "null";
 		}
-		String labelProviderExpr = configurationManager.getLabelProviderExpressionForType(contextElement.eClass());
-		if(labelProviderExpr != null){
-			label = formatValue(contextElement, labelProviderExpr);
-		}else{
-			//use itemProviderAdapter (genModel definition)
-			label = itemProvider.getLabelFor(contextElement);
+		if(EObject.class.isAssignableFrom(contextElement.getClass())){
+			EObject eContextElement = (EObject) contextElement;
+			String labelProviderExpr = configurationManager.getLabelProviderExpressionForType(eContextElement.eClass());			
+			if(labelProviderExpr != null){
+				label = formatValue(eContextElement, labelProviderExpr);
+			}else{
+				//use itemProviderAdapter (genModel definition)
+				label = itemProvider.getLabelFor(eContextElement);
+			}
 		}
+		
 		if(label == null){
 			label = contextElement.toString();                          		
 		}

@@ -2604,10 +2604,10 @@ public class InternalMadConfigDslLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15743:10: ( ( '0' .. '9' )+ )
-            // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15743:12: ( '0' .. '9' )+
+            // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15773:10: ( ( '0' .. '9' )+ )
+            // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15773:12: ( '0' .. '9' )+
             {
-            // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15743:12: ( '0' .. '9' )+
+            // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15773:12: ( '0' .. '9' )+
             int cnt1=0;
             loop1:
             do {
@@ -2621,7 +2621,7 @@ public class InternalMadConfigDslLexer extends Lexer {
 
                 switch (alt1) {
             	case 1 :
-            	    // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15743:13: '0' .. '9'
+            	    // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15773:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -2653,10 +2653,10 @@ public class InternalMadConfigDslLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15745:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15745:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15775:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15775:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15745:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15775:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -2674,10 +2674,10 @@ public class InternalMadConfigDslLexer extends Lexer {
             }
             switch (alt4) {
                 case 1 :
-                    // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15745:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15775:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15745:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15775:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop2:
                     do {
                         int alt2=3;
@@ -2693,7 +2693,7 @@ public class InternalMadConfigDslLexer extends Lexer {
 
                         switch (alt2) {
                     	case 1 :
-                    	    // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15745:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15775:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -2709,7 +2709,7 @@ public class InternalMadConfigDslLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15745:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15775:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2734,10 +2734,10 @@ public class InternalMadConfigDslLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15745:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15775:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15745:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15775:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop3:
                     do {
                         int alt3=3;
@@ -2753,7 +2753,7 @@ public class InternalMadConfigDslLexer extends Lexer {
 
                         switch (alt3) {
                     	case 1 :
-                    	    // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15745:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15775:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -2769,7 +2769,7 @@ public class InternalMadConfigDslLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15745:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15775:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2812,12 +2812,12 @@ public class InternalMadConfigDslLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15747:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15747:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15777:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15777:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15747:24: ( options {greedy=false; } : . )*
+            // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15777:24: ( options {greedy=false; } : . )*
             loop5:
             do {
                 int alt5=2;
@@ -2842,7 +2842,7 @@ public class InternalMadConfigDslLexer extends Lexer {
 
                 switch (alt5) {
             	case 1 :
-            	    // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15747:52: .
+            	    // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15777:52: .
             	    {
             	    matchAny(); 
 
@@ -2872,12 +2872,12 @@ public class InternalMadConfigDslLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15749:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15749:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15779:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15779:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15749:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15779:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop6:
             do {
                 int alt6=2;
@@ -2890,7 +2890,7 @@ public class InternalMadConfigDslLexer extends Lexer {
 
                 switch (alt6) {
             	case 1 :
-            	    // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15749:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15779:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -2910,7 +2910,7 @@ public class InternalMadConfigDslLexer extends Lexer {
                 }
             } while (true);
 
-            // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15749:40: ( ( '\\r' )? '\\n' )?
+            // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15779:40: ( ( '\\r' )? '\\n' )?
             int alt8=2;
             int LA8_0 = input.LA(1);
 
@@ -2919,9 +2919,9 @@ public class InternalMadConfigDslLexer extends Lexer {
             }
             switch (alt8) {
                 case 1 :
-                    // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15749:41: ( '\\r' )? '\\n'
+                    // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15779:41: ( '\\r' )? '\\n'
                     {
-                    // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15749:41: ( '\\r' )?
+                    // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15779:41: ( '\\r' )?
                     int alt7=2;
                     int LA7_0 = input.LA(1);
 
@@ -2930,7 +2930,7 @@ public class InternalMadConfigDslLexer extends Lexer {
                     }
                     switch (alt7) {
                         case 1 :
-                            // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15749:41: '\\r'
+                            // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15779:41: '\\r'
                             {
                             match('\r'); 
 
@@ -2962,10 +2962,10 @@ public class InternalMadConfigDslLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15751:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15751:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15781:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15781:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15751:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15781:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt9=0;
             loop9:
             do {
@@ -3019,8 +3019,8 @@ public class InternalMadConfigDslLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15753:16: ( . )
-            // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15753:18: .
+            // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15783:16: ( . )
+            // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15783:18: .
             {
             matchAny(); 
 
@@ -3039,10 +3039,10 @@ public class InternalMadConfigDslLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15755:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* ( '.' ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )* )
-            // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15755:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* ( '.' ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )*
+            // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15785:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* ( '.' ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )* )
+            // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15785:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* ( '.' ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )*
             {
-            // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15755:11: ( '^' )?
+            // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15785:11: ( '^' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -3051,7 +3051,7 @@ public class InternalMadConfigDslLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15755:11: '^'
+                    // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15785:11: '^'
                     {
                     match('^'); 
 
@@ -3069,7 +3069,7 @@ public class InternalMadConfigDslLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15755:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15785:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop11:
             do {
                 int alt11=2;
@@ -3102,7 +3102,7 @@ public class InternalMadConfigDslLexer extends Lexer {
                 }
             } while (true);
 
-            // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15755:74: ( '.' ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )*
+            // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15785:74: ( '.' ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )*
             loop14:
             do {
                 int alt14=2;
@@ -3115,10 +3115,10 @@ public class InternalMadConfigDslLexer extends Lexer {
 
                 switch (alt14) {
             	case 1 :
-            	    // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15755:75: '.' ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            	    // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15785:75: '.' ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             	    {
             	    match('.'); 
-            	    // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15755:79: ( '^' )?
+            	    // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15785:79: ( '^' )?
             	    int alt12=2;
             	    int LA12_0 = input.LA(1);
 
@@ -3127,7 +3127,7 @@ public class InternalMadConfigDslLexer extends Lexer {
             	    }
             	    switch (alt12) {
             	        case 1 :
-            	            // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15755:79: '^'
+            	            // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15785:79: '^'
             	            {
             	            match('^'); 
 
@@ -3145,7 +3145,7 @@ public class InternalMadConfigDslLexer extends Lexer {
             	        recover(mse);
             	        throw mse;}
 
-            	    // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15755:108: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            	    // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15785:108: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             	    loop13:
             	    do {
             	        int alt13=2;

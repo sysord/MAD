@@ -3285,11 +3285,11 @@ ruleCommandDefinitionMdsl returns [EObject current=null]
 	    }
 
 )
-)(
+)((
 (
 		lv_i18NLabel_1_0=	'I18N' 
     {
-        newLeafNode(lv_i18NLabel_1_0, grammarAccess.getCommandDefinitionMdslAccess().getI18NLabelI18NKeyword_1_0());
+        newLeafNode(lv_i18NLabel_1_0, grammarAccess.getCommandDefinitionMdslAccess().getI18NLabelI18NKeyword_1_0_0());
     }
  
 	    {
@@ -3303,7 +3303,7 @@ ruleCommandDefinitionMdsl returns [EObject current=null]
 )?(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getCommandDefinitionMdslAccess().getLabelFormatExprParserRuleCall_2_0()); 
+	        newCompositeNode(grammarAccess.getCommandDefinitionMdslAccess().getLabelFormatExprParserRuleCall_1_1_0()); 
 	    }
 		lv_label_2_0=ruleFormatExpr		{
 	        if ($current==null) {
@@ -3318,9 +3318,9 @@ ruleCommandDefinitionMdsl returns [EObject current=null]
 	    }
 
 )
-)(	otherlv_3='icon:' 
+))?(	otherlv_3='icon:' 
     {
-    	newLeafNode(otherlv_3, grammarAccess.getCommandDefinitionMdslAccess().getIconKeyword_3_0());
+    	newLeafNode(otherlv_3, grammarAccess.getCommandDefinitionMdslAccess().getIconKeyword_2_0());
     }
 (
 (
@@ -3331,18 +3331,18 @@ ruleCommandDefinitionMdsl returns [EObject current=null]
         }
 	otherlv_4=RULE_ID
 	{
-		newLeafNode(otherlv_4, grammarAccess.getCommandDefinitionMdslAccess().getIconIconDescriptorMdslCrossReference_3_1_0()); 
+		newLeafNode(otherlv_4, grammarAccess.getCommandDefinitionMdslAccess().getIconIconDescriptorMdslCrossReference_2_1_0()); 
 	}
 
 )
 ))?	otherlv_5='action:' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getCommandDefinitionMdslAccess().getActionKeyword_4());
+    	newLeafNode(otherlv_5, grammarAccess.getCommandDefinitionMdslAccess().getActionKeyword_3());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getCommandDefinitionMdslAccess().getActionQueryParserRuleCall_5_0()); 
+	        newCompositeNode(grammarAccess.getCommandDefinitionMdslAccess().getActionQueryParserRuleCall_4_0()); 
 	    }
 		lv_action_6_0=ruleQuery		{
 	        if ($current==null) {
@@ -3359,12 +3359,12 @@ ruleCommandDefinitionMdsl returns [EObject current=null]
 )
 )(	otherlv_7='on success:' 
     {
-    	newLeafNode(otherlv_7, grammarAccess.getCommandDefinitionMdslAccess().getOnSuccessKeyword_6_0());
+    	newLeafNode(otherlv_7, grammarAccess.getCommandDefinitionMdslAccess().getOnSuccessKeyword_5_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getCommandDefinitionMdslAccess().getOnActionSuccessUICommandsUICommandMdslParserRuleCall_6_1_0()); 
+	        newCompositeNode(grammarAccess.getCommandDefinitionMdslAccess().getOnActionSuccessUICommandsUICommandMdslParserRuleCall_5_1_0()); 
 	    }
 		lv_onActionSuccessUICommands_8_0=ruleUICommandMdsl		{
 	        if ($current==null) {
@@ -3381,12 +3381,12 @@ ruleCommandDefinitionMdsl returns [EObject current=null]
 )
 )*)?(	otherlv_9='on error:' 
     {
-    	newLeafNode(otherlv_9, grammarAccess.getCommandDefinitionMdslAccess().getOnErrorKeyword_7_0());
+    	newLeafNode(otherlv_9, grammarAccess.getCommandDefinitionMdslAccess().getOnErrorKeyword_6_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getCommandDefinitionMdslAccess().getOnActionErrorUICommandsUICommandMdslParserRuleCall_7_1_0()); 
+	        newCompositeNode(grammarAccess.getCommandDefinitionMdslAccess().getOnActionErrorUICommandsUICommandMdslParserRuleCall_6_1_0()); 
 	    }
 		lv_onActionErrorUICommands_10_0=ruleUICommandMdsl		{
 	        if ($current==null) {
