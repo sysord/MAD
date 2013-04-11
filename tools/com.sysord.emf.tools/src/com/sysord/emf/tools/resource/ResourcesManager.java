@@ -613,7 +613,7 @@ public class ResourcesManager {
 									IFile storage = (IFile) delta.getResource();
 									final String resourceName = URI.createPlatformResourceURI(storage.getFullPath().toString(), true).toString();
 									final IResourceDelta fdelta = delta;
-									System.out.println(resourceName + ":" + delta.getKind());
+									//System.out.println(resourceName + ":" + delta.getKind());
 																		
 									if (isManagedResource(resourceName) || existsLinkedResources(resourceName)) {
 										// Save all resources linked to the saved
@@ -683,56 +683,6 @@ public class ResourcesManager {
 		}		
 	}
 	
-//	//-------------------------
-//	// XTEXT Resource Validation
-//	//-------------------------
-//	
-//	System.out.println("ResourcesManager: save resource:" + linkedResourceName + " linked to " + masterResourceName);
-//	for(TreeIterator<EObject> it = linkedResource.getContents().get(0).eAllContents(); it.hasNext();){
-//		System.out.println(it.next());							
-//	}
-//	System.out.println(validateXtextResource((XtextResource) linkedResource));
-//	System.out.println("**************************************************************");
-		
-//	public enum XTEXT_ERROR_LEVEL{
-//		NO_ERROR,
-//		WARNING,
-//		CRITICAL_ERROR,
-//	}
-//	
-//	public XTEXT_ERROR_LEVEL validateXtextResource(XtextResource xtextResource){
-//		
-//		//warnings: reference error
-//		EcoreUtil2.resolveLazyCrossReferences(xtextResource, defaultCancelIndicator());
-//		boolean hasError = !xtextResource.getErrors().isEmpty();
-//		if(!hasError){
-//			return XTEXT_ERROR_LEVEL.NO_ERROR;
-//		}
-//			
-//		//analyse error
-//		boolean hasCriticalError = false;
-//		if(hasError){
-//			//dump errors
-//			for(org.eclipse.emf.ecore.resource.Resource.Diagnostic diagnostic : xtextResource.getErrors()){
-//				if(XtextSyntaxDiagnostic.class.isAssignableFrom(diagnostic.getClass())){
-//					//syntax error
-//					hasCriticalError = true;
-//					System.out.println("GRAVE:" + diagnostic.getLine() + " " + diagnostic.toString());						
-//				}else{
-//					System.out.println("WARNING:" + diagnostic.getLine() + " " + diagnostic.toString());						
-//				}
-//			}					
-//		}
-//
-//		if(hasCriticalError){
-//			return XTEXT_ERROR_LEVEL.CRITICAL_ERROR;
-//		}else{
-//			return XTEXT_ERROR_LEVEL.WARNING;			
-//		}
-//	}
-//	
-//	public static CancelIndicator defaultCancelIndicator(){
-//		return new CancelIndicator() {public boolean isCanceled(){return false;}};
-//	}
+
 	
 }

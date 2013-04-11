@@ -113,7 +113,15 @@ public class MadMacrosEvaluator implements MadMacros{
 	 */
 	protected EObject run_CreateMacro(final EObject contextObject, final List<Object> macroArguments) throws QueryEvaluatorException{
 		
-		final String elementTypeName = (String) (macroArguments.size() >= 2 ? macroArguments.get(1) : null);
+		//Extract typename: if argument is an EClass the ECLass name else the argument String value.
+		Object elementTypeArg = (macroArguments.size() >= 2 ? macroArguments.get(1) : null);
+		String elementTypeNameArg = null;
+		if(elementTypeArg instanceof EClass){
+			elementTypeNameArg = ((EClass)elementTypeArg).getName();
+		}else{
+			elementTypeNameArg = String.valueOf(elementTypeArg);
+		}
+		final String elementTypeName = elementTypeNameArg; //(String) (macroArguments.size() >= 2 ? macroArguments.get(1) : null);
 		final EObject container = (EObject) (macroArguments.size() == 3 ? macroArguments.get(2) : contextObject);
 		final MadFuture future = new MadFuture();
 		//get package and factory

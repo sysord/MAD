@@ -36,7 +36,7 @@ import com.sysord.mad.evaluator.QueryEvaluatorProvider;
 import com.sysord.mad.evaluator.impl.FormatExpressionEvaluationServiceImpl;
 import com.sysord.mad.evaluator.impl.QueryEvaluationServiceImpl;
 import com.sysord.mad.evaluator.impl.QueryEvaluatorProviderImpl;
-import com.sysord.mad.evaluator.impl.mad.MadMacrosEvaluatorV1;
+import com.sysord.mad.evaluator.impl.mad.MadMacrosEvaluator;
 import com.sysord.mad.log.MADLoggerImpl;
 import com.sysord.mad.mao.ModelAccessObject;
 import com.sysord.mad.mao.TransactionalCommandProvider;
@@ -196,7 +196,7 @@ public class MadDefaultModule implements Module {
     }
     
     protected void bindMadMacrosEvaluator(Binder binder) {
-        binder.bind(MadMacrosEvaluatorV1.class);
+        binder.bind(MadMacrosEvaluator.class);
     }
 
     protected void bindFormatExpressionEvaluation(Binder binder) {

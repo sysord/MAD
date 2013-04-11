@@ -388,8 +388,7 @@ public class MadConfigDslSemanticSequencer extends AbstractDelegatingSemanticSeq
 	 * Constraint:
 	 *     (
 	 *         category=COMMAND_CATEGORY_MDSL 
-	 *         i18NLabel?='I18N'? 
-	 *         label=FormatExpr 
+	 *         (i18NLabel?='I18N'? label=FormatExpr)? 
 	 *         icon=[IconDescriptorMdsl|ID]? 
 	 *         action=Query 
 	 *         onActionSuccessUICommands+=UICommandMdsl* 

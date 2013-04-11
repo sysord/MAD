@@ -7848,7 +7848,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCommandDefinitionMdsl"
-    // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3266:1: ruleCommandDefinitionMdsl returns [EObject current=null] : ( ( (lv_category_0_0= ruleCOMMAND_CATEGORY_MDSL ) ) ( (lv_i18NLabel_1_0= 'I18N' ) )? ( (lv_label_2_0= ruleFormatExpr ) ) (otherlv_3= 'icon:' ( (otherlv_4= RULE_ID ) ) )? otherlv_5= 'action:' ( (lv_action_6_0= ruleQuery ) ) (otherlv_7= 'on success:' ( (lv_onActionSuccessUICommands_8_0= ruleUICommandMdsl ) )* )? (otherlv_9= 'on error:' ( (lv_onActionErrorUICommands_10_0= ruleUICommandMdsl ) )* )? ) ;
+    // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3266:1: ruleCommandDefinitionMdsl returns [EObject current=null] : ( ( (lv_category_0_0= ruleCOMMAND_CATEGORY_MDSL ) ) ( ( (lv_i18NLabel_1_0= 'I18N' ) )? ( (lv_label_2_0= ruleFormatExpr ) ) )? (otherlv_3= 'icon:' ( (otherlv_4= RULE_ID ) ) )? otherlv_5= 'action:' ( (lv_action_6_0= ruleQuery ) ) (otherlv_7= 'on success:' ( (lv_onActionSuccessUICommands_8_0= ruleUICommandMdsl ) )* )? (otherlv_9= 'on error:' ( (lv_onActionErrorUICommands_10_0= ruleUICommandMdsl ) )* )? ) ;
     public final EObject ruleCommandDefinitionMdsl() throws RecognitionException {
         EObject current = null;
 
@@ -7872,11 +7872,11 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3269:28: ( ( ( (lv_category_0_0= ruleCOMMAND_CATEGORY_MDSL ) ) ( (lv_i18NLabel_1_0= 'I18N' ) )? ( (lv_label_2_0= ruleFormatExpr ) ) (otherlv_3= 'icon:' ( (otherlv_4= RULE_ID ) ) )? otherlv_5= 'action:' ( (lv_action_6_0= ruleQuery ) ) (otherlv_7= 'on success:' ( (lv_onActionSuccessUICommands_8_0= ruleUICommandMdsl ) )* )? (otherlv_9= 'on error:' ( (lv_onActionErrorUICommands_10_0= ruleUICommandMdsl ) )* )? ) )
-            // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3270:1: ( ( (lv_category_0_0= ruleCOMMAND_CATEGORY_MDSL ) ) ( (lv_i18NLabel_1_0= 'I18N' ) )? ( (lv_label_2_0= ruleFormatExpr ) ) (otherlv_3= 'icon:' ( (otherlv_4= RULE_ID ) ) )? otherlv_5= 'action:' ( (lv_action_6_0= ruleQuery ) ) (otherlv_7= 'on success:' ( (lv_onActionSuccessUICommands_8_0= ruleUICommandMdsl ) )* )? (otherlv_9= 'on error:' ( (lv_onActionErrorUICommands_10_0= ruleUICommandMdsl ) )* )? )
+            // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3269:28: ( ( ( (lv_category_0_0= ruleCOMMAND_CATEGORY_MDSL ) ) ( ( (lv_i18NLabel_1_0= 'I18N' ) )? ( (lv_label_2_0= ruleFormatExpr ) ) )? (otherlv_3= 'icon:' ( (otherlv_4= RULE_ID ) ) )? otherlv_5= 'action:' ( (lv_action_6_0= ruleQuery ) ) (otherlv_7= 'on success:' ( (lv_onActionSuccessUICommands_8_0= ruleUICommandMdsl ) )* )? (otherlv_9= 'on error:' ( (lv_onActionErrorUICommands_10_0= ruleUICommandMdsl ) )* )? ) )
+            // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3270:1: ( ( (lv_category_0_0= ruleCOMMAND_CATEGORY_MDSL ) ) ( ( (lv_i18NLabel_1_0= 'I18N' ) )? ( (lv_label_2_0= ruleFormatExpr ) ) )? (otherlv_3= 'icon:' ( (otherlv_4= RULE_ID ) ) )? otherlv_5= 'action:' ( (lv_action_6_0= ruleQuery ) ) (otherlv_7= 'on success:' ( (lv_onActionSuccessUICommands_8_0= ruleUICommandMdsl ) )* )? (otherlv_9= 'on error:' ( (lv_onActionErrorUICommands_10_0= ruleUICommandMdsl ) )* )? )
             {
-            // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3270:1: ( ( (lv_category_0_0= ruleCOMMAND_CATEGORY_MDSL ) ) ( (lv_i18NLabel_1_0= 'I18N' ) )? ( (lv_label_2_0= ruleFormatExpr ) ) (otherlv_3= 'icon:' ( (otherlv_4= RULE_ID ) ) )? otherlv_5= 'action:' ( (lv_action_6_0= ruleQuery ) ) (otherlv_7= 'on success:' ( (lv_onActionSuccessUICommands_8_0= ruleUICommandMdsl ) )* )? (otherlv_9= 'on error:' ( (lv_onActionErrorUICommands_10_0= ruleUICommandMdsl ) )* )? )
-            // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3270:2: ( (lv_category_0_0= ruleCOMMAND_CATEGORY_MDSL ) ) ( (lv_i18NLabel_1_0= 'I18N' ) )? ( (lv_label_2_0= ruleFormatExpr ) ) (otherlv_3= 'icon:' ( (otherlv_4= RULE_ID ) ) )? otherlv_5= 'action:' ( (lv_action_6_0= ruleQuery ) ) (otherlv_7= 'on success:' ( (lv_onActionSuccessUICommands_8_0= ruleUICommandMdsl ) )* )? (otherlv_9= 'on error:' ( (lv_onActionErrorUICommands_10_0= ruleUICommandMdsl ) )* )?
+            // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3270:1: ( ( (lv_category_0_0= ruleCOMMAND_CATEGORY_MDSL ) ) ( ( (lv_i18NLabel_1_0= 'I18N' ) )? ( (lv_label_2_0= ruleFormatExpr ) ) )? (otherlv_3= 'icon:' ( (otherlv_4= RULE_ID ) ) )? otherlv_5= 'action:' ( (lv_action_6_0= ruleQuery ) ) (otherlv_7= 'on success:' ( (lv_onActionSuccessUICommands_8_0= ruleUICommandMdsl ) )* )? (otherlv_9= 'on error:' ( (lv_onActionErrorUICommands_10_0= ruleUICommandMdsl ) )* )? )
+            // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3270:2: ( (lv_category_0_0= ruleCOMMAND_CATEGORY_MDSL ) ) ( ( (lv_i18NLabel_1_0= 'I18N' ) )? ( (lv_label_2_0= ruleFormatExpr ) ) )? (otherlv_3= 'icon:' ( (otherlv_4= RULE_ID ) ) )? otherlv_5= 'action:' ( (lv_action_6_0= ruleQuery ) ) (otherlv_7= 'on success:' ( (lv_onActionSuccessUICommands_8_0= ruleUICommandMdsl ) )* )? (otherlv_9= 'on error:' ( (lv_onActionErrorUICommands_10_0= ruleUICommandMdsl ) )* )?
             {
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3270:2: ( (lv_category_0_0= ruleCOMMAND_CATEGORY_MDSL ) )
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3271:1: (lv_category_0_0= ruleCOMMAND_CATEGORY_MDSL )
@@ -7909,30 +7909,78 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3288:2: ( (lv_i18NLabel_1_0= 'I18N' ) )?
-            int alt67=2;
-            int LA67_0 = input.LA(1);
+            // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3288:2: ( ( (lv_i18NLabel_1_0= 'I18N' ) )? ( (lv_label_2_0= ruleFormatExpr ) ) )?
+            int alt68=2;
+            int LA68_0 = input.LA(1);
 
-            if ( (LA67_0==52) ) {
-                alt67=1;
+            if ( (LA68_0==RULE_STRING||LA68_0==52||LA68_0==104) ) {
+                alt68=1;
             }
-            switch (alt67) {
+            switch (alt68) {
                 case 1 :
-                    // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3289:1: (lv_i18NLabel_1_0= 'I18N' )
+                    // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3288:3: ( (lv_i18NLabel_1_0= 'I18N' ) )? ( (lv_label_2_0= ruleFormatExpr ) )
                     {
-                    // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3289:1: (lv_i18NLabel_1_0= 'I18N' )
-                    // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3290:3: lv_i18NLabel_1_0= 'I18N'
-                    {
-                    lv_i18NLabel_1_0=(Token)match(input,52,FOLLOW_52_in_ruleCommandDefinitionMdsl6966); 
+                    // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3288:3: ( (lv_i18NLabel_1_0= 'I18N' ) )?
+                    int alt67=2;
+                    int LA67_0 = input.LA(1);
 
-                            newLeafNode(lv_i18NLabel_1_0, grammarAccess.getCommandDefinitionMdslAccess().getI18NLabelI18NKeyword_1_0());
-                        
+                    if ( (LA67_0==52) ) {
+                        alt67=1;
+                    }
+                    switch (alt67) {
+                        case 1 :
+                            // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3289:1: (lv_i18NLabel_1_0= 'I18N' )
+                            {
+                            // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3289:1: (lv_i18NLabel_1_0= 'I18N' )
+                            // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3290:3: lv_i18NLabel_1_0= 'I18N'
+                            {
+                            lv_i18NLabel_1_0=(Token)match(input,52,FOLLOW_52_in_ruleCommandDefinitionMdsl6967); 
+
+                                    newLeafNode(lv_i18NLabel_1_0, grammarAccess.getCommandDefinitionMdslAccess().getI18NLabelI18NKeyword_1_0_0());
+                                
+
+                            	        if (current==null) {
+                            	            current = createModelElement(grammarAccess.getCommandDefinitionMdslRule());
+                            	        }
+                                   		setWithLastConsumed(current, "i18NLabel", true, "I18N");
+                            	    
+
+                            }
+
+
+                            }
+                            break;
+
+                    }
+
+                    // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3303:3: ( (lv_label_2_0= ruleFormatExpr ) )
+                    // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3304:1: (lv_label_2_0= ruleFormatExpr )
+                    {
+                    // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3304:1: (lv_label_2_0= ruleFormatExpr )
+                    // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3305:3: lv_label_2_0= ruleFormatExpr
+                    {
+                     
+                    	        newCompositeNode(grammarAccess.getCommandDefinitionMdslAccess().getLabelFormatExprParserRuleCall_1_1_0()); 
+                    	    
+                    pushFollow(FOLLOW_ruleFormatExpr_in_ruleCommandDefinitionMdsl7002);
+                    lv_label_2_0=ruleFormatExpr();
+
+                    state._fsp--;
+
 
                     	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getCommandDefinitionMdslRule());
+                    	            current = createModelElementForParent(grammarAccess.getCommandDefinitionMdslRule());
                     	        }
-                           		setWithLastConsumed(current, "i18NLabel", true, "I18N");
+                           		set(
+                           			current, 
+                           			"label",
+                            		lv_label_2_0, 
+                            		"FormatExpr");
+                    	        afterParserOrEnumRuleCall();
                     	    
+
+                    }
+
 
                     }
 
@@ -7942,51 +7990,20 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3303:3: ( (lv_label_2_0= ruleFormatExpr ) )
-            // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3304:1: (lv_label_2_0= ruleFormatExpr )
-            {
-            // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3304:1: (lv_label_2_0= ruleFormatExpr )
-            // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3305:3: lv_label_2_0= ruleFormatExpr
-            {
-             
-            	        newCompositeNode(grammarAccess.getCommandDefinitionMdslAccess().getLabelFormatExprParserRuleCall_2_0()); 
-            	    
-            pushFollow(FOLLOW_ruleFormatExpr_in_ruleCommandDefinitionMdsl7001);
-            lv_label_2_0=ruleFormatExpr();
+            // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3321:4: (otherlv_3= 'icon:' ( (otherlv_4= RULE_ID ) ) )?
+            int alt69=2;
+            int LA69_0 = input.LA(1);
 
-            state._fsp--;
-
-
-            	        if (current==null) {
-            	            current = createModelElementForParent(grammarAccess.getCommandDefinitionMdslRule());
-            	        }
-                   		set(
-                   			current, 
-                   			"label",
-                    		lv_label_2_0, 
-                    		"FormatExpr");
-            	        afterParserOrEnumRuleCall();
-            	    
-
+            if ( (LA69_0==84) ) {
+                alt69=1;
             }
-
-
-            }
-
-            // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3321:2: (otherlv_3= 'icon:' ( (otherlv_4= RULE_ID ) ) )?
-            int alt68=2;
-            int LA68_0 = input.LA(1);
-
-            if ( (LA68_0==84) ) {
-                alt68=1;
-            }
-            switch (alt68) {
+            switch (alt69) {
                 case 1 :
-                    // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3321:4: otherlv_3= 'icon:' ( (otherlv_4= RULE_ID ) )
+                    // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3321:6: otherlv_3= 'icon:' ( (otherlv_4= RULE_ID ) )
                     {
-                    otherlv_3=(Token)match(input,84,FOLLOW_84_in_ruleCommandDefinitionMdsl7014); 
+                    otherlv_3=(Token)match(input,84,FOLLOW_84_in_ruleCommandDefinitionMdsl7017); 
 
-                        	newLeafNode(otherlv_3, grammarAccess.getCommandDefinitionMdslAccess().getIconKeyword_3_0());
+                        	newLeafNode(otherlv_3, grammarAccess.getCommandDefinitionMdslAccess().getIconKeyword_2_0());
                         
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3325:1: ( (otherlv_4= RULE_ID ) )
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3326:1: (otherlv_4= RULE_ID )
@@ -7999,9 +8016,9 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
                     	            current = createModelElement(grammarAccess.getCommandDefinitionMdslRule());
                     	        }
                             
-                    otherlv_4=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleCommandDefinitionMdsl7034); 
+                    otherlv_4=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleCommandDefinitionMdsl7037); 
 
-                    		newLeafNode(otherlv_4, grammarAccess.getCommandDefinitionMdslAccess().getIconIconDescriptorMdslCrossReference_3_1_0()); 
+                    		newLeafNode(otherlv_4, grammarAccess.getCommandDefinitionMdslAccess().getIconIconDescriptorMdslCrossReference_2_1_0()); 
                     	
 
                     }
@@ -8015,9 +8032,9 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,85,FOLLOW_85_in_ruleCommandDefinitionMdsl7048); 
+            otherlv_5=(Token)match(input,85,FOLLOW_85_in_ruleCommandDefinitionMdsl7051); 
 
-                	newLeafNode(otherlv_5, grammarAccess.getCommandDefinitionMdslAccess().getActionKeyword_4());
+                	newLeafNode(otherlv_5, grammarAccess.getCommandDefinitionMdslAccess().getActionKeyword_3());
                 
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3342:1: ( (lv_action_6_0= ruleQuery ) )
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3343:1: (lv_action_6_0= ruleQuery )
@@ -8026,9 +8043,9 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3344:3: lv_action_6_0= ruleQuery
             {
              
-            	        newCompositeNode(grammarAccess.getCommandDefinitionMdslAccess().getActionQueryParserRuleCall_5_0()); 
+            	        newCompositeNode(grammarAccess.getCommandDefinitionMdslAccess().getActionQueryParserRuleCall_4_0()); 
             	    
-            pushFollow(FOLLOW_ruleQuery_in_ruleCommandDefinitionMdsl7069);
+            pushFollow(FOLLOW_ruleQuery_in_ruleCommandDefinitionMdsl7072);
             lv_action_6_0=ruleQuery();
 
             state._fsp--;
@@ -8051,32 +8068,32 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
             }
 
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3360:2: (otherlv_7= 'on success:' ( (lv_onActionSuccessUICommands_8_0= ruleUICommandMdsl ) )* )?
-            int alt70=2;
-            int LA70_0 = input.LA(1);
+            int alt71=2;
+            int LA71_0 = input.LA(1);
 
-            if ( (LA70_0==86) ) {
-                alt70=1;
+            if ( (LA71_0==86) ) {
+                alt71=1;
             }
-            switch (alt70) {
+            switch (alt71) {
                 case 1 :
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3360:4: otherlv_7= 'on success:' ( (lv_onActionSuccessUICommands_8_0= ruleUICommandMdsl ) )*
                     {
-                    otherlv_7=(Token)match(input,86,FOLLOW_86_in_ruleCommandDefinitionMdsl7082); 
+                    otherlv_7=(Token)match(input,86,FOLLOW_86_in_ruleCommandDefinitionMdsl7085); 
 
-                        	newLeafNode(otherlv_7, grammarAccess.getCommandDefinitionMdslAccess().getOnSuccessKeyword_6_0());
+                        	newLeafNode(otherlv_7, grammarAccess.getCommandDefinitionMdslAccess().getOnSuccessKeyword_5_0());
                         
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3364:1: ( (lv_onActionSuccessUICommands_8_0= ruleUICommandMdsl ) )*
-                    loop69:
+                    loop70:
                     do {
-                        int alt69=2;
-                        int LA69_0 = input.LA(1);
+                        int alt70=2;
+                        int LA70_0 = input.LA(1);
 
-                        if ( ((LA69_0>=90 && LA69_0<=91)) ) {
-                            alt69=1;
+                        if ( ((LA70_0>=90 && LA70_0<=91)) ) {
+                            alt70=1;
                         }
 
 
-                        switch (alt69) {
+                        switch (alt70) {
                     	case 1 :
                     	    // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3365:1: (lv_onActionSuccessUICommands_8_0= ruleUICommandMdsl )
                     	    {
@@ -8084,9 +8101,9 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
                     	    // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3366:3: lv_onActionSuccessUICommands_8_0= ruleUICommandMdsl
                     	    {
                     	     
-                    	    	        newCompositeNode(grammarAccess.getCommandDefinitionMdslAccess().getOnActionSuccessUICommandsUICommandMdslParserRuleCall_6_1_0()); 
+                    	    	        newCompositeNode(grammarAccess.getCommandDefinitionMdslAccess().getOnActionSuccessUICommandsUICommandMdslParserRuleCall_5_1_0()); 
                     	    	    
-                    	    pushFollow(FOLLOW_ruleUICommandMdsl_in_ruleCommandDefinitionMdsl7103);
+                    	    pushFollow(FOLLOW_ruleUICommandMdsl_in_ruleCommandDefinitionMdsl7106);
                     	    lv_onActionSuccessUICommands_8_0=ruleUICommandMdsl();
 
                     	    state._fsp--;
@@ -8110,7 +8127,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop69;
+                    	    break loop70;
                         }
                     } while (true);
 
@@ -8121,32 +8138,32 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
             }
 
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3382:5: (otherlv_9= 'on error:' ( (lv_onActionErrorUICommands_10_0= ruleUICommandMdsl ) )* )?
-            int alt72=2;
-            int LA72_0 = input.LA(1);
+            int alt73=2;
+            int LA73_0 = input.LA(1);
 
-            if ( (LA72_0==87) ) {
-                alt72=1;
+            if ( (LA73_0==87) ) {
+                alt73=1;
             }
-            switch (alt72) {
+            switch (alt73) {
                 case 1 :
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3382:7: otherlv_9= 'on error:' ( (lv_onActionErrorUICommands_10_0= ruleUICommandMdsl ) )*
                     {
-                    otherlv_9=(Token)match(input,87,FOLLOW_87_in_ruleCommandDefinitionMdsl7119); 
+                    otherlv_9=(Token)match(input,87,FOLLOW_87_in_ruleCommandDefinitionMdsl7122); 
 
-                        	newLeafNode(otherlv_9, grammarAccess.getCommandDefinitionMdslAccess().getOnErrorKeyword_7_0());
+                        	newLeafNode(otherlv_9, grammarAccess.getCommandDefinitionMdslAccess().getOnErrorKeyword_6_0());
                         
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3386:1: ( (lv_onActionErrorUICommands_10_0= ruleUICommandMdsl ) )*
-                    loop71:
+                    loop72:
                     do {
-                        int alt71=2;
-                        int LA71_0 = input.LA(1);
+                        int alt72=2;
+                        int LA72_0 = input.LA(1);
 
-                        if ( ((LA71_0>=90 && LA71_0<=91)) ) {
-                            alt71=1;
+                        if ( ((LA72_0>=90 && LA72_0<=91)) ) {
+                            alt72=1;
                         }
 
 
-                        switch (alt71) {
+                        switch (alt72) {
                     	case 1 :
                     	    // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3387:1: (lv_onActionErrorUICommands_10_0= ruleUICommandMdsl )
                     	    {
@@ -8154,9 +8171,9 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
                     	    // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3388:3: lv_onActionErrorUICommands_10_0= ruleUICommandMdsl
                     	    {
                     	     
-                    	    	        newCompositeNode(grammarAccess.getCommandDefinitionMdslAccess().getOnActionErrorUICommandsUICommandMdslParserRuleCall_7_1_0()); 
+                    	    	        newCompositeNode(grammarAccess.getCommandDefinitionMdslAccess().getOnActionErrorUICommandsUICommandMdslParserRuleCall_6_1_0()); 
                     	    	    
-                    	    pushFollow(FOLLOW_ruleUICommandMdsl_in_ruleCommandDefinitionMdsl7140);
+                    	    pushFollow(FOLLOW_ruleUICommandMdsl_in_ruleCommandDefinitionMdsl7143);
                     	    lv_onActionErrorUICommands_10_0=ruleUICommandMdsl();
 
                     	    state._fsp--;
@@ -8180,7 +8197,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop71;
+                    	    break loop72;
                         }
                     } while (true);
 
@@ -8223,13 +8240,13 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3414:2: iv_ruleCommandRefMdsl= ruleCommandRefMdsl EOF
             {
              newCompositeNode(grammarAccess.getCommandRefMdslRule()); 
-            pushFollow(FOLLOW_ruleCommandRefMdsl_in_entryRuleCommandRefMdsl7179);
+            pushFollow(FOLLOW_ruleCommandRefMdsl_in_entryRuleCommandRefMdsl7182);
             iv_ruleCommandRefMdsl=ruleCommandRefMdsl();
 
             state._fsp--;
 
              current =iv_ruleCommandRefMdsl; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleCommandRefMdsl7189); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleCommandRefMdsl7192); 
 
             }
 
@@ -8278,7 +8295,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
             	            current = createModelElement(grammarAccess.getCommandRefMdslRule());
             	        }
                     
-            otherlv_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleCommandRefMdsl7234); 
+            otherlv_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleCommandRefMdsl7237); 
 
             		newLeafNode(otherlv_0, grammarAccess.getCommandRefMdslAccess().getReferencedCommandDeclarationCrossReference_0_0()); 
             	
@@ -8289,35 +8306,35 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
             }
 
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3438:2: (otherlv_1= '(' ( (lv_i18NLabelOverride_2_0= 'I18N' ) )? ( (lv_labelOverride_3_0= ruleFormatExpr ) ) otherlv_4= ')' )?
-            int alt74=2;
-            int LA74_0 = input.LA(1);
+            int alt75=2;
+            int LA75_0 = input.LA(1);
 
-            if ( (LA74_0==88) ) {
-                alt74=1;
+            if ( (LA75_0==88) ) {
+                alt75=1;
             }
-            switch (alt74) {
+            switch (alt75) {
                 case 1 :
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3438:4: otherlv_1= '(' ( (lv_i18NLabelOverride_2_0= 'I18N' ) )? ( (lv_labelOverride_3_0= ruleFormatExpr ) ) otherlv_4= ')'
                     {
-                    otherlv_1=(Token)match(input,88,FOLLOW_88_in_ruleCommandRefMdsl7247); 
+                    otherlv_1=(Token)match(input,88,FOLLOW_88_in_ruleCommandRefMdsl7250); 
 
                         	newLeafNode(otherlv_1, grammarAccess.getCommandRefMdslAccess().getLeftParenthesisKeyword_1_0());
                         
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3442:1: ( (lv_i18NLabelOverride_2_0= 'I18N' ) )?
-                    int alt73=2;
-                    int LA73_0 = input.LA(1);
+                    int alt74=2;
+                    int LA74_0 = input.LA(1);
 
-                    if ( (LA73_0==52) ) {
-                        alt73=1;
+                    if ( (LA74_0==52) ) {
+                        alt74=1;
                     }
-                    switch (alt73) {
+                    switch (alt74) {
                         case 1 :
                             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3443:1: (lv_i18NLabelOverride_2_0= 'I18N' )
                             {
                             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3443:1: (lv_i18NLabelOverride_2_0= 'I18N' )
                             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3444:3: lv_i18NLabelOverride_2_0= 'I18N'
                             {
-                            lv_i18NLabelOverride_2_0=(Token)match(input,52,FOLLOW_52_in_ruleCommandRefMdsl7265); 
+                            lv_i18NLabelOverride_2_0=(Token)match(input,52,FOLLOW_52_in_ruleCommandRefMdsl7268); 
 
                                     newLeafNode(lv_i18NLabelOverride_2_0, grammarAccess.getCommandRefMdslAccess().getI18NLabelOverrideI18NKeyword_1_1_0());
                                 
@@ -8345,7 +8362,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
                      
                     	        newCompositeNode(grammarAccess.getCommandRefMdslAccess().getLabelOverrideFormatExprParserRuleCall_1_2_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleFormatExpr_in_ruleCommandRefMdsl7300);
+                    pushFollow(FOLLOW_ruleFormatExpr_in_ruleCommandRefMdsl7303);
                     lv_labelOverride_3_0=ruleFormatExpr();
 
                     state._fsp--;
@@ -8367,7 +8384,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_4=(Token)match(input,89,FOLLOW_89_in_ruleCommandRefMdsl7312); 
+                    otherlv_4=(Token)match(input,89,FOLLOW_89_in_ruleCommandRefMdsl7315); 
 
                         	newLeafNode(otherlv_4, grammarAccess.getCommandRefMdslAccess().getRightParenthesisKeyword_1_3());
                         
@@ -8410,13 +8427,13 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3489:2: iv_ruleUICommandMdsl= ruleUICommandMdsl EOF
             {
              newCompositeNode(grammarAccess.getUICommandMdslRule()); 
-            pushFollow(FOLLOW_ruleUICommandMdsl_in_entryRuleUICommandMdsl7350);
+            pushFollow(FOLLOW_ruleUICommandMdsl_in_entryRuleUICommandMdsl7353);
             iv_ruleUICommandMdsl=ruleUICommandMdsl();
 
             state._fsp--;
 
              current =iv_ruleUICommandMdsl; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleUICommandMdsl7360); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleUICommandMdsl7363); 
 
             }
 
@@ -8452,42 +8469,42 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3500:1: (this_ReloadWidgetsUICommand_0= ruleReloadWidgetsUICommand | this_ReloadViewUICommand_1= ruleReloadViewUICommand | this_DisplayViewUICommand_2= ruleDisplayViewUICommand )
             {
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3500:1: (this_ReloadWidgetsUICommand_0= ruleReloadWidgetsUICommand | this_ReloadViewUICommand_1= ruleReloadViewUICommand | this_DisplayViewUICommand_2= ruleDisplayViewUICommand )
-            int alt75=3;
-            int LA75_0 = input.LA(1);
+            int alt76=3;
+            int LA76_0 = input.LA(1);
 
-            if ( (LA75_0==91) ) {
-                int LA75_1 = input.LA(2);
+            if ( (LA76_0==91) ) {
+                int LA76_1 = input.LA(2);
 
-                if ( (LA75_1==93) ) {
-                    alt75=1;
+                if ( (LA76_1==93) ) {
+                    alt76=1;
                 }
-                else if ( (LA75_1==92) ) {
-                    alt75=2;
+                else if ( (LA76_1==92) ) {
+                    alt76=2;
                 }
                 else {
                     NoViableAltException nvae =
-                        new NoViableAltException("", 75, 1, input);
+                        new NoViableAltException("", 76, 1, input);
 
                     throw nvae;
                 }
             }
-            else if ( (LA75_0==90) ) {
-                alt75=3;
+            else if ( (LA76_0==90) ) {
+                alt76=3;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 75, 0, input);
+                    new NoViableAltException("", 76, 0, input);
 
                 throw nvae;
             }
-            switch (alt75) {
+            switch (alt76) {
                 case 1 :
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3501:5: this_ReloadWidgetsUICommand_0= ruleReloadWidgetsUICommand
                     {
                      
                             newCompositeNode(grammarAccess.getUICommandMdslAccess().getReloadWidgetsUICommandParserRuleCall_0()); 
                         
-                    pushFollow(FOLLOW_ruleReloadWidgetsUICommand_in_ruleUICommandMdsl7407);
+                    pushFollow(FOLLOW_ruleReloadWidgetsUICommand_in_ruleUICommandMdsl7410);
                     this_ReloadWidgetsUICommand_0=ruleReloadWidgetsUICommand();
 
                     state._fsp--;
@@ -8505,7 +8522,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getUICommandMdslAccess().getReloadViewUICommandParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleReloadViewUICommand_in_ruleUICommandMdsl7434);
+                    pushFollow(FOLLOW_ruleReloadViewUICommand_in_ruleUICommandMdsl7437);
                     this_ReloadViewUICommand_1=ruleReloadViewUICommand();
 
                     state._fsp--;
@@ -8523,7 +8540,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getUICommandMdslAccess().getDisplayViewUICommandParserRuleCall_2()); 
                         
-                    pushFollow(FOLLOW_ruleDisplayViewUICommand_in_ruleUICommandMdsl7461);
+                    pushFollow(FOLLOW_ruleDisplayViewUICommand_in_ruleUICommandMdsl7464);
                     this_DisplayViewUICommand_2=ruleDisplayViewUICommand();
 
                     state._fsp--;
@@ -8568,13 +8585,13 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3539:2: iv_ruleDisplayViewUICommand= ruleDisplayViewUICommand EOF
             {
              newCompositeNode(grammarAccess.getDisplayViewUICommandRule()); 
-            pushFollow(FOLLOW_ruleDisplayViewUICommand_in_entryRuleDisplayViewUICommand7496);
+            pushFollow(FOLLOW_ruleDisplayViewUICommand_in_entryRuleDisplayViewUICommand7499);
             iv_ruleDisplayViewUICommand=ruleDisplayViewUICommand();
 
             state._fsp--;
 
              current =iv_ruleDisplayViewUICommand; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleDisplayViewUICommand7506); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleDisplayViewUICommand7509); 
 
             }
 
@@ -8610,22 +8627,22 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3550:1: (otherlv_0= 'Display view' (otherlv_1= 'for' ( (lv_target_2_0= ruleQueryUsage ) ) )? )
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3550:3: otherlv_0= 'Display view' (otherlv_1= 'for' ( (lv_target_2_0= ruleQueryUsage ) ) )?
             {
-            otherlv_0=(Token)match(input,90,FOLLOW_90_in_ruleDisplayViewUICommand7543); 
+            otherlv_0=(Token)match(input,90,FOLLOW_90_in_ruleDisplayViewUICommand7546); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getDisplayViewUICommandAccess().getDisplayViewKeyword_0());
                 
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3554:1: (otherlv_1= 'for' ( (lv_target_2_0= ruleQueryUsage ) ) )?
-            int alt76=2;
-            int LA76_0 = input.LA(1);
+            int alt77=2;
+            int LA77_0 = input.LA(1);
 
-            if ( (LA76_0==58) ) {
-                alt76=1;
+            if ( (LA77_0==58) ) {
+                alt77=1;
             }
-            switch (alt76) {
+            switch (alt77) {
                 case 1 :
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3554:3: otherlv_1= 'for' ( (lv_target_2_0= ruleQueryUsage ) )
                     {
-                    otherlv_1=(Token)match(input,58,FOLLOW_58_in_ruleDisplayViewUICommand7556); 
+                    otherlv_1=(Token)match(input,58,FOLLOW_58_in_ruleDisplayViewUICommand7559); 
 
                         	newLeafNode(otherlv_1, grammarAccess.getDisplayViewUICommandAccess().getForKeyword_1_0());
                         
@@ -8638,7 +8655,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
                      
                     	        newCompositeNode(grammarAccess.getDisplayViewUICommandAccess().getTargetQueryUsageParserRuleCall_1_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleQueryUsage_in_ruleDisplayViewUICommand7577);
+                    pushFollow(FOLLOW_ruleQueryUsage_in_ruleDisplayViewUICommand7580);
                     lv_target_2_0=ruleQueryUsage();
 
                     state._fsp--;
@@ -8699,13 +8716,13 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3586:2: iv_ruleReloadViewUICommand= ruleReloadViewUICommand EOF
             {
              newCompositeNode(grammarAccess.getReloadViewUICommandRule()); 
-            pushFollow(FOLLOW_ruleReloadViewUICommand_in_entryRuleReloadViewUICommand7615);
+            pushFollow(FOLLOW_ruleReloadViewUICommand_in_entryRuleReloadViewUICommand7618);
             iv_ruleReloadViewUICommand=ruleReloadViewUICommand();
 
             state._fsp--;
 
              current =iv_ruleReloadViewUICommand; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleReloadViewUICommand7625); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleReloadViewUICommand7628); 
 
             }
 
@@ -8750,11 +8767,11 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,91,FOLLOW_91_in_ruleReloadViewUICommand7671); 
+            otherlv_1=(Token)match(input,91,FOLLOW_91_in_ruleReloadViewUICommand7674); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getReloadViewUICommandAccess().getReloadKeyword_1());
                 
-            otherlv_2=(Token)match(input,92,FOLLOW_92_in_ruleReloadViewUICommand7683); 
+            otherlv_2=(Token)match(input,92,FOLLOW_92_in_ruleReloadViewUICommand7686); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getReloadViewUICommandAccess().getViewKeyword_2());
                 
@@ -8791,13 +8808,13 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3621:2: iv_ruleReloadWidgetsUICommand= ruleReloadWidgetsUICommand EOF
             {
              newCompositeNode(grammarAccess.getReloadWidgetsUICommandRule()); 
-            pushFollow(FOLLOW_ruleReloadWidgetsUICommand_in_entryRuleReloadWidgetsUICommand7719);
+            pushFollow(FOLLOW_ruleReloadWidgetsUICommand_in_entryRuleReloadWidgetsUICommand7722);
             iv_ruleReloadWidgetsUICommand=ruleReloadWidgetsUICommand();
 
             state._fsp--;
 
              current =iv_ruleReloadWidgetsUICommand; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleReloadWidgetsUICommand7729); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleReloadWidgetsUICommand7732); 
 
             }
 
@@ -8832,26 +8849,26 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3632:1: (otherlv_0= 'Reload' otherlv_1= 'widgets:' ( (otherlv_2= RULE_ID ) )* )
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3632:3: otherlv_0= 'Reload' otherlv_1= 'widgets:' ( (otherlv_2= RULE_ID ) )*
             {
-            otherlv_0=(Token)match(input,91,FOLLOW_91_in_ruleReloadWidgetsUICommand7766); 
+            otherlv_0=(Token)match(input,91,FOLLOW_91_in_ruleReloadWidgetsUICommand7769); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getReloadWidgetsUICommandAccess().getReloadKeyword_0());
                 
-            otherlv_1=(Token)match(input,93,FOLLOW_93_in_ruleReloadWidgetsUICommand7778); 
+            otherlv_1=(Token)match(input,93,FOLLOW_93_in_ruleReloadWidgetsUICommand7781); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getReloadWidgetsUICommandAccess().getWidgetsKeyword_1());
                 
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3640:1: ( (otherlv_2= RULE_ID ) )*
-            loop77:
+            loop78:
             do {
-                int alt77=2;
-                int LA77_0 = input.LA(1);
+                int alt78=2;
+                int LA78_0 = input.LA(1);
 
-                if ( (LA77_0==RULE_ID) ) {
-                    alt77=1;
+                if ( (LA78_0==RULE_ID) ) {
+                    alt78=1;
                 }
 
 
-                switch (alt77) {
+                switch (alt78) {
             	case 1 :
             	    // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3641:1: (otherlv_2= RULE_ID )
             	    {
@@ -8863,7 +8880,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
             	    	            current = createModelElement(grammarAccess.getReloadWidgetsUICommandRule());
             	    	        }
             	            
-            	    otherlv_2=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleReloadWidgetsUICommand7798); 
+            	    otherlv_2=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleReloadWidgetsUICommand7801); 
 
             	    		newLeafNode(otherlv_2, grammarAccess.getReloadWidgetsUICommandAccess().getWidgetsToReloadWidgetConfigurationMdslCrossReference_2_0()); 
             	    	
@@ -8875,7 +8892,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop77;
+            	    break loop78;
                 }
             } while (true);
 
@@ -8912,13 +8929,13 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3663:2: iv_ruleQueryUsage= ruleQueryUsage EOF
             {
              newCompositeNode(grammarAccess.getQueryUsageRule()); 
-            pushFollow(FOLLOW_ruleQueryUsage_in_entryRuleQueryUsage7835);
+            pushFollow(FOLLOW_ruleQueryUsage_in_entryRuleQueryUsage7838);
             iv_ruleQueryUsage=ruleQueryUsage();
 
             state._fsp--;
 
              current =iv_ruleQueryUsage; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleQueryUsage7845); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleQueryUsage7848); 
 
             }
 
@@ -8952,29 +8969,29 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3674:1: (this_Query_0= ruleQuery | this_QueryChain_1= ruleQueryChain )
             {
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3674:1: (this_Query_0= ruleQuery | this_QueryChain_1= ruleQueryChain )
-            int alt78=2;
-            int LA78_0 = input.LA(1);
+            int alt79=2;
+            int LA79_0 = input.LA(1);
 
-            if ( ((LA78_0>=RULE_STRING && LA78_0<=RULE_ID)||(LA78_0>=95 && LA78_0<=97)||LA78_0==100||LA78_0==104) ) {
-                alt78=1;
+            if ( ((LA79_0>=RULE_STRING && LA79_0<=RULE_ID)||(LA79_0>=95 && LA79_0<=97)||LA79_0==100||LA79_0==104) ) {
+                alt79=1;
             }
-            else if ( (LA78_0==102) ) {
-                alt78=2;
+            else if ( (LA79_0==102) ) {
+                alt79=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 78, 0, input);
+                    new NoViableAltException("", 79, 0, input);
 
                 throw nvae;
             }
-            switch (alt78) {
+            switch (alt79) {
                 case 1 :
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3675:5: this_Query_0= ruleQuery
                     {
                      
                             newCompositeNode(grammarAccess.getQueryUsageAccess().getQueryParserRuleCall_0()); 
                         
-                    pushFollow(FOLLOW_ruleQuery_in_ruleQueryUsage7892);
+                    pushFollow(FOLLOW_ruleQuery_in_ruleQueryUsage7895);
                     this_Query_0=ruleQuery();
 
                     state._fsp--;
@@ -8992,7 +9009,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getQueryUsageAccess().getQueryChainParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleQueryChain_in_ruleQueryUsage7919);
+                    pushFollow(FOLLOW_ruleQueryChain_in_ruleQueryUsage7922);
                     this_QueryChain_1=ruleQueryChain();
 
                     state._fsp--;
@@ -9037,13 +9054,13 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3703:2: iv_ruleQuery= ruleQuery EOF
             {
              newCompositeNode(grammarAccess.getQueryRule()); 
-            pushFollow(FOLLOW_ruleQuery_in_entryRuleQuery7954);
+            pushFollow(FOLLOW_ruleQuery_in_entryRuleQuery7957);
             iv_ruleQuery=ruleQuery();
 
             state._fsp--;
 
              current =iv_ruleQuery; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleQuery7964); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleQuery7967); 
 
             }
 
@@ -9077,29 +9094,29 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3714:1: (this_QueryDefinitionMdsl_0= ruleQueryDefinitionMdsl | this_QueryRefMdsl_1= ruleQueryRefMdsl )
             {
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3714:1: (this_QueryDefinitionMdsl_0= ruleQueryDefinitionMdsl | this_QueryRefMdsl_1= ruleQueryRefMdsl )
-            int alt79=2;
-            int LA79_0 = input.LA(1);
+            int alt80=2;
+            int LA80_0 = input.LA(1);
 
-            if ( (LA79_0==RULE_STRING||(LA79_0>=95 && LA79_0<=97)||LA79_0==100||LA79_0==104) ) {
-                alt79=1;
+            if ( (LA80_0==RULE_STRING||(LA80_0>=95 && LA80_0<=97)||LA80_0==100||LA80_0==104) ) {
+                alt80=1;
             }
-            else if ( (LA79_0==RULE_ID) ) {
-                alt79=2;
+            else if ( (LA80_0==RULE_ID) ) {
+                alt80=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 79, 0, input);
+                    new NoViableAltException("", 80, 0, input);
 
                 throw nvae;
             }
-            switch (alt79) {
+            switch (alt80) {
                 case 1 :
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3715:5: this_QueryDefinitionMdsl_0= ruleQueryDefinitionMdsl
                     {
                      
                             newCompositeNode(grammarAccess.getQueryAccess().getQueryDefinitionMdslParserRuleCall_0()); 
                         
-                    pushFollow(FOLLOW_ruleQueryDefinitionMdsl_in_ruleQuery8011);
+                    pushFollow(FOLLOW_ruleQueryDefinitionMdsl_in_ruleQuery8014);
                     this_QueryDefinitionMdsl_0=ruleQueryDefinitionMdsl();
 
                     state._fsp--;
@@ -9117,7 +9134,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getQueryAccess().getQueryRefMdslParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleQueryRefMdsl_in_ruleQuery8038);
+                    pushFollow(FOLLOW_ruleQueryRefMdsl_in_ruleQuery8041);
                     this_QueryRefMdsl_1=ruleQueryRefMdsl();
 
                     state._fsp--;
@@ -9162,13 +9179,13 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3743:2: iv_ruleQueryDeclaration= ruleQueryDeclaration EOF
             {
              newCompositeNode(grammarAccess.getQueryDeclarationRule()); 
-            pushFollow(FOLLOW_ruleQueryDeclaration_in_entryRuleQueryDeclaration8073);
+            pushFollow(FOLLOW_ruleQueryDeclaration_in_entryRuleQueryDeclaration8076);
             iv_ruleQueryDeclaration=ruleQueryDeclaration();
 
             state._fsp--;
 
              current =iv_ruleQueryDeclaration; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleQueryDeclaration8083); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleQueryDeclaration8086); 
 
             }
 
@@ -9210,7 +9227,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3754:1: (otherlv_0= 'Common Query' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'label:' ( (lv_label_4_0= RULE_STRING ) ) )? (otherlv_5= 'description:' ( (lv_description_6_0= RULE_STRING ) ) )? ( (lv_definition_7_0= ruleQueryDefinitionMdsl ) ) otherlv_8= '}' )
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3754:3: otherlv_0= 'Common Query' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'label:' ( (lv_label_4_0= RULE_STRING ) ) )? (otherlv_5= 'description:' ( (lv_description_6_0= RULE_STRING ) ) )? ( (lv_definition_7_0= ruleQueryDefinitionMdsl ) ) otherlv_8= '}'
             {
-            otherlv_0=(Token)match(input,94,FOLLOW_94_in_ruleQueryDeclaration8120); 
+            otherlv_0=(Token)match(input,94,FOLLOW_94_in_ruleQueryDeclaration8123); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getQueryDeclarationAccess().getCommonQueryKeyword_0());
                 
@@ -9220,7 +9237,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3759:1: (lv_name_1_0= RULE_ID )
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3760:3: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleQueryDeclaration8137); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleQueryDeclaration8140); 
 
             			newLeafNode(lv_name_1_0, grammarAccess.getQueryDeclarationAccess().getNameIDTerminalRuleCall_1_0()); 
             		
@@ -9240,22 +9257,22 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,22,FOLLOW_22_in_ruleQueryDeclaration8154); 
+            otherlv_2=(Token)match(input,22,FOLLOW_22_in_ruleQueryDeclaration8157); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getQueryDeclarationAccess().getLeftCurlyBracketKeyword_2());
                 
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3780:1: (otherlv_3= 'label:' ( (lv_label_4_0= RULE_STRING ) ) )?
-            int alt80=2;
-            int LA80_0 = input.LA(1);
+            int alt81=2;
+            int LA81_0 = input.LA(1);
 
-            if ( (LA80_0==13) ) {
-                alt80=1;
+            if ( (LA81_0==13) ) {
+                alt81=1;
             }
-            switch (alt80) {
+            switch (alt81) {
                 case 1 :
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3780:3: otherlv_3= 'label:' ( (lv_label_4_0= RULE_STRING ) )
                     {
-                    otherlv_3=(Token)match(input,13,FOLLOW_13_in_ruleQueryDeclaration8167); 
+                    otherlv_3=(Token)match(input,13,FOLLOW_13_in_ruleQueryDeclaration8170); 
 
                         	newLeafNode(otherlv_3, grammarAccess.getQueryDeclarationAccess().getLabelKeyword_3_0());
                         
@@ -9265,7 +9282,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3785:1: (lv_label_4_0= RULE_STRING )
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3786:3: lv_label_4_0= RULE_STRING
                     {
-                    lv_label_4_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleQueryDeclaration8184); 
+                    lv_label_4_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleQueryDeclaration8187); 
 
                     			newLeafNode(lv_label_4_0, grammarAccess.getQueryDeclarationAccess().getLabelSTRINGTerminalRuleCall_3_1_0()); 
                     		
@@ -9292,17 +9309,17 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
             }
 
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3802:4: (otherlv_5= 'description:' ( (lv_description_6_0= RULE_STRING ) ) )?
-            int alt81=2;
-            int LA81_0 = input.LA(1);
+            int alt82=2;
+            int LA82_0 = input.LA(1);
 
-            if ( (LA81_0==17) ) {
-                alt81=1;
+            if ( (LA82_0==17) ) {
+                alt82=1;
             }
-            switch (alt81) {
+            switch (alt82) {
                 case 1 :
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3802:6: otherlv_5= 'description:' ( (lv_description_6_0= RULE_STRING ) )
                     {
-                    otherlv_5=(Token)match(input,17,FOLLOW_17_in_ruleQueryDeclaration8204); 
+                    otherlv_5=(Token)match(input,17,FOLLOW_17_in_ruleQueryDeclaration8207); 
 
                         	newLeafNode(otherlv_5, grammarAccess.getQueryDeclarationAccess().getDescriptionKeyword_4_0());
                         
@@ -9312,7 +9329,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3807:1: (lv_description_6_0= RULE_STRING )
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3808:3: lv_description_6_0= RULE_STRING
                     {
-                    lv_description_6_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleQueryDeclaration8221); 
+                    lv_description_6_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleQueryDeclaration8224); 
 
                     			newLeafNode(lv_description_6_0, grammarAccess.getQueryDeclarationAccess().getDescriptionSTRINGTerminalRuleCall_4_1_0()); 
                     		
@@ -9347,7 +9364,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getQueryDeclarationAccess().getDefinitionQueryDefinitionMdslParserRuleCall_5_0()); 
             	    
-            pushFollow(FOLLOW_ruleQueryDefinitionMdsl_in_ruleQueryDeclaration8249);
+            pushFollow(FOLLOW_ruleQueryDefinitionMdsl_in_ruleQueryDeclaration8252);
             lv_definition_7_0=ruleQueryDefinitionMdsl();
 
             state._fsp--;
@@ -9369,7 +9386,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_8=(Token)match(input,28,FOLLOW_28_in_ruleQueryDeclaration8261); 
+            otherlv_8=(Token)match(input,28,FOLLOW_28_in_ruleQueryDeclaration8264); 
 
                 	newLeafNode(otherlv_8, grammarAccess.getQueryDeclarationAccess().getRightCurlyBracketKeyword_6());
                 
@@ -9406,13 +9423,13 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3856:2: iv_ruleQueryDefinitionMdsl= ruleQueryDefinitionMdsl EOF
             {
              newCompositeNode(grammarAccess.getQueryDefinitionMdslRule()); 
-            pushFollow(FOLLOW_ruleQueryDefinitionMdsl_in_entryRuleQueryDefinitionMdsl8297);
+            pushFollow(FOLLOW_ruleQueryDefinitionMdsl_in_entryRuleQueryDefinitionMdsl8300);
             iv_ruleQueryDefinitionMdsl=ruleQueryDefinitionMdsl();
 
             state._fsp--;
 
              current =iv_ruleQueryDefinitionMdsl; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleQueryDefinitionMdsl8307); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleQueryDefinitionMdsl8310); 
 
             }
 
@@ -9466,17 +9483,17 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3867:2: (otherlv_0= 'language:' ( (otherlv_1= RULE_ID ) ) )? (otherlv_2= 'foreign model:' ( (otherlv_3= RULE_ID ) ) )? (otherlv_4= 'context locator:' ( (lv_contextLocator_5_0= RULE_STRING ) ) )? ( ( (lv_query_6_0= ruleQueryBody ) ) | ( (lv_externalQueryCall_7_0= ruleExternalQueryCallMdsl ) ) ) (otherlv_8= ':' ( (otherlv_9= RULE_ID ) ) )? (otherlv_10= 'properties:' ( (lv_properties_11_0= rulePropertyMdsl ) ) (otherlv_12= ',' ( (lv_properties_13_0= rulePropertyMdsl ) ) )* )? (otherlv_14= 'Optimisation:' ( (lv_optimisationLevel_15_0= ruleQUERY_OPTIMISATION_LEVEL ) ) )?
             {
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3867:2: (otherlv_0= 'language:' ( (otherlv_1= RULE_ID ) ) )?
-            int alt82=2;
-            int LA82_0 = input.LA(1);
+            int alt83=2;
+            int LA83_0 = input.LA(1);
 
-            if ( (LA82_0==95) ) {
-                alt82=1;
+            if ( (LA83_0==95) ) {
+                alt83=1;
             }
-            switch (alt82) {
+            switch (alt83) {
                 case 1 :
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3867:4: otherlv_0= 'language:' ( (otherlv_1= RULE_ID ) )
                     {
-                    otherlv_0=(Token)match(input,95,FOLLOW_95_in_ruleQueryDefinitionMdsl8345); 
+                    otherlv_0=(Token)match(input,95,FOLLOW_95_in_ruleQueryDefinitionMdsl8348); 
 
                         	newLeafNode(otherlv_0, grammarAccess.getQueryDefinitionMdslAccess().getLanguageKeyword_0_0());
                         
@@ -9491,7 +9508,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
                     	            current = createModelElement(grammarAccess.getQueryDefinitionMdslRule());
                     	        }
                             
-                    otherlv_1=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleQueryDefinitionMdsl8365); 
+                    otherlv_1=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleQueryDefinitionMdsl8368); 
 
                     		newLeafNode(otherlv_1, grammarAccess.getQueryDefinitionMdslAccess().getEvaluatorQueryEvaluatorMdslCrossReference_0_1_0()); 
                     	
@@ -9508,17 +9525,17 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
             }
 
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3884:4: (otherlv_2= 'foreign model:' ( (otherlv_3= RULE_ID ) ) )?
-            int alt83=2;
-            int LA83_0 = input.LA(1);
+            int alt84=2;
+            int LA84_0 = input.LA(1);
 
-            if ( (LA83_0==96) ) {
-                alt83=1;
+            if ( (LA84_0==96) ) {
+                alt84=1;
             }
-            switch (alt83) {
+            switch (alt84) {
                 case 1 :
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3884:6: otherlv_2= 'foreign model:' ( (otherlv_3= RULE_ID ) )
                     {
-                    otherlv_2=(Token)match(input,96,FOLLOW_96_in_ruleQueryDefinitionMdsl8380); 
+                    otherlv_2=(Token)match(input,96,FOLLOW_96_in_ruleQueryDefinitionMdsl8383); 
 
                         	newLeafNode(otherlv_2, grammarAccess.getQueryDefinitionMdslAccess().getForeignModelKeyword_1_0());
                         
@@ -9533,7 +9550,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
                     	            current = createModelElement(grammarAccess.getQueryDefinitionMdslRule());
                     	        }
                             
-                    otherlv_3=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleQueryDefinitionMdsl8400); 
+                    otherlv_3=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleQueryDefinitionMdsl8403); 
 
                     		newLeafNode(otherlv_3, grammarAccess.getQueryDefinitionMdslAccess().getForeignModelForeignModelMdslCrossReference_1_1_0()); 
                     	
@@ -9550,17 +9567,17 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
             }
 
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3901:4: (otherlv_4= 'context locator:' ( (lv_contextLocator_5_0= RULE_STRING ) ) )?
-            int alt84=2;
-            int LA84_0 = input.LA(1);
+            int alt85=2;
+            int LA85_0 = input.LA(1);
 
-            if ( (LA84_0==97) ) {
-                alt84=1;
+            if ( (LA85_0==97) ) {
+                alt85=1;
             }
-            switch (alt84) {
+            switch (alt85) {
                 case 1 :
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3901:6: otherlv_4= 'context locator:' ( (lv_contextLocator_5_0= RULE_STRING ) )
                     {
-                    otherlv_4=(Token)match(input,97,FOLLOW_97_in_ruleQueryDefinitionMdsl8415); 
+                    otherlv_4=(Token)match(input,97,FOLLOW_97_in_ruleQueryDefinitionMdsl8418); 
 
                         	newLeafNode(otherlv_4, grammarAccess.getQueryDefinitionMdslAccess().getContextLocatorKeyword_2_0());
                         
@@ -9570,7 +9587,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3906:1: (lv_contextLocator_5_0= RULE_STRING )
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3907:3: lv_contextLocator_5_0= RULE_STRING
                     {
-                    lv_contextLocator_5_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleQueryDefinitionMdsl8432); 
+                    lv_contextLocator_5_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleQueryDefinitionMdsl8435); 
 
                     			newLeafNode(lv_contextLocator_5_0, grammarAccess.getQueryDefinitionMdslAccess().getContextLocatorSTRINGTerminalRuleCall_2_1_0()); 
                     		
@@ -9597,22 +9614,22 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
             }
 
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3923:4: ( ( (lv_query_6_0= ruleQueryBody ) ) | ( (lv_externalQueryCall_7_0= ruleExternalQueryCallMdsl ) ) )
-            int alt85=2;
-            int LA85_0 = input.LA(1);
+            int alt86=2;
+            int LA86_0 = input.LA(1);
 
-            if ( (LA85_0==RULE_STRING||LA85_0==104) ) {
-                alt85=1;
+            if ( (LA86_0==RULE_STRING||LA86_0==104) ) {
+                alt86=1;
             }
-            else if ( (LA85_0==100) ) {
-                alt85=2;
+            else if ( (LA86_0==100) ) {
+                alt86=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 85, 0, input);
+                    new NoViableAltException("", 86, 0, input);
 
                 throw nvae;
             }
-            switch (alt85) {
+            switch (alt86) {
                 case 1 :
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3923:5: ( (lv_query_6_0= ruleQueryBody ) )
                     {
@@ -9625,7 +9642,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
                      
                     	        newCompositeNode(grammarAccess.getQueryDefinitionMdslAccess().getQueryQueryBodyParserRuleCall_3_0_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleQueryBody_in_ruleQueryDefinitionMdsl8461);
+                    pushFollow(FOLLOW_ruleQueryBody_in_ruleQueryDefinitionMdsl8464);
                     lv_query_6_0=ruleQueryBody();
 
                     state._fsp--;
@@ -9662,7 +9679,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
                      
                     	        newCompositeNode(grammarAccess.getQueryDefinitionMdslAccess().getExternalQueryCallExternalQueryCallMdslParserRuleCall_3_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleExternalQueryCallMdsl_in_ruleQueryDefinitionMdsl8488);
+                    pushFollow(FOLLOW_ruleExternalQueryCallMdsl_in_ruleQueryDefinitionMdsl8491);
                     lv_externalQueryCall_7_0=ruleExternalQueryCallMdsl();
 
                     state._fsp--;
@@ -9691,17 +9708,17 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
             }
 
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3960:3: (otherlv_8= ':' ( (otherlv_9= RULE_ID ) ) )?
-            int alt86=2;
-            int LA86_0 = input.LA(1);
+            int alt87=2;
+            int LA87_0 = input.LA(1);
 
-            if ( (LA86_0==25) ) {
-                alt86=1;
+            if ( (LA87_0==25) ) {
+                alt87=1;
             }
-            switch (alt86) {
+            switch (alt87) {
                 case 1 :
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3960:5: otherlv_8= ':' ( (otherlv_9= RULE_ID ) )
                     {
-                    otherlv_8=(Token)match(input,25,FOLLOW_25_in_ruleQueryDefinitionMdsl8502); 
+                    otherlv_8=(Token)match(input,25,FOLLOW_25_in_ruleQueryDefinitionMdsl8505); 
 
                         	newLeafNode(otherlv_8, grammarAccess.getQueryDefinitionMdslAccess().getColonKeyword_4_0());
                         
@@ -9716,7 +9733,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
                     	            current = createModelElement(grammarAccess.getQueryDefinitionMdslRule());
                     	        }
                             
-                    otherlv_9=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleQueryDefinitionMdsl8522); 
+                    otherlv_9=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleQueryDefinitionMdsl8525); 
 
                     		newLeafNode(otherlv_9, grammarAccess.getQueryDefinitionMdslAccess().getReturnTypeEClassifierCrossReference_4_1_0()); 
                     	
@@ -9733,17 +9750,17 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
             }
 
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3977:4: (otherlv_10= 'properties:' ( (lv_properties_11_0= rulePropertyMdsl ) ) (otherlv_12= ',' ( (lv_properties_13_0= rulePropertyMdsl ) ) )* )?
-            int alt88=2;
-            int LA88_0 = input.LA(1);
+            int alt89=2;
+            int LA89_0 = input.LA(1);
 
-            if ( (LA88_0==98) ) {
-                alt88=1;
+            if ( (LA89_0==98) ) {
+                alt89=1;
             }
-            switch (alt88) {
+            switch (alt89) {
                 case 1 :
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3977:6: otherlv_10= 'properties:' ( (lv_properties_11_0= rulePropertyMdsl ) ) (otherlv_12= ',' ( (lv_properties_13_0= rulePropertyMdsl ) ) )*
                     {
-                    otherlv_10=(Token)match(input,98,FOLLOW_98_in_ruleQueryDefinitionMdsl8537); 
+                    otherlv_10=(Token)match(input,98,FOLLOW_98_in_ruleQueryDefinitionMdsl8540); 
 
                         	newLeafNode(otherlv_10, grammarAccess.getQueryDefinitionMdslAccess().getPropertiesKeyword_5_0());
                         
@@ -9756,7 +9773,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
                      
                     	        newCompositeNode(grammarAccess.getQueryDefinitionMdslAccess().getPropertiesPropertyMdslParserRuleCall_5_1_0()); 
                     	    
-                    pushFollow(FOLLOW_rulePropertyMdsl_in_ruleQueryDefinitionMdsl8558);
+                    pushFollow(FOLLOW_rulePropertyMdsl_in_ruleQueryDefinitionMdsl8561);
                     lv_properties_11_0=rulePropertyMdsl();
 
                     state._fsp--;
@@ -9779,19 +9796,19 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
                     }
 
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3999:2: (otherlv_12= ',' ( (lv_properties_13_0= rulePropertyMdsl ) ) )*
-                    loop87:
+                    loop88:
                     do {
-                        int alt87=2;
-                        int LA87_0 = input.LA(1);
+                        int alt88=2;
+                        int LA88_0 = input.LA(1);
 
-                        if ( (LA87_0==33) ) {
-                            int LA87_2 = input.LA(2);
+                        if ( (LA88_0==33) ) {
+                            int LA88_2 = input.LA(2);
 
-                            if ( (LA87_2==RULE_ID) ) {
-                                int LA87_3 = input.LA(3);
+                            if ( (LA88_2==RULE_ID) ) {
+                                int LA88_3 = input.LA(3);
 
-                                if ( (LA87_3==14) ) {
-                                    alt87=1;
+                                if ( (LA88_3==14) ) {
+                                    alt88=1;
                                 }
 
 
@@ -9801,11 +9818,11 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
                         }
 
 
-                        switch (alt87) {
+                        switch (alt88) {
                     	case 1 :
                     	    // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:3999:4: otherlv_12= ',' ( (lv_properties_13_0= rulePropertyMdsl ) )
                     	    {
-                    	    otherlv_12=(Token)match(input,33,FOLLOW_33_in_ruleQueryDefinitionMdsl8571); 
+                    	    otherlv_12=(Token)match(input,33,FOLLOW_33_in_ruleQueryDefinitionMdsl8574); 
 
                     	        	newLeafNode(otherlv_12, grammarAccess.getQueryDefinitionMdslAccess().getCommaKeyword_5_2_0());
                     	        
@@ -9818,7 +9835,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
                     	     
                     	    	        newCompositeNode(grammarAccess.getQueryDefinitionMdslAccess().getPropertiesPropertyMdslParserRuleCall_5_2_1_0()); 
                     	    	    
-                    	    pushFollow(FOLLOW_rulePropertyMdsl_in_ruleQueryDefinitionMdsl8592);
+                    	    pushFollow(FOLLOW_rulePropertyMdsl_in_ruleQueryDefinitionMdsl8595);
                     	    lv_properties_13_0=rulePropertyMdsl();
 
                     	    state._fsp--;
@@ -9845,7 +9862,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop87;
+                    	    break loop88;
                         }
                     } while (true);
 
@@ -9856,17 +9873,17 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
             }
 
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4021:6: (otherlv_14= 'Optimisation:' ( (lv_optimisationLevel_15_0= ruleQUERY_OPTIMISATION_LEVEL ) ) )?
-            int alt89=2;
-            int LA89_0 = input.LA(1);
+            int alt90=2;
+            int LA90_0 = input.LA(1);
 
-            if ( (LA89_0==99) ) {
-                alt89=1;
+            if ( (LA90_0==99) ) {
+                alt90=1;
             }
-            switch (alt89) {
+            switch (alt90) {
                 case 1 :
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4021:8: otherlv_14= 'Optimisation:' ( (lv_optimisationLevel_15_0= ruleQUERY_OPTIMISATION_LEVEL ) )
                     {
-                    otherlv_14=(Token)match(input,99,FOLLOW_99_in_ruleQueryDefinitionMdsl8609); 
+                    otherlv_14=(Token)match(input,99,FOLLOW_99_in_ruleQueryDefinitionMdsl8612); 
 
                         	newLeafNode(otherlv_14, grammarAccess.getQueryDefinitionMdslAccess().getOptimisationKeyword_6_0());
                         
@@ -9879,7 +9896,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
                      
                     	        newCompositeNode(grammarAccess.getQueryDefinitionMdslAccess().getOptimisationLevelQUERY_OPTIMISATION_LEVELEnumRuleCall_6_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleQUERY_OPTIMISATION_LEVEL_in_ruleQueryDefinitionMdsl8630);
+                    pushFollow(FOLLOW_ruleQUERY_OPTIMISATION_LEVEL_in_ruleQueryDefinitionMdsl8633);
                     lv_optimisationLevel_15_0=ruleQUERY_OPTIMISATION_LEVEL();
 
                     state._fsp--;
@@ -9940,13 +9957,13 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4053:2: iv_ruleQueryFragment= ruleQueryFragment EOF
             {
              newCompositeNode(grammarAccess.getQueryFragmentRule()); 
-            pushFollow(FOLLOW_ruleQueryFragment_in_entryRuleQueryFragment8668);
+            pushFollow(FOLLOW_ruleQueryFragment_in_entryRuleQueryFragment8671);
             iv_ruleQueryFragment=ruleQueryFragment();
 
             state._fsp--;
 
              current =iv_ruleQueryFragment; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleQueryFragment8678); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleQueryFragment8681); 
 
             }
 
@@ -9980,29 +9997,29 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4064:1: (this_LiteralQueryFragment_0= ruleLiteralQueryFragment | this_TextMacroRef_1= ruleTextMacroRef )
             {
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4064:1: (this_LiteralQueryFragment_0= ruleLiteralQueryFragment | this_TextMacroRef_1= ruleTextMacroRef )
-            int alt90=2;
-            int LA90_0 = input.LA(1);
+            int alt91=2;
+            int LA91_0 = input.LA(1);
 
-            if ( (LA90_0==RULE_STRING) ) {
-                alt90=1;
+            if ( (LA91_0==RULE_STRING) ) {
+                alt91=1;
             }
-            else if ( (LA90_0==104) ) {
-                alt90=2;
+            else if ( (LA91_0==104) ) {
+                alt91=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 90, 0, input);
+                    new NoViableAltException("", 91, 0, input);
 
                 throw nvae;
             }
-            switch (alt90) {
+            switch (alt91) {
                 case 1 :
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4065:5: this_LiteralQueryFragment_0= ruleLiteralQueryFragment
                     {
                      
                             newCompositeNode(grammarAccess.getQueryFragmentAccess().getLiteralQueryFragmentParserRuleCall_0()); 
                         
-                    pushFollow(FOLLOW_ruleLiteralQueryFragment_in_ruleQueryFragment8725);
+                    pushFollow(FOLLOW_ruleLiteralQueryFragment_in_ruleQueryFragment8728);
                     this_LiteralQueryFragment_0=ruleLiteralQueryFragment();
 
                     state._fsp--;
@@ -10020,7 +10037,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getQueryFragmentAccess().getTextMacroRefParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleTextMacroRef_in_ruleQueryFragment8752);
+                    pushFollow(FOLLOW_ruleTextMacroRef_in_ruleQueryFragment8755);
                     this_TextMacroRef_1=ruleTextMacroRef();
 
                     state._fsp--;
@@ -10065,13 +10082,13 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4093:2: iv_ruleLiteralQueryFragment= ruleLiteralQueryFragment EOF
             {
              newCompositeNode(grammarAccess.getLiteralQueryFragmentRule()); 
-            pushFollow(FOLLOW_ruleLiteralQueryFragment_in_entryRuleLiteralQueryFragment8787);
+            pushFollow(FOLLOW_ruleLiteralQueryFragment_in_entryRuleLiteralQueryFragment8790);
             iv_ruleLiteralQueryFragment=ruleLiteralQueryFragment();
 
             state._fsp--;
 
              current =iv_ruleLiteralQueryFragment; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleLiteralQueryFragment8797); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleLiteralQueryFragment8800); 
 
             }
 
@@ -10107,7 +10124,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4105:1: (lv_value_0_0= RULE_STRING )
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4106:3: lv_value_0_0= RULE_STRING
             {
-            lv_value_0_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleLiteralQueryFragment8838); 
+            lv_value_0_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleLiteralQueryFragment8841); 
 
             			newLeafNode(lv_value_0_0, grammarAccess.getLiteralQueryFragmentAccess().getValueSTRINGTerminalRuleCall_0()); 
             		
@@ -10157,13 +10174,13 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4132:2: iv_ruleQueryBody= ruleQueryBody EOF
             {
              newCompositeNode(grammarAccess.getQueryBodyRule()); 
-            pushFollow(FOLLOW_ruleQueryBody_in_entryRuleQueryBody8878);
+            pushFollow(FOLLOW_ruleQueryBody_in_entryRuleQueryBody8881);
             iv_ruleQueryBody=ruleQueryBody();
 
             state._fsp--;
 
              current =iv_ruleQueryBody; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleQueryBody8888); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleQueryBody8891); 
 
             }
 
@@ -10209,7 +10226,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getQueryBodyAccess().getFragmentsQueryFragmentParserRuleCall_0_0()); 
             	    
-            pushFollow(FOLLOW_ruleQueryFragment_in_ruleQueryBody8934);
+            pushFollow(FOLLOW_ruleQueryFragment_in_ruleQueryBody8937);
             lv_fragments_0_0=ruleQueryFragment();
 
             state._fsp--;
@@ -10232,21 +10249,21 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
             }
 
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4161:2: (otherlv_1= '+' ( (lv_fragments_2_0= ruleQueryFragment ) ) )*
-            loop91:
+            loop92:
             do {
-                int alt91=2;
-                int LA91_0 = input.LA(1);
+                int alt92=2;
+                int LA92_0 = input.LA(1);
 
-                if ( (LA91_0==15) ) {
-                    alt91=1;
+                if ( (LA92_0==15) ) {
+                    alt92=1;
                 }
 
 
-                switch (alt91) {
+                switch (alt92) {
             	case 1 :
             	    // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4161:4: otherlv_1= '+' ( (lv_fragments_2_0= ruleQueryFragment ) )
             	    {
-            	    otherlv_1=(Token)match(input,15,FOLLOW_15_in_ruleQueryBody8947); 
+            	    otherlv_1=(Token)match(input,15,FOLLOW_15_in_ruleQueryBody8950); 
 
             	        	newLeafNode(otherlv_1, grammarAccess.getQueryBodyAccess().getPlusSignKeyword_1_0());
             	        
@@ -10259,7 +10276,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
             	     
             	    	        newCompositeNode(grammarAccess.getQueryBodyAccess().getFragmentsQueryFragmentParserRuleCall_1_1_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleQueryFragment_in_ruleQueryBody8968);
+            	    pushFollow(FOLLOW_ruleQueryFragment_in_ruleQueryBody8971);
             	    lv_fragments_2_0=ruleQueryFragment();
 
             	    state._fsp--;
@@ -10286,7 +10303,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop91;
+            	    break loop92;
                 }
             } while (true);
 
@@ -10323,13 +10340,13 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4193:2: iv_ruleQueryRefMdsl= ruleQueryRefMdsl EOF
             {
              newCompositeNode(grammarAccess.getQueryRefMdslRule()); 
-            pushFollow(FOLLOW_ruleQueryRefMdsl_in_entryRuleQueryRefMdsl9006);
+            pushFollow(FOLLOW_ruleQueryRefMdsl_in_entryRuleQueryRefMdsl9009);
             iv_ruleQueryRefMdsl=ruleQueryRefMdsl();
 
             state._fsp--;
 
              current =iv_ruleQueryRefMdsl; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleQueryRefMdsl9016); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleQueryRefMdsl9019); 
 
             }
 
@@ -10370,7 +10387,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
             	            current = createModelElement(grammarAccess.getQueryRefMdslRule());
             	        }
                     
-            otherlv_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleQueryRefMdsl9060); 
+            otherlv_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleQueryRefMdsl9063); 
 
             		newLeafNode(otherlv_0, grammarAccess.getQueryRefMdslAccess().getReferencedQueryDeclarationCrossReference_0()); 
             	
@@ -10410,13 +10427,13 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4227:2: iv_ruleExternalQueryCallMdsl= ruleExternalQueryCallMdsl EOF
             {
              newCompositeNode(grammarAccess.getExternalQueryCallMdslRule()); 
-            pushFollow(FOLLOW_ruleExternalQueryCallMdsl_in_entryRuleExternalQueryCallMdsl9095);
+            pushFollow(FOLLOW_ruleExternalQueryCallMdsl_in_entryRuleExternalQueryCallMdsl9098);
             iv_ruleExternalQueryCallMdsl=ruleExternalQueryCallMdsl();
 
             state._fsp--;
 
              current =iv_ruleExternalQueryCallMdsl; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleExternalQueryCallMdsl9105); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleExternalQueryCallMdsl9108); 
 
             }
 
@@ -10451,7 +10468,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4238:1: (otherlv_0= 'call' ( (otherlv_1= RULE_ID ) ) otherlv_2= '()' )
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4238:3: otherlv_0= 'call' ( (otherlv_1= RULE_ID ) ) otherlv_2= '()'
             {
-            otherlv_0=(Token)match(input,100,FOLLOW_100_in_ruleExternalQueryCallMdsl9142); 
+            otherlv_0=(Token)match(input,100,FOLLOW_100_in_ruleExternalQueryCallMdsl9145); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getExternalQueryCallMdslAccess().getCallKeyword_0());
                 
@@ -10466,7 +10483,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
             	            current = createModelElement(grammarAccess.getExternalQueryCallMdslRule());
             	        }
                     
-            otherlv_1=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleExternalQueryCallMdsl9162); 
+            otherlv_1=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleExternalQueryCallMdsl9165); 
 
             		newLeafNode(otherlv_1, grammarAccess.getExternalQueryCallMdslAccess().getExternalQueryEObjectCrossReference_1_0()); 
             	
@@ -10476,7 +10493,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,101,FOLLOW_101_in_ruleExternalQueryCallMdsl9174); 
+            otherlv_2=(Token)match(input,101,FOLLOW_101_in_ruleExternalQueryCallMdsl9177); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getExternalQueryCallMdslAccess().getLeftParenthesisRightParenthesisKeyword_2());
                 
@@ -10513,13 +10530,13 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4269:2: iv_ruleQueryChain= ruleQueryChain EOF
             {
              newCompositeNode(grammarAccess.getQueryChainRule()); 
-            pushFollow(FOLLOW_ruleQueryChain_in_entryRuleQueryChain9210);
+            pushFollow(FOLLOW_ruleQueryChain_in_entryRuleQueryChain9213);
             iv_ruleQueryChain=ruleQueryChain();
 
             state._fsp--;
 
              current =iv_ruleQueryChain; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleQueryChain9220); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleQueryChain9223); 
 
             }
 
@@ -10559,27 +10576,27 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4280:1: (otherlv_0= 'Query Chain' otherlv_1= '{' ( (lv_queries_2_0= ruleQuery ) )+ (otherlv_3= ',' ( (lv_queries_4_0= ruleQuery ) ) )* otherlv_5= '}' )
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4280:3: otherlv_0= 'Query Chain' otherlv_1= '{' ( (lv_queries_2_0= ruleQuery ) )+ (otherlv_3= ',' ( (lv_queries_4_0= ruleQuery ) ) )* otherlv_5= '}'
             {
-            otherlv_0=(Token)match(input,102,FOLLOW_102_in_ruleQueryChain9257); 
+            otherlv_0=(Token)match(input,102,FOLLOW_102_in_ruleQueryChain9260); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getQueryChainAccess().getQueryChainKeyword_0());
                 
-            otherlv_1=(Token)match(input,22,FOLLOW_22_in_ruleQueryChain9269); 
+            otherlv_1=(Token)match(input,22,FOLLOW_22_in_ruleQueryChain9272); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getQueryChainAccess().getLeftCurlyBracketKeyword_1());
                 
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4288:1: ( (lv_queries_2_0= ruleQuery ) )+
-            int cnt92=0;
-            loop92:
+            int cnt93=0;
+            loop93:
             do {
-                int alt92=2;
-                int LA92_0 = input.LA(1);
+                int alt93=2;
+                int LA93_0 = input.LA(1);
 
-                if ( ((LA92_0>=RULE_STRING && LA92_0<=RULE_ID)||(LA92_0>=95 && LA92_0<=97)||LA92_0==100||LA92_0==104) ) {
-                    alt92=1;
+                if ( ((LA93_0>=RULE_STRING && LA93_0<=RULE_ID)||(LA93_0>=95 && LA93_0<=97)||LA93_0==100||LA93_0==104) ) {
+                    alt93=1;
                 }
 
 
-                switch (alt92) {
+                switch (alt93) {
             	case 1 :
             	    // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4289:1: (lv_queries_2_0= ruleQuery )
             	    {
@@ -10589,7 +10606,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
             	     
             	    	        newCompositeNode(grammarAccess.getQueryChainAccess().getQueriesQueryParserRuleCall_2_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleQuery_in_ruleQueryChain9290);
+            	    pushFollow(FOLLOW_ruleQuery_in_ruleQueryChain9293);
             	    lv_queries_2_0=ruleQuery();
 
             	    state._fsp--;
@@ -10613,30 +10630,30 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    if ( cnt92 >= 1 ) break loop92;
+            	    if ( cnt93 >= 1 ) break loop93;
                         EarlyExitException eee =
-                            new EarlyExitException(92, input);
+                            new EarlyExitException(93, input);
                         throw eee;
                 }
-                cnt92++;
+                cnt93++;
             } while (true);
 
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4306:3: (otherlv_3= ',' ( (lv_queries_4_0= ruleQuery ) ) )*
-            loop93:
+            loop94:
             do {
-                int alt93=2;
-                int LA93_0 = input.LA(1);
+                int alt94=2;
+                int LA94_0 = input.LA(1);
 
-                if ( (LA93_0==33) ) {
-                    alt93=1;
+                if ( (LA94_0==33) ) {
+                    alt94=1;
                 }
 
 
-                switch (alt93) {
+                switch (alt94) {
             	case 1 :
             	    // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4306:5: otherlv_3= ',' ( (lv_queries_4_0= ruleQuery ) )
             	    {
-            	    otherlv_3=(Token)match(input,33,FOLLOW_33_in_ruleQueryChain9304); 
+            	    otherlv_3=(Token)match(input,33,FOLLOW_33_in_ruleQueryChain9307); 
 
             	        	newLeafNode(otherlv_3, grammarAccess.getQueryChainAccess().getCommaKeyword_3_0());
             	        
@@ -10649,7 +10666,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
             	     
             	    	        newCompositeNode(grammarAccess.getQueryChainAccess().getQueriesQueryParserRuleCall_3_1_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleQuery_in_ruleQueryChain9325);
+            	    pushFollow(FOLLOW_ruleQuery_in_ruleQueryChain9328);
             	    lv_queries_4_0=ruleQuery();
 
             	    state._fsp--;
@@ -10676,11 +10693,11 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop93;
+            	    break loop94;
                 }
             } while (true);
 
-            otherlv_5=(Token)match(input,28,FOLLOW_28_in_ruleQueryChain9339); 
+            otherlv_5=(Token)match(input,28,FOLLOW_28_in_ruleQueryChain9342); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getQueryChainAccess().getRightCurlyBracketKeyword_4());
                 
@@ -10717,13 +10734,13 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4342:2: iv_ruleFormatExpr= ruleFormatExpr EOF
             {
              newCompositeNode(grammarAccess.getFormatExprRule()); 
-            pushFollow(FOLLOW_ruleFormatExpr_in_entryRuleFormatExpr9375);
+            pushFollow(FOLLOW_ruleFormatExpr_in_entryRuleFormatExpr9378);
             iv_ruleFormatExpr=ruleFormatExpr();
 
             state._fsp--;
 
              current =iv_ruleFormatExpr; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleFormatExpr9385); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleFormatExpr9388); 
 
             }
 
@@ -10769,7 +10786,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getFormatExprAccess().getFragmentsFormatExprFragmentParserRuleCall_0_0()); 
             	    
-            pushFollow(FOLLOW_ruleFormatExprFragment_in_ruleFormatExpr9431);
+            pushFollow(FOLLOW_ruleFormatExprFragment_in_ruleFormatExpr9434);
             lv_fragments_0_0=ruleFormatExprFragment();
 
             state._fsp--;
@@ -10792,21 +10809,21 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
             }
 
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4371:2: (otherlv_1= '+' ( (lv_fragments_2_0= ruleFormatExprFragment ) ) )*
-            loop94:
+            loop95:
             do {
-                int alt94=2;
-                int LA94_0 = input.LA(1);
+                int alt95=2;
+                int LA95_0 = input.LA(1);
 
-                if ( (LA94_0==15) ) {
-                    alt94=1;
+                if ( (LA95_0==15) ) {
+                    alt95=1;
                 }
 
 
-                switch (alt94) {
+                switch (alt95) {
             	case 1 :
             	    // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4371:4: otherlv_1= '+' ( (lv_fragments_2_0= ruleFormatExprFragment ) )
             	    {
-            	    otherlv_1=(Token)match(input,15,FOLLOW_15_in_ruleFormatExpr9444); 
+            	    otherlv_1=(Token)match(input,15,FOLLOW_15_in_ruleFormatExpr9447); 
 
             	        	newLeafNode(otherlv_1, grammarAccess.getFormatExprAccess().getPlusSignKeyword_1_0());
             	        
@@ -10819,7 +10836,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
             	     
             	    	        newCompositeNode(grammarAccess.getFormatExprAccess().getFragmentsFormatExprFragmentParserRuleCall_1_1_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleFormatExprFragment_in_ruleFormatExpr9465);
+            	    pushFollow(FOLLOW_ruleFormatExprFragment_in_ruleFormatExpr9468);
             	    lv_fragments_2_0=ruleFormatExprFragment();
 
             	    state._fsp--;
@@ -10846,7 +10863,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop94;
+            	    break loop95;
                 }
             } while (true);
 
@@ -10883,13 +10900,13 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4403:2: iv_ruleFormatExprFragment= ruleFormatExprFragment EOF
             {
              newCompositeNode(grammarAccess.getFormatExprFragmentRule()); 
-            pushFollow(FOLLOW_ruleFormatExprFragment_in_entryRuleFormatExprFragment9503);
+            pushFollow(FOLLOW_ruleFormatExprFragment_in_entryRuleFormatExprFragment9506);
             iv_ruleFormatExprFragment=ruleFormatExprFragment();
 
             state._fsp--;
 
              current =iv_ruleFormatExprFragment; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleFormatExprFragment9513); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleFormatExprFragment9516); 
 
             }
 
@@ -10923,29 +10940,29 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4414:1: (this_LiteralFormatExprFragment_0= ruleLiteralFormatExprFragment | this_TextMacroRef_1= ruleTextMacroRef )
             {
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4414:1: (this_LiteralFormatExprFragment_0= ruleLiteralFormatExprFragment | this_TextMacroRef_1= ruleTextMacroRef )
-            int alt95=2;
-            int LA95_0 = input.LA(1);
+            int alt96=2;
+            int LA96_0 = input.LA(1);
 
-            if ( (LA95_0==RULE_STRING) ) {
-                alt95=1;
+            if ( (LA96_0==RULE_STRING) ) {
+                alt96=1;
             }
-            else if ( (LA95_0==104) ) {
-                alt95=2;
+            else if ( (LA96_0==104) ) {
+                alt96=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 95, 0, input);
+                    new NoViableAltException("", 96, 0, input);
 
                 throw nvae;
             }
-            switch (alt95) {
+            switch (alt96) {
                 case 1 :
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4415:5: this_LiteralFormatExprFragment_0= ruleLiteralFormatExprFragment
                     {
                      
                             newCompositeNode(grammarAccess.getFormatExprFragmentAccess().getLiteralFormatExprFragmentParserRuleCall_0()); 
                         
-                    pushFollow(FOLLOW_ruleLiteralFormatExprFragment_in_ruleFormatExprFragment9560);
+                    pushFollow(FOLLOW_ruleLiteralFormatExprFragment_in_ruleFormatExprFragment9563);
                     this_LiteralFormatExprFragment_0=ruleLiteralFormatExprFragment();
 
                     state._fsp--;
@@ -10963,7 +10980,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
                      
                             newCompositeNode(grammarAccess.getFormatExprFragmentAccess().getTextMacroRefParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleTextMacroRef_in_ruleFormatExprFragment9587);
+                    pushFollow(FOLLOW_ruleTextMacroRef_in_ruleFormatExprFragment9590);
                     this_TextMacroRef_1=ruleTextMacroRef();
 
                     state._fsp--;
@@ -11008,13 +11025,13 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4443:2: iv_ruleLiteralFormatExprFragment= ruleLiteralFormatExprFragment EOF
             {
              newCompositeNode(grammarAccess.getLiteralFormatExprFragmentRule()); 
-            pushFollow(FOLLOW_ruleLiteralFormatExprFragment_in_entryRuleLiteralFormatExprFragment9622);
+            pushFollow(FOLLOW_ruleLiteralFormatExprFragment_in_entryRuleLiteralFormatExprFragment9625);
             iv_ruleLiteralFormatExprFragment=ruleLiteralFormatExprFragment();
 
             state._fsp--;
 
              current =iv_ruleLiteralFormatExprFragment; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleLiteralFormatExprFragment9632); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleLiteralFormatExprFragment9635); 
 
             }
 
@@ -11050,7 +11067,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4455:1: (lv_value_0_0= RULE_STRING )
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4456:3: lv_value_0_0= RULE_STRING
             {
-            lv_value_0_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleLiteralFormatExprFragment9673); 
+            lv_value_0_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleLiteralFormatExprFragment9676); 
 
             			newLeafNode(lv_value_0_0, grammarAccess.getLiteralFormatExprFragmentAccess().getValueSTRINGTerminalRuleCall_0()); 
             		
@@ -11100,13 +11117,13 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4482:2: iv_ruleTextMacro= ruleTextMacro EOF
             {
              newCompositeNode(grammarAccess.getTextMacroRule()); 
-            pushFollow(FOLLOW_ruleTextMacro_in_entryRuleTextMacro9713);
+            pushFollow(FOLLOW_ruleTextMacro_in_entryRuleTextMacro9716);
             iv_ruleTextMacro=ruleTextMacro();
 
             state._fsp--;
 
              current =iv_ruleTextMacro; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleTextMacro9723); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleTextMacro9726); 
 
             }
 
@@ -11148,7 +11165,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4493:1: (otherlv_0= 'Macro:' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'label:' ( (lv_label_4_0= RULE_STRING ) ) )? (otherlv_5= 'description:' ( (lv_description_6_0= RULE_STRING ) ) )? otherlv_7= 'value:' ( (lv_macroValue_8_0= RULE_STRING ) ) otherlv_9= '}' )
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4493:3: otherlv_0= 'Macro:' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' (otherlv_3= 'label:' ( (lv_label_4_0= RULE_STRING ) ) )? (otherlv_5= 'description:' ( (lv_description_6_0= RULE_STRING ) ) )? otherlv_7= 'value:' ( (lv_macroValue_8_0= RULE_STRING ) ) otherlv_9= '}'
             {
-            otherlv_0=(Token)match(input,103,FOLLOW_103_in_ruleTextMacro9760); 
+            otherlv_0=(Token)match(input,103,FOLLOW_103_in_ruleTextMacro9763); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getTextMacroAccess().getMacroKeyword_0());
                 
@@ -11158,7 +11175,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4498:1: (lv_name_1_0= RULE_ID )
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4499:3: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleTextMacro9777); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleTextMacro9780); 
 
             			newLeafNode(lv_name_1_0, grammarAccess.getTextMacroAccess().getNameIDTerminalRuleCall_1_0()); 
             		
@@ -11178,22 +11195,22 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,22,FOLLOW_22_in_ruleTextMacro9794); 
+            otherlv_2=(Token)match(input,22,FOLLOW_22_in_ruleTextMacro9797); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getTextMacroAccess().getLeftCurlyBracketKeyword_2());
                 
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4519:1: (otherlv_3= 'label:' ( (lv_label_4_0= RULE_STRING ) ) )?
-            int alt96=2;
-            int LA96_0 = input.LA(1);
+            int alt97=2;
+            int LA97_0 = input.LA(1);
 
-            if ( (LA96_0==13) ) {
-                alt96=1;
+            if ( (LA97_0==13) ) {
+                alt97=1;
             }
-            switch (alt96) {
+            switch (alt97) {
                 case 1 :
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4519:3: otherlv_3= 'label:' ( (lv_label_4_0= RULE_STRING ) )
                     {
-                    otherlv_3=(Token)match(input,13,FOLLOW_13_in_ruleTextMacro9807); 
+                    otherlv_3=(Token)match(input,13,FOLLOW_13_in_ruleTextMacro9810); 
 
                         	newLeafNode(otherlv_3, grammarAccess.getTextMacroAccess().getLabelKeyword_3_0());
                         
@@ -11203,7 +11220,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4524:1: (lv_label_4_0= RULE_STRING )
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4525:3: lv_label_4_0= RULE_STRING
                     {
-                    lv_label_4_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleTextMacro9824); 
+                    lv_label_4_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleTextMacro9827); 
 
                     			newLeafNode(lv_label_4_0, grammarAccess.getTextMacroAccess().getLabelSTRINGTerminalRuleCall_3_1_0()); 
                     		
@@ -11230,17 +11247,17 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
             }
 
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4541:4: (otherlv_5= 'description:' ( (lv_description_6_0= RULE_STRING ) ) )?
-            int alt97=2;
-            int LA97_0 = input.LA(1);
+            int alt98=2;
+            int LA98_0 = input.LA(1);
 
-            if ( (LA97_0==17) ) {
-                alt97=1;
+            if ( (LA98_0==17) ) {
+                alt98=1;
             }
-            switch (alt97) {
+            switch (alt98) {
                 case 1 :
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4541:6: otherlv_5= 'description:' ( (lv_description_6_0= RULE_STRING ) )
                     {
-                    otherlv_5=(Token)match(input,17,FOLLOW_17_in_ruleTextMacro9844); 
+                    otherlv_5=(Token)match(input,17,FOLLOW_17_in_ruleTextMacro9847); 
 
                         	newLeafNode(otherlv_5, grammarAccess.getTextMacroAccess().getDescriptionKeyword_4_0());
                         
@@ -11250,7 +11267,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4546:1: (lv_description_6_0= RULE_STRING )
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4547:3: lv_description_6_0= RULE_STRING
                     {
-                    lv_description_6_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleTextMacro9861); 
+                    lv_description_6_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleTextMacro9864); 
 
                     			newLeafNode(lv_description_6_0, grammarAccess.getTextMacroAccess().getDescriptionSTRINGTerminalRuleCall_4_1_0()); 
                     		
@@ -11276,7 +11293,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_7=(Token)match(input,65,FOLLOW_65_in_ruleTextMacro9880); 
+            otherlv_7=(Token)match(input,65,FOLLOW_65_in_ruleTextMacro9883); 
 
                 	newLeafNode(otherlv_7, grammarAccess.getTextMacroAccess().getValueKeyword_5());
                 
@@ -11286,7 +11303,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4568:1: (lv_macroValue_8_0= RULE_STRING )
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4569:3: lv_macroValue_8_0= RULE_STRING
             {
-            lv_macroValue_8_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleTextMacro9897); 
+            lv_macroValue_8_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleTextMacro9900); 
 
             			newLeafNode(lv_macroValue_8_0, grammarAccess.getTextMacroAccess().getMacroValueSTRINGTerminalRuleCall_6_0()); 
             		
@@ -11306,7 +11323,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_9=(Token)match(input,28,FOLLOW_28_in_ruleTextMacro9914); 
+            otherlv_9=(Token)match(input,28,FOLLOW_28_in_ruleTextMacro9917); 
 
                 	newLeafNode(otherlv_9, grammarAccess.getTextMacroAccess().getRightCurlyBracketKeyword_7());
                 
@@ -11343,13 +11360,13 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4599:2: iv_ruleTextMacroRef= ruleTextMacroRef EOF
             {
              newCompositeNode(grammarAccess.getTextMacroRefRule()); 
-            pushFollow(FOLLOW_ruleTextMacroRef_in_entryRuleTextMacroRef9950);
+            pushFollow(FOLLOW_ruleTextMacroRef_in_entryRuleTextMacroRef9953);
             iv_ruleTextMacroRef=ruleTextMacroRef();
 
             state._fsp--;
 
              current =iv_ruleTextMacroRef; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleTextMacroRef9960); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleTextMacroRef9963); 
 
             }
 
@@ -11383,7 +11400,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4610:1: (otherlv_0= '#' ( (otherlv_1= RULE_ID ) ) )
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4610:3: otherlv_0= '#' ( (otherlv_1= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,104,FOLLOW_104_in_ruleTextMacroRef9997); 
+            otherlv_0=(Token)match(input,104,FOLLOW_104_in_ruleTextMacroRef10000); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getTextMacroRefAccess().getNumberSignKeyword_0());
                 
@@ -11398,7 +11415,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
             	            current = createModelElement(grammarAccess.getTextMacroRefRule());
             	        }
                     
-            otherlv_1=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleTextMacroRef10017); 
+            otherlv_1=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleTextMacroRef10020); 
 
             		newLeafNode(otherlv_1, grammarAccess.getTextMacroRefAccess().getReferencedTextMacroCrossReference_1_0()); 
             	
@@ -11446,53 +11463,53 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4638:1: ( (enumLiteral_0= 'DATE' ) | (enumLiteral_1= 'DATETIME' ) | (enumLiteral_2= 'INTEGER' ) | (enumLiteral_3= 'FLOAT' ) | (enumLiteral_4= 'DOUBLE' ) | (enumLiteral_5= 'XTEXT' ) )
             {
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4638:1: ( (enumLiteral_0= 'DATE' ) | (enumLiteral_1= 'DATETIME' ) | (enumLiteral_2= 'INTEGER' ) | (enumLiteral_3= 'FLOAT' ) | (enumLiteral_4= 'DOUBLE' ) | (enumLiteral_5= 'XTEXT' ) )
-            int alt98=6;
+            int alt99=6;
             switch ( input.LA(1) ) {
             case 105:
                 {
-                alt98=1;
+                alt99=1;
                 }
                 break;
             case 106:
                 {
-                alt98=2;
+                alt99=2;
                 }
                 break;
             case 107:
                 {
-                alt98=3;
+                alt99=3;
                 }
                 break;
             case 108:
                 {
-                alt98=4;
+                alt99=4;
                 }
                 break;
             case 109:
                 {
-                alt98=5;
+                alt99=5;
                 }
                 break;
             case 110:
                 {
-                alt98=6;
+                alt99=6;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 98, 0, input);
+                    new NoViableAltException("", 99, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt98) {
+            switch (alt99) {
                 case 1 :
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4638:2: (enumLiteral_0= 'DATE' )
                     {
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4638:2: (enumLiteral_0= 'DATE' )
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4638:4: enumLiteral_0= 'DATE'
                     {
-                    enumLiteral_0=(Token)match(input,105,FOLLOW_105_in_ruleVALUE_CONVERTER_CATEGORY_MDSL10067); 
+                    enumLiteral_0=(Token)match(input,105,FOLLOW_105_in_ruleVALUE_CONVERTER_CATEGORY_MDSL10070); 
 
                             current = grammarAccess.getVALUE_CONVERTER_CATEGORY_MDSLAccess().getDATEEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_0, grammarAccess.getVALUE_CONVERTER_CATEGORY_MDSLAccess().getDATEEnumLiteralDeclaration_0()); 
@@ -11509,7 +11526,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4644:6: (enumLiteral_1= 'DATETIME' )
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4644:8: enumLiteral_1= 'DATETIME'
                     {
-                    enumLiteral_1=(Token)match(input,106,FOLLOW_106_in_ruleVALUE_CONVERTER_CATEGORY_MDSL10084); 
+                    enumLiteral_1=(Token)match(input,106,FOLLOW_106_in_ruleVALUE_CONVERTER_CATEGORY_MDSL10087); 
 
                             current = grammarAccess.getVALUE_CONVERTER_CATEGORY_MDSLAccess().getDATETIMEEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_1, grammarAccess.getVALUE_CONVERTER_CATEGORY_MDSLAccess().getDATETIMEEnumLiteralDeclaration_1()); 
@@ -11526,7 +11543,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4650:6: (enumLiteral_2= 'INTEGER' )
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4650:8: enumLiteral_2= 'INTEGER'
                     {
-                    enumLiteral_2=(Token)match(input,107,FOLLOW_107_in_ruleVALUE_CONVERTER_CATEGORY_MDSL10101); 
+                    enumLiteral_2=(Token)match(input,107,FOLLOW_107_in_ruleVALUE_CONVERTER_CATEGORY_MDSL10104); 
 
                             current = grammarAccess.getVALUE_CONVERTER_CATEGORY_MDSLAccess().getINTEGEREnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_2, grammarAccess.getVALUE_CONVERTER_CATEGORY_MDSLAccess().getINTEGEREnumLiteralDeclaration_2()); 
@@ -11543,7 +11560,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4656:6: (enumLiteral_3= 'FLOAT' )
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4656:8: enumLiteral_3= 'FLOAT'
                     {
-                    enumLiteral_3=(Token)match(input,108,FOLLOW_108_in_ruleVALUE_CONVERTER_CATEGORY_MDSL10118); 
+                    enumLiteral_3=(Token)match(input,108,FOLLOW_108_in_ruleVALUE_CONVERTER_CATEGORY_MDSL10121); 
 
                             current = grammarAccess.getVALUE_CONVERTER_CATEGORY_MDSLAccess().getFLOATEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_3, grammarAccess.getVALUE_CONVERTER_CATEGORY_MDSLAccess().getFLOATEnumLiteralDeclaration_3()); 
@@ -11560,7 +11577,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4662:6: (enumLiteral_4= 'DOUBLE' )
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4662:8: enumLiteral_4= 'DOUBLE'
                     {
-                    enumLiteral_4=(Token)match(input,109,FOLLOW_109_in_ruleVALUE_CONVERTER_CATEGORY_MDSL10135); 
+                    enumLiteral_4=(Token)match(input,109,FOLLOW_109_in_ruleVALUE_CONVERTER_CATEGORY_MDSL10138); 
 
                             current = grammarAccess.getVALUE_CONVERTER_CATEGORY_MDSLAccess().getDOUBLEEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_4, grammarAccess.getVALUE_CONVERTER_CATEGORY_MDSLAccess().getDOUBLEEnumLiteralDeclaration_4()); 
@@ -11577,7 +11594,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4668:6: (enumLiteral_5= 'XTEXT' )
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4668:8: enumLiteral_5= 'XTEXT'
                     {
-                    enumLiteral_5=(Token)match(input,110,FOLLOW_110_in_ruleVALUE_CONVERTER_CATEGORY_MDSL10152); 
+                    enumLiteral_5=(Token)match(input,110,FOLLOW_110_in_ruleVALUE_CONVERTER_CATEGORY_MDSL10155); 
 
                             current = grammarAccess.getVALUE_CONVERTER_CATEGORY_MDSLAccess().getXTEXTEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_5, grammarAccess.getVALUE_CONVERTER_CATEGORY_MDSLAccess().getXTEXTEnumLiteralDeclaration_5()); 
@@ -11631,78 +11648,78 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4681:1: ( (enumLiteral_0= 'OUTPUTTEXT_WIDGET' ) | (enumLiteral_1= 'NAVIGATION_WIDGET' ) | (enumLiteral_2= 'TEXT_WIDGET' ) | (enumLiteral_3= 'BOOL_WIDGET' ) | (enumLiteral_4= 'DATE_WIDGET' ) | (enumLiteral_5= 'NUMBER_WIDGET' ) | (enumLiteral_6= 'SINGLE_SELECT_WIDGET' ) | (enumLiteral_7= 'MULTI_SELECT_WIDGET' ) | (enumLiteral_8= 'XTEXT_EDITOR' ) | (enumLiteral_9= 'XTEXT_TEXT_EDITOR' ) | (enumLiteral_10= 'FLEXIBLE_WIDGET' ) )
             {
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4681:1: ( (enumLiteral_0= 'OUTPUTTEXT_WIDGET' ) | (enumLiteral_1= 'NAVIGATION_WIDGET' ) | (enumLiteral_2= 'TEXT_WIDGET' ) | (enumLiteral_3= 'BOOL_WIDGET' ) | (enumLiteral_4= 'DATE_WIDGET' ) | (enumLiteral_5= 'NUMBER_WIDGET' ) | (enumLiteral_6= 'SINGLE_SELECT_WIDGET' ) | (enumLiteral_7= 'MULTI_SELECT_WIDGET' ) | (enumLiteral_8= 'XTEXT_EDITOR' ) | (enumLiteral_9= 'XTEXT_TEXT_EDITOR' ) | (enumLiteral_10= 'FLEXIBLE_WIDGET' ) )
-            int alt99=11;
+            int alt100=11;
             switch ( input.LA(1) ) {
             case 111:
                 {
-                alt99=1;
+                alt100=1;
                 }
                 break;
             case 112:
                 {
-                alt99=2;
+                alt100=2;
                 }
                 break;
             case 113:
                 {
-                alt99=3;
+                alt100=3;
                 }
                 break;
             case 114:
                 {
-                alt99=4;
+                alt100=4;
                 }
                 break;
             case 115:
                 {
-                alt99=5;
+                alt100=5;
                 }
                 break;
             case 116:
                 {
-                alt99=6;
+                alt100=6;
                 }
                 break;
             case 117:
                 {
-                alt99=7;
+                alt100=7;
                 }
                 break;
             case 118:
                 {
-                alt99=8;
+                alt100=8;
                 }
                 break;
             case 119:
                 {
-                alt99=9;
+                alt100=9;
                 }
                 break;
             case 120:
                 {
-                alt99=10;
+                alt100=10;
                 }
                 break;
             case 121:
                 {
-                alt99=11;
+                alt100=11;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 99, 0, input);
+                    new NoViableAltException("", 100, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt99) {
+            switch (alt100) {
                 case 1 :
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4681:2: (enumLiteral_0= 'OUTPUTTEXT_WIDGET' )
                     {
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4681:2: (enumLiteral_0= 'OUTPUTTEXT_WIDGET' )
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4681:4: enumLiteral_0= 'OUTPUTTEXT_WIDGET'
                     {
-                    enumLiteral_0=(Token)match(input,111,FOLLOW_111_in_ruleWIDGET_CATEGORY_MDSL10197); 
+                    enumLiteral_0=(Token)match(input,111,FOLLOW_111_in_ruleWIDGET_CATEGORY_MDSL10200); 
 
                             current = grammarAccess.getWIDGET_CATEGORY_MDSLAccess().getOUTPUTTEXT_WIDGETEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_0, grammarAccess.getWIDGET_CATEGORY_MDSLAccess().getOUTPUTTEXT_WIDGETEnumLiteralDeclaration_0()); 
@@ -11719,7 +11736,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4687:6: (enumLiteral_1= 'NAVIGATION_WIDGET' )
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4687:8: enumLiteral_1= 'NAVIGATION_WIDGET'
                     {
-                    enumLiteral_1=(Token)match(input,112,FOLLOW_112_in_ruleWIDGET_CATEGORY_MDSL10214); 
+                    enumLiteral_1=(Token)match(input,112,FOLLOW_112_in_ruleWIDGET_CATEGORY_MDSL10217); 
 
                             current = grammarAccess.getWIDGET_CATEGORY_MDSLAccess().getNAVIGATION_WIDGETEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_1, grammarAccess.getWIDGET_CATEGORY_MDSLAccess().getNAVIGATION_WIDGETEnumLiteralDeclaration_1()); 
@@ -11736,7 +11753,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4693:6: (enumLiteral_2= 'TEXT_WIDGET' )
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4693:8: enumLiteral_2= 'TEXT_WIDGET'
                     {
-                    enumLiteral_2=(Token)match(input,113,FOLLOW_113_in_ruleWIDGET_CATEGORY_MDSL10231); 
+                    enumLiteral_2=(Token)match(input,113,FOLLOW_113_in_ruleWIDGET_CATEGORY_MDSL10234); 
 
                             current = grammarAccess.getWIDGET_CATEGORY_MDSLAccess().getTEXT_WIDGETEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_2, grammarAccess.getWIDGET_CATEGORY_MDSLAccess().getTEXT_WIDGETEnumLiteralDeclaration_2()); 
@@ -11753,7 +11770,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4699:6: (enumLiteral_3= 'BOOL_WIDGET' )
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4699:8: enumLiteral_3= 'BOOL_WIDGET'
                     {
-                    enumLiteral_3=(Token)match(input,114,FOLLOW_114_in_ruleWIDGET_CATEGORY_MDSL10248); 
+                    enumLiteral_3=(Token)match(input,114,FOLLOW_114_in_ruleWIDGET_CATEGORY_MDSL10251); 
 
                             current = grammarAccess.getWIDGET_CATEGORY_MDSLAccess().getBOOL_WIDGETEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_3, grammarAccess.getWIDGET_CATEGORY_MDSLAccess().getBOOL_WIDGETEnumLiteralDeclaration_3()); 
@@ -11770,7 +11787,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4705:6: (enumLiteral_4= 'DATE_WIDGET' )
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4705:8: enumLiteral_4= 'DATE_WIDGET'
                     {
-                    enumLiteral_4=(Token)match(input,115,FOLLOW_115_in_ruleWIDGET_CATEGORY_MDSL10265); 
+                    enumLiteral_4=(Token)match(input,115,FOLLOW_115_in_ruleWIDGET_CATEGORY_MDSL10268); 
 
                             current = grammarAccess.getWIDGET_CATEGORY_MDSLAccess().getDATE_WIDGETEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_4, grammarAccess.getWIDGET_CATEGORY_MDSLAccess().getDATE_WIDGETEnumLiteralDeclaration_4()); 
@@ -11787,7 +11804,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4711:6: (enumLiteral_5= 'NUMBER_WIDGET' )
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4711:8: enumLiteral_5= 'NUMBER_WIDGET'
                     {
-                    enumLiteral_5=(Token)match(input,116,FOLLOW_116_in_ruleWIDGET_CATEGORY_MDSL10282); 
+                    enumLiteral_5=(Token)match(input,116,FOLLOW_116_in_ruleWIDGET_CATEGORY_MDSL10285); 
 
                             current = grammarAccess.getWIDGET_CATEGORY_MDSLAccess().getNUMBER_WIDGETEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_5, grammarAccess.getWIDGET_CATEGORY_MDSLAccess().getNUMBER_WIDGETEnumLiteralDeclaration_5()); 
@@ -11804,7 +11821,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4717:6: (enumLiteral_6= 'SINGLE_SELECT_WIDGET' )
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4717:8: enumLiteral_6= 'SINGLE_SELECT_WIDGET'
                     {
-                    enumLiteral_6=(Token)match(input,117,FOLLOW_117_in_ruleWIDGET_CATEGORY_MDSL10299); 
+                    enumLiteral_6=(Token)match(input,117,FOLLOW_117_in_ruleWIDGET_CATEGORY_MDSL10302); 
 
                             current = grammarAccess.getWIDGET_CATEGORY_MDSLAccess().getSINGLE_SELECT_WIDGETEnumLiteralDeclaration_6().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_6, grammarAccess.getWIDGET_CATEGORY_MDSLAccess().getSINGLE_SELECT_WIDGETEnumLiteralDeclaration_6()); 
@@ -11821,7 +11838,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4723:6: (enumLiteral_7= 'MULTI_SELECT_WIDGET' )
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4723:8: enumLiteral_7= 'MULTI_SELECT_WIDGET'
                     {
-                    enumLiteral_7=(Token)match(input,118,FOLLOW_118_in_ruleWIDGET_CATEGORY_MDSL10316); 
+                    enumLiteral_7=(Token)match(input,118,FOLLOW_118_in_ruleWIDGET_CATEGORY_MDSL10319); 
 
                             current = grammarAccess.getWIDGET_CATEGORY_MDSLAccess().getMULTI_SELECT_WIDGETEnumLiteralDeclaration_7().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_7, grammarAccess.getWIDGET_CATEGORY_MDSLAccess().getMULTI_SELECT_WIDGETEnumLiteralDeclaration_7()); 
@@ -11838,7 +11855,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4729:6: (enumLiteral_8= 'XTEXT_EDITOR' )
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4729:8: enumLiteral_8= 'XTEXT_EDITOR'
                     {
-                    enumLiteral_8=(Token)match(input,119,FOLLOW_119_in_ruleWIDGET_CATEGORY_MDSL10333); 
+                    enumLiteral_8=(Token)match(input,119,FOLLOW_119_in_ruleWIDGET_CATEGORY_MDSL10336); 
 
                             current = grammarAccess.getWIDGET_CATEGORY_MDSLAccess().getXTEXT_EDITOREnumLiteralDeclaration_8().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_8, grammarAccess.getWIDGET_CATEGORY_MDSLAccess().getXTEXT_EDITOREnumLiteralDeclaration_8()); 
@@ -11855,7 +11872,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4735:6: (enumLiteral_9= 'XTEXT_TEXT_EDITOR' )
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4735:8: enumLiteral_9= 'XTEXT_TEXT_EDITOR'
                     {
-                    enumLiteral_9=(Token)match(input,120,FOLLOW_120_in_ruleWIDGET_CATEGORY_MDSL10350); 
+                    enumLiteral_9=(Token)match(input,120,FOLLOW_120_in_ruleWIDGET_CATEGORY_MDSL10353); 
 
                             current = grammarAccess.getWIDGET_CATEGORY_MDSLAccess().getXTEXT_TEXT_EDITOREnumLiteralDeclaration_9().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_9, grammarAccess.getWIDGET_CATEGORY_MDSLAccess().getXTEXT_TEXT_EDITOREnumLiteralDeclaration_9()); 
@@ -11872,7 +11889,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4741:6: (enumLiteral_10= 'FLEXIBLE_WIDGET' )
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4741:8: enumLiteral_10= 'FLEXIBLE_WIDGET'
                     {
-                    enumLiteral_10=(Token)match(input,121,FOLLOW_121_in_ruleWIDGET_CATEGORY_MDSL10367); 
+                    enumLiteral_10=(Token)match(input,121,FOLLOW_121_in_ruleWIDGET_CATEGORY_MDSL10370); 
 
                             current = grammarAccess.getWIDGET_CATEGORY_MDSLAccess().getFLEXIBLE_WIDGETEnumLiteralDeclaration_10().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_10, grammarAccess.getWIDGET_CATEGORY_MDSLAccess().getFLEXIBLE_WIDGETEnumLiteralDeclaration_10()); 
@@ -11918,38 +11935,38 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4754:1: ( (enumLiteral_0= 'UPDATE_COMMAND' ) | (enumLiteral_1= 'GLOBAL_COMMAND' ) | (enumLiteral_2= 'ITEM_COMMAND' ) )
             {
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4754:1: ( (enumLiteral_0= 'UPDATE_COMMAND' ) | (enumLiteral_1= 'GLOBAL_COMMAND' ) | (enumLiteral_2= 'ITEM_COMMAND' ) )
-            int alt100=3;
+            int alt101=3;
             switch ( input.LA(1) ) {
             case 122:
                 {
-                alt100=1;
+                alt101=1;
                 }
                 break;
             case 123:
                 {
-                alt100=2;
+                alt101=2;
                 }
                 break;
             case 124:
                 {
-                alt100=3;
+                alt101=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 100, 0, input);
+                    new NoViableAltException("", 101, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt100) {
+            switch (alt101) {
                 case 1 :
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4754:2: (enumLiteral_0= 'UPDATE_COMMAND' )
                     {
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4754:2: (enumLiteral_0= 'UPDATE_COMMAND' )
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4754:4: enumLiteral_0= 'UPDATE_COMMAND'
                     {
-                    enumLiteral_0=(Token)match(input,122,FOLLOW_122_in_ruleCOMMAND_CATEGORY_MDSL10412); 
+                    enumLiteral_0=(Token)match(input,122,FOLLOW_122_in_ruleCOMMAND_CATEGORY_MDSL10415); 
 
                             current = grammarAccess.getCOMMAND_CATEGORY_MDSLAccess().getUPDATE_COMMANDEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_0, grammarAccess.getCOMMAND_CATEGORY_MDSLAccess().getUPDATE_COMMANDEnumLiteralDeclaration_0()); 
@@ -11966,7 +11983,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4760:6: (enumLiteral_1= 'GLOBAL_COMMAND' )
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4760:8: enumLiteral_1= 'GLOBAL_COMMAND'
                     {
-                    enumLiteral_1=(Token)match(input,123,FOLLOW_123_in_ruleCOMMAND_CATEGORY_MDSL10429); 
+                    enumLiteral_1=(Token)match(input,123,FOLLOW_123_in_ruleCOMMAND_CATEGORY_MDSL10432); 
 
                             current = grammarAccess.getCOMMAND_CATEGORY_MDSLAccess().getGLOBAL_COMMANDEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_1, grammarAccess.getCOMMAND_CATEGORY_MDSLAccess().getGLOBAL_COMMANDEnumLiteralDeclaration_1()); 
@@ -11983,7 +12000,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4766:6: (enumLiteral_2= 'ITEM_COMMAND' )
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4766:8: enumLiteral_2= 'ITEM_COMMAND'
                     {
-                    enumLiteral_2=(Token)match(input,124,FOLLOW_124_in_ruleCOMMAND_CATEGORY_MDSL10446); 
+                    enumLiteral_2=(Token)match(input,124,FOLLOW_124_in_ruleCOMMAND_CATEGORY_MDSL10449); 
 
                             current = grammarAccess.getCOMMAND_CATEGORY_MDSLAccess().getITEM_COMMANDEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_2, grammarAccess.getCOMMAND_CATEGORY_MDSLAccess().getITEM_COMMANDEnumLiteralDeclaration_2()); 
@@ -12029,38 +12046,38 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4779:1: ( (enumLiteral_0= 'NONE' ) | (enumLiteral_1= 'VIEW' ) | (enumLiteral_2= 'CONTEXT' ) )
             {
             // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4779:1: ( (enumLiteral_0= 'NONE' ) | (enumLiteral_1= 'VIEW' ) | (enumLiteral_2= 'CONTEXT' ) )
-            int alt101=3;
+            int alt102=3;
             switch ( input.LA(1) ) {
             case 125:
                 {
-                alt101=1;
+                alt102=1;
                 }
                 break;
             case 126:
                 {
-                alt101=2;
+                alt102=2;
                 }
                 break;
             case 127:
                 {
-                alt101=3;
+                alt102=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 101, 0, input);
+                    new NoViableAltException("", 102, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt101) {
+            switch (alt102) {
                 case 1 :
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4779:2: (enumLiteral_0= 'NONE' )
                     {
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4779:2: (enumLiteral_0= 'NONE' )
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4779:4: enumLiteral_0= 'NONE'
                     {
-                    enumLiteral_0=(Token)match(input,125,FOLLOW_125_in_ruleQUERY_OPTIMISATION_LEVEL10491); 
+                    enumLiteral_0=(Token)match(input,125,FOLLOW_125_in_ruleQUERY_OPTIMISATION_LEVEL10494); 
 
                             current = grammarAccess.getQUERY_OPTIMISATION_LEVELAccess().getNONEEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_0, grammarAccess.getQUERY_OPTIMISATION_LEVELAccess().getNONEEnumLiteralDeclaration_0()); 
@@ -12077,7 +12094,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4785:6: (enumLiteral_1= 'VIEW' )
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4785:8: enumLiteral_1= 'VIEW'
                     {
-                    enumLiteral_1=(Token)match(input,126,FOLLOW_126_in_ruleQUERY_OPTIMISATION_LEVEL10508); 
+                    enumLiteral_1=(Token)match(input,126,FOLLOW_126_in_ruleQUERY_OPTIMISATION_LEVEL10511); 
 
                             current = grammarAccess.getQUERY_OPTIMISATION_LEVELAccess().getVIEWEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_1, grammarAccess.getQUERY_OPTIMISATION_LEVELAccess().getVIEWEnumLiteralDeclaration_1()); 
@@ -12094,7 +12111,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4791:6: (enumLiteral_2= 'CONTEXT' )
                     // ../com.sysord.mad.configDsl/src-gen/com/sysord/mad/configuration/parser/antlr/internal/InternalMadConfigDsl.g:4791:8: enumLiteral_2= 'CONTEXT'
                     {
-                    enumLiteral_2=(Token)match(input,127,FOLLOW_127_in_ruleQUERY_OPTIMISATION_LEVEL10525); 
+                    enumLiteral_2=(Token)match(input,127,FOLLOW_127_in_ruleQUERY_OPTIMISATION_LEVEL10528); 
 
                             current = grammarAccess.getQUERY_OPTIMISATION_LEVELAccess().getCONTEXTEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_2, grammarAccess.getQUERY_OPTIMISATION_LEVELAccess().getCONTEXTEnumLiteralDeclaration_2()); 
@@ -12432,158 +12449,158 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_28_in_ruleCommandDeclaration6856 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleCommandDefinitionMdsl_in_entryRuleCommandDefinitionMdsl6892 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleCommandDefinitionMdsl6902 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleCOMMAND_CATEGORY_MDSL_in_ruleCommandDefinitionMdsl6948 = new BitSet(new long[]{0x0010000000000010L,0x0000010000000000L});
-    public static final BitSet FOLLOW_52_in_ruleCommandDefinitionMdsl6966 = new BitSet(new long[]{0x0000000000000010L,0x0000010000000000L});
-    public static final BitSet FOLLOW_ruleFormatExpr_in_ruleCommandDefinitionMdsl7001 = new BitSet(new long[]{0x0000000000000000L,0x0000000000300000L});
-    public static final BitSet FOLLOW_84_in_ruleCommandDefinitionMdsl7014 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleCommandDefinitionMdsl7034 = new BitSet(new long[]{0x0000000000000000L,0x0000000000200000L});
-    public static final BitSet FOLLOW_85_in_ruleCommandDefinitionMdsl7048 = new BitSet(new long[]{0x0000000000000030L,0x0000011380000000L});
-    public static final BitSet FOLLOW_ruleQuery_in_ruleCommandDefinitionMdsl7069 = new BitSet(new long[]{0x0000000000000002L,0x0000000000C00000L});
-    public static final BitSet FOLLOW_86_in_ruleCommandDefinitionMdsl7082 = new BitSet(new long[]{0x0000000000000002L,0x000000000C800000L});
-    public static final BitSet FOLLOW_ruleUICommandMdsl_in_ruleCommandDefinitionMdsl7103 = new BitSet(new long[]{0x0000000000000002L,0x000000000C800000L});
-    public static final BitSet FOLLOW_87_in_ruleCommandDefinitionMdsl7119 = new BitSet(new long[]{0x0000000000000002L,0x000000000C000000L});
-    public static final BitSet FOLLOW_ruleUICommandMdsl_in_ruleCommandDefinitionMdsl7140 = new BitSet(new long[]{0x0000000000000002L,0x000000000C000000L});
-    public static final BitSet FOLLOW_ruleCommandRefMdsl_in_entryRuleCommandRefMdsl7179 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleCommandRefMdsl7189 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleCommandRefMdsl7234 = new BitSet(new long[]{0x0000000000000002L,0x0000000001000000L});
-    public static final BitSet FOLLOW_88_in_ruleCommandRefMdsl7247 = new BitSet(new long[]{0x0010000000000010L,0x0000010000000000L});
-    public static final BitSet FOLLOW_52_in_ruleCommandRefMdsl7265 = new BitSet(new long[]{0x0000000000000010L,0x0000010000000000L});
-    public static final BitSet FOLLOW_ruleFormatExpr_in_ruleCommandRefMdsl7300 = new BitSet(new long[]{0x0000000000000000L,0x0000000002000000L});
-    public static final BitSet FOLLOW_89_in_ruleCommandRefMdsl7312 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleUICommandMdsl_in_entryRuleUICommandMdsl7350 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleUICommandMdsl7360 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleReloadWidgetsUICommand_in_ruleUICommandMdsl7407 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleReloadViewUICommand_in_ruleUICommandMdsl7434 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDisplayViewUICommand_in_ruleUICommandMdsl7461 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleDisplayViewUICommand_in_entryRuleDisplayViewUICommand7496 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleDisplayViewUICommand7506 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_90_in_ruleDisplayViewUICommand7543 = new BitSet(new long[]{0x0400000000000002L});
-    public static final BitSet FOLLOW_58_in_ruleDisplayViewUICommand7556 = new BitSet(new long[]{0x0000000000000030L,0x0000015380000000L});
-    public static final BitSet FOLLOW_ruleQueryUsage_in_ruleDisplayViewUICommand7577 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleReloadViewUICommand_in_entryRuleReloadViewUICommand7615 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleReloadViewUICommand7625 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_91_in_ruleReloadViewUICommand7671 = new BitSet(new long[]{0x0000000000000000L,0x0000000010000000L});
-    public static final BitSet FOLLOW_92_in_ruleReloadViewUICommand7683 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleReloadWidgetsUICommand_in_entryRuleReloadWidgetsUICommand7719 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleReloadWidgetsUICommand7729 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_91_in_ruleReloadWidgetsUICommand7766 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
-    public static final BitSet FOLLOW_93_in_ruleReloadWidgetsUICommand7778 = new BitSet(new long[]{0x0000000000000022L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleReloadWidgetsUICommand7798 = new BitSet(new long[]{0x0000000000000022L});
-    public static final BitSet FOLLOW_ruleQueryUsage_in_entryRuleQueryUsage7835 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleQueryUsage7845 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQuery_in_ruleQueryUsage7892 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQueryChain_in_ruleQueryUsage7919 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQuery_in_entryRuleQuery7954 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleQuery7964 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQueryDefinitionMdsl_in_ruleQuery8011 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQueryRefMdsl_in_ruleQuery8038 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQueryDeclaration_in_entryRuleQueryDeclaration8073 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleQueryDeclaration8083 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_94_in_ruleQueryDeclaration8120 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleQueryDeclaration8137 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_22_in_ruleQueryDeclaration8154 = new BitSet(new long[]{0x0000000000022010L,0x0000011380000000L});
-    public static final BitSet FOLLOW_13_in_ruleQueryDeclaration8167 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleQueryDeclaration8184 = new BitSet(new long[]{0x0000000000020010L,0x0000011380000000L});
-    public static final BitSet FOLLOW_17_in_ruleQueryDeclaration8204 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleQueryDeclaration8221 = new BitSet(new long[]{0x0000000000000010L,0x0000011380000000L});
-    public static final BitSet FOLLOW_ruleQueryDefinitionMdsl_in_ruleQueryDeclaration8249 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_28_in_ruleQueryDeclaration8261 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQueryDefinitionMdsl_in_entryRuleQueryDefinitionMdsl8297 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleQueryDefinitionMdsl8307 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_95_in_ruleQueryDefinitionMdsl8345 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleQueryDefinitionMdsl8365 = new BitSet(new long[]{0x0000000000000010L,0x0000011380000000L});
-    public static final BitSet FOLLOW_96_in_ruleQueryDefinitionMdsl8380 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleQueryDefinitionMdsl8400 = new BitSet(new long[]{0x0000000000000010L,0x0000011380000000L});
-    public static final BitSet FOLLOW_97_in_ruleQueryDefinitionMdsl8415 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleQueryDefinitionMdsl8432 = new BitSet(new long[]{0x0000000000000010L,0x0000011380000000L});
-    public static final BitSet FOLLOW_ruleQueryBody_in_ruleQueryDefinitionMdsl8461 = new BitSet(new long[]{0x0000000002000002L,0x0000000C00000000L});
-    public static final BitSet FOLLOW_ruleExternalQueryCallMdsl_in_ruleQueryDefinitionMdsl8488 = new BitSet(new long[]{0x0000000002000002L,0x0000000C00000000L});
-    public static final BitSet FOLLOW_25_in_ruleQueryDefinitionMdsl8502 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleQueryDefinitionMdsl8522 = new BitSet(new long[]{0x0000000000000002L,0x0000000C00000000L});
-    public static final BitSet FOLLOW_98_in_ruleQueryDefinitionMdsl8537 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rulePropertyMdsl_in_ruleQueryDefinitionMdsl8558 = new BitSet(new long[]{0x0000000200000002L,0x0000000800000000L});
-    public static final BitSet FOLLOW_33_in_ruleQueryDefinitionMdsl8571 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rulePropertyMdsl_in_ruleQueryDefinitionMdsl8592 = new BitSet(new long[]{0x0000000200000002L,0x0000000800000000L});
-    public static final BitSet FOLLOW_99_in_ruleQueryDefinitionMdsl8609 = new BitSet(new long[]{0x0000000000000000L,0xE000000000000000L});
-    public static final BitSet FOLLOW_ruleQUERY_OPTIMISATION_LEVEL_in_ruleQueryDefinitionMdsl8630 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQueryFragment_in_entryRuleQueryFragment8668 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleQueryFragment8678 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleLiteralQueryFragment_in_ruleQueryFragment8725 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTextMacroRef_in_ruleQueryFragment8752 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleLiteralQueryFragment_in_entryRuleLiteralQueryFragment8787 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleLiteralQueryFragment8797 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleLiteralQueryFragment8838 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQueryBody_in_entryRuleQueryBody8878 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleQueryBody8888 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQueryFragment_in_ruleQueryBody8934 = new BitSet(new long[]{0x0000000000008002L});
-    public static final BitSet FOLLOW_15_in_ruleQueryBody8947 = new BitSet(new long[]{0x0000000000000010L,0x0000010000000000L});
-    public static final BitSet FOLLOW_ruleQueryFragment_in_ruleQueryBody8968 = new BitSet(new long[]{0x0000000000008002L});
-    public static final BitSet FOLLOW_ruleQueryRefMdsl_in_entryRuleQueryRefMdsl9006 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleQueryRefMdsl9016 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleQueryRefMdsl9060 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleExternalQueryCallMdsl_in_entryRuleExternalQueryCallMdsl9095 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleExternalQueryCallMdsl9105 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_100_in_ruleExternalQueryCallMdsl9142 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleExternalQueryCallMdsl9162 = new BitSet(new long[]{0x0000000000000000L,0x0000002000000000L});
-    public static final BitSet FOLLOW_101_in_ruleExternalQueryCallMdsl9174 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQueryChain_in_entryRuleQueryChain9210 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleQueryChain9220 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_102_in_ruleQueryChain9257 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_22_in_ruleQueryChain9269 = new BitSet(new long[]{0x0000000000000030L,0x0000011380000000L});
-    public static final BitSet FOLLOW_ruleQuery_in_ruleQueryChain9290 = new BitSet(new long[]{0x0000000210000030L,0x0000011380000000L});
-    public static final BitSet FOLLOW_33_in_ruleQueryChain9304 = new BitSet(new long[]{0x0000000000000030L,0x0000011380000000L});
-    public static final BitSet FOLLOW_ruleQuery_in_ruleQueryChain9325 = new BitSet(new long[]{0x0000000210000000L});
-    public static final BitSet FOLLOW_28_in_ruleQueryChain9339 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFormatExpr_in_entryRuleFormatExpr9375 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleFormatExpr9385 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFormatExprFragment_in_ruleFormatExpr9431 = new BitSet(new long[]{0x0000000000008002L});
-    public static final BitSet FOLLOW_15_in_ruleFormatExpr9444 = new BitSet(new long[]{0x0000000000000010L,0x0000010000000000L});
-    public static final BitSet FOLLOW_ruleFormatExprFragment_in_ruleFormatExpr9465 = new BitSet(new long[]{0x0000000000008002L});
-    public static final BitSet FOLLOW_ruleFormatExprFragment_in_entryRuleFormatExprFragment9503 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleFormatExprFragment9513 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleLiteralFormatExprFragment_in_ruleFormatExprFragment9560 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTextMacroRef_in_ruleFormatExprFragment9587 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleLiteralFormatExprFragment_in_entryRuleLiteralFormatExprFragment9622 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleLiteralFormatExprFragment9632 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleLiteralFormatExprFragment9673 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTextMacro_in_entryRuleTextMacro9713 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleTextMacro9723 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_103_in_ruleTextMacro9760 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleTextMacro9777 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_22_in_ruleTextMacro9794 = new BitSet(new long[]{0x0000000000022000L,0x0000000000000002L});
-    public static final BitSet FOLLOW_13_in_ruleTextMacro9807 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleTextMacro9824 = new BitSet(new long[]{0x0000000000020000L,0x0000000000000002L});
-    public static final BitSet FOLLOW_17_in_ruleTextMacro9844 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleTextMacro9861 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
-    public static final BitSet FOLLOW_65_in_ruleTextMacro9880 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleTextMacro9897 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_28_in_ruleTextMacro9914 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTextMacroRef_in_entryRuleTextMacroRef9950 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleTextMacroRef9960 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_104_in_ruleTextMacroRef9997 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleTextMacroRef10017 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_105_in_ruleVALUE_CONVERTER_CATEGORY_MDSL10067 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_106_in_ruleVALUE_CONVERTER_CATEGORY_MDSL10084 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_107_in_ruleVALUE_CONVERTER_CATEGORY_MDSL10101 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_108_in_ruleVALUE_CONVERTER_CATEGORY_MDSL10118 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_109_in_ruleVALUE_CONVERTER_CATEGORY_MDSL10135 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_110_in_ruleVALUE_CONVERTER_CATEGORY_MDSL10152 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_111_in_ruleWIDGET_CATEGORY_MDSL10197 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_112_in_ruleWIDGET_CATEGORY_MDSL10214 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_113_in_ruleWIDGET_CATEGORY_MDSL10231 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_114_in_ruleWIDGET_CATEGORY_MDSL10248 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_115_in_ruleWIDGET_CATEGORY_MDSL10265 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_116_in_ruleWIDGET_CATEGORY_MDSL10282 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_117_in_ruleWIDGET_CATEGORY_MDSL10299 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_118_in_ruleWIDGET_CATEGORY_MDSL10316 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_119_in_ruleWIDGET_CATEGORY_MDSL10333 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_120_in_ruleWIDGET_CATEGORY_MDSL10350 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_121_in_ruleWIDGET_CATEGORY_MDSL10367 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_122_in_ruleCOMMAND_CATEGORY_MDSL10412 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_123_in_ruleCOMMAND_CATEGORY_MDSL10429 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_124_in_ruleCOMMAND_CATEGORY_MDSL10446 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_125_in_ruleQUERY_OPTIMISATION_LEVEL10491 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_126_in_ruleQUERY_OPTIMISATION_LEVEL10508 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_127_in_ruleQUERY_OPTIMISATION_LEVEL10525 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleCOMMAND_CATEGORY_MDSL_in_ruleCommandDefinitionMdsl6948 = new BitSet(new long[]{0x0010000000000010L,0x0000010000300000L});
+    public static final BitSet FOLLOW_52_in_ruleCommandDefinitionMdsl6967 = new BitSet(new long[]{0x0000000000000010L,0x0000010000000000L});
+    public static final BitSet FOLLOW_ruleFormatExpr_in_ruleCommandDefinitionMdsl7002 = new BitSet(new long[]{0x0000000000000000L,0x0000000000300000L});
+    public static final BitSet FOLLOW_84_in_ruleCommandDefinitionMdsl7017 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleCommandDefinitionMdsl7037 = new BitSet(new long[]{0x0000000000000000L,0x0000000000200000L});
+    public static final BitSet FOLLOW_85_in_ruleCommandDefinitionMdsl7051 = new BitSet(new long[]{0x0000000000000030L,0x0000011380000000L});
+    public static final BitSet FOLLOW_ruleQuery_in_ruleCommandDefinitionMdsl7072 = new BitSet(new long[]{0x0000000000000002L,0x0000000000C00000L});
+    public static final BitSet FOLLOW_86_in_ruleCommandDefinitionMdsl7085 = new BitSet(new long[]{0x0000000000000002L,0x000000000C800000L});
+    public static final BitSet FOLLOW_ruleUICommandMdsl_in_ruleCommandDefinitionMdsl7106 = new BitSet(new long[]{0x0000000000000002L,0x000000000C800000L});
+    public static final BitSet FOLLOW_87_in_ruleCommandDefinitionMdsl7122 = new BitSet(new long[]{0x0000000000000002L,0x000000000C000000L});
+    public static final BitSet FOLLOW_ruleUICommandMdsl_in_ruleCommandDefinitionMdsl7143 = new BitSet(new long[]{0x0000000000000002L,0x000000000C000000L});
+    public static final BitSet FOLLOW_ruleCommandRefMdsl_in_entryRuleCommandRefMdsl7182 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleCommandRefMdsl7192 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleCommandRefMdsl7237 = new BitSet(new long[]{0x0000000000000002L,0x0000000001000000L});
+    public static final BitSet FOLLOW_88_in_ruleCommandRefMdsl7250 = new BitSet(new long[]{0x0010000000000010L,0x0000010000000000L});
+    public static final BitSet FOLLOW_52_in_ruleCommandRefMdsl7268 = new BitSet(new long[]{0x0000000000000010L,0x0000010000000000L});
+    public static final BitSet FOLLOW_ruleFormatExpr_in_ruleCommandRefMdsl7303 = new BitSet(new long[]{0x0000000000000000L,0x0000000002000000L});
+    public static final BitSet FOLLOW_89_in_ruleCommandRefMdsl7315 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleUICommandMdsl_in_entryRuleUICommandMdsl7353 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleUICommandMdsl7363 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleReloadWidgetsUICommand_in_ruleUICommandMdsl7410 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleReloadViewUICommand_in_ruleUICommandMdsl7437 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDisplayViewUICommand_in_ruleUICommandMdsl7464 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleDisplayViewUICommand_in_entryRuleDisplayViewUICommand7499 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleDisplayViewUICommand7509 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_90_in_ruleDisplayViewUICommand7546 = new BitSet(new long[]{0x0400000000000002L});
+    public static final BitSet FOLLOW_58_in_ruleDisplayViewUICommand7559 = new BitSet(new long[]{0x0000000000000030L,0x0000015380000000L});
+    public static final BitSet FOLLOW_ruleQueryUsage_in_ruleDisplayViewUICommand7580 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleReloadViewUICommand_in_entryRuleReloadViewUICommand7618 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleReloadViewUICommand7628 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_91_in_ruleReloadViewUICommand7674 = new BitSet(new long[]{0x0000000000000000L,0x0000000010000000L});
+    public static final BitSet FOLLOW_92_in_ruleReloadViewUICommand7686 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleReloadWidgetsUICommand_in_entryRuleReloadWidgetsUICommand7722 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleReloadWidgetsUICommand7732 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_91_in_ruleReloadWidgetsUICommand7769 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
+    public static final BitSet FOLLOW_93_in_ruleReloadWidgetsUICommand7781 = new BitSet(new long[]{0x0000000000000022L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleReloadWidgetsUICommand7801 = new BitSet(new long[]{0x0000000000000022L});
+    public static final BitSet FOLLOW_ruleQueryUsage_in_entryRuleQueryUsage7838 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleQueryUsage7848 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQuery_in_ruleQueryUsage7895 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQueryChain_in_ruleQueryUsage7922 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQuery_in_entryRuleQuery7957 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleQuery7967 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQueryDefinitionMdsl_in_ruleQuery8014 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQueryRefMdsl_in_ruleQuery8041 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQueryDeclaration_in_entryRuleQueryDeclaration8076 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleQueryDeclaration8086 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_94_in_ruleQueryDeclaration8123 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleQueryDeclaration8140 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_22_in_ruleQueryDeclaration8157 = new BitSet(new long[]{0x0000000000022010L,0x0000011380000000L});
+    public static final BitSet FOLLOW_13_in_ruleQueryDeclaration8170 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleQueryDeclaration8187 = new BitSet(new long[]{0x0000000000020010L,0x0000011380000000L});
+    public static final BitSet FOLLOW_17_in_ruleQueryDeclaration8207 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleQueryDeclaration8224 = new BitSet(new long[]{0x0000000000000010L,0x0000011380000000L});
+    public static final BitSet FOLLOW_ruleQueryDefinitionMdsl_in_ruleQueryDeclaration8252 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_28_in_ruleQueryDeclaration8264 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQueryDefinitionMdsl_in_entryRuleQueryDefinitionMdsl8300 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleQueryDefinitionMdsl8310 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_95_in_ruleQueryDefinitionMdsl8348 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleQueryDefinitionMdsl8368 = new BitSet(new long[]{0x0000000000000010L,0x0000011380000000L});
+    public static final BitSet FOLLOW_96_in_ruleQueryDefinitionMdsl8383 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleQueryDefinitionMdsl8403 = new BitSet(new long[]{0x0000000000000010L,0x0000011380000000L});
+    public static final BitSet FOLLOW_97_in_ruleQueryDefinitionMdsl8418 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleQueryDefinitionMdsl8435 = new BitSet(new long[]{0x0000000000000010L,0x0000011380000000L});
+    public static final BitSet FOLLOW_ruleQueryBody_in_ruleQueryDefinitionMdsl8464 = new BitSet(new long[]{0x0000000002000002L,0x0000000C00000000L});
+    public static final BitSet FOLLOW_ruleExternalQueryCallMdsl_in_ruleQueryDefinitionMdsl8491 = new BitSet(new long[]{0x0000000002000002L,0x0000000C00000000L});
+    public static final BitSet FOLLOW_25_in_ruleQueryDefinitionMdsl8505 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleQueryDefinitionMdsl8525 = new BitSet(new long[]{0x0000000000000002L,0x0000000C00000000L});
+    public static final BitSet FOLLOW_98_in_ruleQueryDefinitionMdsl8540 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rulePropertyMdsl_in_ruleQueryDefinitionMdsl8561 = new BitSet(new long[]{0x0000000200000002L,0x0000000800000000L});
+    public static final BitSet FOLLOW_33_in_ruleQueryDefinitionMdsl8574 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rulePropertyMdsl_in_ruleQueryDefinitionMdsl8595 = new BitSet(new long[]{0x0000000200000002L,0x0000000800000000L});
+    public static final BitSet FOLLOW_99_in_ruleQueryDefinitionMdsl8612 = new BitSet(new long[]{0x0000000000000000L,0xE000000000000000L});
+    public static final BitSet FOLLOW_ruleQUERY_OPTIMISATION_LEVEL_in_ruleQueryDefinitionMdsl8633 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQueryFragment_in_entryRuleQueryFragment8671 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleQueryFragment8681 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLiteralQueryFragment_in_ruleQueryFragment8728 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTextMacroRef_in_ruleQueryFragment8755 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLiteralQueryFragment_in_entryRuleLiteralQueryFragment8790 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleLiteralQueryFragment8800 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleLiteralQueryFragment8841 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQueryBody_in_entryRuleQueryBody8881 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleQueryBody8891 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQueryFragment_in_ruleQueryBody8937 = new BitSet(new long[]{0x0000000000008002L});
+    public static final BitSet FOLLOW_15_in_ruleQueryBody8950 = new BitSet(new long[]{0x0000000000000010L,0x0000010000000000L});
+    public static final BitSet FOLLOW_ruleQueryFragment_in_ruleQueryBody8971 = new BitSet(new long[]{0x0000000000008002L});
+    public static final BitSet FOLLOW_ruleQueryRefMdsl_in_entryRuleQueryRefMdsl9009 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleQueryRefMdsl9019 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleQueryRefMdsl9063 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleExternalQueryCallMdsl_in_entryRuleExternalQueryCallMdsl9098 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleExternalQueryCallMdsl9108 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_100_in_ruleExternalQueryCallMdsl9145 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleExternalQueryCallMdsl9165 = new BitSet(new long[]{0x0000000000000000L,0x0000002000000000L});
+    public static final BitSet FOLLOW_101_in_ruleExternalQueryCallMdsl9177 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQueryChain_in_entryRuleQueryChain9213 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleQueryChain9223 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_102_in_ruleQueryChain9260 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_22_in_ruleQueryChain9272 = new BitSet(new long[]{0x0000000000000030L,0x0000011380000000L});
+    public static final BitSet FOLLOW_ruleQuery_in_ruleQueryChain9293 = new BitSet(new long[]{0x0000000210000030L,0x0000011380000000L});
+    public static final BitSet FOLLOW_33_in_ruleQueryChain9307 = new BitSet(new long[]{0x0000000000000030L,0x0000011380000000L});
+    public static final BitSet FOLLOW_ruleQuery_in_ruleQueryChain9328 = new BitSet(new long[]{0x0000000210000000L});
+    public static final BitSet FOLLOW_28_in_ruleQueryChain9342 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFormatExpr_in_entryRuleFormatExpr9378 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleFormatExpr9388 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFormatExprFragment_in_ruleFormatExpr9434 = new BitSet(new long[]{0x0000000000008002L});
+    public static final BitSet FOLLOW_15_in_ruleFormatExpr9447 = new BitSet(new long[]{0x0000000000000010L,0x0000010000000000L});
+    public static final BitSet FOLLOW_ruleFormatExprFragment_in_ruleFormatExpr9468 = new BitSet(new long[]{0x0000000000008002L});
+    public static final BitSet FOLLOW_ruleFormatExprFragment_in_entryRuleFormatExprFragment9506 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleFormatExprFragment9516 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLiteralFormatExprFragment_in_ruleFormatExprFragment9563 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTextMacroRef_in_ruleFormatExprFragment9590 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLiteralFormatExprFragment_in_entryRuleLiteralFormatExprFragment9625 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleLiteralFormatExprFragment9635 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleLiteralFormatExprFragment9676 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTextMacro_in_entryRuleTextMacro9716 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleTextMacro9726 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_103_in_ruleTextMacro9763 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleTextMacro9780 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_22_in_ruleTextMacro9797 = new BitSet(new long[]{0x0000000000022000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_13_in_ruleTextMacro9810 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleTextMacro9827 = new BitSet(new long[]{0x0000000000020000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_17_in_ruleTextMacro9847 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleTextMacro9864 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_65_in_ruleTextMacro9883 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleTextMacro9900 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_28_in_ruleTextMacro9917 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTextMacroRef_in_entryRuleTextMacroRef9953 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleTextMacroRef9963 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_104_in_ruleTextMacroRef10000 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleTextMacroRef10020 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_105_in_ruleVALUE_CONVERTER_CATEGORY_MDSL10070 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_106_in_ruleVALUE_CONVERTER_CATEGORY_MDSL10087 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_107_in_ruleVALUE_CONVERTER_CATEGORY_MDSL10104 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_108_in_ruleVALUE_CONVERTER_CATEGORY_MDSL10121 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_109_in_ruleVALUE_CONVERTER_CATEGORY_MDSL10138 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_110_in_ruleVALUE_CONVERTER_CATEGORY_MDSL10155 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_111_in_ruleWIDGET_CATEGORY_MDSL10200 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_112_in_ruleWIDGET_CATEGORY_MDSL10217 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_113_in_ruleWIDGET_CATEGORY_MDSL10234 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_114_in_ruleWIDGET_CATEGORY_MDSL10251 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_115_in_ruleWIDGET_CATEGORY_MDSL10268 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_116_in_ruleWIDGET_CATEGORY_MDSL10285 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_117_in_ruleWIDGET_CATEGORY_MDSL10302 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_118_in_ruleWIDGET_CATEGORY_MDSL10319 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_119_in_ruleWIDGET_CATEGORY_MDSL10336 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_120_in_ruleWIDGET_CATEGORY_MDSL10353 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_121_in_ruleWIDGET_CATEGORY_MDSL10370 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_122_in_ruleCOMMAND_CATEGORY_MDSL10415 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_123_in_ruleCOMMAND_CATEGORY_MDSL10432 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_124_in_ruleCOMMAND_CATEGORY_MDSL10449 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_125_in_ruleQUERY_OPTIMISATION_LEVEL10494 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_126_in_ruleQUERY_OPTIMISATION_LEVEL10511 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_127_in_ruleQUERY_OPTIMISATION_LEVEL10528 = new BitSet(new long[]{0x0000000000000002L});
 
 }

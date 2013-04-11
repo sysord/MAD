@@ -208,37 +208,9 @@ public class QueryEvaluationServiceImpl implements QueryEvaluationService {
 	
 	protected TypedValue adaptResultContext(TypedValue resultContext){
 		return resultContext;
-//		if(EObject.class.isAssignableFrom(resultContext.getClass())){
-//			return (EObject) resultContext;
-//		} else if(resultContext instanceof Collection){
-//			//convert Java collection to EObject collection using MADCOllection EObject
-//			//TODO: find how to reinject mad collection as OCL sequence
-//			MadCollection madCollection = attributesFactory.createMadCollection((Collection<? extends EObject>) resultContext);
-//			
-//			return madCollection;
-//		}else{
-//			return resultContext;
-//		}
 	}
 
-	/**
-	 * try to convert Object result context to an EObject
-	 * Collection are converted to MADCollection
-	 * @param resultContext
-	 * @return
-	 */
-	protected Object adaptResultContextV1(Object resultContext){
-		if(EObject.class.isAssignableFrom(resultContext.getClass())){
-			return (EObject) resultContext;
-		} else if(resultContext instanceof Collection){
-			//convert Java collection to EObject collection using MADCOllection EObject
-			//TODO: find how to reinject mad collection as OCL sequence
-			MadCollection madCollection = attributesFactory.createMadCollection((Collection<? extends EObject>) resultContext);			
-			return madCollection;
-		}else{
-			return resultContext;
-		}
-	}
+
 	
 	/**
 	 * 

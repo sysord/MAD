@@ -273,7 +273,7 @@ CommandDeclaration:
 //-------------------
 CommandDefinitionMdsl:
 	category=COMMAND_CATEGORY_MDSL 
-		(i18NLabel?='I18N')? label = FormatExpr 
+		((i18NLabel?='I18N')? label = FormatExpr)? 
 		('icon:' icon = [IconDescriptorMdsl])?
 		'action:' action = Query 
 		 ('on success:' onActionSuccessUICommands += UICommandMdsl*)?
