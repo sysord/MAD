@@ -54,6 +54,7 @@ public class MadEcoreEvaluationEnvironment extends EcoreEvaluationEnvironment {
 	public static final String E_CONTAINER = "eContainer";
 	
 	//EObject operations
+	public static final String E_GET = "eGet";
 	public static final String E_CONTENTS = "eContents";
 	public static final String E_ALL_CONTENTS = "eAllContents";
 	public static final String METAMODEL_CLASSIFIERS = "metamodelClassifiers";
@@ -70,6 +71,8 @@ public class MadEcoreEvaluationEnvironment extends EcoreEvaluationEnvironment {
 			oclOperation(OCLCustomisationHelper.OCL_ANY, ROOT_CONTAINER, OCLCustomisationHelper.OCL_ANY),
 			oclOperation(OCLCustomisationHelper.OCL_ANY, E_CONTAINER, OCLCustomisationHelper.OCL_ANY),
 			oclOperation(OCLCustomisationHelper.OCL_ANY, TYPENAME, OCLCustomisationHelper.OCL_STRING),
+			oclOperation(OCLCustomisationHelper.OCL_ANY, E_GET, OCLCustomisationHelper.OCL_ANY,
+					OCLCustomisationHelper.createOCLTypedElementDefinition("feature", OCLCustomisationHelper.OCL_STRING)),
 			oclOperation(OCLCustomisationHelper.OCL_ANY, E_CONTENTS, OCLCustomisationHelper.OCL_SEQUENCE),
 			oclOperation(OCLCustomisationHelper.OCL_ANY, E_ALL_CONTENTS, OCLCustomisationHelper.OCL_SEQUENCE,
 					OCLCustomisationHelper.createOCLTypedElementDefinition("filter", OCLCustomisationHelper.OCL_ANY)),
@@ -174,7 +177,7 @@ public class MadEcoreEvaluationEnvironment extends EcoreEvaluationEnvironment {
 	
 	
 
-	
+
 	protected void processCollectOperationCall(Object source, EOperation operation, Object[] args, Object result){
 		CurrentEvaluationContext.getEvaluationAnalyze().collectOperationCall(source, operation, args, result);
 		if(TRACE_ENABLED) trace("Operation call:" + operation.getName() + " ( arg...) on "  + source.toString() + "  ==>  " + result );		
@@ -183,6 +186,13 @@ public class MadEcoreEvaluationEnvironment extends EcoreEvaluationEnvironment {
 	protected void processCollectContainerAccess(Object source, EStructuralFeature containingFeature, Object result){
 		CurrentEvaluationContext.getEvaluationAnalyze().collectContainerAccess(source, containingFeature, null, result);
 		if(TRACE_ENABLED) trace("EContainer access : on "  + source.toString() + "  ==>  " + result );		
+	}
+	
+	protected void processCollectPropertyAccess(Object source, EStructuralFeature property, List<?> qualifiers, Object result){
+		CurrentEvaluationContext.getEvaluationAnalyze().collectPropertyAccess(source, property, qualifiers, result);
+		if (TRACE_ENABLED)
+			trace("Property access:" + property.getName() + " with qualifiers " + qualifiers == null ? "none"
+					: qualifiers + " on " + source.toString() + "  ==>  " + result);
 	}
 	
 	//-----------------------
@@ -231,6 +241,17 @@ public class MadEcoreEvaluationEnvironment extends EcoreEvaluationEnvironment {
 		}else if(E_CONTENTS.equals(operationName)){
 			if(eSource != null){
 				result = eSource.eContents();
+			}
+		}else if(E_GET.equals(operationName)){
+			if(eSource != null){
+				if (args != null && args.length > 0) {
+					EStructuralFeature feature = eSource.eClass().getEStructuralFeature(String.valueOf(args[0]));
+					if (feature != null) {
+						result = eSource.eGet(feature);
+						processCollectPropertyAccess(eSource, feature, null, result);
+						return result;
+					}
+				}
 			}
 		}else if(E_ALL_CONTENTS.equals(operationName)){
 			if(eSource != null){
