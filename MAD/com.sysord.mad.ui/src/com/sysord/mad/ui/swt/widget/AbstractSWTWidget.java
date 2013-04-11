@@ -19,6 +19,8 @@ import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.DisposeEvent;
+import org.eclipse.swt.events.DisposeListener;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.graphics.Image;
@@ -81,11 +83,12 @@ public abstract class AbstractSWTWidget extends AbstractSpecificWidget {
 		this.specificContextHolder = specificContextHolder;
 		checkMadWidget(madWidget);
 
-		addDiagnosticContent(getSwtContext(), madWidget);
+		Label lbl_diagnostic = addDiagnosticContent(getSwtContext(), madWidget);
 		Control swtWidget = createSpecificWidget(madWidget);
 		if (swtWidget != null) {
 			addVisibilityListener(madWidget, swtWidget);
 			addControlDisposedListener(madWidget, swtWidget);
+			addDisposeListenerForDiagnostic(swtWidget, lbl_diagnostic);
 		}
 		return swtWidget;
 	}
@@ -97,7 +100,7 @@ public abstract class AbstractSWTWidget extends AbstractSpecificWidget {
 	 * @param madWidget
 	 * @return
 	 */
-	protected static Composite addDiagnosticContent(SWTSpecificWidgetContext swtSpecificWidgetContext, Widget<?> madWidget) {
+	protected static Label addDiagnosticContent(SWTSpecificWidgetContext swtSpecificWidgetContext, Widget<?> madWidget) {
 		FormToolkit toolkit = swtSpecificWidgetContext.getToolkit();
 		Composite widgetContainer = swtSpecificWidgetContext.getWidgetContainer();
 
@@ -125,7 +128,7 @@ public abstract class AbstractSWTWidget extends AbstractSpecificWidget {
 			lbl_diagnostic.setToolTipText(status.getMessage());
 		}
 		
-		return widgetContainer;
+		return lbl_diagnostic;
 	}
 
 	/**
@@ -136,6 +139,24 @@ public abstract class AbstractSWTWidget extends AbstractSpecificWidget {
 	 */
 	protected void addControlDisposedListener(Widget<?> madWidget, Control swtWidget) {
 		SWTWidgetUtil.addControlDisposedListener(swtWidget, madWidget);
+	}
+
+	/**
+	 * Adds the disposed listeners to the MAD widget and its corresponding SWT widget.
+	 * 
+	 * @param swtWidget
+	 * @param lbl_diagnostic 
+	 */
+	protected void addDisposeListenerForDiagnostic(Control swtWidget, final Label lbl_diagnostic) {
+		swtWidget.addDisposeListener(new DisposeListener() {
+            
+            @Override
+            public void widgetDisposed(DisposeEvent e) {
+            	if (!lbl_diagnostic.isDisposed()) {
+            		lbl_diagnostic.dispose();
+            	}
+            }
+        });
 	}
 
 	/**

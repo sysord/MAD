@@ -12,8 +12,6 @@
 package com.sysord.mad.ui.swt.widget;
 
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.jface.layout.GridLayoutFactory;
-import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;
@@ -21,6 +19,7 @@ import org.eclipse.swt.widgets.Control;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 
 import com.sysord.eclipse.tools.swt.GridDataHelper;
+import com.sysord.eclipse.tools.swt.GridLayoutHelper;
 import com.sysord.mad.emitter.impl.SWTViewBuilder;
 import com.sysord.mad.ui.Lbl;
 import com.sysord.mad.ui.swt.SWTSpecificWidgetContext;
@@ -78,8 +77,8 @@ public class SWTFlexibleWidget extends AbstractSWTWidget {
 
         // Flexible
         Composite flexible = toolkit.createComposite(container);
-        flexible.setLayout(GridLayoutFactory.fillDefaults().create());
-        GridData data = new GridData(SWT.FILL, SWT.BEGINNING, true, false);
+        flexible.setLayout(GridLayoutHelper.createNoSpacingNoMargin(2));
+        GridData data = GridDataHelper.horizontalFill();
         data.horizontalSpan = 2;
         flexible.setLayoutData(data);
 

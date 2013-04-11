@@ -58,6 +58,7 @@ public class FlexibleWidgetImpl<T> extends AbstractWidget<T> implements Flexible
 
     @Override
     protected void beforeLoadingWidget() {
+    	prototype = null;
         for (ComposedWidget<T> composedWidget : composedWidgets) {
             composedWidget.dispose();
         }

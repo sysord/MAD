@@ -17,6 +17,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnumLiteral;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -35,7 +36,9 @@ import com.sysord.mad.configuration.WidgetConfiguration;
 import com.sysord.mad.configuration.WidgetConfiguration.WIDGET_CATEGORY;
 import com.sysord.mad.core.Activator;
 import com.sysord.mad.emitter.ViewBuilder;
+import com.sysord.mad.emitter.WidgetFactory;
 import com.sysord.mad.emitter.impl.ComposedWidgetConfigurer;
+import com.sysord.mad.emitter.impl.EmitterWidgetSwitch;
 import com.sysord.mad.evaluator.EvaluationAnalyze;
 import com.sysord.mad.evaluator.FormatExpressionEvaluationService;
 import com.sysord.mad.evaluator.QueryEvaluationService;
@@ -66,6 +69,9 @@ public class LoadWidgetValueVisitor extends AbstractWidgetVisitor<Boolean> {
 
 	@Inject
 	protected ConfigurationManager configurationManager;
+	
+	@Inject
+	protected WidgetFactory widgetFactory;
 
     @Inject
     protected EMFImageProvider itemProvider;
@@ -417,9 +423,13 @@ public class LoadWidgetValueVisitor extends AbstractWidgetVisitor<Boolean> {
 		//affect value
 		flexibleWidget.setValuedSemanticElement(valuedElement);
 
-
 		TypeConfiguration flexibleTemplate = flexibleWidget.getConfig().getFlexibleTemplate();
 		String flexibleTemplateLabelProviderExpr = null;
+
+		// Configure the flexible widget's prototype (fail if the list is empty or if the elements are null)
+		if (flexibleTemplate == null) {
+			getComposedWidgetConfigurer().configure(flexibleWidget, collflexibleWidgetValues);
+		}
 
 		//For each flexible value create composed with valued element.
 		for(Object composedItem : collflexibleWidgetValues){
@@ -453,12 +463,6 @@ public class LoadWidgetValueVisitor extends AbstractWidgetVisitor<Boolean> {
 					composedWidget.setLabel(formatValue(composedValuedElement.getValue(), flexibleTemplateLabelProviderExpr));
 				}
 
-			}
-
-			//if dynamic template: template retrieve from value type
-			//Create widgets configuration for value type
-			if(flexibleTemplate == null){
-				getComposedWidgetConfigurer().configureComposedWidget(composedWidget);
 			}
 
 			//fill value for composed widget

@@ -11,13 +11,19 @@
  ****************************************************************************/
 package com.sysord.mad.emitter.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 
 import com.google.inject.Inject;
-import com.sysord.mad.configuration.*;
+import com.sysord.mad.configuration.ConfigurationManager;
+import com.sysord.mad.configuration.TypeConfiguration;
+import com.sysord.mad.configuration.WidgetConfiguration;
 import com.sysord.mad.emitter.WidgetFactory;
 import com.sysord.mad.widget.ComposedWidget;
+import com.sysord.mad.widget.FlexibleWidget;
+import com.sysord.mad.widget.Widget;
 
 /**
  * Create and add widgets for a Composed widget
@@ -30,6 +36,28 @@ public class ComposedWidgetConfigurer {
 	
 	@Inject
 	protected WidgetFactory widgetFactory;
+	
+	@SuppressWarnings("unchecked")
+	public <T> void configure(FlexibleWidget<T> flexibleWidget, Collection<Object> items) {
+		TypeConfiguration config = null;
+		for(Object composedItem : items){
+			if (composedItem != null) {
+				EClass eclass = ((EObject) composedItem).eClass();
+				if (eclass != null) {
+					config = configurationManager.getConfiguration(eclass);
+					if (config != null) {
+						break;
+					}
+				}
+			}
+		}
+		if (config != null) {
+			EmitterWidgetSwitch widgetSwitch = new EmitterWidgetSwitch(widgetFactory);
+			for (WidgetConfiguration<?> widgetConfig : config.getWidgetsConfigurations()) {
+				flexibleWidget.addWidget((Widget<T>) widgetSwitch.doSwitch(widgetConfig));
+			}
+		}
+	}
 	
 	
 	public void configureComposedWidget(ComposedWidget<?> composedWidget){
