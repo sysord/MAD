@@ -16,6 +16,7 @@ import java.util.*;
 import org.eclipse.core.runtime.Assert;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Color;
+import org.eclipse.swt.graphics.RGB;
 import org.eclipse.swt.widgets.*;
 
 /**
@@ -45,110 +46,170 @@ import org.eclipse.swt.widgets.*;
  */
 public class ColorRegistry {
 
-    private static Map<Display, ColorRegistry> colorRegistries = Collections
-            .synchronizedMap(new HashMap<Display, ColorRegistry>(2));
-    private Map<Integer, Color> colors;
-    private Display display;
+	private static Map<Display, ColorRegistry> colorRegistries = Collections
+			.synchronizedMap(new HashMap<Display, ColorRegistry>(2));
+	private Map<Integer, Color> colors;
+	private Display display;
 
-    /**
-     * Creates a {@code ColorRegistry} for the given {@link Display}.
-     * 
-     * @param display
-     */
-    private ColorRegistry(Display display) {
-        this.display = display;
-        colors = Collections.synchronizedMap(new TreeMap<Integer, Color>());
-        hookDisposeListener();
-    }
+	/**
+	 * Creates a {@code ColorRegistry} for the given {@link Display}.
+	 * 
+	 * @param display
+	 */
+	private ColorRegistry(Display display) {
+		this.display = display;
+		colors = Collections.synchronizedMap(new TreeMap<Integer, Color>());
+		hookDisposeListener();
+	}
 
-    /**
-     * Returns the {@link Color} corresponding to the given 3 color's component's.
-     * 
-     * @param red Amount of red in the color.
-     * @param green Amount of green in the color.
-     * @param blue Amount of blue in the color.
-     * @return the {@link Color} corresponding to the given 3 color's component's.
-     * @see Color#Color(org.eclipse.swt.graphics.Device, int, int, int)
-     */
-    public static Color get(int red, int green, int blue) {
-        ColorRegistry registry = getRegitry();
-        return registry.getColor(red, green, blue);
-    }
+	/**
+	 * Returns the {@link Color} corresponding to the given 3 color's component's.
+	 * 
+	 * @param red Amount of red in the color.
+	 * @param green Amount of green in the color.
+	 * @param blue Amount of blue in the color.
+	 * @return the {@link Color} corresponding to the given 3 color's component's.
+	 * @see Color#Color(org.eclipse.swt.graphics.Device, int, int, int)
+	 */
+	public static Color get(int red, int green, int blue) {
+		ColorRegistry registry = getRegitry();
+		return registry.getColor(red, green, blue);
+	}
 
-    /**
-     * Returns the {@link Color} corresponding to the given {@code code}.
-     * <p>
-     * The {@code code} is composed of the 3 color's components (red, green, blue) on 24
-     * bits.
-     * 
-     * @param code The code of the color to create.
-     * @return the {@link Color} corresponding to the given {@code code}.
-     * @see #getCode(int, int, int)
-     */
-    public static Color get(int code) {
-        ColorRegistry registry = getRegitry();
-        int red = (code & 0xFF0000) >> 16;
-        int green = (code & 0x00FF00) >> 8;
-        int blue = code & 0x0000FF;
-        return registry.getColor(red, green, blue);
-    }
+	/**
+	 * Returns the {@link Color} corresponding to the given {@code code}.
+	 * <p>
+	 * The {@code code} is composed of the 3 color's components (red, green, blue) on 24
+	 * bits.
+	 * 
+	 * @param code The code of the color to create.
+	 * @return the {@link Color} corresponding to the given {@code code}.
+	 * @see #getCode(int, int, int)
+	 */
+	public static Color get(int code) {
+		ColorRegistry registry = getRegitry();
+		final RGB rgb = createRGB(code);
+		return registry.getColor(rgb.red, rgb.green, rgb.blue);
+	}
 
-    /**
-     * Creates and return the code corresponding to the given 3 color's components.
-     * 
-     * @param red Amount of red.
-     * @param green Amount of green.
-     * @param blue Amount of blue.
-     * @return the corresponding color code.
-     */
-    public static int getCode(int red, int green, int blue) {
-        return red << 16 | green << 8 | blue;
-    }
+	/**
+	 * Creates and return the code corresponding to the given 3 color's components.
+	 * 
+	 * @param red Amount of red.
+	 * @param green Amount of green.
+	 * @param blue Amount of blue.
+	 * @return the corresponding color code.
+	 */
+	public static int getCode(int red, int green, int blue) {
+		return red << 16 | green << 8 | blue;
+	}
 
-    private static ColorRegistry getRegitry() {
-        ColorRegistry registry = colorRegistries.get(getDisplay());
-        if (registry == null) {
-            registry = new ColorRegistry(getDisplay());
-            colorRegistries.put(getDisplay(), registry);
-        }
-        return registry;
-    }
+	/**
+	 * Darken the color corresponding to the given 3 color's components by adding the
+	 * specified {@code darkenPoints} to each component.
+	 * <p>
+	 * The number of {@code darkenPoints} is adapted to avoid a component lower than 0.
+	 * So, <code>darken(0,&nbsp;0,&nbsp;0,&nbsp;<em>anyPositiveNumber</em>)</code> will do
+	 * nothing.
+	 * 
+	 * @param red Amount of red.
+	 * @param green Amount of green.
+	 * @param blue Amount of blue.
+	 * @param darkenPoints The number of points to take off from the color components.
+	 * @return the color code of the darken color.
+	 * @since 1.1
+	 */
+	public static int darkenCode(int red, int green, int blue, int darkenPoints) {
+		darkenPoints = checkDarkenPoints(red, darkenPoints);
+		darkenPoints = checkDarkenPoints(green, darkenPoints);
+		darkenPoints = checkDarkenPoints(blue, darkenPoints);
+		return getCode(red - darkenPoints, green - darkenPoints, blue - darkenPoints);
+	}
 
-    private static Display getDisplay() {
-        Display display = Display.getCurrent();
-        Assert.isNotNull(display, ColorRegistry.class.getName() + " was called outside SWT thread.");
-        return display;
-    }
+	/**
+	 * Darken the given color by adding the specified {@code darkenPoints} to each of its
+	 * components.
+	 * 
+	 * @param color The color to darken.
+	 * @param darkenPoints The number of points to take off from the color components.
+	 * @return The darkened color.
+	 * @since 1.1
+	 */
+	public static Color darken(Color color, int darkenPoints) {
+		return get(darkenCode(color.getRed(), color.getGreen(), color.getBlue(), darkenPoints));
+	}
 
-    private Color getColor(int red, int green, int blue) {
-        int code = getCode(red, green, blue);
-        Color color = colors.get(code);
-        if (color == null) {
-            color = createColor(red, green, blue);
-        }
-        return color;
-    }
+	/**
+	 * Darken the color corresponding to the given code by adding the specified
+	 * {@code darkenPoints} to each of its components.
+	 * 
+	 * @param code The code of the color to darken.
+	 * @param darkenPoints The number of points to take off from the color components.
+	 * @return The darkened color.
+	 * @since 1.1
+	 */
+	public static Color darken(int code, int darkenPoints) {
+		final RGB rgb = createRGB(code);
+		return get(darkenCode(rgb.red, rgb.green, rgb.blue, darkenPoints));
+	}
 
-    private Color createColor(int red, int green, int blue) {
-        Color color = new Color(display, red, green, blue);
-        colors.put(getCode(red, green, blue), color);
-        return color;
-    }
+	private static ColorRegistry getRegitry() {
+		ColorRegistry registry = colorRegistries.get(getDisplay());
+		if (registry == null) {
+			registry = new ColorRegistry(getDisplay());
+			colorRegistries.put(getDisplay(), registry);
+		}
+		return registry;
+	}
 
-    private void hookDisposeListener() {
-        display.addListener(SWT.Dispose, new Listener() {
+	private static Display getDisplay() {
+		Display display = Display.getCurrent();
+		Assert.isNotNull(display, ColorRegistry.class.getName() + " was called outside SWT thread.");
+		return display;
+	}
 
-            @Override
-            public void handleEvent(Event event) {
-                synchronized (colors) {
-                    for (Color color : colors.values()) {
-                        color.dispose();
-                    }
-                    colors.clear();
-                }
-                colorRegistries.remove(display);
-                display = null;
-            }
-        });
-    }
+	private static RGB createRGB(int code) {
+		return new RGB((code & 0xFF0000) >> 16, (code & 0x00FF00) >> 8, code & 0x0000FF);
+	}
+	
+	private static int checkDarkenPoints(int colorComponentValue, int darkenPoints) {
+		if (colorComponentValue - darkenPoints < 0) {
+			darkenPoints = darkenPoints + (colorComponentValue - darkenPoints);
+		} else if (colorComponentValue - darkenPoints > 255) {
+			darkenPoints = darkenPoints + (colorComponentValue - darkenPoints - 255);
+		}
+		return darkenPoints;
+	}
+
+	private Color getColor(int red, int green, int blue) {
+		int code = getCode(red, green, blue);
+		Color color = colors.get(code);
+		if (color == null || color.isDisposed()) {
+			color = createColor(red, green, blue);
+		}
+		return color;
+	}
+
+	private Color createColor(int red, int green, int blue) {
+		Color color = new Color(display, red, green, blue);
+		colors.put(getCode(red, green, blue), color);
+		return color;
+	}
+
+	private void hookDisposeListener() {
+		display.addListener(SWT.Dispose, new Listener() {
+
+			@Override
+			public void handleEvent(Event event) {
+				synchronized (colors) {
+					for (Color color : colors.values()) {
+						color.dispose();
+					}
+					colors.clear();
+				}
+				colorRegistries.remove(display);
+				display = null;
+			}
+		});
+	}
 }
