@@ -168,4 +168,14 @@ public class MadStringAttributeImpl extends MadAttributeImpl implements MadStrin
 		return result.toString();
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	public String getAttributeValue() {
+		return value;
+	}
+
 } //MadStringAttributeImpl

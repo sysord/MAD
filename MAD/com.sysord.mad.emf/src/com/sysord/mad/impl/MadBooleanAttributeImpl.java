@@ -168,4 +168,14 @@ public class MadBooleanAttributeImpl extends MadAttributeImpl implements MadBool
 		return result.toString();
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	public Boolean getAttributeValue() {
+		return value;
+	}
+
 } //MadBooleanAttributeImpl

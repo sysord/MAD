@@ -203,4 +203,14 @@ public class MadSingleObjectAttributeImpl extends MadAttributeImpl implements Ma
 		return super.eIsSet(featureID);
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	public EObject getAttributeValue() {
+		return value;
+	}
+
 } //MadSingleObjectAttributeImpl
