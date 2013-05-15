@@ -513,18 +513,19 @@ public class SWTUtil {
 	/**
 	 * Paints a border on the given {@link Composite}.
 	 * 
-	 * @param composite The {@link Composite} for which to paint a border.
+	 * @param control The {@link Composite} for which to paint a border.
 	 * @param borderWidth The width of the border.
 	 * @param color The {@link Color} of the border.
 	 * @since 1.1
 	 */
-	public static void paintBorder(Composite composite, int borderWidth, Color color) {
-		final Rectangle area = composite.getClientArea();
+	public static void paintBorder(Control control, int borderWidth, Color color) {
+		final Rectangle area = control.getBounds();
+		area.x = area.y = 0;
 		final Rectangle top = new Rectangle(area.x, area.y, area.width, borderWidth);
 		final Rectangle right = new Rectangle(area.x + area.width - borderWidth, area.y, borderWidth, area.height);
 		final Rectangle bottom = new Rectangle(area.x, area.y + area.height - borderWidth, area.width, borderWidth);
 		final Rectangle left = new Rectangle(area.x, area.y, borderWidth, area.height);
-		final GC gc = new GC(composite);
+		final GC gc = new GC(control);
 		gc.setBackground(color);
 		gc.fillRectangle(top);
 		gc.fillRectangle(right);
@@ -532,4 +533,5 @@ public class SWTUtil {
 		gc.fillRectangle(left);
 		gc.dispose();
 	}
+
 }
