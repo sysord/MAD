@@ -53,7 +53,7 @@ public class ModelAccessObjectImpl implements ModelAccessObject {
 				loadWidgetValue(widget);
 			} catch (Exception e) {
 				String errorMessage = "Widget " + widget.getId()  + ": fail to load value. (error message:" + e.getMessage() + ")"; 
-				logger.logError(errorMessage);
+				logger.logError(e);
 				if(!PreferenceHelper.getDebugMode()){
 					//if not debug mode, hide the widget
 					widget.setVisible(false);					

@@ -746,12 +746,16 @@ public class QueryEvaluationServiceImpl implements QueryEvaluationService {
 				List lResults = new ArrayList(((Collection)resultValue));
 				if(lResults.isEmpty()){
 					//no value in the collection: return null;
-					return (QueryResult<T>) QueryResultImpl.NULL_QUERY_RESULT;
+					outQResult = (QueryResult<T>) QueryResultImpl.NULL_QUERY_RESULT;
+					outQResult.setEvaluationAnalyze(queryResult.getEvaluationAnalyze());
+					return outQResult;
 				}else{
 					validateResultType(lResults.get(0).getClass(), queryDefinition);
 					if(queryDefinition.getReturnType().isAssignableFrom(lResults.get(0).getClass())){
 						//Select only first collection element, result type is the collection itemType
-						return new QueryResultImpl<T>((T) lResults.get(0), resultType.getItemTypeDescriptor());						
+						outQResult = new QueryResultImpl<T>((T) lResults.get(0), resultType.getItemTypeDescriptor());
+						outQResult.setEvaluationAnalyze(queryResult.getEvaluationAnalyze());
+						return outQResult;
 					}else{
 					}
 				}

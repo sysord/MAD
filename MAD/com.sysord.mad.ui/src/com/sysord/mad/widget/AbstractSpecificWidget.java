@@ -187,7 +187,7 @@ public abstract class AbstractSpecificWidget implements SpecificWidget {
     protected static Label createLabelColumn(FormToolkit toolkit, Composite container, Widget<?> widget) {
         // Label container
         Composite labelContainer = toolkit.createComposite(container);
-        GridData data = new GridData(SWT.BEGINNING, SWT.BEGINNING, false, false);
+        GridData data = GridDataHelper.defaultData();
         data.verticalIndent = 4;
         labelContainer.setLayoutData(data);
         labelContainer.setLayout(GridLayoutHelper.createNoSpacingNoMargin(2));

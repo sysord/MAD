@@ -172,4 +172,14 @@ public class MadMultiObjectAttributeImpl extends MadAttributeImpl implements Mad
 		return super.eIsSet(featureID);
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	public Collection<?> getAttributeValue() {
+		return value;
+	}
+
 } //MadMultiObjectAttributeImpl

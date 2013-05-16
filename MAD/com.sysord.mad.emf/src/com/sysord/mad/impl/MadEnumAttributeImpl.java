@@ -203,4 +203,14 @@ public class MadEnumAttributeImpl extends MadAttributeImpl implements MadEnumAtt
 		return super.eIsSet(featureID);
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	public EEnumLiteral getAttributeValue() {
+		return value;
+	}
+
 } //MadEnumAttributeImpl

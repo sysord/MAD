@@ -48,6 +48,13 @@ Widget type {
 	from plugin com.sysord.mad.ui
 }
 
+Widget type {
+	name: TextArea category:TEXT_WIDGET
+	label:"Text Area"
+	custom widget:com.sysord.mad.ui.swt.widget.custom.TextAreaWidget
+	from plugin com.sysord.mad.ui
+}
+
 //=============================
 // Query evaluators declaration
 //=============================
