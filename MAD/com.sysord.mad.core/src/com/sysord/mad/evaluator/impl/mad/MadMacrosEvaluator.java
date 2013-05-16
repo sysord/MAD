@@ -54,9 +54,9 @@ public class MadMacrosEvaluator implements MadMacros{
 		}else if(UPDATE_FEATURE_MACRO.equals(macro)){
 			run_UpdateFeatureMacro(contextObject, macroArguments);
 		}else if(DELETE_MACRO.equals(macro)){
-			run_DeleteMacro(contextObject);
+			run_DeleteMacro(contextObject, macroArguments);
 		}else if(REMOVE_MACRO.equals(macro)){
-			run_RemoveMacro(contextObject);			
+			run_RemoveMacro(contextObject, macroArguments);			
 		}else if(MOVE_UP.equals(macro)){
 			run_MoveUpMacro(contextObject);			
 		}else if(MOVE_DOWN.equals(macro)){
@@ -71,13 +71,20 @@ public class MadMacrosEvaluator implements MadMacros{
 	/**
 	 * Delete object and clear all its references.
 	 * EcoreUtil.delete(contextObject, recursive) do the job.
+	 * if first argument is an EObject then this EObject is deleted otherwise the contextObject is deleted
 	 * @param contextObject
+	 * @param arguments
 	 */
-	protected void run_DeleteMacro(final EObject contextObject) throws QueryEvaluatorException{
+	protected void run_DeleteMacro(EObject contextObject, List<Object> arguments) throws QueryEvaluatorException{
+		//delete EObject passed as argument
+		if(!arguments.isEmpty() && (arguments.get(0) instanceof EObject)){
+			contextObject = (EObject) arguments.get(0);
+		}
+		final EObject objectToDelete = contextObject;
 		Runnable baseCommand = new Runnable() {			
 			@Override
 			public void run() {
-				EcoreUtil.delete(contextObject, true);
+				EcoreUtil.delete(objectToDelete, true);
 			}
 		};
 		executeAsTransactionalCommand(contextObject, baseCommand);
@@ -87,15 +94,21 @@ public class MadMacrosEvaluator implements MadMacros{
 	/**
 	 * Remove the context object from its container
 	 * EcoreUtil.remove(contextObject) do the job.
+	 * if first argument is an EObject then this EObject is removed otherwise the contextObject is removed
 	 * 
 	 * Action: remove contextObject from its container
 	 * @param contextObject
 	 */
-	protected void run_RemoveMacro(final EObject contextObject) throws QueryEvaluatorException{
+	protected void run_RemoveMacro(EObject contextObject, List<Object> arguments) throws QueryEvaluatorException{
+		//delete EObject passed as argument
+		if(!arguments.isEmpty() && (arguments.get(0) instanceof EObject)){
+			contextObject = (EObject) arguments.get(0);
+		}
+		final EObject objectToRemove = contextObject;
 		Runnable baseCommand = new Runnable() {			
 			@Override
 			public void run() {
-				EcoreUtil.remove(contextObject);
+				EcoreUtil.remove(objectToRemove);
 			}
 		};		
 		executeAsTransactionalCommand(contextObject, baseCommand);
