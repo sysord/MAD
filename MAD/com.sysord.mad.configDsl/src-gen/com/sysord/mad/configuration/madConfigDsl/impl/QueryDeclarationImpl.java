@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link com.sysord.mad.configuration.madConfigDsl.impl.QueryDeclarationImpl#getName <em>Name</em>}</li>
  *   <li>{@link com.sysord.mad.configuration.madConfigDsl.impl.QueryDeclarationImpl#getLabel <em>Label</em>}</li>
  *   <li>{@link com.sysord.mad.configuration.madConfigDsl.impl.QueryDeclarationImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link com.sysord.mad.configuration.madConfigDsl.impl.QueryDeclarationImpl#getDefinition <em>Definition</em>}</li>
@@ -34,6 +35,26 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class QueryDeclarationImpl extends MADConfigElementImpl implements QueryDeclaration
 {
+  /**
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
+
   /**
    * The default value of the '{@link #getLabel() <em>Label</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -103,6 +124,29 @@ public class QueryDeclarationImpl extends MADConfigElementImpl implements QueryD
   protected EClass eStaticClass()
   {
     return MadConfigDslPackage.Literals.QUERY_DECLARATION;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getName()
+  {
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MadConfigDslPackage.QUERY_DECLARATION__NAME, oldName, name));
   }
 
   /**
@@ -225,6 +269,8 @@ public class QueryDeclarationImpl extends MADConfigElementImpl implements QueryD
   {
     switch (featureID)
     {
+      case MadConfigDslPackage.QUERY_DECLARATION__NAME:
+        return getName();
       case MadConfigDslPackage.QUERY_DECLARATION__LABEL:
         return getLabel();
       case MadConfigDslPackage.QUERY_DECLARATION__DESCRIPTION:
@@ -245,6 +291,9 @@ public class QueryDeclarationImpl extends MADConfigElementImpl implements QueryD
   {
     switch (featureID)
     {
+      case MadConfigDslPackage.QUERY_DECLARATION__NAME:
+        setName((String)newValue);
+        return;
       case MadConfigDslPackage.QUERY_DECLARATION__LABEL:
         setLabel((String)newValue);
         return;
@@ -268,6 +317,9 @@ public class QueryDeclarationImpl extends MADConfigElementImpl implements QueryD
   {
     switch (featureID)
     {
+      case MadConfigDslPackage.QUERY_DECLARATION__NAME:
+        setName(NAME_EDEFAULT);
+        return;
       case MadConfigDslPackage.QUERY_DECLARATION__LABEL:
         setLabel(LABEL_EDEFAULT);
         return;
@@ -291,6 +343,8 @@ public class QueryDeclarationImpl extends MADConfigElementImpl implements QueryD
   {
     switch (featureID)
     {
+      case MadConfigDslPackage.QUERY_DECLARATION__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case MadConfigDslPackage.QUERY_DECLARATION__LABEL:
         return LABEL_EDEFAULT == null ? label != null : !LABEL_EDEFAULT.equals(label);
       case MadConfigDslPackage.QUERY_DECLARATION__DESCRIPTION:
@@ -312,7 +366,9 @@ public class QueryDeclarationImpl extends MADConfigElementImpl implements QueryD
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (label: ");
+    result.append(" (name: ");
+    result.append(name);
+    result.append(", label: ");
     result.append(label);
     result.append(", description: ");
     result.append(description);

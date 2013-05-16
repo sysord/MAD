@@ -19,6 +19,7 @@ Export-Package: com.sysord.mad.configuration.impl,
  com.sysord.mad.emitter.impl,
  com.sysord.mad.evaluator.impl,
  com.sysord.mad.evaluator.impl.ocl,
+ com.sysord.mad.evaluator.impl.ocl.customization,
  com.sysord.mad.model.provider.impl,
  com.sysord.mad.query.impl,
  com.sysord.mad.widget.impl

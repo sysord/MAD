@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link com.sysord.mad.configuration.madConfigDsl.impl.XtextLanguageDescriptorMdslImpl#getName <em>Name</em>}</li>
  *   <li>{@link com.sysord.mad.configuration.madConfigDsl.impl.XtextLanguageDescriptorMdslImpl#getLanguageId <em>Language Id</em>}</li>
  *   <li>{@link com.sysord.mad.configuration.madConfigDsl.impl.XtextLanguageDescriptorMdslImpl#getBundleId <em>Bundle Id</em>}</li>
  *   <li>{@link com.sysord.mad.configuration.madConfigDsl.impl.XtextLanguageDescriptorMdslImpl#getActivatorClassName <em>Activator Class Name</em>}</li>
@@ -31,6 +32,26 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class XtextLanguageDescriptorMdslImpl extends MADConfigElementImpl implements XtextLanguageDescriptorMdsl
 {
+  /**
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
+
   /**
    * The default value of the '{@link #getLanguageId() <em>Language Id</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -117,6 +138,29 @@ public class XtextLanguageDescriptorMdslImpl extends MADConfigElementImpl implem
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getName()
+  {
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MadConfigDslPackage.XTEXT_LANGUAGE_DESCRIPTOR_MDSL__NAME, oldName, name));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public String getLanguageId()
   {
     return languageId;
@@ -191,6 +235,8 @@ public class XtextLanguageDescriptorMdslImpl extends MADConfigElementImpl implem
   {
     switch (featureID)
     {
+      case MadConfigDslPackage.XTEXT_LANGUAGE_DESCRIPTOR_MDSL__NAME:
+        return getName();
       case MadConfigDslPackage.XTEXT_LANGUAGE_DESCRIPTOR_MDSL__LANGUAGE_ID:
         return getLanguageId();
       case MadConfigDslPackage.XTEXT_LANGUAGE_DESCRIPTOR_MDSL__BUNDLE_ID:
@@ -211,6 +257,9 @@ public class XtextLanguageDescriptorMdslImpl extends MADConfigElementImpl implem
   {
     switch (featureID)
     {
+      case MadConfigDslPackage.XTEXT_LANGUAGE_DESCRIPTOR_MDSL__NAME:
+        setName((String)newValue);
+        return;
       case MadConfigDslPackage.XTEXT_LANGUAGE_DESCRIPTOR_MDSL__LANGUAGE_ID:
         setLanguageId((String)newValue);
         return;
@@ -234,6 +283,9 @@ public class XtextLanguageDescriptorMdslImpl extends MADConfigElementImpl implem
   {
     switch (featureID)
     {
+      case MadConfigDslPackage.XTEXT_LANGUAGE_DESCRIPTOR_MDSL__NAME:
+        setName(NAME_EDEFAULT);
+        return;
       case MadConfigDslPackage.XTEXT_LANGUAGE_DESCRIPTOR_MDSL__LANGUAGE_ID:
         setLanguageId(LANGUAGE_ID_EDEFAULT);
         return;
@@ -257,6 +309,8 @@ public class XtextLanguageDescriptorMdslImpl extends MADConfigElementImpl implem
   {
     switch (featureID)
     {
+      case MadConfigDslPackage.XTEXT_LANGUAGE_DESCRIPTOR_MDSL__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case MadConfigDslPackage.XTEXT_LANGUAGE_DESCRIPTOR_MDSL__LANGUAGE_ID:
         return LANGUAGE_ID_EDEFAULT == null ? languageId != null : !LANGUAGE_ID_EDEFAULT.equals(languageId);
       case MadConfigDslPackage.XTEXT_LANGUAGE_DESCRIPTOR_MDSL__BUNDLE_ID:
@@ -278,7 +332,9 @@ public class XtextLanguageDescriptorMdslImpl extends MADConfigElementImpl implem
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (languageId: ");
+    result.append(" (name: ");
+    result.append(name);
+    result.append(", languageId: ");
     result.append(languageId);
     result.append(", bundleId: ");
     result.append(bundleId);

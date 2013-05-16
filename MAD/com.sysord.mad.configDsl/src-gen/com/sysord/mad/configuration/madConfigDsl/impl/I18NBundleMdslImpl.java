@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link com.sysord.mad.configuration.madConfigDsl.impl.I18NBundleMdslImpl#getName <em>Name</em>}</li>
  *   <li>{@link com.sysord.mad.configuration.madConfigDsl.impl.I18NBundleMdslImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link com.sysord.mad.configuration.madConfigDsl.impl.I18NBundleMdslImpl#getBundleDescriptor <em>Bundle Descriptor</em>}</li>
  *   <li>{@link com.sysord.mad.configuration.madConfigDsl.impl.I18NBundleMdslImpl#getBundleUri <em>Bundle Uri</em>}</li>
@@ -34,6 +35,26 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class I18NBundleMdslImpl extends MADConfigElementImpl implements I18NBundleMdsl
 {
+  /**
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
+
   /**
    * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -103,6 +124,29 @@ public class I18NBundleMdslImpl extends MADConfigElementImpl implements I18NBund
   protected EClass eStaticClass()
   {
     return MadConfigDslPackage.Literals.I18N_BUNDLE_MDSL;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getName()
+  {
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MadConfigDslPackage.I18N_BUNDLE_MDSL__NAME, oldName, name));
   }
 
   /**
@@ -225,6 +269,8 @@ public class I18NBundleMdslImpl extends MADConfigElementImpl implements I18NBund
   {
     switch (featureID)
     {
+      case MadConfigDslPackage.I18N_BUNDLE_MDSL__NAME:
+        return getName();
       case MadConfigDslPackage.I18N_BUNDLE_MDSL__DESCRIPTION:
         return getDescription();
       case MadConfigDslPackage.I18N_BUNDLE_MDSL__BUNDLE_DESCRIPTOR:
@@ -245,6 +291,9 @@ public class I18NBundleMdslImpl extends MADConfigElementImpl implements I18NBund
   {
     switch (featureID)
     {
+      case MadConfigDslPackage.I18N_BUNDLE_MDSL__NAME:
+        setName((String)newValue);
+        return;
       case MadConfigDslPackage.I18N_BUNDLE_MDSL__DESCRIPTION:
         setDescription((String)newValue);
         return;
@@ -268,6 +317,9 @@ public class I18NBundleMdslImpl extends MADConfigElementImpl implements I18NBund
   {
     switch (featureID)
     {
+      case MadConfigDslPackage.I18N_BUNDLE_MDSL__NAME:
+        setName(NAME_EDEFAULT);
+        return;
       case MadConfigDslPackage.I18N_BUNDLE_MDSL__DESCRIPTION:
         setDescription(DESCRIPTION_EDEFAULT);
         return;
@@ -291,6 +343,8 @@ public class I18NBundleMdslImpl extends MADConfigElementImpl implements I18NBund
   {
     switch (featureID)
     {
+      case MadConfigDslPackage.I18N_BUNDLE_MDSL__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case MadConfigDslPackage.I18N_BUNDLE_MDSL__DESCRIPTION:
         return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
       case MadConfigDslPackage.I18N_BUNDLE_MDSL__BUNDLE_DESCRIPTOR:
@@ -312,7 +366,9 @@ public class I18NBundleMdslImpl extends MADConfigElementImpl implements I18NBund
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (description: ");
+    result.append(" (name: ");
+    result.append(name);
+    result.append(", description: ");
     result.append(description);
     result.append(", bundleUri: ");
     result.append(bundleUri);

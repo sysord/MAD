@@ -14,6 +14,7 @@ package com.sysord.acceleo.tools.module;
 import java.util.List;
 
 import org.eclipse.acceleo.model.mtl.Module;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EPackage;
 
 /**
@@ -23,7 +24,7 @@ import org.eclipse.emf.ecore.EPackage;
  * @author Fabien Vignal <vignalf@gmail.com>
  */
 public interface AcceleoModuleProvider {
-
+ 
     /**
      * Initializes this module provider with the given {@link EPackage packages}.
      * 
@@ -41,4 +42,15 @@ public interface AcceleoModuleProvider {
      * @throws IllegalStateException if this provider has not been initialized.
      */
     public Module getModule(ModuleDescriptor moduleDescriptor);
+
+    /**
+     * Returns the {@link Module module} corresponding to the given
+     * {@link URI} or {@code null} if it was not found.
+     * 
+     * @param moduleUri
+     * @return the {@link Module module} corresponding to the given
+     *         {@link URI} or {@code null}.
+     * @throws IllegalStateException if this provider has not been initialized.
+     */
+	public Module getModule(URI moduleUri);
 }

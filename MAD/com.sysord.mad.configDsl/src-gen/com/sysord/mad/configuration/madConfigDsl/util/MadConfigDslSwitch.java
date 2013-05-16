@@ -209,6 +209,14 @@ public class MadConfigDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case MadConfigDslPackage.OCL_CUSTOM_LIBRARY_MDSL:
+      {
+        OCLCustomLibraryMdsl oclCustomLibraryMdsl = (OCLCustomLibraryMdsl)theEObject;
+        T result = caseOCLCustomLibraryMdsl(oclCustomLibraryMdsl);
+        if (result == null) result = caseMADConfigElement(oclCustomLibraryMdsl);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case MadConfigDslPackage.QUERY_EVALUATOR_MDSL:
       {
         QueryEvaluatorMdsl queryEvaluatorMdsl = (QueryEvaluatorMdsl)theEObject;
@@ -770,6 +778,22 @@ public class MadConfigDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseXtextLanguageReference(XtextLanguageReference object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>OCL Custom Library Mdsl</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>OCL Custom Library Mdsl</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseOCLCustomLibraryMdsl(OCLCustomLibraryMdsl object)
   {
     return null;
   }

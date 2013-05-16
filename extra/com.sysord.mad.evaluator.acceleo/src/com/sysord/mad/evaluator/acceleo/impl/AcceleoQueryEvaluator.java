@@ -29,8 +29,8 @@ import com.sysord.mad.evaluator.QueryEvaluatorException;
 import com.sysord.mad.evaluator.QueryResult;
 import com.sysord.mad.evaluator.impl.AbstractQueryEvaluator;
 import com.sysord.mad.evaluator.impl.QueryResultImpl;
-import com.sysord.mad.evaluator.impl.ocl.OCLCustomisationHelper;
 import com.sysord.mad.evaluator.impl.ocl.OCLTypeDescriptorUtil;
+import com.sysord.mad.evaluator.impl.ocl.OCLTypeUtil;
 import com.sysord.mad.type.TypeDescriptor;
 import com.sysord.mad.type.TypeDescriptorUtil;
 
@@ -69,7 +69,7 @@ public class AcceleoQueryEvaluator  extends AbstractQueryEvaluator implements Qu
 
 	
 	@Override
-	protected <T> QueryResult processEvaluation(QueryEvaluationContext evaluationContext) throws QueryEvaluatorException {
+	protected <T> QueryResult<?> processEvaluation(QueryEvaluationContext evaluationContext) throws QueryEvaluatorException {
 		
 		Object acceleoContextObject = evaluationContext.getContextObject();
 		
@@ -87,6 +87,7 @@ public class AcceleoQueryEvaluator  extends AbstractQueryEvaluator implements Qu
 
 	}
 
+	@SuppressWarnings("unchecked")
 	protected <T> QueryResult<T> evaluateAcceleoQuery(QueryEvaluationContext evaluationContext, Query query, Object contextObjectOrProxy) {
 		Object result = evalQuery(evaluationContext, query, contextObjectOrProxy);
 		//create and return QueryResult
@@ -113,7 +114,7 @@ public class AcceleoQueryEvaluator  extends AbstractQueryEvaluator implements Qu
 		}else{
 			//when result ocl return type is oclAny: we have no instanceClass
 			// use default TypDescriptor builder
-			if(OCLCustomisationHelper.OCL_ANY == oclReturnType){
+			if(OCLTypeUtil.OCL_ANY == oclReturnType){
 				resultTypeDescriptor = TypeDescriptorUtil.createTypeDescriptor(result);			
 			}else{
 				resultTypeDescriptor = oclTypeToTypeDescriptor(oclReturnType);							

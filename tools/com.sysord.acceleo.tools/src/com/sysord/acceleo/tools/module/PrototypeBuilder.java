@@ -412,6 +412,24 @@ public class PrototypeBuilder {
             return EmfToolsFacade.getInstance().typesEqual(returnType, otherProto.getReturnType());
         }
 
+        /**
+         * Create a String representation for the prototype
+         * @return
+         */
+        @Override
+        public String toString(){
+        	StringBuilder sb = new StringBuilder();
+        	sb.append(type.toString()).append("_")
+        	.append(name).append("(");
+        	for(Parameter parameter : parameters){
+        		sb.append(parameter.getType().getInstanceClassName()).append(" ");
+        	}
+        	sb.append(name).append(")")
+        	.append(returnType == null ? "" : ":" + returnType.getInstanceClassName());
+
+        	return sb.toString();
+        }
+        
         @Override
         protected TemplatePrototype clone() throws CloneNotSupportedException {
             TemplatePrototypeImpl clone = (TemplatePrototypeImpl) super.clone();

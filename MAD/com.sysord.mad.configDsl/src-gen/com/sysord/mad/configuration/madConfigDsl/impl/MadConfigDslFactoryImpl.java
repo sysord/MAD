@@ -86,6 +86,7 @@ public class MadConfigDslFactoryImpl extends EFactoryImpl implements MadConfigDs
       case MadConfigDslPackage.CUSTOM_MODEL_PROVIDER_MDSL: return createCustomModelProviderMdsl();
       case MadConfigDslPackage.XTEXT_LANGUAGE_DESCRIPTOR_MDSL: return createXtextLanguageDescriptorMdsl();
       case MadConfigDslPackage.XTEXT_LANGUAGE_REFERENCE: return createXtextLanguageReference();
+      case MadConfigDslPackage.OCL_CUSTOM_LIBRARY_MDSL: return createOCLCustomLibraryMdsl();
       case MadConfigDslPackage.QUERY_EVALUATOR_MDSL: return createQueryEvaluatorMdsl();
       case MadConfigDslPackage.WIDGET_TYPE: return createWidgetType();
       case MadConfigDslPackage.UI_TAB_MDSL: return createUITabMdsl();
@@ -368,6 +369,17 @@ public class MadConfigDslFactoryImpl extends EFactoryImpl implements MadConfigDs
   {
     XtextLanguageReferenceImpl xtextLanguageReference = new XtextLanguageReferenceImpl();
     return xtextLanguageReference;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public OCLCustomLibraryMdsl createOCLCustomLibraryMdsl()
+  {
+    OCLCustomLibraryMdslImpl oclCustomLibraryMdsl = new OCLCustomLibraryMdslImpl();
+    return oclCustomLibraryMdsl;
   }
 
   /**

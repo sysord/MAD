@@ -44,9 +44,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//MADConfiguration/imports"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//MADConfiguration/configElements"/>
     </genClasses>
-    <genClasses ecoreClass="MadConfigDsl.ecore#//MADConfigElement">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//MADConfigElement/name"/>
-    </genClasses>
+    <genClasses ecoreClass="MadConfigDsl.ecore#//MADConfigElement"/>
     <genClasses ecoreClass="MadConfigDsl.ecore#//Import">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//Import/importURI"/>
     </genClasses>
@@ -70,16 +68,19 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//LiteraPropValueExprFragment/value"/>
     </genClasses>
     <genClasses ecoreClass="MadConfigDsl.ecore#//IconDescriptorMdsl">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//IconDescriptorMdsl/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//IconDescriptorMdsl/description"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//IconDescriptorMdsl/bundleDescriptor"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//IconDescriptorMdsl/bundleUri"/>
     </genClasses>
     <genClasses ecoreClass="MadConfigDsl.ecore#//I18NBundleMdsl">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//I18NBundleMdsl/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//I18NBundleMdsl/description"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//I18NBundleMdsl/bundleDescriptor"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//I18NBundleMdsl/bundleUri"/>
     </genClasses>
     <genClasses ecoreClass="MadConfigDsl.ecore#//ForeignModelMdsl">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//ForeignModelMdsl/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//ForeignModelMdsl/label"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//ForeignModelMdsl/description"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//ForeignModelMdsl/provider"/>
@@ -100,6 +101,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//CustomModelProviderMdsl/parameters"/>
     </genClasses>
     <genClasses ecoreClass="MadConfigDsl.ecore#//XtextLanguageDescriptorMdsl">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//XtextLanguageDescriptorMdsl/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//XtextLanguageDescriptorMdsl/languageId"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//XtextLanguageDescriptorMdsl/bundleId"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//XtextLanguageDescriptorMdsl/activatorClassName"/>
@@ -107,7 +109,13 @@
     <genClasses ecoreClass="MadConfigDsl.ecore#//XtextLanguageReference">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//XtextLanguageReference/xtextLanguageDescriptor"/>
     </genClasses>
+    <genClasses ecoreClass="MadConfigDsl.ecore#//OCLCustomLibraryMdsl">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//OCLCustomLibraryMdsl/label"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//OCLCustomLibraryMdsl/classDescriptor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//OCLCustomLibraryMdsl/description"/>
+    </genClasses>
     <genClasses ecoreClass="MadConfigDsl.ecore#//QueryEvaluatorMdsl">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//QueryEvaluatorMdsl/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//QueryEvaluatorMdsl/label"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//QueryEvaluatorMdsl/classDescriptor"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//QueryEvaluatorMdsl/queryPropertiesTypes"/>
@@ -115,17 +123,20 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//QueryEvaluatorMdsl/description"/>
     </genClasses>
     <genClasses ecoreClass="MadConfigDsl.ecore#//WidgetType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//WidgetType/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//WidgetType/category"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//WidgetType/label"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//WidgetType/classDescriptor"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//WidgetType/description"/>
     </genClasses>
     <genClasses ecoreClass="MadConfigDsl.ecore#//UITabMdsl">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//UITabMdsl/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//UITabMdsl/i18NLabel"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//UITabMdsl/labelFormatExpr"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//UITabMdsl/description"/>
     </genClasses>
     <genClasses ecoreClass="MadConfigDsl.ecore#//LayerMdsl">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//LayerMdsl/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//LayerMdsl/i18NLabel"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//LayerMdsl/labelFormatExpr"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//LayerMdsl/description"/>
@@ -133,6 +144,7 @@
     </genClasses>
     <genClasses ecoreClass="MadConfigDsl.ecore#//TypeConfigurationMdsl">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//TypeConfigurationMdsl/defaultConfiguration"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//TypeConfigurationMdsl/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//TypeConfigurationMdsl/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//TypeConfigurationMdsl/i18NLabelProvider"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//TypeConfigurationMdsl/labelProviderExpression"/>
@@ -185,6 +197,7 @@
     </genClasses>
     <genClasses ecoreClass="MadConfigDsl.ecore#//CommandMdsl"/>
     <genClasses ecoreClass="MadConfigDsl.ecore#//CommandDeclaration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//CommandDeclaration/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//CommandDeclaration/label"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//CommandDeclaration/description"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//CommandDeclaration/definition"/>
@@ -214,6 +227,7 @@
     <genClasses ecoreClass="MadConfigDsl.ecore#//QueryUsage"/>
     <genClasses ecoreClass="MadConfigDsl.ecore#//QueryMdsl"/>
     <genClasses ecoreClass="MadConfigDsl.ecore#//QueryDeclaration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//QueryDeclaration/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//QueryDeclaration/label"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//QueryDeclaration/description"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MadConfigDsl.ecore#//QueryDeclaration/definition"/>
@@ -252,6 +266,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//LiteralFormatExprFragment/value"/>
     </genClasses>
     <genClasses ecoreClass="MadConfigDsl.ecore#//TextMacro">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//TextMacro/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//TextMacro/label"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//TextMacro/description"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MadConfigDsl.ecore#//TextMacro/macroValue"/>

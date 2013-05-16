@@ -48,6 +48,17 @@ public class ModuleInterfaceBuilder {
     }
 
     /**
+     * Add the given import for the {@link ModuleInterface}.
+     * 
+     * @param importName
+     * @return this {@link ModuleInterfaceBuilder builder}.
+     */
+    public ModuleInterfaceBuilder addImport(String importName) {
+        moduleInterface.imports.add(importName);
+        return this;
+    }
+
+    /**
      * Add the given {@link TemplatePrototype prototype} for the {@link ModuleInterface}.
      * 
      * @param prototype
@@ -66,6 +77,17 @@ public class ModuleInterfaceBuilder {
      */
     public ModuleInterfaceBuilder addAllMetamodelUris(Collection<String> uris) {
         moduleInterface.metamodelUris.addAll(uris);
+        return this;
+    }
+
+    /**
+     * Add the given meta-model's URIs for the {@link ModuleInterface}.
+     * 
+     * @param uris
+     * @return this {@link ModuleInterfaceBuilder builder}.
+     */
+    public ModuleInterfaceBuilder addAllImports(Collection<String> imports) {
+        moduleInterface.imports.addAll(imports);
         return this;
     }
 
@@ -103,6 +125,7 @@ public class ModuleInterfaceBuilder {
 
         private ModuleDescriptor descriptor;
         private HashSet<String> metamodelUris;
+        private HashSet<String> imports;
         private List<TemplatePrototype> prototypes;
 
         // Unmodifiable lists for avoiding external modifications
@@ -114,6 +137,7 @@ public class ModuleInterfaceBuilder {
          */
         public ModuleInterfaceImpl() {
             metamodelUris = new HashSet<String>(1);
+            imports = new HashSet<String>(1);
             prototypes = new ArrayList<TemplatePrototype>();
             externViewMetamodelUris = Collections.unmodifiableSet(metamodelUris);
             externViewPrototypes = Collections.unmodifiableList(prototypes);
@@ -129,6 +153,11 @@ public class ModuleInterfaceBuilder {
             return externViewMetamodelUris;
         }
 
+        @Override 
+        public Set<String> getImports(){
+            return imports;
+        }
+        
         @Override
         public List<TemplatePrototype> getPrototypes() {
             return externViewPrototypes;
@@ -140,6 +169,7 @@ public class ModuleInterfaceBuilder {
             moduleInterface.descriptor = new ModuleDescriptorImpl(descriptor.getBundleURI(),
                     descriptor.getQualifiedName());
             moduleInterface.metamodelUris.addAll(metamodelUris);
+            moduleInterface.imports.addAll(imports);            
             moduleInterface.prototypes.addAll(prototypes);
             return moduleInterface;
         }

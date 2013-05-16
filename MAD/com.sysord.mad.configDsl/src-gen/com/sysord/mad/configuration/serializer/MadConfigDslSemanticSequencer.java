@@ -22,6 +22,7 @@ import com.sysord.mad.configuration.madConfigDsl.LiteralFormatExprFragment;
 import com.sysord.mad.configuration.madConfigDsl.LiteralQueryFragment;
 import com.sysord.mad.configuration.madConfigDsl.MADConfiguration;
 import com.sysord.mad.configuration.madConfigDsl.MadConfigDslPackage;
+import com.sysord.mad.configuration.madConfigDsl.OCLCustomLibraryMdsl;
 import com.sysord.mad.configuration.madConfigDsl.PropertyMdsl;
 import com.sysord.mad.configuration.madConfigDsl.PropertyTypeMdsl;
 import com.sysord.mad.configuration.madConfigDsl.PropertyValueMdsl;
@@ -191,6 +192,13 @@ public class MadConfigDslSemanticSequencer extends AbstractDelegatingSemanticSeq
 			case MadConfigDslPackage.MAD_CONFIGURATION:
 				if(context == grammarAccess.getMADConfigurationRule()) {
 					sequence_MADConfiguration(context, (MADConfiguration) semanticObject); 
+					return; 
+				}
+				else break;
+			case MadConfigDslPackage.OCL_CUSTOM_LIBRARY_MDSL:
+				if(context == grammarAccess.getMADConfigElementRule() ||
+				   context == grammarAccess.getOCLCustomLibraryMdslRule()) {
+					sequence_OCLCustomLibraryMdsl(context, (OCLCustomLibraryMdsl) semanticObject); 
 					return; 
 				}
 				else break;
@@ -601,6 +609,15 @@ public class MadConfigDslSemanticSequencer extends AbstractDelegatingSemanticSeq
 	
 	/**
 	 * Constraint:
+	 *     (label=STRING classDescriptor=ClassDescriptorMdsl description=STRING?)
+	 */
+	protected void sequence_OCLCustomLibraryMdsl(EObject context, OCLCustomLibraryMdsl semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (propertyName=[PropertyTypeMdsl|ID] propertyValue=PropertyValueMdsl)
 	 */
 	protected void sequence_PropertyMdsl(EObject context, PropertyMdsl semanticObject) {
@@ -892,8 +909,8 @@ public class MadConfigDslSemanticSequencer extends AbstractDelegatingSemanticSeq
 	 */
 	protected void sequence_XtextLanguageDescriptorMdsl(EObject context, XtextLanguageDescriptorMdsl semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, MadConfigDslPackage.Literals.MAD_CONFIG_ELEMENT__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MadConfigDslPackage.Literals.MAD_CONFIG_ELEMENT__NAME));
+			if(transientValues.isValueTransient(semanticObject, MadConfigDslPackage.Literals.XTEXT_LANGUAGE_DESCRIPTOR_MDSL__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MadConfigDslPackage.Literals.XTEXT_LANGUAGE_DESCRIPTOR_MDSL__NAME));
 			if(transientValues.isValueTransient(semanticObject, MadConfigDslPackage.Literals.XTEXT_LANGUAGE_DESCRIPTOR_MDSL__LANGUAGE_ID) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MadConfigDslPackage.Literals.XTEXT_LANGUAGE_DESCRIPTOR_MDSL__LANGUAGE_ID));
 			if(transientValues.isValueTransient(semanticObject, MadConfigDslPackage.Literals.XTEXT_LANGUAGE_DESCRIPTOR_MDSL__BUNDLE_ID) == ValueTransient.YES)

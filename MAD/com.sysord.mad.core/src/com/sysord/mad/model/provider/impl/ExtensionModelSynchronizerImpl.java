@@ -94,7 +94,7 @@ public class ExtensionModelSynchronizerImpl extends AbstractModelObserver implem
 	@Override
 	public void elementAdded(EObject element) {
 		if(extensionManager.elementSupportExtension(getExtensionModel(), element)){
-			//add element in extension model: request bloc with create if not exists flag
+			//add element in extension model: request extension fro then element with create if not exists flag set to true
 			extensionManager.getElementExtension(getExtensionModel(), element, null, true);
 			if(isAutoSaveEnabled){
 				_doAutosave();

@@ -14,6 +14,7 @@ package com.sysord.mad.evaluator.impl;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -26,7 +27,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.domain.IEditingDomainProvider;
-import org.eclipse.emf.transaction.TransactionalEditingDomain;
 
 public class ContextObjectInvocationHandler implements InvocationHandler{
 	
@@ -43,7 +43,7 @@ public class ContextObjectInvocationHandler implements InvocationHandler{
 	/**
 	 * Proxies store.
 	 */
-	protected static Map<Object,Object> proxiesCache = new HashMap<Object,Object>();
+	protected static Map<Object,List<Object>> proxiesCache = new HashMap<Object,List<Object>>();
 	
 	/**
 	 * Classes excluded for proxy creation. 
@@ -63,22 +63,36 @@ public class ContextObjectInvocationHandler implements InvocationHandler{
 	 */
 	public static Object createProxy(Object realObject){
 		if(TRACE__CONTEXT_OBJECT_INVOCATION_HANDLER){
-			System.out.println("Create proxy for " + realObject.getClass());
-		}		
-		Object proxy = proxiesCache.get(realObject);
-		if(proxy == null){
-			ClassLoader classLoader = realObject.getClass().getClassLoader();
-			Set<Class<?>> interfaces = new HashSet<Class<?>>(Arrays.asList(realObject.getClass().getInterfaces()));
-			Class<?> curclass = realObject.getClass();
-			while(curclass != null){
-				List<Class<?>> superInterfaces = Arrays.asList(curclass.getInterfaces());
-				interfaces.addAll(superInterfaces);
-				curclass = curclass.getSuperclass();
-			}
-			ContextObjectInvocationHandler invocationHandler = new ContextObjectInvocationHandler(realObject);		
-			proxy = Proxy.newProxyInstance(classLoader, interfaces.toArray(new Class<?>[0]), invocationHandler);
-			proxiesCache.put(realObject, proxy);
+			//System.out.println("Create proxy for " + realObject.getClass() + ":" + realObject.hashCode());
 		}
+		
+		List<Object> cachedProxies = proxiesCache.get(realObject);
+		//found candidate proxies for the object
+		if(cachedProxies != null){
+			for(Object cachedProxy : cachedProxies){
+				//object has since a proxy: returns it
+				if(retrieveRealObject(cachedProxy) == realObject){
+					//System.out.println("Retreive proxy for " + realObject.getClass() + ":" + realObject.hashCode());
+					return cachedProxy;
+				}
+			}
+		}else{
+			cachedProxies = new ArrayList<Object>();
+			proxiesCache.put(realObject, cachedProxies);
+		}
+		
+		//System.out.println("Create proxy for " + realObject.getClass() + ":" + realObject.hashCode());
+		ClassLoader classLoader = realObject.getClass().getClassLoader();
+		Set<Class<?>> interfaces = new HashSet<Class<?>>(Arrays.asList(realObject.getClass().getInterfaces()));
+		Class<?> curclass = realObject.getClass();
+		while(curclass != null){
+			List<Class<?>> superInterfaces = Arrays.asList(curclass.getInterfaces());
+			interfaces.addAll(superInterfaces);
+			curclass = curclass.getSuperclass();
+		}
+		ContextObjectInvocationHandler invocationHandler = new ContextObjectInvocationHandler(realObject);		
+		Object proxy = Proxy.newProxyInstance(classLoader, interfaces.toArray(new Class<?>[0]), invocationHandler);
+		cachedProxies.add(proxy);
 		return proxy;
 	}
 	
@@ -127,18 +141,25 @@ public class ContextObjectInvocationHandler implements InvocationHandler{
 				System.out.println("ContextObjectProxy Method:" + contextObject.getClass().getName() + "." + method.getName());				
 			}
 			
-			if(isEObject){
-				//Property access
-				if(E_GET_FEATURE_METHOD.equals(method.getName())){
-					processEGetMethodInvocation(args, result);
-				}else if(E_CONTAINER_METHOD.equals(method.getName())){
-					processEContainerMethodInvocation(args, result);					
-				}else if(method.getName().startsWith(GET_FEATURE_PREFIX)){
-					processGetFeatureMethodInvocation(method.getName().substring(GET_FEATURE_PREFIX.length()), result);										
-				}				
+			if(CurrentEvaluationContext.getEvaluationAnalyze() == null){
+				//when proxy method is invoked out of an evaluation
+				return result;
+			}else{
+				if(isEObject){
+					//Property access
+					if(E_GET_FEATURE_METHOD.equals(method.getName())){
+						processEGetMethodInvocation(args, result);
+					}else if(E_CONTAINER_METHOD.equals(method.getName())){
+						processEContainerMethodInvocation(args, result);					
+					}else if(method.getName().startsWith(GET_FEATURE_PREFIX)){
+						processGetFeatureMethodInvocation(method.getName().substring(GET_FEATURE_PREFIX.length()), result);										
+					}				
+				}
+
+				return createProxyIfNeeded(result);				
 			}
 
-			return createProxyIfNeeded(result);
+			
 				
 		} catch (Exception e) {
 			e.printStackTrace();

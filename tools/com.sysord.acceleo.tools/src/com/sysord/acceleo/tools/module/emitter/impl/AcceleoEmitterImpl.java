@@ -58,6 +58,59 @@ public class AcceleoEmitterImpl implements AcceleoEmitter {
         fillBuffer(sourceContent, buffer, moduleInterface);
         saveContent(file, buffer);
     }
+    
+    @Override
+    public void addImport(org.eclipse.acceleo.model.mtl.Module module, String importName) {
+        addAllImports(module, Arrays.asList(importName));
+    }
+
+    @Override
+    public void addAllImports(org.eclipse.acceleo.model.mtl.Module module, Collection<String> importNames) {
+    	createImports(module, importNames);
+    }
+
+    public void createImports(org.eclipse.acceleo.model.mtl.Module module, Collection<String> importNames) {
+        ModuleDescriptor descriptor = AcceleoTools.createModuleDescriptor(module);
+        URI mtlUri = AcceleoTools.createMtlURI(descriptor);
+        IFile file = EMFUtil.createIFileFromURI(mtlUri);
+        StringBuffer buffer = new AcceleoSourceBuffer(EclipseTools.createFile(file)).getBuffer();
+        AcceleoSourceContent sourceContent = new AcceleoSourceContent();
+        sourceContent.init(buffer, file);
+        org.eclipse.acceleo.model.mtl.ModuleElement element = null;
+
+        int originalLength = buffer.length();
+        int offset = 0;
+        int startPosition = 0;
+        
+        //look for first element
+        if(!module.getOwnedModuleElement().isEmpty()){
+        	element = module.getOwnedModuleElement().get(0); 
+        }
+        
+        if (element != null) {
+            startPosition = element.getStartPosition();
+        } else {
+            Module cst = sourceContent.getCST();
+            EList<ModuleElement> moduleElements = cst.getOwnedModuleElement();
+            if (moduleElements.size() > 0) {
+                startPosition = moduleElements.get(moduleElements.size() - 1).getEndPosition();
+            } else {
+                startPosition = buffer.length();
+            }
+        }
+        for (String importName : importNames) {
+        	addImport(sourceContent, buffer, startPosition + offset, importName);
+            offset = buffer.length() - originalLength;
+        }
+        emitLR(sourceContent, buffer, startPosition + offset);
+        saveContent(file, buffer);
+    }
+
+    
+    protected void emitLR(AcceleoSourceContent sourceContent, StringBuffer buffer, int startPosition){
+        buffer.insert(startPosition, LR);
+        sourceContent.updateCST(0, buffer.length(), buffer.toString());
+    }
 
     @Override
     public void addTemplate(org.eclipse.acceleo.model.mtl.Module module, TemplatePrototype prototype) {
@@ -142,7 +195,14 @@ public class AcceleoEmitterImpl implements AcceleoEmitter {
         // Delete the last comma and space
         buffer.delete(buffer.length() - 2, buffer.length());
         buffer.append(")]");
+        buffer.append("\n");
 
+        //Emit Imports
+        for (String importName : moduleInterface.getImports()) {
+        	addImport(sourceContent, buffer, buffer.length(), importName);
+        }
+        buffer.append("\n");
+        
         // Creation of the templates and queries
         for (TemplatePrototype prototype : moduleInterface.getPrototypes()) {
             addTemplate(sourceContent, buffer, buffer.length(), prototype);
@@ -242,6 +302,16 @@ public class AcceleoEmitterImpl implements AcceleoEmitter {
 
         // Insertion of the template in the buffer and updating the CST
         buffer.insert(startPosition, template.toString());
+        sourceContent.updateCST(0, buffer.length(), buffer.toString());
+    }
+
+    // Import emitter
+    private void addImport(AcceleoSourceContent sourceContent, StringBuffer buffer, int startPosition, String importName) {
+        StringBuilder importBloc = new StringBuilder();
+        // import
+        importBloc.append("[import ").append(importName).append("]").append(LR);        
+        // Insertion of the import statement in the buffer and updating the CST
+        buffer.insert(startPosition, importBloc.toString());
         sourceContent.updateCST(0, buffer.length(), buffer.toString());
     }
 

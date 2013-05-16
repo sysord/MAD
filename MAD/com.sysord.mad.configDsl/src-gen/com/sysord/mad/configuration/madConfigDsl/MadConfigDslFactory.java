@@ -188,6 +188,15 @@ public interface MadConfigDslFactory extends EFactory
   XtextLanguageReference createXtextLanguageReference();
 
   /**
+   * Returns a new object of class '<em>OCL Custom Library Mdsl</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>OCL Custom Library Mdsl</em>'.
+   * @generated
+   */
+  OCLCustomLibraryMdsl createOCLCustomLibraryMdsl();
+
+  /**
    * Returns a new object of class '<em>Query Evaluator Mdsl</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

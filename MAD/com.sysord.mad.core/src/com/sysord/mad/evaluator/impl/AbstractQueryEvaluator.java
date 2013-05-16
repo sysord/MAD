@@ -29,7 +29,6 @@ import com.sysord.mad.evaluator.QueryEvaluationContext;
 import com.sysord.mad.evaluator.QueryEvaluator;
 import com.sysord.mad.evaluator.QueryEvaluatorException;
 import com.sysord.mad.evaluator.QueryResult;
-import com.sysord.mad.evaluator.impl.ocl.EvaluationAnalyzeImpl;
 import com.sysord.mad.evaluator.impl.ocl.OCLQueryEvaluator;
 import com.sysord.mad.functionparser.FunctionProcessingException;
 import com.sysord.mad.functionparser.FunctionProcessor;
@@ -174,6 +173,16 @@ public abstract class AbstractQueryEvaluator implements QueryEvaluator {
 	 */
 	protected final boolean canUseProxies(){
 		return evaluateUsingProxy() && !PreferenceHelper.isProxyMechanismDisabled();		
+	}
+	
+	/**
+	 * Retrieves the real object if the realObjectOrProxy is a proxy with a ContextObjectInvocationHandler
+	 * @param realObjectOrProxy object or proxy
+	 * @return if the realObjectOrProxy is a with a ContextObjectInvocationHandler return the real object
+	 * otherwise return the realObjectOrProxy.
+	 */
+	protected Object resolveProxy(Object objectOrProxy){
+		return ContextObjectInvocationHandler.retrieveRealObject(objectOrProxy);
 	}
 	
 	/**

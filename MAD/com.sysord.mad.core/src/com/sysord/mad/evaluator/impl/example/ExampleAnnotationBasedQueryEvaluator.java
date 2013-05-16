@@ -46,6 +46,15 @@ public class ExampleAnnotationBasedQueryEvaluator extends AbstractAnnotationBase
 		return f1 + f2;
 	}
 	
+	/**
+	 * Provides the toString(Object) function
+	 * @param arg
+	 * @return
+	 */
+	@EvaluatorFunction
+	public String toString(Object arg){
+		return String.valueOf(arg);
+	}
 
 	/**
 	 * Provides the parent(EObject) function
@@ -60,21 +69,11 @@ public class ExampleAnnotationBasedQueryEvaluator extends AbstractAnnotationBase
 
 	@EvaluatorFunction(name="contextType")
 	public Object evalContext(QueryEvaluationContext evalContext, Integer i){
-		return "" +  i + " ==> " +  evalContext.getContextObjectType().getType();
-	}
-	
-	/**
-	 * Provides the toString(Object) function
-	 * @param arg
-	 * @return
-	 */
-	@EvaluatorFunction
-	public String toString(Object arg){
-		return String.valueOf(arg);
+		return evalContext.getContextObjectType().getType();
 	}
 	
 	
-
+	
 	/**
 	 * viewHolder for getting currentView and retrieve widgets
 	 */

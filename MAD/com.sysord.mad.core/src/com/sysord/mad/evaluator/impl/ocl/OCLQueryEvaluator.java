@@ -26,17 +26,10 @@ import org.eclipse.ocl.OCL;
 import org.eclipse.ocl.ParserException;
 import org.eclipse.ocl.Query;
 import org.eclipse.ocl.TypeResolver;
-import org.eclipse.ocl.ecore.BagType;
-import org.eclipse.ocl.ecore.EcoreEnvironmentFactory;
-import org.eclipse.ocl.ecore.EcoreFactory;
-import org.eclipse.ocl.ecore.OrderedSetType;
-import org.eclipse.ocl.ecore.SequenceType;
-import org.eclipse.ocl.ecore.SetType;
 import org.eclipse.ocl.expressions.ExpressionsFactory;
 import org.eclipse.ocl.expressions.OCLExpression;
 import org.eclipse.ocl.expressions.Variable;
 import org.eclipse.ocl.helper.OCLHelper;
-import org.eclipse.ocl.util.TypeUtil;
 
 import com.sysord.mad.evaluator.QueryAnalyze;
 import com.sysord.mad.evaluator.QueryEvaluationContext;
@@ -46,8 +39,6 @@ import com.sysord.mad.evaluator.impl.AbstractQueryEvaluator;
 import com.sysord.mad.evaluator.impl.QueryAnalyzeImpl;
 import com.sysord.mad.evaluator.impl.QueryResultImpl;
 import com.sysord.mad.type.TypeDescriptor;
-import com.sysord.mad.type.TypeDescriptor.TYPE_CATEGORY;
-import com.sysord.mad.type.TypeDescriptorImpl;
 import com.sysord.mad.type.TypeDescriptorUtil;
 import com.sysord.mad.type.TypedValue;
 
@@ -92,7 +83,7 @@ public class OCLQueryEvaluator extends AbstractQueryEvaluator {
 			EClassifier injectedVariableType = typeDescriptorToOclType(argEntry.getValue().getType());
 			//FIXME: define a default type for null value: choose OCLAny but is not the best way...
 			if(injectedVariableType == null){
-				injectedVariableType = OCLCustomisationHelper.OCL_ANY;
+				injectedVariableType = OCLTypeUtil.OCL_ANY;
 			}
 			// add it to the global OCL environment (remove previous version before for ensure variable registering)
 			String varname = oclVariableFormat.format(new String[]{argEntry.getKey()});
@@ -160,7 +151,7 @@ public class OCLQueryEvaluator extends AbstractQueryEvaluator {
 		}else{
 			//when result ocl return type is oclAny: we have no instanceClass
 			// use default TypDescriptor builder
-			if(OCLCustomisationHelper.OCL_ANY == oclReturnType){
+			if(OCLTypeUtil.OCL_ANY == oclReturnType){
 				resultTypeDescriptor = TypeDescriptorUtil.createTypeDescriptor(result);			
 			}else{
 				resultTypeDescriptor = oclTypeToTypeDescriptor(oclReturnType);							
@@ -264,7 +255,7 @@ public class OCLQueryEvaluator extends AbstractQueryEvaluator {
 
 			
 	protected EClassifier argumentOCLType(Object argument){
-		return OCLCustomisationHelper.oclType(argument);
+		return OCLTypeUtil.oclType(argument);
 	}
 
 	

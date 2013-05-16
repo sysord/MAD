@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link com.sysord.mad.configuration.madConfigDsl.impl.TextMacroImpl#getName <em>Name</em>}</li>
  *   <li>{@link com.sysord.mad.configuration.madConfigDsl.impl.TextMacroImpl#getLabel <em>Label</em>}</li>
  *   <li>{@link com.sysord.mad.configuration.madConfigDsl.impl.TextMacroImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link com.sysord.mad.configuration.madConfigDsl.impl.TextMacroImpl#getMacroValue <em>Macro Value</em>}</li>
@@ -31,6 +32,26 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class TextMacroImpl extends MADConfigElementImpl implements TextMacro
 {
+  /**
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
+
   /**
    * The default value of the '{@link #getLabel() <em>Label</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -117,6 +138,29 @@ public class TextMacroImpl extends MADConfigElementImpl implements TextMacro
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getName()
+  {
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MadConfigDslPackage.TEXT_MACRO__NAME, oldName, name));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public String getLabel()
   {
     return label;
@@ -191,6 +235,8 @@ public class TextMacroImpl extends MADConfigElementImpl implements TextMacro
   {
     switch (featureID)
     {
+      case MadConfigDslPackage.TEXT_MACRO__NAME:
+        return getName();
       case MadConfigDslPackage.TEXT_MACRO__LABEL:
         return getLabel();
       case MadConfigDslPackage.TEXT_MACRO__DESCRIPTION:
@@ -211,6 +257,9 @@ public class TextMacroImpl extends MADConfigElementImpl implements TextMacro
   {
     switch (featureID)
     {
+      case MadConfigDslPackage.TEXT_MACRO__NAME:
+        setName((String)newValue);
+        return;
       case MadConfigDslPackage.TEXT_MACRO__LABEL:
         setLabel((String)newValue);
         return;
@@ -234,6 +283,9 @@ public class TextMacroImpl extends MADConfigElementImpl implements TextMacro
   {
     switch (featureID)
     {
+      case MadConfigDslPackage.TEXT_MACRO__NAME:
+        setName(NAME_EDEFAULT);
+        return;
       case MadConfigDslPackage.TEXT_MACRO__LABEL:
         setLabel(LABEL_EDEFAULT);
         return;
@@ -257,6 +309,8 @@ public class TextMacroImpl extends MADConfigElementImpl implements TextMacro
   {
     switch (featureID)
     {
+      case MadConfigDslPackage.TEXT_MACRO__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case MadConfigDslPackage.TEXT_MACRO__LABEL:
         return LABEL_EDEFAULT == null ? label != null : !LABEL_EDEFAULT.equals(label);
       case MadConfigDslPackage.TEXT_MACRO__DESCRIPTION:
@@ -278,7 +332,9 @@ public class TextMacroImpl extends MADConfigElementImpl implements TextMacro
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (label: ");
+    result.append(" (name: ");
+    result.append(name);
+    result.append(", label: ");
     result.append(label);
     result.append(", description: ");
     result.append(description);

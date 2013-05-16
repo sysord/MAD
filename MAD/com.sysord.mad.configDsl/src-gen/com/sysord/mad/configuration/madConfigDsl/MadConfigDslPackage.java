@@ -108,22 +108,13 @@ public interface MadConfigDslPackage extends EPackage
   int MAD_CONFIG_ELEMENT = 1;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MAD_CONFIG_ELEMENT__NAME = 0;
-
-  /**
    * The number of structural features of the '<em>MAD Config Element</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MAD_CONFIG_ELEMENT_FEATURE_COUNT = 1;
+  int MAD_CONFIG_ELEMENT_FEATURE_COUNT = 0;
 
   /**
    * The meta object id for the '{@link com.sysord.mad.configuration.madConfigDsl.impl.ImportImpl <em>Import</em>}' class.
@@ -356,7 +347,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ICON_DESCRIPTOR_MDSL__NAME = MAD_CONFIG_ELEMENT__NAME;
+  int ICON_DESCRIPTOR_MDSL__NAME = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -365,7 +356,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ICON_DESCRIPTOR_MDSL__DESCRIPTION = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 0;
+  int ICON_DESCRIPTOR_MDSL__DESCRIPTION = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Bundle Descriptor</b></em>' containment reference.
@@ -374,7 +365,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ICON_DESCRIPTOR_MDSL__BUNDLE_DESCRIPTOR = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 1;
+  int ICON_DESCRIPTOR_MDSL__BUNDLE_DESCRIPTOR = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Bundle Uri</b></em>' attribute.
@@ -383,7 +374,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ICON_DESCRIPTOR_MDSL__BUNDLE_URI = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 2;
+  int ICON_DESCRIPTOR_MDSL__BUNDLE_URI = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 3;
 
   /**
    * The number of structural features of the '<em>Icon Descriptor Mdsl</em>' class.
@@ -392,7 +383,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ICON_DESCRIPTOR_MDSL_FEATURE_COUNT = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 3;
+  int ICON_DESCRIPTOR_MDSL_FEATURE_COUNT = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link com.sysord.mad.configuration.madConfigDsl.impl.I18NBundleMdslImpl <em>I18N Bundle Mdsl</em>}' class.
@@ -411,7 +402,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int I18N_BUNDLE_MDSL__NAME = MAD_CONFIG_ELEMENT__NAME;
+  int I18N_BUNDLE_MDSL__NAME = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -420,7 +411,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int I18N_BUNDLE_MDSL__DESCRIPTION = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 0;
+  int I18N_BUNDLE_MDSL__DESCRIPTION = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Bundle Descriptor</b></em>' containment reference.
@@ -429,7 +420,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int I18N_BUNDLE_MDSL__BUNDLE_DESCRIPTOR = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 1;
+  int I18N_BUNDLE_MDSL__BUNDLE_DESCRIPTOR = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Bundle Uri</b></em>' attribute.
@@ -438,7 +429,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int I18N_BUNDLE_MDSL__BUNDLE_URI = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 2;
+  int I18N_BUNDLE_MDSL__BUNDLE_URI = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 3;
 
   /**
    * The number of structural features of the '<em>I18N Bundle Mdsl</em>' class.
@@ -447,7 +438,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int I18N_BUNDLE_MDSL_FEATURE_COUNT = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 3;
+  int I18N_BUNDLE_MDSL_FEATURE_COUNT = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link com.sysord.mad.configuration.madConfigDsl.impl.ForeignModelMdslImpl <em>Foreign Model Mdsl</em>}' class.
@@ -466,7 +457,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FOREIGN_MODEL_MDSL__NAME = MAD_CONFIG_ELEMENT__NAME;
+  int FOREIGN_MODEL_MDSL__NAME = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Label</b></em>' attribute.
@@ -475,7 +466,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FOREIGN_MODEL_MDSL__LABEL = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 0;
+  int FOREIGN_MODEL_MDSL__LABEL = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -484,7 +475,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FOREIGN_MODEL_MDSL__DESCRIPTION = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 1;
+  int FOREIGN_MODEL_MDSL__DESCRIPTION = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Provider</b></em>' containment reference.
@@ -493,7 +484,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FOREIGN_MODEL_MDSL__PROVIDER = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 2;
+  int FOREIGN_MODEL_MDSL__PROVIDER = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Synchronizer Factory Class</b></em>' containment reference.
@@ -502,7 +493,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FOREIGN_MODEL_MDSL__SYNCHRONIZER_FACTORY_CLASS = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 3;
+  int FOREIGN_MODEL_MDSL__SYNCHRONIZER_FACTORY_CLASS = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Extension Manager Class</b></em>' containment reference.
@@ -511,7 +502,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FOREIGN_MODEL_MDSL__EXTENSION_MANAGER_CLASS = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 4;
+  int FOREIGN_MODEL_MDSL__EXTENSION_MANAGER_CLASS = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Dsl Reference</b></em>' containment reference.
@@ -520,7 +511,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FOREIGN_MODEL_MDSL__DSL_REFERENCE = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 5;
+  int FOREIGN_MODEL_MDSL__DSL_REFERENCE = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Relocator Query</b></em>' containment reference.
@@ -529,7 +520,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FOREIGN_MODEL_MDSL__RELOCATOR_QUERY = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 6;
+  int FOREIGN_MODEL_MDSL__RELOCATOR_QUERY = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 7;
 
   /**
    * The number of structural features of the '<em>Foreign Model Mdsl</em>' class.
@@ -538,7 +529,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FOREIGN_MODEL_MDSL_FEATURE_COUNT = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 7;
+  int FOREIGN_MODEL_MDSL_FEATURE_COUNT = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 8;
 
   /**
    * The meta object id for the '{@link com.sysord.mad.configuration.madConfigDsl.impl.ModelProviderMdslImpl <em>Model Provider Mdsl</em>}' class.
@@ -669,7 +660,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int XTEXT_LANGUAGE_DESCRIPTOR_MDSL__NAME = MAD_CONFIG_ELEMENT__NAME;
+  int XTEXT_LANGUAGE_DESCRIPTOR_MDSL__NAME = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Language Id</b></em>' attribute.
@@ -678,7 +669,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int XTEXT_LANGUAGE_DESCRIPTOR_MDSL__LANGUAGE_ID = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 0;
+  int XTEXT_LANGUAGE_DESCRIPTOR_MDSL__LANGUAGE_ID = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Bundle Id</b></em>' attribute.
@@ -687,7 +678,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int XTEXT_LANGUAGE_DESCRIPTOR_MDSL__BUNDLE_ID = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 1;
+  int XTEXT_LANGUAGE_DESCRIPTOR_MDSL__BUNDLE_ID = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Activator Class Name</b></em>' attribute.
@@ -696,7 +687,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int XTEXT_LANGUAGE_DESCRIPTOR_MDSL__ACTIVATOR_CLASS_NAME = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 2;
+  int XTEXT_LANGUAGE_DESCRIPTOR_MDSL__ACTIVATOR_CLASS_NAME = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 3;
 
   /**
    * The number of structural features of the '<em>Xtext Language Descriptor Mdsl</em>' class.
@@ -705,7 +696,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int XTEXT_LANGUAGE_DESCRIPTOR_MDSL_FEATURE_COUNT = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 3;
+  int XTEXT_LANGUAGE_DESCRIPTOR_MDSL_FEATURE_COUNT = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link com.sysord.mad.configuration.madConfigDsl.impl.XtextLanguageReferenceImpl <em>Xtext Language Reference</em>}' class.
@@ -736,23 +727,14 @@ public interface MadConfigDslPackage extends EPackage
   int XTEXT_LANGUAGE_REFERENCE_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link com.sysord.mad.configuration.madConfigDsl.impl.QueryEvaluatorMdslImpl <em>Query Evaluator Mdsl</em>}' class.
+   * The meta object id for the '{@link com.sysord.mad.configuration.madConfigDsl.impl.OCLCustomLibraryMdslImpl <em>OCL Custom Library Mdsl</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see com.sysord.mad.configuration.madConfigDsl.impl.QueryEvaluatorMdslImpl
-   * @see com.sysord.mad.configuration.madConfigDsl.impl.MadConfigDslPackageImpl#getQueryEvaluatorMdsl()
+   * @see com.sysord.mad.configuration.madConfigDsl.impl.OCLCustomLibraryMdslImpl
+   * @see com.sysord.mad.configuration.madConfigDsl.impl.MadConfigDslPackageImpl#getOCLCustomLibraryMdsl()
    * @generated
    */
-  int QUERY_EVALUATOR_MDSL = 18;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int QUERY_EVALUATOR_MDSL__NAME = MAD_CONFIG_ELEMENT__NAME;
+  int OCL_CUSTOM_LIBRARY_MDSL = 18;
 
   /**
    * The feature id for the '<em><b>Label</b></em>' attribute.
@@ -761,7 +743,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int QUERY_EVALUATOR_MDSL__LABEL = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 0;
+  int OCL_CUSTOM_LIBRARY_MDSL__LABEL = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Class Descriptor</b></em>' containment reference.
@@ -770,25 +752,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int QUERY_EVALUATOR_MDSL__CLASS_DESCRIPTOR = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Query Properties Types</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int QUERY_EVALUATOR_MDSL__QUERY_PROPERTIES_TYPES = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 2;
-
-  /**
-   * The feature id for the '<em><b>Ext QService Class Descriptor</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int QUERY_EVALUATOR_MDSL__EXT_QSERVICE_CLASS_DESCRIPTOR = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 3;
+  int OCL_CUSTOM_LIBRARY_MDSL__CLASS_DESCRIPTOR = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -797,7 +761,80 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int QUERY_EVALUATOR_MDSL__DESCRIPTION = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 4;
+  int OCL_CUSTOM_LIBRARY_MDSL__DESCRIPTION = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>OCL Custom Library Mdsl</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OCL_CUSTOM_LIBRARY_MDSL_FEATURE_COUNT = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link com.sysord.mad.configuration.madConfigDsl.impl.QueryEvaluatorMdslImpl <em>Query Evaluator Mdsl</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.sysord.mad.configuration.madConfigDsl.impl.QueryEvaluatorMdslImpl
+   * @see com.sysord.mad.configuration.madConfigDsl.impl.MadConfigDslPackageImpl#getQueryEvaluatorMdsl()
+   * @generated
+   */
+  int QUERY_EVALUATOR_MDSL = 19;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int QUERY_EVALUATOR_MDSL__NAME = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Label</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int QUERY_EVALUATOR_MDSL__LABEL = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Class Descriptor</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int QUERY_EVALUATOR_MDSL__CLASS_DESCRIPTOR = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Query Properties Types</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int QUERY_EVALUATOR_MDSL__QUERY_PROPERTIES_TYPES = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Ext QService Class Descriptor</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int QUERY_EVALUATOR_MDSL__EXT_QSERVICE_CLASS_DESCRIPTOR = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Description</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int QUERY_EVALUATOR_MDSL__DESCRIPTION = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 5;
 
   /**
    * The number of structural features of the '<em>Query Evaluator Mdsl</em>' class.
@@ -806,7 +843,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int QUERY_EVALUATOR_MDSL_FEATURE_COUNT = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 5;
+  int QUERY_EVALUATOR_MDSL_FEATURE_COUNT = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 6;
 
   /**
    * The meta object id for the '{@link com.sysord.mad.configuration.madConfigDsl.impl.WidgetTypeImpl <em>Widget Type</em>}' class.
@@ -816,7 +853,7 @@ public interface MadConfigDslPackage extends EPackage
    * @see com.sysord.mad.configuration.madConfigDsl.impl.MadConfigDslPackageImpl#getWidgetType()
    * @generated
    */
-  int WIDGET_TYPE = 19;
+  int WIDGET_TYPE = 20;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -825,7 +862,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int WIDGET_TYPE__NAME = MAD_CONFIG_ELEMENT__NAME;
+  int WIDGET_TYPE__NAME = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Category</b></em>' attribute.
@@ -834,7 +871,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int WIDGET_TYPE__CATEGORY = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 0;
+  int WIDGET_TYPE__CATEGORY = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Label</b></em>' attribute.
@@ -843,7 +880,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int WIDGET_TYPE__LABEL = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 1;
+  int WIDGET_TYPE__LABEL = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Class Descriptor</b></em>' containment reference.
@@ -852,7 +889,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int WIDGET_TYPE__CLASS_DESCRIPTOR = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 2;
+  int WIDGET_TYPE__CLASS_DESCRIPTOR = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -861,7 +898,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int WIDGET_TYPE__DESCRIPTION = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 3;
+  int WIDGET_TYPE__DESCRIPTION = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 4;
 
   /**
    * The number of structural features of the '<em>Widget Type</em>' class.
@@ -870,7 +907,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int WIDGET_TYPE_FEATURE_COUNT = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 4;
+  int WIDGET_TYPE_FEATURE_COUNT = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 5;
 
   /**
    * The meta object id for the '{@link com.sysord.mad.configuration.madConfigDsl.impl.UITabMdslImpl <em>UI Tab Mdsl</em>}' class.
@@ -880,7 +917,7 @@ public interface MadConfigDslPackage extends EPackage
    * @see com.sysord.mad.configuration.madConfigDsl.impl.MadConfigDslPackageImpl#getUITabMdsl()
    * @generated
    */
-  int UI_TAB_MDSL = 20;
+  int UI_TAB_MDSL = 21;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -889,7 +926,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int UI_TAB_MDSL__NAME = MAD_CONFIG_ELEMENT__NAME;
+  int UI_TAB_MDSL__NAME = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>I18N Label</b></em>' attribute.
@@ -898,7 +935,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int UI_TAB_MDSL__I18_NLABEL = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 0;
+  int UI_TAB_MDSL__I18_NLABEL = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Label Format Expr</b></em>' containment reference.
@@ -907,7 +944,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int UI_TAB_MDSL__LABEL_FORMAT_EXPR = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 1;
+  int UI_TAB_MDSL__LABEL_FORMAT_EXPR = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -916,7 +953,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int UI_TAB_MDSL__DESCRIPTION = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 2;
+  int UI_TAB_MDSL__DESCRIPTION = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 3;
 
   /**
    * The number of structural features of the '<em>UI Tab Mdsl</em>' class.
@@ -925,7 +962,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int UI_TAB_MDSL_FEATURE_COUNT = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 3;
+  int UI_TAB_MDSL_FEATURE_COUNT = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link com.sysord.mad.configuration.madConfigDsl.impl.LayerMdslImpl <em>Layer Mdsl</em>}' class.
@@ -935,7 +972,7 @@ public interface MadConfigDslPackage extends EPackage
    * @see com.sysord.mad.configuration.madConfigDsl.impl.MadConfigDslPackageImpl#getLayerMdsl()
    * @generated
    */
-  int LAYER_MDSL = 21;
+  int LAYER_MDSL = 22;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -944,7 +981,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LAYER_MDSL__NAME = MAD_CONFIG_ELEMENT__NAME;
+  int LAYER_MDSL__NAME = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>I18N Label</b></em>' attribute.
@@ -953,7 +990,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LAYER_MDSL__I18_NLABEL = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 0;
+  int LAYER_MDSL__I18_NLABEL = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Label Format Expr</b></em>' containment reference.
@@ -962,7 +999,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LAYER_MDSL__LABEL_FORMAT_EXPR = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 1;
+  int LAYER_MDSL__LABEL_FORMAT_EXPR = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -971,7 +1008,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LAYER_MDSL__DESCRIPTION = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 2;
+  int LAYER_MDSL__DESCRIPTION = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Sub Layers</b></em>' containment reference list.
@@ -980,7 +1017,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LAYER_MDSL__SUB_LAYERS = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 3;
+  int LAYER_MDSL__SUB_LAYERS = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 4;
 
   /**
    * The number of structural features of the '<em>Layer Mdsl</em>' class.
@@ -989,7 +1026,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LAYER_MDSL_FEATURE_COUNT = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 4;
+  int LAYER_MDSL_FEATURE_COUNT = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 5;
 
   /**
    * The meta object id for the '{@link com.sysord.mad.configuration.madConfigDsl.impl.TypeConfigurationMdslImpl <em>Type Configuration Mdsl</em>}' class.
@@ -999,16 +1036,7 @@ public interface MadConfigDslPackage extends EPackage
    * @see com.sysord.mad.configuration.madConfigDsl.impl.MadConfigDslPackageImpl#getTypeConfigurationMdsl()
    * @generated
    */
-  int TYPE_CONFIGURATION_MDSL = 22;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TYPE_CONFIGURATION_MDSL__NAME = MAD_CONFIG_ELEMENT__NAME;
+  int TYPE_CONFIGURATION_MDSL = 23;
 
   /**
    * The feature id for the '<em><b>Default Configuration</b></em>' attribute.
@@ -1020,13 +1048,22 @@ public interface MadConfigDslPackage extends EPackage
   int TYPE_CONFIGURATION_MDSL__DEFAULT_CONFIGURATION = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_CONFIGURATION_MDSL__NAME = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 1;
+
+  /**
    * The feature id for the '<em><b>Type</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TYPE_CONFIGURATION_MDSL__TYPE = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 1;
+  int TYPE_CONFIGURATION_MDSL__TYPE = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>I18N Label Provider</b></em>' attribute.
@@ -1035,7 +1072,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TYPE_CONFIGURATION_MDSL__I18_NLABEL_PROVIDER = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 2;
+  int TYPE_CONFIGURATION_MDSL__I18_NLABEL_PROVIDER = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Label Provider Expression</b></em>' containment reference.
@@ -1044,7 +1081,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TYPE_CONFIGURATION_MDSL__LABEL_PROVIDER_EXPRESSION = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 3;
+  int TYPE_CONFIGURATION_MDSL__LABEL_PROVIDER_EXPRESSION = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Use Explicit Extends</b></em>' attribute.
@@ -1053,7 +1090,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TYPE_CONFIGURATION_MDSL__USE_EXPLICIT_EXTENDS = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 4;
+  int TYPE_CONFIGURATION_MDSL__USE_EXPLICIT_EXTENDS = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Super Configurations</b></em>' reference list.
@@ -1062,7 +1099,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TYPE_CONFIGURATION_MDSL__SUPER_CONFIGURATIONS = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 5;
+  int TYPE_CONFIGURATION_MDSL__SUPER_CONFIGURATIONS = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Template Elements</b></em>' containment reference list.
@@ -1071,7 +1108,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TYPE_CONFIGURATION_MDSL__TEMPLATE_ELEMENTS = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 6;
+  int TYPE_CONFIGURATION_MDSL__TEMPLATE_ELEMENTS = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Layout Defined</b></em>' attribute.
@@ -1080,7 +1117,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TYPE_CONFIGURATION_MDSL__LAYOUT_DEFINED = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 7;
+  int TYPE_CONFIGURATION_MDSL__LAYOUT_DEFINED = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 8;
 
   /**
    * The feature id for the '<em><b>Layout Elements</b></em>' reference list.
@@ -1089,7 +1126,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TYPE_CONFIGURATION_MDSL__LAYOUT_ELEMENTS = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 8;
+  int TYPE_CONFIGURATION_MDSL__LAYOUT_ELEMENTS = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 9;
 
   /**
    * The number of structural features of the '<em>Type Configuration Mdsl</em>' class.
@@ -1098,7 +1135,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TYPE_CONFIGURATION_MDSL_FEATURE_COUNT = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 9;
+  int TYPE_CONFIGURATION_MDSL_FEATURE_COUNT = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 10;
 
   /**
    * The meta object id for the '{@link com.sysord.mad.configuration.madConfigDsl.impl.TypeConfigurationTemplateElementImpl <em>Type Configuration Template Element</em>}' class.
@@ -1108,7 +1145,7 @@ public interface MadConfigDslPackage extends EPackage
    * @see com.sysord.mad.configuration.madConfigDsl.impl.MadConfigDslPackageImpl#getTypeConfigurationTemplateElement()
    * @generated
    */
-  int TYPE_CONFIGURATION_TEMPLATE_ELEMENT = 23;
+  int TYPE_CONFIGURATION_TEMPLATE_ELEMENT = 24;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1145,7 +1182,7 @@ public interface MadConfigDslPackage extends EPackage
    * @see com.sysord.mad.configuration.madConfigDsl.impl.MadConfigDslPackageImpl#getIncludeTemplateElementMdsl()
    * @generated
    */
-  int INCLUDE_TEMPLATE_ELEMENT_MDSL = 24;
+  int INCLUDE_TEMPLATE_ELEMENT_MDSL = 25;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1191,7 +1228,7 @@ public interface MadConfigDslPackage extends EPackage
    * @see com.sysord.mad.configuration.madConfigDsl.impl.MadConfigDslPackageImpl#getValueConverter()
    * @generated
    */
-  int VALUE_CONVERTER = 25;
+  int VALUE_CONVERTER = 26;
 
   /**
    * The number of structural features of the '<em>Value Converter</em>' class.
@@ -1210,7 +1247,7 @@ public interface MadConfigDslPackage extends EPackage
    * @see com.sysord.mad.configuration.madConfigDsl.impl.MadConfigDslPackageImpl#getQueryBasedValueConverter()
    * @generated
    */
-  int QUERY_BASED_VALUE_CONVERTER = 26;
+  int QUERY_BASED_VALUE_CONVERTER = 27;
 
   /**
    * The feature id for the '<em><b>Converter Query</b></em>' containment reference.
@@ -1238,7 +1275,7 @@ public interface MadConfigDslPackage extends EPackage
    * @see com.sysord.mad.configuration.madConfigDsl.impl.MadConfigDslPackageImpl#getBasicTypeValueConverter()
    * @generated
    */
-  int BASIC_TYPE_VALUE_CONVERTER = 27;
+  int BASIC_TYPE_VALUE_CONVERTER = 28;
 
   /**
    * The feature id for the '<em><b>Category</b></em>' attribute.
@@ -1275,7 +1312,7 @@ public interface MadConfigDslPackage extends EPackage
    * @see com.sysord.mad.configuration.madConfigDsl.impl.MadConfigDslPackageImpl#getWidgetConfigurationMdsl()
    * @generated
    */
-  int WIDGET_CONFIGURATION_MDSL = 28;
+  int WIDGET_CONFIGURATION_MDSL = 29;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1483,7 +1520,7 @@ public interface MadConfigDslPackage extends EPackage
    * @see com.sysord.mad.configuration.madConfigDsl.impl.MadConfigDslPackageImpl#getValidatorMdsl()
    * @generated
    */
-  int VALIDATOR_MDSL = 29;
+  int VALIDATOR_MDSL = 30;
 
   /**
    * The feature id for the '<em><b>Validation Query</b></em>' containment reference.
@@ -1529,7 +1566,7 @@ public interface MadConfigDslPackage extends EPackage
    * @see com.sysord.mad.configuration.madConfigDsl.impl.MadConfigDslPackageImpl#getCommandMdsl()
    * @generated
    */
-  int COMMAND_MDSL = 30;
+  int COMMAND_MDSL = 31;
 
   /**
    * The number of structural features of the '<em>Command Mdsl</em>' class.
@@ -1548,7 +1585,7 @@ public interface MadConfigDslPackage extends EPackage
    * @see com.sysord.mad.configuration.madConfigDsl.impl.MadConfigDslPackageImpl#getCommandDeclaration()
    * @generated
    */
-  int COMMAND_DECLARATION = 31;
+  int COMMAND_DECLARATION = 32;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1557,7 +1594,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMMAND_DECLARATION__NAME = MAD_CONFIG_ELEMENT__NAME;
+  int COMMAND_DECLARATION__NAME = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Label</b></em>' attribute.
@@ -1566,7 +1603,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMMAND_DECLARATION__LABEL = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 0;
+  int COMMAND_DECLARATION__LABEL = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -1575,7 +1612,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMMAND_DECLARATION__DESCRIPTION = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 1;
+  int COMMAND_DECLARATION__DESCRIPTION = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Definition</b></em>' containment reference.
@@ -1584,7 +1621,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMMAND_DECLARATION__DEFINITION = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 2;
+  int COMMAND_DECLARATION__DEFINITION = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 3;
 
   /**
    * The number of structural features of the '<em>Command Declaration</em>' class.
@@ -1593,7 +1630,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMMAND_DECLARATION_FEATURE_COUNT = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 3;
+  int COMMAND_DECLARATION_FEATURE_COUNT = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link com.sysord.mad.configuration.madConfigDsl.impl.CommandDefinitionMdslImpl <em>Command Definition Mdsl</em>}' class.
@@ -1603,7 +1640,7 @@ public interface MadConfigDslPackage extends EPackage
    * @see com.sysord.mad.configuration.madConfigDsl.impl.MadConfigDslPackageImpl#getCommandDefinitionMdsl()
    * @generated
    */
-  int COMMAND_DEFINITION_MDSL = 32;
+  int COMMAND_DEFINITION_MDSL = 33;
 
   /**
    * The feature id for the '<em><b>Category</b></em>' attribute.
@@ -1685,7 +1722,7 @@ public interface MadConfigDslPackage extends EPackage
    * @see com.sysord.mad.configuration.madConfigDsl.impl.MadConfigDslPackageImpl#getCommandRefMdsl()
    * @generated
    */
-  int COMMAND_REF_MDSL = 33;
+  int COMMAND_REF_MDSL = 34;
 
   /**
    * The feature id for the '<em><b>Referenced</b></em>' reference.
@@ -1731,7 +1768,7 @@ public interface MadConfigDslPackage extends EPackage
    * @see com.sysord.mad.configuration.madConfigDsl.impl.MadConfigDslPackageImpl#getUICommandMdsl()
    * @generated
    */
-  int UI_COMMAND_MDSL = 34;
+  int UI_COMMAND_MDSL = 35;
 
   /**
    * The number of structural features of the '<em>UI Command Mdsl</em>' class.
@@ -1750,7 +1787,7 @@ public interface MadConfigDslPackage extends EPackage
    * @see com.sysord.mad.configuration.madConfigDsl.impl.MadConfigDslPackageImpl#getDisplayViewUICommand()
    * @generated
    */
-  int DISPLAY_VIEW_UI_COMMAND = 35;
+  int DISPLAY_VIEW_UI_COMMAND = 36;
 
   /**
    * The feature id for the '<em><b>Target</b></em>' containment reference.
@@ -1778,7 +1815,7 @@ public interface MadConfigDslPackage extends EPackage
    * @see com.sysord.mad.configuration.madConfigDsl.impl.MadConfigDslPackageImpl#getReloadViewUICommand()
    * @generated
    */
-  int RELOAD_VIEW_UI_COMMAND = 36;
+  int RELOAD_VIEW_UI_COMMAND = 37;
 
   /**
    * The number of structural features of the '<em>Reload View UI Command</em>' class.
@@ -1797,7 +1834,7 @@ public interface MadConfigDslPackage extends EPackage
    * @see com.sysord.mad.configuration.madConfigDsl.impl.MadConfigDslPackageImpl#getReloadWidgetsUICommand()
    * @generated
    */
-  int RELOAD_WIDGETS_UI_COMMAND = 37;
+  int RELOAD_WIDGETS_UI_COMMAND = 38;
 
   /**
    * The feature id for the '<em><b>Widgets To Reload</b></em>' reference list.
@@ -1825,7 +1862,7 @@ public interface MadConfigDslPackage extends EPackage
    * @see com.sysord.mad.configuration.madConfigDsl.impl.MadConfigDslPackageImpl#getQueryUsage()
    * @generated
    */
-  int QUERY_USAGE = 38;
+  int QUERY_USAGE = 39;
 
   /**
    * The number of structural features of the '<em>Query Usage</em>' class.
@@ -1844,7 +1881,7 @@ public interface MadConfigDslPackage extends EPackage
    * @see com.sysord.mad.configuration.madConfigDsl.impl.MadConfigDslPackageImpl#getQueryMdsl()
    * @generated
    */
-  int QUERY_MDSL = 39;
+  int QUERY_MDSL = 40;
 
   /**
    * The number of structural features of the '<em>Query Mdsl</em>' class.
@@ -1863,7 +1900,7 @@ public interface MadConfigDslPackage extends EPackage
    * @see com.sysord.mad.configuration.madConfigDsl.impl.MadConfigDslPackageImpl#getQueryDeclaration()
    * @generated
    */
-  int QUERY_DECLARATION = 40;
+  int QUERY_DECLARATION = 41;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1872,7 +1909,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int QUERY_DECLARATION__NAME = MAD_CONFIG_ELEMENT__NAME;
+  int QUERY_DECLARATION__NAME = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Label</b></em>' attribute.
@@ -1881,7 +1918,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int QUERY_DECLARATION__LABEL = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 0;
+  int QUERY_DECLARATION__LABEL = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -1890,7 +1927,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int QUERY_DECLARATION__DESCRIPTION = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 1;
+  int QUERY_DECLARATION__DESCRIPTION = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Definition</b></em>' containment reference.
@@ -1899,7 +1936,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int QUERY_DECLARATION__DEFINITION = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 2;
+  int QUERY_DECLARATION__DEFINITION = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 3;
 
   /**
    * The number of structural features of the '<em>Query Declaration</em>' class.
@@ -1908,7 +1945,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int QUERY_DECLARATION_FEATURE_COUNT = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 3;
+  int QUERY_DECLARATION_FEATURE_COUNT = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link com.sysord.mad.configuration.madConfigDsl.impl.QueryDefinitionMdslImpl <em>Query Definition Mdsl</em>}' class.
@@ -1918,7 +1955,7 @@ public interface MadConfigDslPackage extends EPackage
    * @see com.sysord.mad.configuration.madConfigDsl.impl.MadConfigDslPackageImpl#getQueryDefinitionMdsl()
    * @generated
    */
-  int QUERY_DEFINITION_MDSL = 41;
+  int QUERY_DEFINITION_MDSL = 42;
 
   /**
    * The feature id for the '<em><b>Evaluator</b></em>' reference.
@@ -2009,7 +2046,7 @@ public interface MadConfigDslPackage extends EPackage
    * @see com.sysord.mad.configuration.madConfigDsl.impl.MadConfigDslPackageImpl#getQueryFragment()
    * @generated
    */
-  int QUERY_FRAGMENT = 42;
+  int QUERY_FRAGMENT = 43;
 
   /**
    * The number of structural features of the '<em>Query Fragment</em>' class.
@@ -2028,7 +2065,7 @@ public interface MadConfigDslPackage extends EPackage
    * @see com.sysord.mad.configuration.madConfigDsl.impl.MadConfigDslPackageImpl#getLiteralQueryFragment()
    * @generated
    */
-  int LITERAL_QUERY_FRAGMENT = 43;
+  int LITERAL_QUERY_FRAGMENT = 44;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -2056,7 +2093,7 @@ public interface MadConfigDslPackage extends EPackage
    * @see com.sysord.mad.configuration.madConfigDsl.impl.MadConfigDslPackageImpl#getQueryBody()
    * @generated
    */
-  int QUERY_BODY = 44;
+  int QUERY_BODY = 45;
 
   /**
    * The feature id for the '<em><b>Fragments</b></em>' containment reference list.
@@ -2084,7 +2121,7 @@ public interface MadConfigDslPackage extends EPackage
    * @see com.sysord.mad.configuration.madConfigDsl.impl.MadConfigDslPackageImpl#getQueryRefMdsl()
    * @generated
    */
-  int QUERY_REF_MDSL = 45;
+  int QUERY_REF_MDSL = 46;
 
   /**
    * The feature id for the '<em><b>Referenced</b></em>' reference.
@@ -2112,7 +2149,7 @@ public interface MadConfigDslPackage extends EPackage
    * @see com.sysord.mad.configuration.madConfigDsl.impl.MadConfigDslPackageImpl#getExternalQueryCallMdsl()
    * @generated
    */
-  int EXTERNAL_QUERY_CALL_MDSL = 46;
+  int EXTERNAL_QUERY_CALL_MDSL = 47;
 
   /**
    * The feature id for the '<em><b>External Query</b></em>' reference.
@@ -2140,7 +2177,7 @@ public interface MadConfigDslPackage extends EPackage
    * @see com.sysord.mad.configuration.madConfigDsl.impl.MadConfigDslPackageImpl#getQueryChain()
    * @generated
    */
-  int QUERY_CHAIN = 47;
+  int QUERY_CHAIN = 48;
 
   /**
    * The feature id for the '<em><b>Queries</b></em>' containment reference list.
@@ -2168,7 +2205,7 @@ public interface MadConfigDslPackage extends EPackage
    * @see com.sysord.mad.configuration.madConfigDsl.impl.MadConfigDslPackageImpl#getFormatExpr()
    * @generated
    */
-  int FORMAT_EXPR = 48;
+  int FORMAT_EXPR = 49;
 
   /**
    * The feature id for the '<em><b>Fragments</b></em>' containment reference list.
@@ -2196,7 +2233,7 @@ public interface MadConfigDslPackage extends EPackage
    * @see com.sysord.mad.configuration.madConfigDsl.impl.MadConfigDslPackageImpl#getFormatExprFragment()
    * @generated
    */
-  int FORMAT_EXPR_FRAGMENT = 49;
+  int FORMAT_EXPR_FRAGMENT = 50;
 
   /**
    * The number of structural features of the '<em>Format Expr Fragment</em>' class.
@@ -2215,7 +2252,7 @@ public interface MadConfigDslPackage extends EPackage
    * @see com.sysord.mad.configuration.madConfigDsl.impl.MadConfigDslPackageImpl#getLiteralFormatExprFragment()
    * @generated
    */
-  int LITERAL_FORMAT_EXPR_FRAGMENT = 50;
+  int LITERAL_FORMAT_EXPR_FRAGMENT = 51;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -2243,7 +2280,7 @@ public interface MadConfigDslPackage extends EPackage
    * @see com.sysord.mad.configuration.madConfigDsl.impl.MadConfigDslPackageImpl#getTextMacro()
    * @generated
    */
-  int TEXT_MACRO = 51;
+  int TEXT_MACRO = 52;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2252,7 +2289,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TEXT_MACRO__NAME = MAD_CONFIG_ELEMENT__NAME;
+  int TEXT_MACRO__NAME = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Label</b></em>' attribute.
@@ -2261,7 +2298,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TEXT_MACRO__LABEL = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 0;
+  int TEXT_MACRO__LABEL = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -2270,7 +2307,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TEXT_MACRO__DESCRIPTION = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 1;
+  int TEXT_MACRO__DESCRIPTION = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Macro Value</b></em>' attribute.
@@ -2279,7 +2316,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TEXT_MACRO__MACRO_VALUE = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 2;
+  int TEXT_MACRO__MACRO_VALUE = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 3;
 
   /**
    * The number of structural features of the '<em>Text Macro</em>' class.
@@ -2288,7 +2325,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TEXT_MACRO_FEATURE_COUNT = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 3;
+  int TEXT_MACRO_FEATURE_COUNT = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link com.sysord.mad.configuration.madConfigDsl.impl.TextMacroRefImpl <em>Text Macro Ref</em>}' class.
@@ -2298,7 +2335,7 @@ public interface MadConfigDslPackage extends EPackage
    * @see com.sysord.mad.configuration.madConfigDsl.impl.MadConfigDslPackageImpl#getTextMacroRef()
    * @generated
    */
-  int TEXT_MACRO_REF = 52;
+  int TEXT_MACRO_REF = 53;
 
   /**
    * The feature id for the '<em><b>Referenced</b></em>' reference.
@@ -2326,7 +2363,7 @@ public interface MadConfigDslPackage extends EPackage
    * @see com.sysord.mad.configuration.madConfigDsl.impl.MadConfigDslPackageImpl#getVALUE_CONVERTER_CATEGORY_MDSL()
    * @generated
    */
-  int VALUE_CONVERTER_CATEGORY_MDSL = 53;
+  int VALUE_CONVERTER_CATEGORY_MDSL = 54;
 
   /**
    * The meta object id for the '{@link com.sysord.mad.configuration.madConfigDsl.WIDGET_CATEGORY_MDSL <em>WIDGET CATEGORY MDSL</em>}' enum.
@@ -2336,7 +2373,7 @@ public interface MadConfigDslPackage extends EPackage
    * @see com.sysord.mad.configuration.madConfigDsl.impl.MadConfigDslPackageImpl#getWIDGET_CATEGORY_MDSL()
    * @generated
    */
-  int WIDGET_CATEGORY_MDSL = 54;
+  int WIDGET_CATEGORY_MDSL = 55;
 
   /**
    * The meta object id for the '{@link com.sysord.mad.configuration.madConfigDsl.COMMAND_CATEGORY_MDSL <em>COMMAND CATEGORY MDSL</em>}' enum.
@@ -2346,7 +2383,7 @@ public interface MadConfigDslPackage extends EPackage
    * @see com.sysord.mad.configuration.madConfigDsl.impl.MadConfigDslPackageImpl#getCOMMAND_CATEGORY_MDSL()
    * @generated
    */
-  int COMMAND_CATEGORY_MDSL = 55;
+  int COMMAND_CATEGORY_MDSL = 56;
 
   /**
    * The meta object id for the '{@link com.sysord.mad.configuration.madConfigDsl.QUERY_OPTIMISATION_LEVEL <em>QUERY OPTIMISATION LEVEL</em>}' enum.
@@ -2356,7 +2393,7 @@ public interface MadConfigDslPackage extends EPackage
    * @see com.sysord.mad.configuration.madConfigDsl.impl.MadConfigDslPackageImpl#getQUERY_OPTIMISATION_LEVEL()
    * @generated
    */
-  int QUERY_OPTIMISATION_LEVEL = 56;
+  int QUERY_OPTIMISATION_LEVEL = 57;
 
 
   /**
@@ -2400,17 +2437,6 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    */
   EClass getMADConfigElement();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.sysord.mad.configuration.madConfigDsl.MADConfigElement#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see com.sysord.mad.configuration.madConfigDsl.MADConfigElement#getName()
-   * @see #getMADConfigElement()
-   * @generated
-   */
-  EAttribute getMADConfigElement_Name();
 
   /**
    * Returns the meta object for class '{@link com.sysord.mad.configuration.madConfigDsl.Import <em>Import</em>}'.
@@ -2592,6 +2618,17 @@ public interface MadConfigDslPackage extends EPackage
   EClass getIconDescriptorMdsl();
 
   /**
+   * Returns the meta object for the attribute '{@link com.sysord.mad.configuration.madConfigDsl.IconDescriptorMdsl#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see com.sysord.mad.configuration.madConfigDsl.IconDescriptorMdsl#getName()
+   * @see #getIconDescriptorMdsl()
+   * @generated
+   */
+  EAttribute getIconDescriptorMdsl_Name();
+
+  /**
    * Returns the meta object for the attribute '{@link com.sysord.mad.configuration.madConfigDsl.IconDescriptorMdsl#getDescription <em>Description</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2635,6 +2672,17 @@ public interface MadConfigDslPackage extends EPackage
   EClass getI18NBundleMdsl();
 
   /**
+   * Returns the meta object for the attribute '{@link com.sysord.mad.configuration.madConfigDsl.I18NBundleMdsl#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see com.sysord.mad.configuration.madConfigDsl.I18NBundleMdsl#getName()
+   * @see #getI18NBundleMdsl()
+   * @generated
+   */
+  EAttribute getI18NBundleMdsl_Name();
+
+  /**
    * Returns the meta object for the attribute '{@link com.sysord.mad.configuration.madConfigDsl.I18NBundleMdsl#getDescription <em>Description</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2676,6 +2724,17 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    */
   EClass getForeignModelMdsl();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.sysord.mad.configuration.madConfigDsl.ForeignModelMdsl#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see com.sysord.mad.configuration.madConfigDsl.ForeignModelMdsl#getName()
+   * @see #getForeignModelMdsl()
+   * @generated
+   */
+  EAttribute getForeignModelMdsl_Name();
 
   /**
    * Returns the meta object for the attribute '{@link com.sysord.mad.configuration.madConfigDsl.ForeignModelMdsl#getLabel <em>Label</em>}'.
@@ -2849,6 +2908,17 @@ public interface MadConfigDslPackage extends EPackage
   EClass getXtextLanguageDescriptorMdsl();
 
   /**
+   * Returns the meta object for the attribute '{@link com.sysord.mad.configuration.madConfigDsl.XtextLanguageDescriptorMdsl#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see com.sysord.mad.configuration.madConfigDsl.XtextLanguageDescriptorMdsl#getName()
+   * @see #getXtextLanguageDescriptorMdsl()
+   * @generated
+   */
+  EAttribute getXtextLanguageDescriptorMdsl_Name();
+
+  /**
    * Returns the meta object for the attribute '{@link com.sysord.mad.configuration.madConfigDsl.XtextLanguageDescriptorMdsl#getLanguageId <em>Language Id</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2903,6 +2973,49 @@ public interface MadConfigDslPackage extends EPackage
   EReference getXtextLanguageReference_XtextLanguageDescriptor();
 
   /**
+   * Returns the meta object for class '{@link com.sysord.mad.configuration.madConfigDsl.OCLCustomLibraryMdsl <em>OCL Custom Library Mdsl</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>OCL Custom Library Mdsl</em>'.
+   * @see com.sysord.mad.configuration.madConfigDsl.OCLCustomLibraryMdsl
+   * @generated
+   */
+  EClass getOCLCustomLibraryMdsl();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.sysord.mad.configuration.madConfigDsl.OCLCustomLibraryMdsl#getLabel <em>Label</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Label</em>'.
+   * @see com.sysord.mad.configuration.madConfigDsl.OCLCustomLibraryMdsl#getLabel()
+   * @see #getOCLCustomLibraryMdsl()
+   * @generated
+   */
+  EAttribute getOCLCustomLibraryMdsl_Label();
+
+  /**
+   * Returns the meta object for the containment reference '{@link com.sysord.mad.configuration.madConfigDsl.OCLCustomLibraryMdsl#getClassDescriptor <em>Class Descriptor</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Class Descriptor</em>'.
+   * @see com.sysord.mad.configuration.madConfigDsl.OCLCustomLibraryMdsl#getClassDescriptor()
+   * @see #getOCLCustomLibraryMdsl()
+   * @generated
+   */
+  EReference getOCLCustomLibraryMdsl_ClassDescriptor();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.sysord.mad.configuration.madConfigDsl.OCLCustomLibraryMdsl#getDescription <em>Description</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Description</em>'.
+   * @see com.sysord.mad.configuration.madConfigDsl.OCLCustomLibraryMdsl#getDescription()
+   * @see #getOCLCustomLibraryMdsl()
+   * @generated
+   */
+  EAttribute getOCLCustomLibraryMdsl_Description();
+
+  /**
    * Returns the meta object for class '{@link com.sysord.mad.configuration.madConfigDsl.QueryEvaluatorMdsl <em>Query Evaluator Mdsl</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2911,6 +3024,17 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    */
   EClass getQueryEvaluatorMdsl();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.sysord.mad.configuration.madConfigDsl.QueryEvaluatorMdsl#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see com.sysord.mad.configuration.madConfigDsl.QueryEvaluatorMdsl#getName()
+   * @see #getQueryEvaluatorMdsl()
+   * @generated
+   */
+  EAttribute getQueryEvaluatorMdsl_Name();
 
   /**
    * Returns the meta object for the attribute '{@link com.sysord.mad.configuration.madConfigDsl.QueryEvaluatorMdsl#getLabel <em>Label</em>}'.
@@ -2978,6 +3102,17 @@ public interface MadConfigDslPackage extends EPackage
   EClass getWidgetType();
 
   /**
+   * Returns the meta object for the attribute '{@link com.sysord.mad.configuration.madConfigDsl.WidgetType#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see com.sysord.mad.configuration.madConfigDsl.WidgetType#getName()
+   * @see #getWidgetType()
+   * @generated
+   */
+  EAttribute getWidgetType_Name();
+
+  /**
    * Returns the meta object for the attribute '{@link com.sysord.mad.configuration.madConfigDsl.WidgetType#getCategory <em>Category</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3032,6 +3167,17 @@ public interface MadConfigDslPackage extends EPackage
   EClass getUITabMdsl();
 
   /**
+   * Returns the meta object for the attribute '{@link com.sysord.mad.configuration.madConfigDsl.UITabMdsl#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see com.sysord.mad.configuration.madConfigDsl.UITabMdsl#getName()
+   * @see #getUITabMdsl()
+   * @generated
+   */
+  EAttribute getUITabMdsl_Name();
+
+  /**
    * Returns the meta object for the attribute '{@link com.sysord.mad.configuration.madConfigDsl.UITabMdsl#isI18NLabel <em>I18N Label</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3073,6 +3219,17 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    */
   EClass getLayerMdsl();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.sysord.mad.configuration.madConfigDsl.LayerMdsl#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see com.sysord.mad.configuration.madConfigDsl.LayerMdsl#getName()
+   * @see #getLayerMdsl()
+   * @generated
+   */
+  EAttribute getLayerMdsl_Name();
 
   /**
    * Returns the meta object for the attribute '{@link com.sysord.mad.configuration.madConfigDsl.LayerMdsl#isI18NLabel <em>I18N Label</em>}'.
@@ -3138,6 +3295,17 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    */
   EAttribute getTypeConfigurationMdsl_DefaultConfiguration();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.sysord.mad.configuration.madConfigDsl.TypeConfigurationMdsl#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see com.sysord.mad.configuration.madConfigDsl.TypeConfigurationMdsl#getName()
+   * @see #getTypeConfigurationMdsl()
+   * @generated
+   */
+  EAttribute getTypeConfigurationMdsl_Name();
 
   /**
    * Returns the meta object for the reference '{@link com.sysord.mad.configuration.madConfigDsl.TypeConfigurationMdsl#getType <em>Type</em>}'.
@@ -3626,6 +3794,17 @@ public interface MadConfigDslPackage extends EPackage
   EClass getCommandDeclaration();
 
   /**
+   * Returns the meta object for the attribute '{@link com.sysord.mad.configuration.madConfigDsl.CommandDeclaration#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see com.sysord.mad.configuration.madConfigDsl.CommandDeclaration#getName()
+   * @see #getCommandDeclaration()
+   * @generated
+   */
+  EAttribute getCommandDeclaration_Name();
+
+  /**
    * Returns the meta object for the attribute '{@link com.sysord.mad.configuration.madConfigDsl.CommandDeclaration#getLabel <em>Label</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3879,6 +4058,17 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    */
   EClass getQueryDeclaration();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.sysord.mad.configuration.madConfigDsl.QueryDeclaration#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see com.sysord.mad.configuration.madConfigDsl.QueryDeclaration#getName()
+   * @see #getQueryDeclaration()
+   * @generated
+   */
+  EAttribute getQueryDeclaration_Name();
 
   /**
    * Returns the meta object for the attribute '{@link com.sysord.mad.configuration.madConfigDsl.QueryDeclaration#getLabel <em>Label</em>}'.
@@ -4189,6 +4379,17 @@ public interface MadConfigDslPackage extends EPackage
   EClass getTextMacro();
 
   /**
+   * Returns the meta object for the attribute '{@link com.sysord.mad.configuration.madConfigDsl.TextMacro#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see com.sysord.mad.configuration.madConfigDsl.TextMacro#getName()
+   * @see #getTextMacro()
+   * @generated
+   */
+  EAttribute getTextMacro_Name();
+
+  /**
    * Returns the meta object for the attribute '{@link com.sysord.mad.configuration.madConfigDsl.TextMacro#getLabel <em>Label</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -4340,14 +4541,6 @@ public interface MadConfigDslPackage extends EPackage
      * @generated
      */
     EClass MAD_CONFIG_ELEMENT = eINSTANCE.getMADConfigElement();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute MAD_CONFIG_ELEMENT__NAME = eINSTANCE.getMADConfigElement_Name();
 
     /**
      * The meta object literal for the '{@link com.sysord.mad.configuration.madConfigDsl.impl.ImportImpl <em>Import</em>}' class.
@@ -4502,6 +4695,14 @@ public interface MadConfigDslPackage extends EPackage
     EClass ICON_DESCRIPTOR_MDSL = eINSTANCE.getIconDescriptorMdsl();
 
     /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ICON_DESCRIPTOR_MDSL__NAME = eINSTANCE.getIconDescriptorMdsl_Name();
+
+    /**
      * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4536,6 +4737,14 @@ public interface MadConfigDslPackage extends EPackage
     EClass I18N_BUNDLE_MDSL = eINSTANCE.getI18NBundleMdsl();
 
     /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute I18N_BUNDLE_MDSL__NAME = eINSTANCE.getI18NBundleMdsl_Name();
+
+    /**
      * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4568,6 +4777,14 @@ public interface MadConfigDslPackage extends EPackage
      * @generated
      */
     EClass FOREIGN_MODEL_MDSL = eINSTANCE.getForeignModelMdsl();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FOREIGN_MODEL_MDSL__NAME = eINSTANCE.getForeignModelMdsl_Name();
 
     /**
      * The meta object literal for the '<em><b>Label</b></em>' attribute feature.
@@ -4708,6 +4925,14 @@ public interface MadConfigDslPackage extends EPackage
     EClass XTEXT_LANGUAGE_DESCRIPTOR_MDSL = eINSTANCE.getXtextLanguageDescriptorMdsl();
 
     /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute XTEXT_LANGUAGE_DESCRIPTOR_MDSL__NAME = eINSTANCE.getXtextLanguageDescriptorMdsl_Name();
+
+    /**
      * The meta object literal for the '<em><b>Language Id</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4750,6 +4975,40 @@ public interface MadConfigDslPackage extends EPackage
     EReference XTEXT_LANGUAGE_REFERENCE__XTEXT_LANGUAGE_DESCRIPTOR = eINSTANCE.getXtextLanguageReference_XtextLanguageDescriptor();
 
     /**
+     * The meta object literal for the '{@link com.sysord.mad.configuration.madConfigDsl.impl.OCLCustomLibraryMdslImpl <em>OCL Custom Library Mdsl</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.sysord.mad.configuration.madConfigDsl.impl.OCLCustomLibraryMdslImpl
+     * @see com.sysord.mad.configuration.madConfigDsl.impl.MadConfigDslPackageImpl#getOCLCustomLibraryMdsl()
+     * @generated
+     */
+    EClass OCL_CUSTOM_LIBRARY_MDSL = eINSTANCE.getOCLCustomLibraryMdsl();
+
+    /**
+     * The meta object literal for the '<em><b>Label</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute OCL_CUSTOM_LIBRARY_MDSL__LABEL = eINSTANCE.getOCLCustomLibraryMdsl_Label();
+
+    /**
+     * The meta object literal for the '<em><b>Class Descriptor</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OCL_CUSTOM_LIBRARY_MDSL__CLASS_DESCRIPTOR = eINSTANCE.getOCLCustomLibraryMdsl_ClassDescriptor();
+
+    /**
+     * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute OCL_CUSTOM_LIBRARY_MDSL__DESCRIPTION = eINSTANCE.getOCLCustomLibraryMdsl_Description();
+
+    /**
      * The meta object literal for the '{@link com.sysord.mad.configuration.madConfigDsl.impl.QueryEvaluatorMdslImpl <em>Query Evaluator Mdsl</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4758,6 +5017,14 @@ public interface MadConfigDslPackage extends EPackage
      * @generated
      */
     EClass QUERY_EVALUATOR_MDSL = eINSTANCE.getQueryEvaluatorMdsl();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute QUERY_EVALUATOR_MDSL__NAME = eINSTANCE.getQueryEvaluatorMdsl_Name();
 
     /**
      * The meta object literal for the '<em><b>Label</b></em>' attribute feature.
@@ -4810,6 +5077,14 @@ public interface MadConfigDslPackage extends EPackage
     EClass WIDGET_TYPE = eINSTANCE.getWidgetType();
 
     /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute WIDGET_TYPE__NAME = eINSTANCE.getWidgetType_Name();
+
+    /**
      * The meta object literal for the '<em><b>Category</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4852,6 +5127,14 @@ public interface MadConfigDslPackage extends EPackage
     EClass UI_TAB_MDSL = eINSTANCE.getUITabMdsl();
 
     /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute UI_TAB_MDSL__NAME = eINSTANCE.getUITabMdsl_Name();
+
+    /**
      * The meta object literal for the '<em><b>I18N Label</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4884,6 +5167,14 @@ public interface MadConfigDslPackage extends EPackage
      * @generated
      */
     EClass LAYER_MDSL = eINSTANCE.getLayerMdsl();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LAYER_MDSL__NAME = eINSTANCE.getLayerMdsl_Name();
 
     /**
      * The meta object literal for the '<em><b>I18N Label</b></em>' attribute feature.
@@ -4934,6 +5225,14 @@ public interface MadConfigDslPackage extends EPackage
      * @generated
      */
     EAttribute TYPE_CONFIGURATION_MDSL__DEFAULT_CONFIGURATION = eINSTANCE.getTypeConfigurationMdsl_DefaultConfiguration();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TYPE_CONFIGURATION_MDSL__NAME = eINSTANCE.getTypeConfigurationMdsl_Name();
 
     /**
      * The meta object literal for the '<em><b>Type</b></em>' reference feature.
@@ -5314,6 +5613,14 @@ public interface MadConfigDslPackage extends EPackage
     EClass COMMAND_DECLARATION = eINSTANCE.getCommandDeclaration();
 
     /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute COMMAND_DECLARATION__NAME = eINSTANCE.getCommandDeclaration_Name();
+
+    /**
      * The meta object literal for the '<em><b>Label</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -5522,6 +5829,14 @@ public interface MadConfigDslPackage extends EPackage
      * @generated
      */
     EClass QUERY_DECLARATION = eINSTANCE.getQueryDeclaration();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute QUERY_DECLARATION__NAME = eINSTANCE.getQueryDeclaration_Name();
 
     /**
      * The meta object literal for the '<em><b>Label</b></em>' attribute feature.
@@ -5776,6 +6091,14 @@ public interface MadConfigDslPackage extends EPackage
      * @generated
      */
     EClass TEXT_MACRO = eINSTANCE.getTextMacro();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TEXT_MACRO__NAME = eINSTANCE.getTextMacro_Name();
 
     /**
      * The meta object literal for the '<em><b>Label</b></em>' attribute feature.

@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.ocl.ecore.Variable;
 
 import com.sysord.acceleo.tools.module.*;
+import com.sysord.acceleo.tools.module.TemplatePrototype.TemplateType;
 import com.sysord.acceleo.tools.module.emitter.AcceleoEmitter;
 import com.sysord.acceleo.tools.module.emitter.impl.AcceleoEmitterImpl;
 import com.sysord.acceleo.tools.module.impl.*;
@@ -179,12 +180,14 @@ public class AcceleoTools {
         PrototypeBuilder protoBuilder = new PrototypeBuilder().setName(moduleElement.getName());
 
         if (moduleElement instanceof Query) {
+        	protoBuilder.setType(TemplateType.QUERY);
             protoBuilder.setReturnType(((Query) moduleElement).getType());
             for (Variable var : ((Query) moduleElement).getParameter()) {
                 protoBuilder.addParameter(var.getName(), var.getType());
             }
         }
         if (moduleElement instanceof Template) {
+        	protoBuilder.setType(TemplateType.TEMPLATE);
             for (Variable var : ((Template) moduleElement).getParameter()) {
                 protoBuilder.addParameter(var.getName(), var.getType());
             }

@@ -46,6 +46,7 @@ import com.sysord.mad.configuration.madConfigDsl.IncludeTemplateElementMdsl;
 import com.sysord.mad.configuration.madConfigDsl.LayerMdsl;
 import com.sysord.mad.configuration.madConfigDsl.MADConfiguration;
 import com.sysord.mad.configuration.madConfigDsl.ModelProviderMdsl;
+import com.sysord.mad.configuration.madConfigDsl.OCLCustomLibraryMdsl;
 import com.sysord.mad.configuration.madConfigDsl.QueryDefinitionMdsl;
 import com.sysord.mad.configuration.madConfigDsl.QueryEvaluatorMdsl;
 import com.sysord.mad.configuration.madConfigDsl.TypeConfigurationMdsl;
@@ -61,6 +62,7 @@ import com.sysord.mad.core.IMADConstants;
 import com.sysord.mad.core.preferences.PreferenceHelper;
 import com.sysord.mad.evaluator.QueryEvaluator;
 import com.sysord.mad.evaluator.QueryEvaluatorProvider;
+import com.sysord.mad.evaluator.impl.ocl.MadOclCustomizer;
 import com.sysord.mad.evaluator.impl.ocl.OCLQueryEvaluator;
 import com.sysord.mad.model.provider.ModelExtensionManager;
 import com.sysord.mad.model.provider.ModelProvider;
@@ -71,7 +73,6 @@ import com.sysord.mad.query.impl.QueryFactory;
 import com.sysord.mad.widget.SpecificWidget;
 import com.sysord.mad.widget.WidgetBuilder;
 import com.sysord.xtext.tools.XtextUtility;
-import com.sysord.xtext.tools.XtextUtility.XTEXT_ERROR_LEVEL;
 
 /**
  * Extract Mad configuration for an element type
@@ -749,7 +750,7 @@ public class ConfigurationManagerImpl implements ConfigurationManager{
 		evaluatorProvider.unregisterAllQueryEvaluators();
 		
 		//Register default OCL query evaluator
-		evaluatorProvider.registerQueryEvaluator(new OCLQueryEvaluator());
+		setupOCLQueryEvaluator();
 
 		for(MADConfiguration madConfig : _getMadConfigurations()){
 			for(QueryEvaluatorMdsl queryEvaluatorMdsl : MadConfigDslUtil.getQueryEvaluatorDeclarations(madConfig)){
@@ -775,6 +776,43 @@ public class ConfigurationManagerImpl implements ConfigurationManager{
 		}		
 	}
 
+	/**
+	 * Creates and registers the OCL Query evaluator provider
+	 */
+	protected void setupOCLQueryEvaluator(){
+		
+		//Register custom OCL libraries
+		MadOclCustomizer.removeAllCustomLibraries();
+		for(MADConfiguration madConfig : _getMadConfigurations()){
+			for(OCLCustomLibraryMdsl oclCustomLibraryMdsl : MadConfigDslUtil.getOCLCustomLibraryDeclarations(madConfig)){
+				Object oclCustomLibrary = retreiveOCLCustomLibray(oclCustomLibraryMdsl);
+				if(oclCustomLibrary != null){
+					//register OCL custom libray
+					MadOclCustomizer.registerCustomLibray(oclCustomLibrary);
+				}else{
+					logger.logError("ExtensionManager for foreign model '" + oclCustomLibraryMdsl.getLabel() 
+							+ "' not found. Class descriptor:" + oclCustomLibraryMdsl.getClassDescriptor()
+							, ConsoleLogger.LOW);
+
+				}
+			}
+		}
+
+		//Register default OCL query evaluator
+		OCLQueryEvaluator oclQueryEvaluator = new OCLQueryEvaluator();
+		evaluatorProvider.registerQueryEvaluator(oclQueryEvaluator);
+
+	}
+	
+	protected Object retreiveOCLCustomLibray(OCLCustomLibraryMdsl oclCustomLibraryMdsl) {
+		Class<?> oclCustomLibraryClass = MadConfigDslUtil.resolveClassDescriptorMdsl(oclCustomLibraryMdsl.getClassDescriptor());
+		if(oclCustomLibraryClass != null){
+			return Activator.getDefault().getInjector().getInstance(oclCustomLibraryClass);
+		}else{
+			return null;			
+		}
+	}
+
 	
 	private void configureExtQServiceProvider() {
 		extQServiceProvider.unregisterAllExtQServices();		
@@ -785,7 +823,6 @@ public class ConfigurationManagerImpl implements ConfigurationManager{
 
 	
 
-	//@Override
 	public void configureConcreteWidgetBuilder(){
 		//Load and store all widget types in work map
 		Map<String, WidgetType> hWidgetTypeConfgsMdsl = new HashMap<String, WidgetType>();

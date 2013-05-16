@@ -11,6 +11,7 @@
  ****************************************************************************/
 package com.sysord.acceleo.tools.module.emitter;
 
+import java.util.Arrays;
 import java.util.Collection;
 
 import org.eclipse.acceleo.model.mtl.Module;
@@ -35,6 +36,22 @@ public interface AcceleoEmitter {
      */
     public void createModule(ModuleInterface moduleInterface) throws CoreException;
 
+    /**
+     * creates an import for the given ImportName in the {@link Module module}.
+     * 
+     * @param module
+     * @param importName
+     */
+    public void addImport(org.eclipse.acceleo.model.mtl.Module module, String importName);
+
+    /**
+     * creates imports for the given ImportNames in the {@link Module module}.
+     * 
+     * @param module
+     * @param importNames
+     */
+    public void addAllImports(org.eclipse.acceleo.model.mtl.Module module, Collection<String> importNames);
+    
     /**
      * Adds the given {@link TemplatePrototype prototype} to the end of the {@link Module
      * module}.

@@ -168,6 +168,11 @@ public class MadConfigDslAdapterFactory extends AdapterFactoryImpl
         return createXtextLanguageReferenceAdapter();
       }
       @Override
+      public Adapter caseOCLCustomLibraryMdsl(OCLCustomLibraryMdsl object)
+      {
+        return createOCLCustomLibraryMdslAdapter();
+      }
+      @Override
       public Adapter caseQueryEvaluatorMdsl(QueryEvaluatorMdsl object)
       {
         return createQueryEvaluatorMdslAdapter();
@@ -630,6 +635,21 @@ public class MadConfigDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createXtextLanguageReferenceAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.sysord.mad.configuration.madConfigDsl.OCLCustomLibraryMdsl <em>OCL Custom Library Mdsl</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.sysord.mad.configuration.madConfigDsl.OCLCustomLibraryMdsl
+   * @generated
+   */
+  public Adapter createOCLCustomLibraryMdslAdapter()
   {
     return null;
   }

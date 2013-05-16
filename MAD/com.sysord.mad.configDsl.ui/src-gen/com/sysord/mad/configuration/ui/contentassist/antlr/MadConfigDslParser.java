@@ -84,6 +84,8 @@ public class MadConfigDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getCustomModelProviderMdslAccess().getGroup_2_2(), "rule__CustomModelProviderMdsl__Group_2_2__0");
 					put(grammarAccess.getXtextLanguageDescriptorMdslAccess().getGroup(), "rule__XtextLanguageDescriptorMdsl__Group__0");
 					put(grammarAccess.getXtextLanguageReferenceAccess().getGroup(), "rule__XtextLanguageReference__Group__0");
+					put(grammarAccess.getOCLCustomLibraryMdslAccess().getGroup(), "rule__OCLCustomLibraryMdsl__Group__0");
+					put(grammarAccess.getOCLCustomLibraryMdslAccess().getGroup_6(), "rule__OCLCustomLibraryMdsl__Group_6__0");
 					put(grammarAccess.getQueryEvaluatorMdslAccess().getGroup(), "rule__QueryEvaluatorMdsl__Group__0");
 					put(grammarAccess.getQueryEvaluatorMdslAccess().getGroup_9(), "rule__QueryEvaluatorMdsl__Group_9__0");
 					put(grammarAccess.getQueryEvaluatorMdslAccess().getGroup_9_2(), "rule__QueryEvaluatorMdsl__Group_9_2__0");
@@ -198,6 +200,9 @@ public class MadConfigDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getXtextLanguageDescriptorMdslAccess().getBundleIdAssignment_5(), "rule__XtextLanguageDescriptorMdsl__BundleIdAssignment_5");
 					put(grammarAccess.getXtextLanguageDescriptorMdslAccess().getActivatorClassNameAssignment_7(), "rule__XtextLanguageDescriptorMdsl__ActivatorClassNameAssignment_7");
 					put(grammarAccess.getXtextLanguageReferenceAccess().getXtextLanguageDescriptorAssignment_1(), "rule__XtextLanguageReference__XtextLanguageDescriptorAssignment_1");
+					put(grammarAccess.getOCLCustomLibraryMdslAccess().getLabelAssignment_3(), "rule__OCLCustomLibraryMdsl__LabelAssignment_3");
+					put(grammarAccess.getOCLCustomLibraryMdslAccess().getClassDescriptorAssignment_5(), "rule__OCLCustomLibraryMdsl__ClassDescriptorAssignment_5");
+					put(grammarAccess.getOCLCustomLibraryMdslAccess().getDescriptionAssignment_6_1(), "rule__OCLCustomLibraryMdsl__DescriptionAssignment_6_1");
 					put(grammarAccess.getQueryEvaluatorMdslAccess().getNameAssignment_3(), "rule__QueryEvaluatorMdsl__NameAssignment_3");
 					put(grammarAccess.getQueryEvaluatorMdslAccess().getLabelAssignment_5(), "rule__QueryEvaluatorMdsl__LabelAssignment_5");
 					put(grammarAccess.getQueryEvaluatorMdslAccess().getClassDescriptorAssignment_8(), "rule__QueryEvaluatorMdsl__ClassDescriptorAssignment_8");

@@ -36,6 +36,7 @@ import com.sysord.mad.configuration.madConfigDsl.LiteralQueryFragment;
 import com.sysord.mad.configuration.madConfigDsl.MADConfigElement;
 import com.sysord.mad.configuration.madConfigDsl.MADConfiguration;
 import com.sysord.mad.configuration.madConfigDsl.MadConfigDslPackage;
+import com.sysord.mad.configuration.madConfigDsl.OCLCustomLibraryMdsl;
 import com.sysord.mad.configuration.madConfigDsl.PropertyMdsl;
 import com.sysord.mad.configuration.madConfigDsl.QueryBody;
 import com.sysord.mad.configuration.madConfigDsl.QueryChain;
@@ -660,6 +661,14 @@ public class MadConfigDslUtil {
 		return EcoreUtil.getObjectsByType(madConfig.getConfigElements(), MadConfigDslPackage.Literals.QUERY_EVALUATOR_MDSL);		
 	}
 
+	/**
+	 * Return all Query OCL Custom libraries declarations for the model
+	 * @param madConfig
+	 * @return
+	 */
+	public static Collection<OCLCustomLibraryMdsl> getOCLCustomLibraryDeclarations(MADConfiguration madConfig){
+		return EcoreUtil.getObjectsByType(madConfig.getConfigElements(), MadConfigDslPackage.Literals.OCL_CUSTOM_LIBRARY_MDSL);		
+	}
 	
 	/**
 	 * Return all Foreign model declarations for the model

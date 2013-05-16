@@ -12,7 +12,10 @@
 package com.sysord.mad.evaluator.impl.ocl;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EClass;
@@ -28,8 +31,8 @@ import org.eclipse.ocl.ecore.EcoreEnvironmentFactory;
 import org.eclipse.ocl.ecore.EcoreEvaluationEnvironment;
 
 import com.sysord.mad.evaluator.impl.CurrentEvaluationContext;
-import com.sysord.mad.evaluator.impl.ocl.OCLCustomisationHelper.OCLOperationDefinition;
-import com.sysord.mad.evaluator.impl.ocl.OCLCustomisationHelper.OCLTypedElementDefinition;
+import com.sysord.mad.evaluator.impl.ocl.customization.OCLCustomisationHelper;
+import com.sysord.mad.evaluator.impl.ocl.customization.OCLCustomisationHelper.OCLOperationDefinition;
 
 public class MadEcoreEvaluationEnvironment extends EcoreEvaluationEnvironment {
 
@@ -42,42 +45,15 @@ public class MadEcoreEvaluationEnvironment extends EcoreEvaluationEnvironment {
 	 */
 	protected boolean updateEvaluationAnalyze = true;
 	
-	//----------------------
-	// Custom operations
-	//----------------------
 	
-	public static final String TOSTRING_OPERATION = "toString";
-	public static final String TYPENAME = "typeName";
+	/**
+	 * Storage for custom operations definition
+	 */
+	protected static Map<EOperation, OCLOperationDefinition> customOperations = new HashMap<EOperation, OCLCustomisationHelper.OCLOperationDefinition>();
 	
-	//Ecore util operations
-	public static final String ROOT_CONTAINER = "rootContainer";
-	public static final String E_CONTAINER = "eContainer";
-	
-	//EObject operations
-	public static final String E_CONTENTS = "eContents";
-	public static final String E_ALL_CONTENTS = "eAllContents";
-	public static final String METAMODEL_CLASSIFIERS = "metamodelClassifiers";
-
-	protected static OCLTypedElementDefinition oclTypedElement(String name, EClassifier type){
-		return OCLCustomisationHelper.createOCLTypedElementDefinition(name, type);
+	public static void registerCustomOperations(Map<EOperation, OCLOperationDefinition> customOperationsDef){
+		customOperations = customOperationsDef;		
 	}
-	protected static OCLOperationDefinition oclOperation(EClassifier ownerType, String name, EClassifier returnType, OCLTypedElementDefinition...parametersDefinition){
-		return OCLCustomisationHelper.createOCLOperationDefinition(ownerType, name, returnType, parametersDefinition);
-	}
-	
-	public static final OCLOperationDefinition[] CUSTOM_OPERATIONS_DEFINITIONS = new OCLOperationDefinition[]{
-			oclOperation(OCLCustomisationHelper.OCL_ANY, TOSTRING_OPERATION, OCLCustomisationHelper.OCL_STRING),
-			oclOperation(OCLCustomisationHelper.OCL_ANY, ROOT_CONTAINER, OCLCustomisationHelper.OCL_ANY),
-			oclOperation(OCLCustomisationHelper.OCL_ANY, E_CONTAINER, OCLCustomisationHelper.OCL_ANY),
-			oclOperation(OCLCustomisationHelper.OCL_ANY, TYPENAME, OCLCustomisationHelper.OCL_STRING),
-			oclOperation(OCLCustomisationHelper.OCL_ANY, E_CONTENTS, OCLCustomisationHelper.OCL_SEQUENCE),
-			oclOperation(OCLCustomisationHelper.OCL_ANY, E_ALL_CONTENTS, OCLCustomisationHelper.OCL_SEQUENCE,
-					OCLCustomisationHelper.createOCLTypedElementDefinition("filter", OCLCustomisationHelper.OCL_ANY)),
-			oclOperation(OCLCustomisationHelper.OCL_ANY, METAMODEL_CLASSIFIERS, OCLCustomisationHelper.OCL_SEQUENCE,
-					OCLCustomisationHelper.createOCLTypedElementDefinition("filter", OCLCustomisationHelper.OCL_ANY)),
-	};
-	
-	
 	
 	/**
 	 * set variable value
@@ -115,17 +91,26 @@ public class MadEcoreEvaluationEnvironment extends EcoreEvaluationEnvironment {
 	@Override
 	public Object callOperation(EOperation operation, int opcode, Object source, Object[] args) throws IllegalArgumentException {
 		Object result = null;
-		if (operation.getEAnnotation(MadEcoreEnvironment.MAD_ENVIRONMENT_ID) == null) {
+		if (operation.getEAnnotation(MadEcoreEnvironment.DEFAULT_CUSTOM_ENVIRONMENT_ID) != null) {			
+        	//eval custom operation
+			try {
+				OCLOperationDefinition customOperationDef = customOperations.get(operation);
+				if(customOperationDef.getMethod() != null){
+					//eval custom operation declared by annotation
+					result = evalCustomAnnotatedOperation(customOperationDef, source, args);        											
+				}else{
+					result = evalCustomOperation(operation, opcode, source, args);        								
+				}
+			} catch (Exception e) {
+				throw new IllegalArgumentException("Error during '" + operation.getName() + "' custom opearation evaluation." , e);
+			}
+		}else{
 			//not a custom operation
             result = super.callOperation(operation, opcode, source, args);
             if(updateEvaluationAnalyze){
             	processCollectOperationCall(source, operation, args, result);
-            }
-        }else{
-        	//eval custom operation
-    		result = evalCustomOperation(operation, opcode, source, args);        	
-        }
-		
+            }			
+		}
 		
 		return result; 
 	}
@@ -199,7 +184,7 @@ public class MadEcoreEvaluationEnvironment extends EcoreEvaluationEnvironment {
 			eSource = (EObject)source;
 		}
 
-		if(E_CONTAINER.equals(operationName)){
+		if(MadOclCustomizer.E_CONTAINER.equals(operationName)){
 			//specific analyze for container access
 			if(eSource != null){
 				eResult = eSource.eContainer();
@@ -213,10 +198,10 @@ public class MadEcoreEvaluationEnvironment extends EcoreEvaluationEnvironment {
 			}
 			return eResult;
 			
-		}else if(TOSTRING_OPERATION.equals(operationName)){
+		}else if(MadOclCustomizer.TOSTRING_OPERATION.equals(operationName)){
 			result = source.toString();
 
-		}else if(TYPENAME.equals(operationName)){
+		}else if(MadOclCustomizer.TYPENAME.equals(operationName)){
 			//if EObject then return ECLass name else return java class name
 			if(eSource != null){
 				result = eSource.eClass().getName();
@@ -224,15 +209,15 @@ public class MadEcoreEvaluationEnvironment extends EcoreEvaluationEnvironment {
 				result = source.getClass().getSimpleName();
 			}
 			
-		}else if(ROOT_CONTAINER.equals(operationName)){
+		}else if(MadOclCustomizer.ROOT_CONTAINER.equals(operationName)){
 			if(eSource != null){
 				result = EcoreUtil.getRootContainer(eSource);
 			}
-		}else if(E_CONTENTS.equals(operationName)){
+		}else if(MadOclCustomizer.E_CONTENTS.equals(operationName)){
 			if(eSource != null){
 				result = eSource.eContents();
 			}
-		}else if(E_ALL_CONTENTS.equals(operationName)){
+		}else if(MadOclCustomizer.E_ALL_CONTENTS.equals(operationName)){
 			if(eSource != null){
 				final List<EObject> elements = new ArrayList<EObject>();
 				final TreeIterator<EObject> iterator = eSource.eAllContents();
@@ -251,7 +236,7 @@ public class MadEcoreEvaluationEnvironment extends EcoreEvaluationEnvironment {
 				}
 				result = elements;
 			}
-		}else if(METAMODEL_CLASSIFIERS.equals(operationName)){
+		}else if(MadOclCustomizer.METAMODEL_CLASSIFIERS.equals(operationName)){
 			if(eSource != null){
 				final List<EObject> elements = new ArrayList<EObject>();
 				final EPackage ePackage = eSource.eClass().getEPackage();
@@ -278,7 +263,24 @@ public class MadEcoreEvaluationEnvironment extends EcoreEvaluationEnvironment {
 		return result;
 	}
 	
-		
+
+	/**
+	 * Invoke operation method by reflection.
+	 * 
+	 * @param customOperationDef
+	 * @param source
+	 * @param args
+	 * @return
+	 */
+	protected Object evalCustomAnnotatedOperation(OCLOperationDefinition customOperationDef, Object source, Object[] args) throws Exception{
+		//arguments
+		List<Object> invokationArgs = new ArrayList<Object>(Arrays.asList(args));
+		//set context at head
+		invokationArgs.add(0, source);
+		return customOperationDef.getMethod().invoke(customOperationDef.getLibInstance(), invokationArgs.toArray());
+	}
+
+	
 	protected void trace(String msg){
 		System.out.println("*** TRACE:" + msg);
 

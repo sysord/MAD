@@ -14,7 +14,6 @@ package com.sysord.mad.evaluator.impl;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 import com.sysord.mad.evaluator.QueryAnalyze;
 import com.sysord.mad.evaluator.QueryEvaluationContext;
@@ -96,7 +95,7 @@ public abstract class AbstractAnnotationBasedQueryEvaluator extends AbstractQuer
 	/**
 	 * Search for method annotated with {@link EvaluatorFunction}
 	 * - Method with same name or function name defined in the annotation.
-	 * - conform prototype
+	 * - prototype is conform
 	 * @param funcname
 	 * @param arguments
 	 * @return

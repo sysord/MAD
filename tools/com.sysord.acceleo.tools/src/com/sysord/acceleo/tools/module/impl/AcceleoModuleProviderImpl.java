@@ -88,22 +88,27 @@ public class AcceleoModuleProviderImpl implements AcceleoModuleProvider {
 
     @Override
     public Module getModule(ModuleDescriptor moduleDescriptor) {
+        return getModule(AcceleoTools.createEMtlURI(moduleDescriptor));
+    }
+
+    @Override
+    public Module getModule(URI moduleUri){
         if (resourceSet == null) {
             throw new IllegalStateException("AcceleoModuleProvider has not been initialized.");
         }// else
-        return loadModule(moduleDescriptor);
+        return loadModule(moduleUri);
     }
 
+    
     /**
-     * Loads and returns the module corresponding to the module {@link ModuleDescriptor
-     * descriptor}.
+     * Loads and returns the module corresponding to the module {@link URI
+     * uri}.
      * 
-     * @param moduleDescriptor
-     * @return the module corresponding to the module {@link ModuleDescriptor
-     *         descriptor}.
+     * @param moduleURI
+     * @return the module corresponding to the module {@link URI
+     *         uri}.
      */
-    private Module loadModule(ModuleDescriptor moduleDescriptor) {
-        URI moduleURI = AcceleoTools.createEMtlURI(moduleDescriptor);
+    private Module loadModule(URI moduleURI) {
         Module module = moduleCache.get(moduleURI);
         if (module == null) {
             synchronized (resourceSet.getResources()) {
@@ -124,6 +129,7 @@ public class AcceleoModuleProviderImpl implements AcceleoModuleProvider {
         return module;
     }
 
+    
     private synchronized ResourceSet getResourceSet() {
         if (resourceSet == null) {
             resourceSet = new AcceleoResourceSetImpl();

@@ -11,19 +11,15 @@
  ****************************************************************************/
 package com.sysord.mad.evaluator.impl.ocl;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 
-import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EOperation;
-import org.eclipse.emf.ecore.EParameter;
-import org.eclipse.emf.ecore.EcoreFactory;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.ocl.ecore.EcoreEnvironment;
 import org.eclipse.ocl.ecore.EcoreEnvironmentFactory;
 
-import com.sysord.mad.evaluator.impl.ocl.OCLCustomisationHelper.OCLOperationDefinition;
-import com.sysord.mad.evaluator.impl.ocl.OCLCustomisationHelper.OCLTypedElementDefinition;
+import com.sysord.mad.evaluator.impl.ocl.customization.OCLCustomisationHelper.OCLOperationDefinition;
 
 /**
  * Custom environment for add new EOperation to OCL
@@ -33,24 +29,40 @@ import com.sysord.mad.evaluator.impl.ocl.OCLCustomisationHelper.OCLTypedElementD
  * http://www.sysord.com
  *
  */
-public class MadEcoreEnvironment extends MadOCLEcoreEnvironment {
+public class MadEcoreEnvironment extends EcoreEnvironment {
 
-	public static final String MAD_ENVIRONMENT_ID = "MADEnvironment";
-
+	public static final String DEFAULT_CUSTOM_ENVIRONMENT_ID = "MadCustomEnvironment";
+	
+	
+	public MadEcoreEnvironment(MadEcoreEnvironment parent) {
+		super(parent);
+		//defineCustomOperations();
+	}
 	
 	
 	public MadEcoreEnvironment(EcoreEnvironmentFactory fac, Resource resource) {
 		super(fac, resource);
+		defineCustomOperations();
 	}
 
-	public MadEcoreEnvironment(MadEcoreEnvironment parent) {
-		super(parent);
-	}
 	
 	protected String getCustomEnvironmentId(){
-		return MAD_ENVIRONMENT_ID;
+		return DEFAULT_CUSTOM_ENVIRONMENT_ID;
 	}
 
-
+	
+	/**
+	 * Define and register custom operations
+	 */
+    protected void defineCustomOperations() {
+    	Map<EOperation, OCLOperationDefinition> customOperationsDef = MadOclCustomizer.getCustomOperations(getCustomEnvironmentId(), getTypeResolver());
+    	for(Entry<EOperation, OCLOperationDefinition> operationDefEntry : customOperationsDef.entrySet()){
+    		EOperation oclOperation = operationDefEntry.getKey();
+            //add operation to owner type (with owner type resolution)
+            addHelperOperation(getTypeResolver().resolve(operationDefEntry.getValue().getOwnerType()), oclOperation);
+    	}
+    	MadEcoreEvaluationEnvironment.registerCustomOperations(customOperationsDef);
+    }
+	
 
 }

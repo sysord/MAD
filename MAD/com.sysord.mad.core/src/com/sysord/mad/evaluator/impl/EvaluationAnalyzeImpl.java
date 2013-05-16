@@ -9,7 +9,7 @@
  * Contributors:
  *     Sysord - initial API and implementation
  ****************************************************************************/
-package com.sysord.mad.evaluator.impl.ocl;
+package com.sysord.mad.evaluator.impl;
 
 import java.util.List;
 
@@ -20,7 +20,6 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.ETypedElement;
 import org.eclipse.emf.ecore.resource.Resource;
 
-import com.sysord.emf.tools.EmfToolsFacade;
 import com.sysord.mad.evaluator.EvaluationAnalyze;
 import com.sysord.mad.evaluator.QueryResult;
 import com.sysord.mad.mao.ValuedSemanticElement.ACCESS_CATEGORY;

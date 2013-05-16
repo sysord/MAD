@@ -99,7 +99,8 @@ public class MadAttributesFactoryImpl implements MadAttributesFactory {
 			return null;
 		}
 		EObject root = contextObject.eResource().getContents().get(0);										
-		List<? extends EObject> candidates = EcoreUtil2.getAllContentsOfType(root, (Class<? extends EObject>)feature.getEType().getInstanceClass());
+		List<? extends EObject> candidates = EcoreUtil2.getAllContentsOfType(root, 
+							(Class<? extends EObject>)feature.getEType().getInstanceClass());
 		return candidates;
 	}
 

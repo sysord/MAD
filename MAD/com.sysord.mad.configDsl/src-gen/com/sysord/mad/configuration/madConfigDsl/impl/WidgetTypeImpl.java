@@ -25,6 +25,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link com.sysord.mad.configuration.madConfigDsl.impl.WidgetTypeImpl#getName <em>Name</em>}</li>
  *   <li>{@link com.sysord.mad.configuration.madConfigDsl.impl.WidgetTypeImpl#getCategory <em>Category</em>}</li>
  *   <li>{@link com.sysord.mad.configuration.madConfigDsl.impl.WidgetTypeImpl#getLabel <em>Label</em>}</li>
  *   <li>{@link com.sysord.mad.configuration.madConfigDsl.impl.WidgetTypeImpl#getClassDescriptor <em>Class Descriptor</em>}</li>
@@ -36,6 +37,26 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class WidgetTypeImpl extends MADConfigElementImpl implements WidgetType
 {
+  /**
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
+
   /**
    * The default value of the '{@link #getCategory() <em>Category</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -125,6 +146,29 @@ public class WidgetTypeImpl extends MADConfigElementImpl implements WidgetType
   protected EClass eStaticClass()
   {
     return MadConfigDslPackage.Literals.WIDGET_TYPE;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getName()
+  {
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MadConfigDslPackage.WIDGET_TYPE__NAME, oldName, name));
   }
 
   /**
@@ -270,6 +314,8 @@ public class WidgetTypeImpl extends MADConfigElementImpl implements WidgetType
   {
     switch (featureID)
     {
+      case MadConfigDslPackage.WIDGET_TYPE__NAME:
+        return getName();
       case MadConfigDslPackage.WIDGET_TYPE__CATEGORY:
         return getCategory();
       case MadConfigDslPackage.WIDGET_TYPE__LABEL:
@@ -292,6 +338,9 @@ public class WidgetTypeImpl extends MADConfigElementImpl implements WidgetType
   {
     switch (featureID)
     {
+      case MadConfigDslPackage.WIDGET_TYPE__NAME:
+        setName((String)newValue);
+        return;
       case MadConfigDslPackage.WIDGET_TYPE__CATEGORY:
         setCategory((WIDGET_CATEGORY_MDSL)newValue);
         return;
@@ -318,6 +367,9 @@ public class WidgetTypeImpl extends MADConfigElementImpl implements WidgetType
   {
     switch (featureID)
     {
+      case MadConfigDslPackage.WIDGET_TYPE__NAME:
+        setName(NAME_EDEFAULT);
+        return;
       case MadConfigDslPackage.WIDGET_TYPE__CATEGORY:
         setCategory(CATEGORY_EDEFAULT);
         return;
@@ -344,6 +396,8 @@ public class WidgetTypeImpl extends MADConfigElementImpl implements WidgetType
   {
     switch (featureID)
     {
+      case MadConfigDslPackage.WIDGET_TYPE__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case MadConfigDslPackage.WIDGET_TYPE__CATEGORY:
         return category != CATEGORY_EDEFAULT;
       case MadConfigDslPackage.WIDGET_TYPE__LABEL:
@@ -367,7 +421,9 @@ public class WidgetTypeImpl extends MADConfigElementImpl implements WidgetType
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (category: ");
+    result.append(" (name: ");
+    result.append(name);
+    result.append(", category: ");
     result.append(category);
     result.append(", label: ");
     result.append(label);

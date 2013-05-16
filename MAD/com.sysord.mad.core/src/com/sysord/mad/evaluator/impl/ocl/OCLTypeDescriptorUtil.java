@@ -14,14 +14,13 @@ package com.sysord.mad.evaluator.impl.ocl;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.ocl.ecore.BagType;
-import org.eclipse.ocl.ecore.EcoreFactory;
 import org.eclipse.ocl.ecore.OrderedSetType;
 import org.eclipse.ocl.ecore.SequenceType;
 import org.eclipse.ocl.ecore.SetType;
 
 import com.sysord.mad.type.TypeDescriptor;
-import com.sysord.mad.type.TypeDescriptorImpl;
 import com.sysord.mad.type.TypeDescriptor.TYPE_CATEGORY;
+import com.sysord.mad.type.TypeDescriptorImpl;
 
 public class OCLTypeDescriptorUtil {
 	
@@ -33,19 +32,19 @@ public class OCLTypeDescriptorUtil {
 		EClassifier resultEtype = null;
 		TypeDescriptor itemAnalyze = null;
 		
-		if(OCLCustomisationHelper.OCL_STRING.equals(oclType)){
+		if(OCLTypeUtil.OCL_STRING.equals(oclType)){
 			resultCategory = TYPE_CATEGORY.STRING;
 			resultType = oclType.getInstanceClass();
 		
-		}else if(OCLCustomisationHelper.OCL_BOOLEAN.equals(oclType)){
+		}else if(OCLTypeUtil.OCL_BOOLEAN.equals(oclType)){
 			resultCategory = TYPE_CATEGORY.BOOLEAN;
 			resultType = oclType.getInstanceClass();			
 		
-		}else if(OCLCustomisationHelper.OCL_INTEGER.equals(oclType)){
+		}else if(OCLTypeUtil.OCL_INTEGER.equals(oclType)){
 			resultCategory = TYPE_CATEGORY.INTEGER;
 			resultType = oclType.getInstanceClass();			
 		
-		}else if(OCLCustomisationHelper.OCL_REAL.equals(oclType)){
+		}else if(OCLTypeUtil.OCL_REAL.equals(oclType)){
 			resultCategory = TYPE_CATEGORY.DOUBLE;
 			resultType = oclType.getInstanceClass();
 			
@@ -96,35 +95,27 @@ public class OCLTypeDescriptorUtil {
 		case NULL:
 			return null;
 		case STRING:
-			return OCLCustomisationHelper.OCL_STRING;
+			return OCLTypeUtil.OCL_STRING;
 		case BOOLEAN:
-			return OCLCustomisationHelper.OCL_BOOLEAN;
+			return OCLTypeUtil.OCL_BOOLEAN;
 		case LONG:
-			return OCLCustomisationHelper.OCL_INTEGER;
+			return OCLTypeUtil.OCL_INTEGER;
 		case INTEGER:
-			return OCLCustomisationHelper.OCL_INTEGER;
+			return OCLTypeUtil.OCL_INTEGER;
 		case FLOAT:
-			return OCLCustomisationHelper.OCL_REAL;
+			return OCLTypeUtil.OCL_REAL;
 		case DOUBLE:
-			return OCLCustomisationHelper.OCL_REAL;
+			return OCLTypeUtil.OCL_REAL;
 		case SEQUENCE:
-			SequenceType sequenceType = EcoreFactory.eINSTANCE.createSequenceType();
-			sequenceType.setElementType(typeDescriptorToOclType(typeDescriptor.getItemTypeDescriptor()));
-			return sequenceType;
+			return OCLTypeUtil.OCL_SEQUENCE(typeDescriptorToOclType(typeDescriptor.getItemTypeDescriptor()));
 		case SET:
-			SetType setType = EcoreFactory.eINSTANCE.createSetType();
-			setType.setElementType(typeDescriptorToOclType(typeDescriptor.getItemTypeDescriptor()));
-			return setType;
+			return OCLTypeUtil.OCL_SET(typeDescriptorToOclType(typeDescriptor.getItemTypeDescriptor()));
 		case ORDERED_SET:
-			OrderedSetType orderedSetType = EcoreFactory.eINSTANCE.createOrderedSetType();
-			orderedSetType.setElementType(typeDescriptorToOclType(typeDescriptor.getItemTypeDescriptor()));
-			return orderedSetType;
+			return OCLTypeUtil.OCL_ORDERED_SET(typeDescriptorToOclType(typeDescriptor.getItemTypeDescriptor()));
 		case BAG:
-			BagType BagType = EcoreFactory.eINSTANCE.createBagType();
-			BagType.setElementType(typeDescriptorToOclType(typeDescriptor.getItemTypeDescriptor()));
-			return BagType;
+			return OCLTypeUtil.OCL_BAG(typeDescriptorToOclType(typeDescriptor.getItemTypeDescriptor()));
 		default:
-			return OCLCustomisationHelper.OCL_ANY;
+			return OCLTypeUtil.OCL_ANY;
 		}
 		
 	}

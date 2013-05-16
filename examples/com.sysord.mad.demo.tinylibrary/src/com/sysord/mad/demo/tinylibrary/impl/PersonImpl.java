@@ -164,21 +164,7 @@ public abstract class PersonImpl extends EObjectImpl implements Person {
 	 * @generated
 	 */
 	public String getName() {
-		if (getFirstName() == null) {
-			if (getLastName() == null) {
-				return ""; //$NON-NLS-1$
-			} else {
-				return getLastName();
-			}
-		} else if (getLastName() == null) {
-			return getFirstName();
-		} else {
-			StringBuffer result = new StringBuffer();
-
-			result.append(getFirstName()).append(' ').append(getLastName());
-
-			return result.toString();
-		}
+		return name;
 	}
 
 	/**
@@ -187,23 +173,10 @@ public abstract class PersonImpl extends EObjectImpl implements Person {
 	 * @generated
 	 */
 	public void setName(String newName) {
-		if (newName == null || newName.length() == 0) {
-			setFirstName(null);
-			setLastName(null);
-		} else {
-			int comma = newName.indexOf(',');
-			if (comma < 0) {
-				comma = newName.indexOf(' ');
-			}
-
-			if (comma >= 0) {
-				setFirstName(newName.substring(0, comma).trim());
-				setLastName(newName.substring(comma + 1).trim());
-			} else {
-				setFirstName(newName);
-				setLastName(null);
-			}
-		}
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TinylibraryPackage.PERSON__NAME, oldName, name));
 	}
 
 	/**

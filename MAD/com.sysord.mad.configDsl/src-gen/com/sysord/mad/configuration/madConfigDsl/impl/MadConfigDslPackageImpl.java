@@ -30,6 +30,7 @@ import com.sysord.mad.configuration.madConfigDsl.MADConfiguration;
 import com.sysord.mad.configuration.madConfigDsl.MadConfigDslFactory;
 import com.sysord.mad.configuration.madConfigDsl.MadConfigDslPackage;
 import com.sysord.mad.configuration.madConfigDsl.ModelProviderMdsl;
+import com.sysord.mad.configuration.madConfigDsl.OCLCustomLibraryMdsl;
 import com.sysord.mad.configuration.madConfigDsl.PropValueExprFragment;
 import com.sysord.mad.configuration.madConfigDsl.PropertyMdsl;
 import com.sysord.mad.configuration.madConfigDsl.PropertyTypeMdsl;
@@ -202,6 +203,13 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
    * @generated
    */
   private EClass xtextLanguageReferenceEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass oclCustomLibraryMdslEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -584,16 +592,6 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getMADConfigElement_Name()
-  {
-    return (EAttribute)madConfigElementEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getImport()
   {
     return importEClass;
@@ -764,7 +762,7 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getIconDescriptorMdsl_Description()
+  public EAttribute getIconDescriptorMdsl_Name()
   {
     return (EAttribute)iconDescriptorMdslEClass.getEStructuralFeatures().get(0);
   }
@@ -774,9 +772,19 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getIconDescriptorMdsl_Description()
+  {
+    return (EAttribute)iconDescriptorMdslEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getIconDescriptorMdsl_BundleDescriptor()
   {
-    return (EReference)iconDescriptorMdslEClass.getEStructuralFeatures().get(1);
+    return (EReference)iconDescriptorMdslEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -786,7 +794,7 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
    */
   public EAttribute getIconDescriptorMdsl_BundleUri()
   {
-    return (EAttribute)iconDescriptorMdslEClass.getEStructuralFeatures().get(2);
+    return (EAttribute)iconDescriptorMdslEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -804,7 +812,7 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getI18NBundleMdsl_Description()
+  public EAttribute getI18NBundleMdsl_Name()
   {
     return (EAttribute)i18NBundleMdslEClass.getEStructuralFeatures().get(0);
   }
@@ -814,9 +822,19 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getI18NBundleMdsl_Description()
+  {
+    return (EAttribute)i18NBundleMdslEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getI18NBundleMdsl_BundleDescriptor()
   {
-    return (EReference)i18NBundleMdslEClass.getEStructuralFeatures().get(1);
+    return (EReference)i18NBundleMdslEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -826,7 +844,7 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
    */
   public EAttribute getI18NBundleMdsl_BundleUri()
   {
-    return (EAttribute)i18NBundleMdslEClass.getEStructuralFeatures().get(2);
+    return (EAttribute)i18NBundleMdslEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -844,7 +862,7 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getForeignModelMdsl_Label()
+  public EAttribute getForeignModelMdsl_Name()
   {
     return (EAttribute)foreignModelMdslEClass.getEStructuralFeatures().get(0);
   }
@@ -854,7 +872,7 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getForeignModelMdsl_Description()
+  public EAttribute getForeignModelMdsl_Label()
   {
     return (EAttribute)foreignModelMdslEClass.getEStructuralFeatures().get(1);
   }
@@ -864,9 +882,9 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getForeignModelMdsl_Provider()
+  public EAttribute getForeignModelMdsl_Description()
   {
-    return (EReference)foreignModelMdslEClass.getEStructuralFeatures().get(2);
+    return (EAttribute)foreignModelMdslEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -874,7 +892,7 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getForeignModelMdsl_SynchronizerFactoryClass()
+  public EReference getForeignModelMdsl_Provider()
   {
     return (EReference)foreignModelMdslEClass.getEStructuralFeatures().get(3);
   }
@@ -884,7 +902,7 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getForeignModelMdsl_ExtensionManagerClass()
+  public EReference getForeignModelMdsl_SynchronizerFactoryClass()
   {
     return (EReference)foreignModelMdslEClass.getEStructuralFeatures().get(4);
   }
@@ -894,7 +912,7 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getForeignModelMdsl_DslReference()
+  public EReference getForeignModelMdsl_ExtensionManagerClass()
   {
     return (EReference)foreignModelMdslEClass.getEStructuralFeatures().get(5);
   }
@@ -904,9 +922,19 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getForeignModelMdsl_RelocatorQuery()
+  public EReference getForeignModelMdsl_DslReference()
   {
     return (EReference)foreignModelMdslEClass.getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getForeignModelMdsl_RelocatorQuery()
+  {
+    return (EReference)foreignModelMdslEClass.getEStructuralFeatures().get(7);
   }
 
   /**
@@ -1004,7 +1032,7 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getXtextLanguageDescriptorMdsl_LanguageId()
+  public EAttribute getXtextLanguageDescriptorMdsl_Name()
   {
     return (EAttribute)xtextLanguageDescriptorMdslEClass.getEStructuralFeatures().get(0);
   }
@@ -1014,7 +1042,7 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getXtextLanguageDescriptorMdsl_BundleId()
+  public EAttribute getXtextLanguageDescriptorMdsl_LanguageId()
   {
     return (EAttribute)xtextLanguageDescriptorMdslEClass.getEStructuralFeatures().get(1);
   }
@@ -1024,9 +1052,19 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getXtextLanguageDescriptorMdsl_ActivatorClassName()
+  public EAttribute getXtextLanguageDescriptorMdsl_BundleId()
   {
     return (EAttribute)xtextLanguageDescriptorMdslEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getXtextLanguageDescriptorMdsl_ActivatorClassName()
+  {
+    return (EAttribute)xtextLanguageDescriptorMdslEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -1054,6 +1092,46 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getOCLCustomLibraryMdsl()
+  {
+    return oclCustomLibraryMdslEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getOCLCustomLibraryMdsl_Label()
+  {
+    return (EAttribute)oclCustomLibraryMdslEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getOCLCustomLibraryMdsl_ClassDescriptor()
+  {
+    return (EReference)oclCustomLibraryMdslEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getOCLCustomLibraryMdsl_Description()
+  {
+    return (EAttribute)oclCustomLibraryMdslEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getQueryEvaluatorMdsl()
   {
     return queryEvaluatorMdslEClass;
@@ -1064,7 +1142,7 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getQueryEvaluatorMdsl_Label()
+  public EAttribute getQueryEvaluatorMdsl_Name()
   {
     return (EAttribute)queryEvaluatorMdslEClass.getEStructuralFeatures().get(0);
   }
@@ -1074,9 +1152,9 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getQueryEvaluatorMdsl_ClassDescriptor()
+  public EAttribute getQueryEvaluatorMdsl_Label()
   {
-    return (EReference)queryEvaluatorMdslEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)queryEvaluatorMdslEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1084,7 +1162,7 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getQueryEvaluatorMdsl_QueryPropertiesTypes()
+  public EReference getQueryEvaluatorMdsl_ClassDescriptor()
   {
     return (EReference)queryEvaluatorMdslEClass.getEStructuralFeatures().get(2);
   }
@@ -1094,7 +1172,7 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getQueryEvaluatorMdsl_ExtQServiceClassDescriptor()
+  public EReference getQueryEvaluatorMdsl_QueryPropertiesTypes()
   {
     return (EReference)queryEvaluatorMdslEClass.getEStructuralFeatures().get(3);
   }
@@ -1104,9 +1182,19 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getQueryEvaluatorMdsl_ExtQServiceClassDescriptor()
+  {
+    return (EReference)queryEvaluatorMdslEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EAttribute getQueryEvaluatorMdsl_Description()
   {
-    return (EAttribute)queryEvaluatorMdslEClass.getEStructuralFeatures().get(4);
+    return (EAttribute)queryEvaluatorMdslEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -1124,7 +1212,7 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getWidgetType_Category()
+  public EAttribute getWidgetType_Name()
   {
     return (EAttribute)widgetTypeEClass.getEStructuralFeatures().get(0);
   }
@@ -1134,7 +1222,7 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getWidgetType_Label()
+  public EAttribute getWidgetType_Category()
   {
     return (EAttribute)widgetTypeEClass.getEStructuralFeatures().get(1);
   }
@@ -1144,9 +1232,19 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getWidgetType_Label()
+  {
+    return (EAttribute)widgetTypeEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getWidgetType_ClassDescriptor()
   {
-    return (EReference)widgetTypeEClass.getEStructuralFeatures().get(2);
+    return (EReference)widgetTypeEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -1156,7 +1254,7 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
    */
   public EAttribute getWidgetType_Description()
   {
-    return (EAttribute)widgetTypeEClass.getEStructuralFeatures().get(3);
+    return (EAttribute)widgetTypeEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -1174,7 +1272,7 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getUITabMdsl_I18NLabel()
+  public EAttribute getUITabMdsl_Name()
   {
     return (EAttribute)uiTabMdslEClass.getEStructuralFeatures().get(0);
   }
@@ -1184,9 +1282,19 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getUITabMdsl_I18NLabel()
+  {
+    return (EAttribute)uiTabMdslEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getUITabMdsl_LabelFormatExpr()
   {
-    return (EReference)uiTabMdslEClass.getEStructuralFeatures().get(1);
+    return (EReference)uiTabMdslEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1196,7 +1304,7 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
    */
   public EAttribute getUITabMdsl_Description()
   {
-    return (EAttribute)uiTabMdslEClass.getEStructuralFeatures().get(2);
+    return (EAttribute)uiTabMdslEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -1214,7 +1322,7 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getLayerMdsl_I18NLabel()
+  public EAttribute getLayerMdsl_Name()
   {
     return (EAttribute)layerMdslEClass.getEStructuralFeatures().get(0);
   }
@@ -1224,9 +1332,19 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getLayerMdsl_I18NLabel()
+  {
+    return (EAttribute)layerMdslEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getLayerMdsl_LabelFormatExpr()
   {
-    return (EReference)layerMdslEClass.getEStructuralFeatures().get(1);
+    return (EReference)layerMdslEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1236,7 +1354,7 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
    */
   public EAttribute getLayerMdsl_Description()
   {
-    return (EAttribute)layerMdslEClass.getEStructuralFeatures().get(2);
+    return (EAttribute)layerMdslEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -1246,7 +1364,7 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
    */
   public EReference getLayerMdsl_SubLayers()
   {
-    return (EReference)layerMdslEClass.getEStructuralFeatures().get(3);
+    return (EReference)layerMdslEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -1274,9 +1392,19 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getTypeConfigurationMdsl_Name()
+  {
+    return (EAttribute)typeConfigurationMdslEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getTypeConfigurationMdsl_Type()
   {
-    return (EReference)typeConfigurationMdslEClass.getEStructuralFeatures().get(1);
+    return (EReference)typeConfigurationMdslEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1286,7 +1414,7 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
    */
   public EAttribute getTypeConfigurationMdsl_I18NLabelProvider()
   {
-    return (EAttribute)typeConfigurationMdslEClass.getEStructuralFeatures().get(2);
+    return (EAttribute)typeConfigurationMdslEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -1296,7 +1424,7 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
    */
   public EReference getTypeConfigurationMdsl_LabelProviderExpression()
   {
-    return (EReference)typeConfigurationMdslEClass.getEStructuralFeatures().get(3);
+    return (EReference)typeConfigurationMdslEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -1306,7 +1434,7 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
    */
   public EAttribute getTypeConfigurationMdsl_UseExplicitExtends()
   {
-    return (EAttribute)typeConfigurationMdslEClass.getEStructuralFeatures().get(4);
+    return (EAttribute)typeConfigurationMdslEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -1316,7 +1444,7 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
    */
   public EReference getTypeConfigurationMdsl_SuperConfigurations()
   {
-    return (EReference)typeConfigurationMdslEClass.getEStructuralFeatures().get(5);
+    return (EReference)typeConfigurationMdslEClass.getEStructuralFeatures().get(6);
   }
 
   /**
@@ -1326,7 +1454,7 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
    */
   public EReference getTypeConfigurationMdsl_TemplateElements()
   {
-    return (EReference)typeConfigurationMdslEClass.getEStructuralFeatures().get(6);
+    return (EReference)typeConfigurationMdslEClass.getEStructuralFeatures().get(7);
   }
 
   /**
@@ -1336,7 +1464,7 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
    */
   public EAttribute getTypeConfigurationMdsl_LayoutDefined()
   {
-    return (EAttribute)typeConfigurationMdslEClass.getEStructuralFeatures().get(7);
+    return (EAttribute)typeConfigurationMdslEClass.getEStructuralFeatures().get(8);
   }
 
   /**
@@ -1346,7 +1474,7 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
    */
   public EReference getTypeConfigurationMdsl_LayoutElements()
   {
-    return (EReference)typeConfigurationMdslEClass.getEStructuralFeatures().get(8);
+    return (EReference)typeConfigurationMdslEClass.getEStructuralFeatures().get(9);
   }
 
   /**
@@ -1724,7 +1852,7 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getCommandDeclaration_Label()
+  public EAttribute getCommandDeclaration_Name()
   {
     return (EAttribute)commandDeclarationEClass.getEStructuralFeatures().get(0);
   }
@@ -1734,7 +1862,7 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getCommandDeclaration_Description()
+  public EAttribute getCommandDeclaration_Label()
   {
     return (EAttribute)commandDeclarationEClass.getEStructuralFeatures().get(1);
   }
@@ -1744,9 +1872,19 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getCommandDeclaration_Description()
+  {
+    return (EAttribute)commandDeclarationEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getCommandDeclaration_Definition()
   {
-    return (EReference)commandDeclarationEClass.getEStructuralFeatures().get(2);
+    return (EReference)commandDeclarationEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -1964,7 +2102,7 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getQueryDeclaration_Label()
+  public EAttribute getQueryDeclaration_Name()
   {
     return (EAttribute)queryDeclarationEClass.getEStructuralFeatures().get(0);
   }
@@ -1974,7 +2112,7 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getQueryDeclaration_Description()
+  public EAttribute getQueryDeclaration_Label()
   {
     return (EAttribute)queryDeclarationEClass.getEStructuralFeatures().get(1);
   }
@@ -1984,9 +2122,19 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getQueryDeclaration_Description()
+  {
+    return (EAttribute)queryDeclarationEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getQueryDeclaration_Definition()
   {
-    return (EReference)queryDeclarationEClass.getEStructuralFeatures().get(2);
+    return (EReference)queryDeclarationEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -2254,7 +2402,7 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getTextMacro_Label()
+  public EAttribute getTextMacro_Name()
   {
     return (EAttribute)textMacroEClass.getEStructuralFeatures().get(0);
   }
@@ -2264,7 +2412,7 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getTextMacro_Description()
+  public EAttribute getTextMacro_Label()
   {
     return (EAttribute)textMacroEClass.getEStructuralFeatures().get(1);
   }
@@ -2274,9 +2422,19 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getTextMacro_MacroValue()
+  public EAttribute getTextMacro_Description()
   {
     return (EAttribute)textMacroEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getTextMacro_MacroValue()
+  {
+    return (EAttribute)textMacroEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -2374,7 +2532,6 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
     createEReference(madConfigurationEClass, MAD_CONFIGURATION__CONFIG_ELEMENTS);
 
     madConfigElementEClass = createEClass(MAD_CONFIG_ELEMENT);
-    createEAttribute(madConfigElementEClass, MAD_CONFIG_ELEMENT__NAME);
 
     importEClass = createEClass(IMPORT);
     createEAttribute(importEClass, IMPORT__IMPORT_URI);
@@ -2400,16 +2557,19 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
     createEAttribute(literaPropValueExprFragmentEClass, LITERA_PROP_VALUE_EXPR_FRAGMENT__VALUE);
 
     iconDescriptorMdslEClass = createEClass(ICON_DESCRIPTOR_MDSL);
+    createEAttribute(iconDescriptorMdslEClass, ICON_DESCRIPTOR_MDSL__NAME);
     createEAttribute(iconDescriptorMdslEClass, ICON_DESCRIPTOR_MDSL__DESCRIPTION);
     createEReference(iconDescriptorMdslEClass, ICON_DESCRIPTOR_MDSL__BUNDLE_DESCRIPTOR);
     createEAttribute(iconDescriptorMdslEClass, ICON_DESCRIPTOR_MDSL__BUNDLE_URI);
 
     i18NBundleMdslEClass = createEClass(I18N_BUNDLE_MDSL);
+    createEAttribute(i18NBundleMdslEClass, I18N_BUNDLE_MDSL__NAME);
     createEAttribute(i18NBundleMdslEClass, I18N_BUNDLE_MDSL__DESCRIPTION);
     createEReference(i18NBundleMdslEClass, I18N_BUNDLE_MDSL__BUNDLE_DESCRIPTOR);
     createEAttribute(i18NBundleMdslEClass, I18N_BUNDLE_MDSL__BUNDLE_URI);
 
     foreignModelMdslEClass = createEClass(FOREIGN_MODEL_MDSL);
+    createEAttribute(foreignModelMdslEClass, FOREIGN_MODEL_MDSL__NAME);
     createEAttribute(foreignModelMdslEClass, FOREIGN_MODEL_MDSL__LABEL);
     createEAttribute(foreignModelMdslEClass, FOREIGN_MODEL_MDSL__DESCRIPTION);
     createEReference(foreignModelMdslEClass, FOREIGN_MODEL_MDSL__PROVIDER);
@@ -2431,6 +2591,7 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
     createEAttribute(customModelProviderMdslEClass, CUSTOM_MODEL_PROVIDER_MDSL__PARAMETERS);
 
     xtextLanguageDescriptorMdslEClass = createEClass(XTEXT_LANGUAGE_DESCRIPTOR_MDSL);
+    createEAttribute(xtextLanguageDescriptorMdslEClass, XTEXT_LANGUAGE_DESCRIPTOR_MDSL__NAME);
     createEAttribute(xtextLanguageDescriptorMdslEClass, XTEXT_LANGUAGE_DESCRIPTOR_MDSL__LANGUAGE_ID);
     createEAttribute(xtextLanguageDescriptorMdslEClass, XTEXT_LANGUAGE_DESCRIPTOR_MDSL__BUNDLE_ID);
     createEAttribute(xtextLanguageDescriptorMdslEClass, XTEXT_LANGUAGE_DESCRIPTOR_MDSL__ACTIVATOR_CLASS_NAME);
@@ -2438,7 +2599,13 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
     xtextLanguageReferenceEClass = createEClass(XTEXT_LANGUAGE_REFERENCE);
     createEReference(xtextLanguageReferenceEClass, XTEXT_LANGUAGE_REFERENCE__XTEXT_LANGUAGE_DESCRIPTOR);
 
+    oclCustomLibraryMdslEClass = createEClass(OCL_CUSTOM_LIBRARY_MDSL);
+    createEAttribute(oclCustomLibraryMdslEClass, OCL_CUSTOM_LIBRARY_MDSL__LABEL);
+    createEReference(oclCustomLibraryMdslEClass, OCL_CUSTOM_LIBRARY_MDSL__CLASS_DESCRIPTOR);
+    createEAttribute(oclCustomLibraryMdslEClass, OCL_CUSTOM_LIBRARY_MDSL__DESCRIPTION);
+
     queryEvaluatorMdslEClass = createEClass(QUERY_EVALUATOR_MDSL);
+    createEAttribute(queryEvaluatorMdslEClass, QUERY_EVALUATOR_MDSL__NAME);
     createEAttribute(queryEvaluatorMdslEClass, QUERY_EVALUATOR_MDSL__LABEL);
     createEReference(queryEvaluatorMdslEClass, QUERY_EVALUATOR_MDSL__CLASS_DESCRIPTOR);
     createEReference(queryEvaluatorMdslEClass, QUERY_EVALUATOR_MDSL__QUERY_PROPERTIES_TYPES);
@@ -2446,17 +2613,20 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
     createEAttribute(queryEvaluatorMdslEClass, QUERY_EVALUATOR_MDSL__DESCRIPTION);
 
     widgetTypeEClass = createEClass(WIDGET_TYPE);
+    createEAttribute(widgetTypeEClass, WIDGET_TYPE__NAME);
     createEAttribute(widgetTypeEClass, WIDGET_TYPE__CATEGORY);
     createEAttribute(widgetTypeEClass, WIDGET_TYPE__LABEL);
     createEReference(widgetTypeEClass, WIDGET_TYPE__CLASS_DESCRIPTOR);
     createEAttribute(widgetTypeEClass, WIDGET_TYPE__DESCRIPTION);
 
     uiTabMdslEClass = createEClass(UI_TAB_MDSL);
+    createEAttribute(uiTabMdslEClass, UI_TAB_MDSL__NAME);
     createEAttribute(uiTabMdslEClass, UI_TAB_MDSL__I18_NLABEL);
     createEReference(uiTabMdslEClass, UI_TAB_MDSL__LABEL_FORMAT_EXPR);
     createEAttribute(uiTabMdslEClass, UI_TAB_MDSL__DESCRIPTION);
 
     layerMdslEClass = createEClass(LAYER_MDSL);
+    createEAttribute(layerMdslEClass, LAYER_MDSL__NAME);
     createEAttribute(layerMdslEClass, LAYER_MDSL__I18_NLABEL);
     createEReference(layerMdslEClass, LAYER_MDSL__LABEL_FORMAT_EXPR);
     createEAttribute(layerMdslEClass, LAYER_MDSL__DESCRIPTION);
@@ -2464,6 +2634,7 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
 
     typeConfigurationMdslEClass = createEClass(TYPE_CONFIGURATION_MDSL);
     createEAttribute(typeConfigurationMdslEClass, TYPE_CONFIGURATION_MDSL__DEFAULT_CONFIGURATION);
+    createEAttribute(typeConfigurationMdslEClass, TYPE_CONFIGURATION_MDSL__NAME);
     createEReference(typeConfigurationMdslEClass, TYPE_CONFIGURATION_MDSL__TYPE);
     createEAttribute(typeConfigurationMdslEClass, TYPE_CONFIGURATION_MDSL__I18_NLABEL_PROVIDER);
     createEReference(typeConfigurationMdslEClass, TYPE_CONFIGURATION_MDSL__LABEL_PROVIDER_EXPRESSION);
@@ -2518,6 +2689,7 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
     commandMdslEClass = createEClass(COMMAND_MDSL);
 
     commandDeclarationEClass = createEClass(COMMAND_DECLARATION);
+    createEAttribute(commandDeclarationEClass, COMMAND_DECLARATION__NAME);
     createEAttribute(commandDeclarationEClass, COMMAND_DECLARATION__LABEL);
     createEAttribute(commandDeclarationEClass, COMMAND_DECLARATION__DESCRIPTION);
     createEReference(commandDeclarationEClass, COMMAND_DECLARATION__DEFINITION);
@@ -2551,6 +2723,7 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
     queryMdslEClass = createEClass(QUERY_MDSL);
 
     queryDeclarationEClass = createEClass(QUERY_DECLARATION);
+    createEAttribute(queryDeclarationEClass, QUERY_DECLARATION__NAME);
     createEAttribute(queryDeclarationEClass, QUERY_DECLARATION__LABEL);
     createEAttribute(queryDeclarationEClass, QUERY_DECLARATION__DESCRIPTION);
     createEReference(queryDeclarationEClass, QUERY_DECLARATION__DEFINITION);
@@ -2591,6 +2764,7 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
     createEAttribute(literalFormatExprFragmentEClass, LITERAL_FORMAT_EXPR_FRAGMENT__VALUE);
 
     textMacroEClass = createEClass(TEXT_MACRO);
+    createEAttribute(textMacroEClass, TEXT_MACRO__NAME);
     createEAttribute(textMacroEClass, TEXT_MACRO__LABEL);
     createEAttribute(textMacroEClass, TEXT_MACRO__DESCRIPTION);
     createEAttribute(textMacroEClass, TEXT_MACRO__MACRO_VALUE);
@@ -2642,6 +2816,7 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
     uriModelProviderMdslEClass.getESuperTypes().add(this.getModelProviderMdsl());
     customModelProviderMdslEClass.getESuperTypes().add(this.getModelProviderMdsl());
     xtextLanguageDescriptorMdslEClass.getESuperTypes().add(this.getMADConfigElement());
+    oclCustomLibraryMdslEClass.getESuperTypes().add(this.getMADConfigElement());
     queryEvaluatorMdslEClass.getESuperTypes().add(this.getMADConfigElement());
     widgetTypeEClass.getESuperTypes().add(this.getMADConfigElement());
     uiTabMdslEClass.getESuperTypes().add(this.getMADConfigElement());
@@ -2675,7 +2850,6 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
     initEReference(getMADConfiguration_ConfigElements(), this.getMADConfigElement(), null, "configElements", null, 0, -1, MADConfiguration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(madConfigElementEClass, MADConfigElement.class, "MADConfigElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getMADConfigElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, MADConfigElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(importEClass, Import.class, "Import", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getImport_ImportURI(), ecorePackage.getEString(), "importURI", null, 0, 1, Import.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2701,16 +2875,19 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
     initEAttribute(getLiteraPropValueExprFragment_Value(), ecorePackage.getEString(), "value", null, 0, 1, LiteraPropValueExprFragment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(iconDescriptorMdslEClass, IconDescriptorMdsl.class, "IconDescriptorMdsl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getIconDescriptorMdsl_Name(), ecorePackage.getEString(), "name", null, 0, 1, IconDescriptorMdsl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getIconDescriptorMdsl_Description(), ecorePackage.getEString(), "description", null, 0, 1, IconDescriptorMdsl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getIconDescriptorMdsl_BundleDescriptor(), this.getClassDescriptorMdsl(), null, "bundleDescriptor", null, 0, 1, IconDescriptorMdsl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getIconDescriptorMdsl_BundleUri(), ecorePackage.getEString(), "bundleUri", null, 0, 1, IconDescriptorMdsl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(i18NBundleMdslEClass, I18NBundleMdsl.class, "I18NBundleMdsl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getI18NBundleMdsl_Name(), ecorePackage.getEString(), "name", null, 0, 1, I18NBundleMdsl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getI18NBundleMdsl_Description(), ecorePackage.getEString(), "description", null, 0, 1, I18NBundleMdsl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getI18NBundleMdsl_BundleDescriptor(), this.getClassDescriptorMdsl(), null, "bundleDescriptor", null, 0, 1, I18NBundleMdsl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getI18NBundleMdsl_BundleUri(), ecorePackage.getEString(), "bundleUri", null, 0, 1, I18NBundleMdsl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(foreignModelMdslEClass, ForeignModelMdsl.class, "ForeignModelMdsl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getForeignModelMdsl_Name(), ecorePackage.getEString(), "name", null, 0, 1, ForeignModelMdsl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getForeignModelMdsl_Label(), ecorePackage.getEString(), "label", null, 0, 1, ForeignModelMdsl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getForeignModelMdsl_Description(), ecorePackage.getEString(), "description", null, 0, 1, ForeignModelMdsl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getForeignModelMdsl_Provider(), this.getModelProviderMdsl(), null, "provider", null, 0, 1, ForeignModelMdsl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2732,6 +2909,7 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
     initEAttribute(getCustomModelProviderMdsl_Parameters(), ecorePackage.getEString(), "parameters", null, 0, -1, CustomModelProviderMdsl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(xtextLanguageDescriptorMdslEClass, XtextLanguageDescriptorMdsl.class, "XtextLanguageDescriptorMdsl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getXtextLanguageDescriptorMdsl_Name(), ecorePackage.getEString(), "name", null, 0, 1, XtextLanguageDescriptorMdsl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getXtextLanguageDescriptorMdsl_LanguageId(), ecorePackage.getEString(), "languageId", null, 0, 1, XtextLanguageDescriptorMdsl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getXtextLanguageDescriptorMdsl_BundleId(), ecorePackage.getEString(), "bundleId", null, 0, 1, XtextLanguageDescriptorMdsl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getXtextLanguageDescriptorMdsl_ActivatorClassName(), ecorePackage.getEString(), "activatorClassName", null, 0, 1, XtextLanguageDescriptorMdsl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2739,7 +2917,13 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
     initEClass(xtextLanguageReferenceEClass, XtextLanguageReference.class, "XtextLanguageReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getXtextLanguageReference_XtextLanguageDescriptor(), this.getXtextLanguageDescriptorMdsl(), null, "xtextLanguageDescriptor", null, 0, 1, XtextLanguageReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(oclCustomLibraryMdslEClass, OCLCustomLibraryMdsl.class, "OCLCustomLibraryMdsl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getOCLCustomLibraryMdsl_Label(), ecorePackage.getEString(), "label", null, 0, 1, OCLCustomLibraryMdsl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getOCLCustomLibraryMdsl_ClassDescriptor(), this.getClassDescriptorMdsl(), null, "classDescriptor", null, 0, 1, OCLCustomLibraryMdsl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getOCLCustomLibraryMdsl_Description(), ecorePackage.getEString(), "description", null, 0, 1, OCLCustomLibraryMdsl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(queryEvaluatorMdslEClass, QueryEvaluatorMdsl.class, "QueryEvaluatorMdsl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getQueryEvaluatorMdsl_Name(), ecorePackage.getEString(), "name", null, 0, 1, QueryEvaluatorMdsl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getQueryEvaluatorMdsl_Label(), ecorePackage.getEString(), "label", null, 0, 1, QueryEvaluatorMdsl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getQueryEvaluatorMdsl_ClassDescriptor(), this.getClassDescriptorMdsl(), null, "classDescriptor", null, 0, 1, QueryEvaluatorMdsl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getQueryEvaluatorMdsl_QueryPropertiesTypes(), this.getPropertyTypeMdsl(), null, "queryPropertiesTypes", null, 0, -1, QueryEvaluatorMdsl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2747,17 +2931,20 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
     initEAttribute(getQueryEvaluatorMdsl_Description(), ecorePackage.getEString(), "description", null, 0, 1, QueryEvaluatorMdsl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(widgetTypeEClass, WidgetType.class, "WidgetType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getWidgetType_Name(), ecorePackage.getEString(), "name", null, 0, 1, WidgetType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getWidgetType_Category(), this.getWIDGET_CATEGORY_MDSL(), "category", null, 0, 1, WidgetType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getWidgetType_Label(), ecorePackage.getEString(), "label", null, 0, 1, WidgetType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getWidgetType_ClassDescriptor(), this.getClassDescriptorMdsl(), null, "classDescriptor", null, 0, 1, WidgetType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getWidgetType_Description(), ecorePackage.getEString(), "description", null, 0, 1, WidgetType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(uiTabMdslEClass, UITabMdsl.class, "UITabMdsl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getUITabMdsl_Name(), ecorePackage.getEString(), "name", null, 0, 1, UITabMdsl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getUITabMdsl_I18NLabel(), ecorePackage.getEBoolean(), "i18NLabel", null, 0, 1, UITabMdsl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getUITabMdsl_LabelFormatExpr(), this.getFormatExpr(), null, "labelFormatExpr", null, 0, 1, UITabMdsl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getUITabMdsl_Description(), ecorePackage.getEString(), "description", null, 0, 1, UITabMdsl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(layerMdslEClass, LayerMdsl.class, "LayerMdsl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getLayerMdsl_Name(), ecorePackage.getEString(), "name", null, 0, 1, LayerMdsl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getLayerMdsl_I18NLabel(), ecorePackage.getEBoolean(), "i18NLabel", null, 0, 1, LayerMdsl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getLayerMdsl_LabelFormatExpr(), this.getFormatExpr(), null, "labelFormatExpr", null, 0, 1, LayerMdsl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getLayerMdsl_Description(), ecorePackage.getEString(), "description", null, 0, 1, LayerMdsl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2765,6 +2952,7 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
 
     initEClass(typeConfigurationMdslEClass, TypeConfigurationMdsl.class, "TypeConfigurationMdsl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getTypeConfigurationMdsl_DefaultConfiguration(), ecorePackage.getEBoolean(), "defaultConfiguration", null, 0, 1, TypeConfigurationMdsl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getTypeConfigurationMdsl_Name(), ecorePackage.getEString(), "name", null, 0, 1, TypeConfigurationMdsl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTypeConfigurationMdsl_Type(), ecorePackage.getEClass(), null, "type", null, 0, 1, TypeConfigurationMdsl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getTypeConfigurationMdsl_I18NLabelProvider(), ecorePackage.getEBoolean(), "i18NLabelProvider", null, 0, 1, TypeConfigurationMdsl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTypeConfigurationMdsl_LabelProviderExpression(), this.getFormatExpr(), null, "labelProviderExpression", null, 0, 1, TypeConfigurationMdsl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2819,6 +3007,7 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
     initEClass(commandMdslEClass, CommandMdsl.class, "CommandMdsl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(commandDeclarationEClass, CommandDeclaration.class, "CommandDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getCommandDeclaration_Name(), ecorePackage.getEString(), "name", null, 0, 1, CommandDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getCommandDeclaration_Label(), ecorePackage.getEString(), "label", null, 0, 1, CommandDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getCommandDeclaration_Description(), ecorePackage.getEString(), "description", null, 0, 1, CommandDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getCommandDeclaration_Definition(), this.getCommandDefinitionMdsl(), null, "definition", null, 0, 1, CommandDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2852,6 +3041,7 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
     initEClass(queryMdslEClass, QueryMdsl.class, "QueryMdsl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(queryDeclarationEClass, QueryDeclaration.class, "QueryDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getQueryDeclaration_Name(), ecorePackage.getEString(), "name", null, 0, 1, QueryDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getQueryDeclaration_Label(), ecorePackage.getEString(), "label", null, 0, 1, QueryDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getQueryDeclaration_Description(), ecorePackage.getEString(), "description", null, 0, 1, QueryDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getQueryDeclaration_Definition(), this.getQueryDefinitionMdsl(), null, "definition", null, 0, 1, QueryDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2892,6 +3082,7 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
     initEAttribute(getLiteralFormatExprFragment_Value(), ecorePackage.getEString(), "value", null, 0, 1, LiteralFormatExprFragment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(textMacroEClass, TextMacro.class, "TextMacro", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getTextMacro_Name(), ecorePackage.getEString(), "name", null, 0, 1, TextMacro.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getTextMacro_Label(), ecorePackage.getEString(), "label", null, 0, 1, TextMacro.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getTextMacro_Description(), ecorePackage.getEString(), "description", null, 0, 1, TextMacro.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getTextMacro_MacroValue(), ecorePackage.getEString(), "macroValue", null, 0, 1, TextMacro.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

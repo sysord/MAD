@@ -79,5 +79,38 @@ public class TypeDescriptorUtil {
 		return new TypeDescriptorImpl(TYPE_CATEGORY.UNKNOW, object.getClass(), null);
 
 	}
-	
+
+//	public static TypeDescriptor createTypeDescriptor(Class clazz){
+//		if(clazz == null){
+//			return NULL_TYPE;
+//		}else if(EObject.class.isAssignableFrom(clazz)){
+//			return new TypeDescriptorImpl(TYPE_CATEGORY.EOBJECT, clazz, ((EObject)object).eClass());			
+//		}else if(Collection.class.isAssignableFrom(object.getClass())){			
+//			if(List.class.isAssignableFrom(object.getClass())){
+//				return new TypeDescriptorImpl(TYPE_CATEGORY.SEQUENCE, object.getClass(), null).setItemTypeDescriptor(OBJECT_TYPE);
+//			}else if(Set.class.isAssignableFrom(object.getClass())){
+//				return new TypeDescriptorImpl(TYPE_CATEGORY.SET, object.getClass(), null).setItemTypeDescriptor(OBJECT_TYPE);
+//			}						
+//		}else if(object instanceof String){
+//			return STRING_TYPE;
+//		}else if(object instanceof Boolean){
+//			return BOOLEAN_TYPE;
+//		}else if(object instanceof java.util.Date){
+//			return DATE_TYPE;			
+//		}else if(object instanceof Number){
+//			if(object instanceof Integer){
+//				return INTEGER_TYPE;							
+//			}else if(object instanceof Long){
+//				return LONG_TYPE;
+//			}else if(object instanceof Float){
+//				return FLOAT_TYPE;
+//			}else if(object instanceof Double){
+//				return DOUBLE_TYPE;
+//			}
+//		}
+//		
+//		return new TypeDescriptorImpl(TYPE_CATEGORY.UNKNOW, object.getClass(), null);
+//
+//	}
+
 }

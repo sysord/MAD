@@ -38,9 +38,17 @@ public interface ModuleInterface {
     public Set<String> getMetamodelUris();
 
     /**
+     * Returns the list of the module's imports.
+     * 
+     * @return the list of the module's imports.
+     */
+	public Set<String> getImports(); 
+
+    /**
      * Returns the {@link TemplatePrototype prototypes} the module must implements.
      * 
      * @return the {@link TemplatePrototype prototypes} the module must implements.
      */
     public List<TemplatePrototype> getPrototypes();
+
 }

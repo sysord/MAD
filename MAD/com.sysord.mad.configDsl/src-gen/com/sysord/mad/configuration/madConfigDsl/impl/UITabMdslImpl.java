@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link com.sysord.mad.configuration.madConfigDsl.impl.UITabMdslImpl#getName <em>Name</em>}</li>
  *   <li>{@link com.sysord.mad.configuration.madConfigDsl.impl.UITabMdslImpl#isI18NLabel <em>I18N Label</em>}</li>
  *   <li>{@link com.sysord.mad.configuration.madConfigDsl.impl.UITabMdslImpl#getLabelFormatExpr <em>Label Format Expr</em>}</li>
  *   <li>{@link com.sysord.mad.configuration.madConfigDsl.impl.UITabMdslImpl#getDescription <em>Description</em>}</li>
@@ -34,6 +35,26 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class UITabMdslImpl extends MADConfigElementImpl implements UITabMdsl
 {
+  /**
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
+
   /**
    * The default value of the '{@link #isI18NLabel() <em>I18N Label</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -103,6 +124,29 @@ public class UITabMdslImpl extends MADConfigElementImpl implements UITabMdsl
   protected EClass eStaticClass()
   {
     return MadConfigDslPackage.Literals.UI_TAB_MDSL;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getName()
+  {
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MadConfigDslPackage.UI_TAB_MDSL__NAME, oldName, name));
   }
 
   /**
@@ -225,6 +269,8 @@ public class UITabMdslImpl extends MADConfigElementImpl implements UITabMdsl
   {
     switch (featureID)
     {
+      case MadConfigDslPackage.UI_TAB_MDSL__NAME:
+        return getName();
       case MadConfigDslPackage.UI_TAB_MDSL__I18_NLABEL:
         return isI18NLabel();
       case MadConfigDslPackage.UI_TAB_MDSL__LABEL_FORMAT_EXPR:
@@ -245,6 +291,9 @@ public class UITabMdslImpl extends MADConfigElementImpl implements UITabMdsl
   {
     switch (featureID)
     {
+      case MadConfigDslPackage.UI_TAB_MDSL__NAME:
+        setName((String)newValue);
+        return;
       case MadConfigDslPackage.UI_TAB_MDSL__I18_NLABEL:
         setI18NLabel((Boolean)newValue);
         return;
@@ -268,6 +317,9 @@ public class UITabMdslImpl extends MADConfigElementImpl implements UITabMdsl
   {
     switch (featureID)
     {
+      case MadConfigDslPackage.UI_TAB_MDSL__NAME:
+        setName(NAME_EDEFAULT);
+        return;
       case MadConfigDslPackage.UI_TAB_MDSL__I18_NLABEL:
         setI18NLabel(I18_NLABEL_EDEFAULT);
         return;
@@ -291,6 +343,8 @@ public class UITabMdslImpl extends MADConfigElementImpl implements UITabMdsl
   {
     switch (featureID)
     {
+      case MadConfigDslPackage.UI_TAB_MDSL__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case MadConfigDslPackage.UI_TAB_MDSL__I18_NLABEL:
         return i18NLabel != I18_NLABEL_EDEFAULT;
       case MadConfigDslPackage.UI_TAB_MDSL__LABEL_FORMAT_EXPR:
@@ -312,7 +366,9 @@ public class UITabMdslImpl extends MADConfigElementImpl implements UITabMdsl
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (i18NLabel: ");
+    result.append(" (name: ");
+    result.append(name);
+    result.append(", i18NLabel: ");
     result.append(i18NLabel);
     result.append(", description: ");
     result.append(description);

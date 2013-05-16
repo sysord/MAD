@@ -53,22 +53,25 @@ public class MadConfigDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cForeignModelMdslParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cXtextLanguageDescriptorMdslParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		private final RuleCall cQueryEvaluatorMdslParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
-		private final RuleCall cQueryDeclarationParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
-		private final RuleCall cWidgetTypeParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
-		private final RuleCall cUITabMdslParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
-		private final RuleCall cCommandDeclarationParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
-		private final RuleCall cTypeConfigurationMdslParserRuleCall_8 = (RuleCall)cAlternatives.eContents().get(8);
-		private final RuleCall cTextMacroParserRuleCall_9 = (RuleCall)cAlternatives.eContents().get(9);
-		private final RuleCall cI18NBundleMdslParserRuleCall_10 = (RuleCall)cAlternatives.eContents().get(10);
-		private final RuleCall cIconDescriptorMdslParserRuleCall_11 = (RuleCall)cAlternatives.eContents().get(11);
+		private final RuleCall cOCLCustomLibraryMdslParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		private final RuleCall cQueryDeclarationParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
+		private final RuleCall cWidgetTypeParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
+		private final RuleCall cUITabMdslParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
+		private final RuleCall cCommandDeclarationParserRuleCall_8 = (RuleCall)cAlternatives.eContents().get(8);
+		private final RuleCall cTypeConfigurationMdslParserRuleCall_9 = (RuleCall)cAlternatives.eContents().get(9);
+		private final RuleCall cTextMacroParserRuleCall_10 = (RuleCall)cAlternatives.eContents().get(10);
+		private final RuleCall cI18NBundleMdslParserRuleCall_11 = (RuleCall)cAlternatives.eContents().get(11);
+		private final RuleCall cIconDescriptorMdslParserRuleCall_12 = (RuleCall)cAlternatives.eContents().get(12);
 		
 		//MADConfigElement:
-		//	LayerMdsl | ForeignModelMdsl | XtextLanguageDescriptorMdsl | QueryEvaluatorMdsl | QueryDeclaration | WidgetType |
-		//	UITabMdsl | CommandDeclaration | TypeConfigurationMdsl | TextMacro | I18NBundleMdsl | IconDescriptorMdsl;
+		//	LayerMdsl | ForeignModelMdsl | XtextLanguageDescriptorMdsl | QueryEvaluatorMdsl | OCLCustomLibraryMdsl |
+		//	QueryDeclaration | WidgetType | UITabMdsl | CommandDeclaration | TypeConfigurationMdsl | TextMacro | I18NBundleMdsl |
+		//	IconDescriptorMdsl;
 		public ParserRule getRule() { return rule; }
 
-		//LayerMdsl | ForeignModelMdsl | XtextLanguageDescriptorMdsl | QueryEvaluatorMdsl | QueryDeclaration | WidgetType |
-		//UITabMdsl | CommandDeclaration | TypeConfigurationMdsl | TextMacro | I18NBundleMdsl | IconDescriptorMdsl
+		//LayerMdsl | ForeignModelMdsl | XtextLanguageDescriptorMdsl | QueryEvaluatorMdsl | OCLCustomLibraryMdsl |
+		//QueryDeclaration | WidgetType | UITabMdsl | CommandDeclaration | TypeConfigurationMdsl | TextMacro | I18NBundleMdsl |
+		//IconDescriptorMdsl
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//LayerMdsl
@@ -83,29 +86,32 @@ public class MadConfigDslGrammarAccess extends AbstractGrammarElementFinder {
 		//QueryEvaluatorMdsl
 		public RuleCall getQueryEvaluatorMdslParserRuleCall_3() { return cQueryEvaluatorMdslParserRuleCall_3; }
 
+		//OCLCustomLibraryMdsl
+		public RuleCall getOCLCustomLibraryMdslParserRuleCall_4() { return cOCLCustomLibraryMdslParserRuleCall_4; }
+
 		//QueryDeclaration
-		public RuleCall getQueryDeclarationParserRuleCall_4() { return cQueryDeclarationParserRuleCall_4; }
+		public RuleCall getQueryDeclarationParserRuleCall_5() { return cQueryDeclarationParserRuleCall_5; }
 
 		//WidgetType
-		public RuleCall getWidgetTypeParserRuleCall_5() { return cWidgetTypeParserRuleCall_5; }
+		public RuleCall getWidgetTypeParserRuleCall_6() { return cWidgetTypeParserRuleCall_6; }
 
 		//UITabMdsl
-		public RuleCall getUITabMdslParserRuleCall_6() { return cUITabMdslParserRuleCall_6; }
+		public RuleCall getUITabMdslParserRuleCall_7() { return cUITabMdslParserRuleCall_7; }
 
 		//CommandDeclaration
-		public RuleCall getCommandDeclarationParserRuleCall_7() { return cCommandDeclarationParserRuleCall_7; }
+		public RuleCall getCommandDeclarationParserRuleCall_8() { return cCommandDeclarationParserRuleCall_8; }
 
 		//TypeConfigurationMdsl
-		public RuleCall getTypeConfigurationMdslParserRuleCall_8() { return cTypeConfigurationMdslParserRuleCall_8; }
+		public RuleCall getTypeConfigurationMdslParserRuleCall_9() { return cTypeConfigurationMdslParserRuleCall_9; }
 
 		//TextMacro
-		public RuleCall getTextMacroParserRuleCall_9() { return cTextMacroParserRuleCall_9; }
+		public RuleCall getTextMacroParserRuleCall_10() { return cTextMacroParserRuleCall_10; }
 
 		//I18NBundleMdsl
-		public RuleCall getI18NBundleMdslParserRuleCall_10() { return cI18NBundleMdslParserRuleCall_10; }
+		public RuleCall getI18NBundleMdslParserRuleCall_11() { return cI18NBundleMdslParserRuleCall_11; }
 
 		//IconDescriptorMdsl
-		public RuleCall getIconDescriptorMdslParserRuleCall_11() { return cIconDescriptorMdslParserRuleCall_11; }
+		public RuleCall getIconDescriptorMdslParserRuleCall_12() { return cIconDescriptorMdslParserRuleCall_12; }
 	}
 
 	public class ImportElements extends AbstractParserRuleElementFinder {
@@ -845,6 +851,75 @@ public class MadConfigDslGrammarAccess extends AbstractGrammarElementFinder {
 
 		//ID
 		public RuleCall getXtextLanguageDescriptorXtextLanguageDescriptorMdslIDTerminalRuleCall_1_0_1() { return cXtextLanguageDescriptorXtextLanguageDescriptorMdslIDTerminalRuleCall_1_0_1; }
+	}
+
+	public class OCLCustomLibraryMdslElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "OCLCustomLibraryMdsl");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cCustomOCLLibraryKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cLabelKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cLabelAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cLabelSTRINGTerminalRuleCall_3_0 = (RuleCall)cLabelAssignment_3.eContents().get(0);
+		private final Keyword cClassKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cClassDescriptorAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cClassDescriptorClassDescriptorMdslParserRuleCall_5_0 = (RuleCall)cClassDescriptorAssignment_5.eContents().get(0);
+		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
+		private final Keyword cDescriptionKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Assignment cDescriptionAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
+		private final RuleCall cDescriptionSTRINGTerminalRuleCall_6_1_0 = (RuleCall)cDescriptionAssignment_6_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		
+		////--------------------------------
+		////OCL Custom Library Declaration
+		////--------------------------------
+		//OCLCustomLibraryMdsl:
+		//	"Custom OCL Library" "{" "label:" label=STRING "Class:" classDescriptor=ClassDescriptorMdsl ("description:"
+		//	description=STRING)? "}";
+		public ParserRule getRule() { return rule; }
+
+		//"Custom OCL Library" "{" "label:" label=STRING "Class:" classDescriptor=ClassDescriptorMdsl ("description:"
+		//description=STRING)? "}"
+		public Group getGroup() { return cGroup; }
+
+		//"Custom OCL Library"
+		public Keyword getCustomOCLLibraryKeyword_0() { return cCustomOCLLibraryKeyword_0; }
+
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
+
+		//"label:"
+		public Keyword getLabelKeyword_2() { return cLabelKeyword_2; }
+
+		//label=STRING
+		public Assignment getLabelAssignment_3() { return cLabelAssignment_3; }
+
+		//STRING
+		public RuleCall getLabelSTRINGTerminalRuleCall_3_0() { return cLabelSTRINGTerminalRuleCall_3_0; }
+
+		//"Class:"
+		public Keyword getClassKeyword_4() { return cClassKeyword_4; }
+
+		//classDescriptor=ClassDescriptorMdsl
+		public Assignment getClassDescriptorAssignment_5() { return cClassDescriptorAssignment_5; }
+
+		//ClassDescriptorMdsl
+		public RuleCall getClassDescriptorClassDescriptorMdslParserRuleCall_5_0() { return cClassDescriptorClassDescriptorMdslParserRuleCall_5_0; }
+
+		//("description:" description=STRING)?
+		public Group getGroup_6() { return cGroup_6; }
+
+		//"description:"
+		public Keyword getDescriptionKeyword_6_0() { return cDescriptionKeyword_6_0; }
+
+		//description=STRING
+		public Assignment getDescriptionAssignment_6_1() { return cDescriptionAssignment_6_1; }
+
+		//STRING
+		public RuleCall getDescriptionSTRINGTerminalRuleCall_6_1_0() { return cDescriptionSTRINGTerminalRuleCall_6_1_0; }
+
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
 	}
 
 	public class QueryEvaluatorMdslElements extends AbstractParserRuleElementFinder {
@@ -3308,6 +3383,7 @@ public class MadConfigDslGrammarAccess extends AbstractGrammarElementFinder {
 	private CustomModelProviderMdslElements pCustomModelProviderMdsl;
 	private XtextLanguageDescriptorMdslElements pXtextLanguageDescriptorMdsl;
 	private XtextLanguageReferenceElements pXtextLanguageReference;
+	private OCLCustomLibraryMdslElements pOCLCustomLibraryMdsl;
 	private QueryEvaluatorMdslElements pQueryEvaluatorMdsl;
 	private WidgetTypeElements pWidgetType;
 	private UITabMdslElements pUITabMdsl;
@@ -3396,8 +3472,9 @@ public class MadConfigDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//MADConfigElement:
-	//	LayerMdsl | ForeignModelMdsl | XtextLanguageDescriptorMdsl | QueryEvaluatorMdsl | QueryDeclaration | WidgetType |
-	//	UITabMdsl | CommandDeclaration | TypeConfigurationMdsl | TextMacro | I18NBundleMdsl | IconDescriptorMdsl;
+	//	LayerMdsl | ForeignModelMdsl | XtextLanguageDescriptorMdsl | QueryEvaluatorMdsl | OCLCustomLibraryMdsl |
+	//	QueryDeclaration | WidgetType | UITabMdsl | CommandDeclaration | TypeConfigurationMdsl | TextMacro | I18NBundleMdsl |
+	//	IconDescriptorMdsl;
 	public MADConfigElementElements getMADConfigElementAccess() {
 		return (pMADConfigElement != null) ? pMADConfigElement : (pMADConfigElement = new MADConfigElementElements());
 	}
@@ -3585,6 +3662,20 @@ public class MadConfigDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getXtextLanguageReferenceRule() {
 		return getXtextLanguageReferenceAccess().getRule();
+	}
+
+	////--------------------------------
+	////OCL Custom Library Declaration
+	////--------------------------------
+	//OCLCustomLibraryMdsl:
+	//	"Custom OCL Library" "{" "label:" label=STRING "Class:" classDescriptor=ClassDescriptorMdsl ("description:"
+	//	description=STRING)? "}";
+	public OCLCustomLibraryMdslElements getOCLCustomLibraryMdslAccess() {
+		return (pOCLCustomLibraryMdsl != null) ? pOCLCustomLibraryMdsl : (pOCLCustomLibraryMdsl = new OCLCustomLibraryMdslElements());
+	}
+	
+	public ParserRule getOCLCustomLibraryMdslRule() {
+		return getOCLCustomLibraryMdslAccess().getRule();
 	}
 
 	////-----------------------------

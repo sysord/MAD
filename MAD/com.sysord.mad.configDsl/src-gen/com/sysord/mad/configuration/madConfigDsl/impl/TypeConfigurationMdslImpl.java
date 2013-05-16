@@ -35,6 +35,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link com.sysord.mad.configuration.madConfigDsl.impl.TypeConfigurationMdslImpl#isDefaultConfiguration <em>Default Configuration</em>}</li>
+ *   <li>{@link com.sysord.mad.configuration.madConfigDsl.impl.TypeConfigurationMdslImpl#getName <em>Name</em>}</li>
  *   <li>{@link com.sysord.mad.configuration.madConfigDsl.impl.TypeConfigurationMdslImpl#getType <em>Type</em>}</li>
  *   <li>{@link com.sysord.mad.configuration.madConfigDsl.impl.TypeConfigurationMdslImpl#isI18NLabelProvider <em>I18N Label Provider</em>}</li>
  *   <li>{@link com.sysord.mad.configuration.madConfigDsl.impl.TypeConfigurationMdslImpl#getLabelProviderExpression <em>Label Provider Expression</em>}</li>
@@ -69,6 +70,26 @@ public class TypeConfigurationMdslImpl extends MADConfigElementImpl implements T
    * @ordered
    */
   protected boolean defaultConfiguration = DEFAULT_CONFIGURATION_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getType() <em>Type</em>}' reference.
@@ -222,6 +243,29 @@ public class TypeConfigurationMdslImpl extends MADConfigElementImpl implements T
     defaultConfiguration = newDefaultConfiguration;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, MadConfigDslPackage.TYPE_CONFIGURATION_MDSL__DEFAULT_CONFIGURATION, oldDefaultConfiguration, defaultConfiguration));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getName()
+  {
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MadConfigDslPackage.TYPE_CONFIGURATION_MDSL__NAME, oldName, name));
   }
 
   /**
@@ -456,6 +500,8 @@ public class TypeConfigurationMdslImpl extends MADConfigElementImpl implements T
     {
       case MadConfigDslPackage.TYPE_CONFIGURATION_MDSL__DEFAULT_CONFIGURATION:
         return isDefaultConfiguration();
+      case MadConfigDslPackage.TYPE_CONFIGURATION_MDSL__NAME:
+        return getName();
       case MadConfigDslPackage.TYPE_CONFIGURATION_MDSL__TYPE:
         if (resolve) return getType();
         return basicGetType();
@@ -490,6 +536,9 @@ public class TypeConfigurationMdslImpl extends MADConfigElementImpl implements T
     {
       case MadConfigDslPackage.TYPE_CONFIGURATION_MDSL__DEFAULT_CONFIGURATION:
         setDefaultConfiguration((Boolean)newValue);
+        return;
+      case MadConfigDslPackage.TYPE_CONFIGURATION_MDSL__NAME:
+        setName((String)newValue);
         return;
       case MadConfigDslPackage.TYPE_CONFIGURATION_MDSL__TYPE:
         setType((EClass)newValue);
@@ -535,6 +584,9 @@ public class TypeConfigurationMdslImpl extends MADConfigElementImpl implements T
       case MadConfigDslPackage.TYPE_CONFIGURATION_MDSL__DEFAULT_CONFIGURATION:
         setDefaultConfiguration(DEFAULT_CONFIGURATION_EDEFAULT);
         return;
+      case MadConfigDslPackage.TYPE_CONFIGURATION_MDSL__NAME:
+        setName(NAME_EDEFAULT);
+        return;
       case MadConfigDslPackage.TYPE_CONFIGURATION_MDSL__TYPE:
         setType((EClass)null);
         return;
@@ -575,6 +627,8 @@ public class TypeConfigurationMdslImpl extends MADConfigElementImpl implements T
     {
       case MadConfigDslPackage.TYPE_CONFIGURATION_MDSL__DEFAULT_CONFIGURATION:
         return defaultConfiguration != DEFAULT_CONFIGURATION_EDEFAULT;
+      case MadConfigDslPackage.TYPE_CONFIGURATION_MDSL__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case MadConfigDslPackage.TYPE_CONFIGURATION_MDSL__TYPE:
         return type != null;
       case MadConfigDslPackage.TYPE_CONFIGURATION_MDSL__I18_NLABEL_PROVIDER:
@@ -608,6 +662,8 @@ public class TypeConfigurationMdslImpl extends MADConfigElementImpl implements T
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (defaultConfiguration: ");
     result.append(defaultConfiguration);
+    result.append(", name: ");
+    result.append(name);
     result.append(", i18NLabelProvider: ");
     result.append(i18NLabelProvider);
     result.append(", useExplicitExtends: ");
