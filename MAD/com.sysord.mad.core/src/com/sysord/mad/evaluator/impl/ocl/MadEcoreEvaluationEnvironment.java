@@ -170,6 +170,13 @@ public class MadEcoreEvaluationEnvironment extends EcoreEvaluationEnvironment {
 		if(TRACE_ENABLED) trace("EContainer access : on "  + source.toString() + "  ==>  " + result );		
 	}
 	
+	protected void processCollectPropertyAccess(Object source, EStructuralFeature property, List<?> qualifiers, Object result){
+		CurrentEvaluationContext.getEvaluationAnalyze().collectPropertyAccess(source, property, qualifiers, result);
+		if (TRACE_ENABLED)
+			trace("Property access:" + property.getName() + " with qualifiers " + qualifiers == null ? "none"
+					: qualifiers + " on " + source.toString() + "  ==>  " + result);
+	}
+	
 	//-----------------------
 	// CUSTOM EVALUATION
 	//-----------------------
@@ -216,6 +223,17 @@ public class MadEcoreEvaluationEnvironment extends EcoreEvaluationEnvironment {
 		}else if(MadOclCustomizer.E_CONTENTS.equals(operationName)){
 			if(eSource != null){
 				result = eSource.eContents();
+			}
+		}else if(MadOclCustomizer.E_GET.equals(operationName)){
+			if(eSource != null){
+				if (args != null && args.length > 0) {
+					EStructuralFeature feature = eSource.eClass().getEStructuralFeature(String.valueOf(args[0]));
+					if (feature != null) {
+						result = eSource.eGet(feature);
+						processCollectPropertyAccess(eSource, feature, null, result);
+						return result;
+					}
+				}
 			}
 		}else if(MadOclCustomizer.E_ALL_CONTENTS.equals(operationName)){
 			if(eSource != null){
