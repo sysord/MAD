@@ -377,12 +377,23 @@ public class SWTBasicTypeWidget extends AbstractSWTWidget {
         // Add an ENTER Key listener on the SWT widget updating the MAD widget value
         KeyAdapter keyListener = new KeyAdapter() {
 
+        	@Override
+			public void keyPressed(KeyEvent e) {
+				final char character = e.character;
+				if (((e.stateMask & SWT.CTRL) == 0 && (e.stateMask & SWT.ALT) == 0)
+						&& (character < '0' || character > '9') && character != '.' && character != SWT.BS
+						&& e.keyCode != SWT.DEL && e.keyCode != SWT.DEL && e.keyCode != SWT.ARROW_LEFT
+						&& e.keyCode != SWT.ARROW_RIGHT) {
+					e.doit = false;
+				}
+			}
+        	
             @Override
-            public void keyReleased(KeyEvent e) {
-                if (e.keyCode == SWT.KEYPAD_CR || e.keyCode == SWT.CR) {
-                    numberContentChangedAction.execute();
-                }
-            }
+			public void keyReleased(KeyEvent e) {
+				if (e.keyCode == SWT.KEYPAD_CR || e.keyCode == SWT.CR) {
+					numberContentChangedAction.execute();
+				}
+			}
         };
         keyContainer[0] = keyListener;
         numberTextBox.addKeyListener(keyListener);
