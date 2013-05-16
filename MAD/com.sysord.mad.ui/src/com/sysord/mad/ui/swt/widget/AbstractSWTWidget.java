@@ -25,7 +25,6 @@ import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.layout.GridData;
-import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
@@ -83,6 +82,7 @@ public abstract class AbstractSWTWidget extends AbstractSpecificWidget {
 		this.specificContextHolder = specificContextHolder;
 		checkMadWidget(madWidget);
 
+		beforeDiagnosticLabel(madWidget);
 		Label lbl_diagnostic = addDiagnosticContent(getSwtContext(), madWidget);
 		Control swtWidget = createSpecificWidget(madWidget);
 		if (swtWidget != null) {
@@ -167,6 +167,15 @@ public abstract class AbstractSWTWidget extends AbstractSpecificWidget {
 	 */
 	protected void addVisibilityListener(Widget<?> madWidget, Control swtWidget) {
 		SWTWidgetUtil.addVisibilityListener(madWidget, swtWidget);
+	}
+
+	/**
+	 * This method is called just before the creation of the diagnostic label.<br>
+	 * It does nothing by default and may be overriden by sub-classes.
+	 * 
+	 * @param madWidget
+	 */
+	protected void beforeDiagnosticLabel(Widget<?> madWidget) {
 	}
 
 	/**
@@ -287,12 +296,10 @@ public abstract class AbstractSWTWidget extends AbstractSpecificWidget {
 		if (usedCommands.size() > 0) {
 			// Creates the buttons container
 			Composite buttonsContainer = toolkit.createComposite(container);
-			GridLayout layout = new GridLayout(commands.size(), false);
-			layout.marginWidth = 0;
-			layout.marginHeight = 0;
 			buttonsContainer.setLayout(GridLayoutHelper.createWithNoMargin(commands.size()));
 			GridData data = GridDataHelper.horizontalGrab();
 			data.horizontalSpan = GRID_COLUMNS;
+			data.verticalIndent = 5;
 			buttonsContainer.setLayoutData(data);
 
 			for (CommandDefinition command : usedCommands) {
@@ -328,8 +335,9 @@ public abstract class AbstractSWTWidget extends AbstractSpecificWidget {
 		GridData data = GridDataHelper.horizontalGrab();
 		if (widget instanceof FlexibleWidget) {
 			SWTUtil.computeButtonWidth(btn_command, data);
+		} else {
+			btn_command.setLayoutData(data);
 		}
-		btn_command.setLayoutData(data);
 		btn_command.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {

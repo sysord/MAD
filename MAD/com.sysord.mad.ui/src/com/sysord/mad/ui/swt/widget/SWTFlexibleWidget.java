@@ -40,11 +40,16 @@ public class SWTFlexibleWidget extends AbstractSWTWidget {
                     widget.getClass().getName()));
         }
     }
+    
+    @Override
+    protected void beforeDiagnosticLabel(Widget<?> madWidget) {
+        FlexibleWidget<?> flexibleWidget = castWidget(madWidget);
+        addFlexibleCommandsButtons(getSwtContext().getWidgetContainer(), getSwtContext().getToolkit(), flexibleWidget);
+    }
 
     @Override
     protected Control createSpecificWidget(Widget<?> madWidget) {
         FlexibleWidget<?> flexibleWidget = castWidget(madWidget);
-        addFlexibleCommandsButtons(getSwtContext().getWidgetContainer(), getSwtContext().getToolkit(), flexibleWidget);
         Composite flexibleContainer = createFlexible(getSwtContext().getWidgetContainer(), flexibleWidget);
         // Keep current container reference during the FlexibleWidget's visit
         Composite saveContainer = null;
