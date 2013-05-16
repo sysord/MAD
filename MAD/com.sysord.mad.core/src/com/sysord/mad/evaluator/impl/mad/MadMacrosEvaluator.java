@@ -126,30 +126,31 @@ public class MadMacrosEvaluator implements MadMacros{
 		final MadFuture future = new MadFuture();
 		//get package and factory
 		final EPackage ePackage = container.eClass().getEPackage();
-		final EFactory eFactory = ePackage.getEFactoryInstance();
 		
 		Runnable baseCommand = new Runnable() {					
-					@Override
-					public void run() {
-						//get containing feature
-						EReference containingFeature = (EReference) container.eClass().getEStructuralFeature((String) macroArguments.get(0));
-						EClass elementToCreateType = (EClass) containingFeature.getEType();
-						if(elementTypeName != null){
-							elementToCreateType = (EClass) elementToCreateType.getEPackage().getEClassifier(elementTypeName);
-						}
-						//create new object
-						EObject createdObject = eFactory.create(elementToCreateType);
-						//attach created object to its container
-						if(containingFeature.isMany()){
-							@SuppressWarnings("unchecked")
-							Collection<EObject> owningCollection = (Collection<EObject>) contextObject.eGet(containingFeature);
-							owningCollection.add(createdObject);
-						}else{
-							contextObject.eSet(containingFeature, createdObject);
-						}	
-						//set the result to the future
-						future.result = createdObject;
-					}
+			@Override
+			public void run() {
+				EFactory eFactory = ePackage.getEFactoryInstance();
+				//get containing feature
+				EReference containingFeature = (EReference) container.eClass().getEStructuralFeature((String) macroArguments.get(0));
+				EClass elementToCreateType = (EClass) containingFeature.getEType();
+				if(elementTypeName != null){
+					elementToCreateType = (EClass) elementToCreateType.getEPackage().getEClassifier(elementTypeName);
+					eFactory = elementToCreateType.getEPackage().getEFactoryInstance();
+				}
+				//create new object
+				EObject createdObject = eFactory.create(elementToCreateType);
+				//attach created object to its container
+				if(containingFeature.isMany()){
+					@SuppressWarnings("unchecked")
+					Collection<EObject> owningCollection = (Collection<EObject>) contextObject.eGet(containingFeature);
+					owningCollection.add(createdObject);
+				}else{
+					contextObject.eSet(containingFeature, createdObject);
+				}	
+				//set the result to the future
+				future.result = createdObject;
+			}
 		};
 
 		executeAsTransactionalCommand(container, baseCommand);
