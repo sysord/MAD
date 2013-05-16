@@ -120,6 +120,17 @@ public class TextAreaWidget extends AbstractSWTWidget {
                 return canrun;
             }
         };
+        // Add a ley listener
+        textarea.addKeyListener(new KeyAdapter() {
+			
+			@Override
+			public void keyPressed(KeyEvent e) {
+				if ((e.keyCode == SWT.KEYPAD_CR || e.keyCode == SWT.CR) && (e.stateMask & SWT.CTRL) != 0) {
+					e.doit = false;
+					textareaContentChangedAction.execute();
+				}
+			}
+		});
         // Add a focus lost listener on the SWT widget updating the MAD widget value
         FocusAdapter focusListener = new FocusAdapter() {
 
