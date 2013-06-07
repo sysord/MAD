@@ -26,6 +26,7 @@ import org.eclipse.ocl.OCL;
 import org.eclipse.ocl.ParserException;
 import org.eclipse.ocl.Query;
 import org.eclipse.ocl.TypeResolver;
+import org.eclipse.ocl.ecore.EcoreEnvironmentFactory;
 import org.eclipse.ocl.expressions.ExpressionsFactory;
 import org.eclipse.ocl.expressions.OCLExpression;
 import org.eclipse.ocl.expressions.Variable;
@@ -101,6 +102,8 @@ public class OCLQueryEvaluator extends AbstractQueryEvaluator {
 		//TODO: register additional metamodels
 //		for(String nsUri : evaluationContext.getEnvironment().getEnvironmentNSUris()){
 //			EcoreEnvironmentFactory.INSTANCE.getEPackageRegistry().getEPackage(nsUri);				
+//		EcoreEnvironmentFactory.INSTANCE.getEPackageRegistry().getEPackage("http://www.sysord.com/umlExtension");				
+
 //		}
 		
 	}
