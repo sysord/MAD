@@ -32,6 +32,10 @@ public class L extends NLS {
 	public static String error_onlyPlatformScheme;
 	public static String msg_unzippingProjects;
 	public static String msg_unzippingTheProject;
+	/**
+	 * @since 1.1
+	 */
+	public static String openingJavaDocFailed;
 	public static String title_examplePageProjects;
 	public static String title_new;
     static {

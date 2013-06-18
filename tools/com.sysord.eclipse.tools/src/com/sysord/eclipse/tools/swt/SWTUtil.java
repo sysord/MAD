@@ -12,9 +12,9 @@
 package com.sysord.eclipse.tools.swt;
 
 import java.io.IOException;
-import java.io.PrintStream;
 import java.net.URL;
 
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.jface.viewers.ArrayContentProvider;
 import org.eclipse.jface.viewers.IBaseLabelProvider;
 import org.eclipse.jface.viewers.IContentProvider;
@@ -53,6 +53,8 @@ import org.eclipse.ui.console.MessageConsole;
 import org.eclipse.ui.console.MessageConsoleStream;
 
 import com.sysord.eclipse.tools.EclipseTools;
+import com.sysord.eclipse.tools.EclipseToolsPlugin;
+import com.sysord.eclipse.tools.L;
 
 /**
  * Utility class for SWT.
@@ -61,13 +63,12 @@ import com.sysord.eclipse.tools.EclipseTools;
  */
 public class SWTUtil {
 
-	public static final String LBL_BROWSE = "Browse...";
+	public static final String LBL_BROWSE = "Browse..."; //$NON-NLS-1$
 
 	public static final int STD_BUTTON_WIDTH = 100;
 
 	// Suppresses default constructor, ensuring non-instantiability.
-	private SWTUtil() {
-	}
+	private SWTUtil() {}
 
 	/**
 	 * Returns the widget's {@link Display}.
@@ -249,8 +250,8 @@ public class SWTUtil {
 	 * Create and open an error {@link MessageBox} with the specified title and message.
 	 * <p>
 	 * The message box is open with a call to {@code Display.getDefault().asyncExec()} and
-	 * if the obtained {@link Shell} is {@code null}, the error is flushed in the standard
-	 * error {@link PrintStream} ({@code System.err}).
+	 * if the obtained {@link Shell} is {@code null}, the error is flushed in the error
+	 * log.
 	 * 
 	 * @param title
 	 * @param errorMessage
@@ -263,17 +264,14 @@ public class SWTUtil {
 	 * Create and open a {@link MessageBox} with the specified title, message and style.
 	 * <p>
 	 * The message box is open with a call to {@code Display.getDefault().asyncExec()} and
-	 * if the obtained {@link Shell} is {@code null}, the message is flushed in the
-	 * standard {@link PrintStream} ({@code System.out} or {@code System.err} if it is an
-	 * error).
+	 * if the obtained {@link Shell} is {@code null}, the message is flushed in the error
+	 * log.
 	 * 
 	 * @param title
 	 * @param errorMessage
 	 */
 	public static void showMessage(final String title, final String message, final int style) {
-		final PrintStream _err = System.err;
-		final PrintStream _out = System.out;
-		Display.getDefault().asyncExec(new Runnable() {
+		getDisplay().asyncExec(new Runnable() {
 
 			@Override
 			public void run() {
@@ -284,11 +282,15 @@ public class SWTUtil {
 					msgBox.setText(title);
 					msgBox.open();
 				} else {
+					int severity;
 					if ((style & SWT.ICON_ERROR) == 1) {
-						_err.println(message);
+						severity = IStatus.ERROR;
+					} else if ((style & SWT.ICON_WARNING) == 1) {
+						severity = IStatus.WARNING;
 					} else {
-						_out.println(message);
+						severity = IStatus.INFO;
 					}
+					EclipseToolsPlugin.log(message, severity);
 				}
 			}
 		});
@@ -309,10 +311,10 @@ public class SWTUtil {
 		// Write the message into the console
 		MessageConsoleStream consoleStream = console.newMessageStream();
 		try {
-			consoleStream.write(message + "\n");
+			consoleStream.write(message + "\n"); //$NON-NLS-1$
 			consoleStream.flush();
 		} catch (IOException e) {
-			// TODO Error message
+			EclipseToolsPlugin.log(e);
 		}
 	}
 
@@ -454,7 +456,7 @@ public class SWTUtil {
 	 * <p>
 	 * Specify a negative number of points to reduce the font size.
 	 * 
-	 * @param control
+	 * @param control {@link Control} for which to <em>increment</em> the font size.
 	 * @param points Number of points to add to the default font size of the
 	 *        control.
 	 */
@@ -474,9 +476,10 @@ public class SWTUtil {
 	 * If {@code useExternalBrowser} is set to {@code true}, the {@code URL} will be open
 	 * in the system web browser.
 	 * 
-	 * @param url
-	 * @param display
-	 * @param useExternalBrowser
+	 * @param url The {@link URL} to open in the browser.
+	 * @param display The SWT {@link Display} to use.
+	 * @param useExternalBrowser set to {@code true} to indicate the system web browser
+	 *        should be used.
 	 */
 	public static void openBrowser(final URL url, Display display, final boolean useExternalBrowser) {
 		display.asyncExec(new Runnable() {
@@ -510,7 +513,7 @@ public class SWTUtil {
 						browser = browserSupport.createBrowser(null);
 					browser.openURL(helpSystemUrl);
 				} catch (PartInitException ex) {
-					System.err.println("Opening Javadoc failed"); //$NON-NLS-1$
+					EclipseToolsPlugin.log(L.openingJavaDocFailed, IStatus.ERROR);
 				}
 			}
 		});
