@@ -224,6 +224,10 @@ public class EMFUtil {
 		if (uri.isPlatformResource()) {
 			file = EclipseTools.getCurrentWorkspace().getRoot().getFile(new Path(uri.toPlatformString(true)));
 		}
+		if (uri.isFile()) {
+			file = EclipseTools.getCurrentWorkspace().getRoot().getFile(new Path(uri.toFileString()));
+		}
+		
 		return file;
 	}
 
