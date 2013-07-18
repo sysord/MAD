@@ -13,7 +13,6 @@ package com.sysord.eclipse.tools.jface.preference;
 
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.ProjectScope;
-import org.eclipse.core.runtime.Assert;
 import org.eclipse.core.runtime.preferences.IEclipsePreferences;
 import org.osgi.service.prefs.BackingStoreException;
 
@@ -32,10 +31,13 @@ public abstract class AbstractProjectPreferenceProvider {
      * Create a new {@code AbstractProjectPreferenceProvider} for the given
      * {@link IProject}.
      * 
-     * @param project
+     * @param project The {@link IProject} for which this provider is for.
+     * @throws NullPointerException if the given project is {@code null}.
      */
     public AbstractProjectPreferenceProvider(IProject project) {
-        Assert.isNotNull(project);
+    	if (project == null) {
+    		throw new NullPointerException();
+    	}// else
         this.project = project;
     }
 

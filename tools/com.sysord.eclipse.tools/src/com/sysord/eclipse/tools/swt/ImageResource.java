@@ -17,6 +17,8 @@ import java.net.URL;
 import org.eclipse.core.runtime.Platform;
 import org.osgi.framework.Bundle;
 
+import com.sysord.eclipse.tools.EclipseToolsPlugin;
+
 /**
  * Description of an Image resource.
  * 
@@ -112,8 +114,8 @@ public class ImageResource {
         try {
             imageURL = new URL(imageURI);
         } catch (MalformedURLException e) {
-            // TODO Log error
             imageURL = null;
+            EclipseToolsPlugin.log(e);
         }
         return imageURL;
     }
