@@ -156,7 +156,7 @@ public class AcceleoTools {
         } else {
             uri.append(ext);
         }
-        return URI.createURI(uri.toString());
+        return URI.createPlatformResourceURI(uri.toString(), true);
     }
 
     /**
