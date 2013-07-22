@@ -48,7 +48,11 @@ public class QueryEvaluatorProviderImpl implements QueryEvaluatorProvider {
 
 	@Override
 	public QueryEvaluator getQueryEvaluator(String languageId) {
-		return hEvaluators.get(languageId);
+		QueryEvaluator evaluator = hEvaluators.get(languageId);
+		if(evaluator == null){
+			logger.logError("QueryEvaluatorProvider: none QueryEvalautor registered for language " + languageId);			
+		}
+		return evaluator;
 	}
 
 

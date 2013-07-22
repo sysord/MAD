@@ -60,7 +60,15 @@ public class EmfToolsFacade {
 		return transactionalCommandProvider;
 	}
 	
-
+	/**
+	 * Executes a command in a EMF transaction.
+	 * @param transactionContext element owned by the modified model 
+	 * @param command a runnable 
+	 */
+	public void executeAsTransactionalCommand(EObject transactionContext, Runnable command){
+		getTransactionalCommandProvider().executeAsTransactionnalCommand(transactionContext, command);
+	}
+	
 	/**
      * Indicates if the given {@link EClassifier classifiers} are equal.
      * 
@@ -258,7 +266,28 @@ public class EmfToolsFacade {
 		}
 	}
 	
-	
+ 	public EObject getFirstAssignableParent(EObject current, Class<? extends EObject>[] searchedClasses){
+ 		if(isAssignableFromClasses(current, searchedClasses)){
+ 			return current;
+ 		}else {			
+ 			if(current.eContainer() == null){
+ 				return null;
+ 			}
+ 			return getFirstAssignableParent(current.eContainer(), searchedClasses);
+ 		}
+ 	}
+    
+    protected boolean isAssignableFromClasses(EObject current, Class<? extends EObject>[] searchedClasses){
+    	for(Class<? extends EObject> clazz : searchedClasses){
+    		if(clazz.isAssignableFrom(current.getClass())){
+    			return true;
+    		}
+    	}
+    	return false;
+    }
+
+    
+    
 	
 //	public Class<?> eClassToClass(EClass eClass){
 //		System.out.println("CREE:" + EcoreUtil.create(eClass));

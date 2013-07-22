@@ -316,28 +316,30 @@ public class LoadWidgetValueVisitor extends AbstractWidgetVisitor<Boolean> {
 			lCandidates.add(new CandidateImpl("", null));
 		}
 
-		for(Object candValue : candidateValues){
+		if(candidateValues != null){
+			for(Object candValue : candidateValues){
 
-			//Eval label
-			String candidateLabel;
-			if(widgetConfigMdsl.getItemLabelExpression() != null){
-				candidateLabel = formatValue(candValue, widgetConfigMdsl.getItemLabelExpression());
-			}else{
-				candidateLabel = getItemLabel(candValue, widget);
-			}
-
-			//Convert candidate (from EEnumLiteral to Enum)
-			//XXX: should be improved 
-			if(enumInstanceClass != null){
-				try {
-					//convert Candvalue: get enum by name using static emf generated method: getByName
-					candValue = enumInstanceClass.getMethod("getByName", String.class).invoke(widget.getValuedSemanticElement().getFeatureOrOperation().getEType(), ((EEnumLiteral)candValue).getName());
-				} catch (Exception e) {
-					e.printStackTrace();
+				//Eval label
+				String candidateLabel;
+				if(widgetConfigMdsl.getItemLabelExpression() != null){
+					candidateLabel = formatValue(candValue, widgetConfigMdsl.getItemLabelExpression());
+				}else{
+					candidateLabel = getItemLabel(candValue, widget);
 				}
-			}
 
-			lCandidates.add(new CandidateImpl(candidateLabel, candValue));
+				//Convert candidate (from EEnumLiteral to Enum)
+				//XXX: should be improved 
+				if(enumInstanceClass != null){
+					try {
+						//convert Candvalue: get enum by name using static emf generated method: getByName
+						candValue = enumInstanceClass.getMethod("getByName", String.class).invoke(widget.getValuedSemanticElement().getFeatureOrOperation().getEType(), ((EEnumLiteral)candValue).getName());
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+				}
+
+				lCandidates.add(new CandidateImpl(candidateLabel, candValue));
+			}			
 		}
 		
 		return lCandidates;     

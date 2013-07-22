@@ -249,7 +249,9 @@ public class WidgetConfigurationImpl<VT> implements WidgetConfiguration<VT> {
 			String commandLabelExpr = ConfigurationManagerHelper.createLiteralFormatExpression(
 											formatExprInfos.formatExpr, 
 											formatExprInfos.isI18N);	
-			
+			if(commandLabelExpr == null){
+				commandLabelExpr ="";
+			}
 			if(commandDefinitionMdsl.getCategory() == COMMAND_CATEGORY_MDSL.UPDATE_COMMAND){
 				commandId = MaoCommand.UPDATE_COMMAND;
 			}else{
