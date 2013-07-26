@@ -11,7 +11,6 @@
  ****************************************************************************/
 package com.sysord.acceleo.tools.module.emitter;
 
-import java.util.Arrays;
 import java.util.Collection;
 
 import org.eclipse.acceleo.model.mtl.Module;
