@@ -12,7 +12,8 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.acceleo.model;bundle-version="3.2.2";visibility:=reexport,
  org.eclipse.acceleo.common;bundle-version="3.2.2";visibility:=reexport,
  org.eclipse.ocl.ecore;bundle-version="3.1.2";visibility:=reexport,
- com.sysord.emf.tools;bundle-version="1.0.0";visibility:=reexport
+ com.sysord.emf.tools;bundle-version="1.0.0";visibility:=reexport,
+ org.eclipse.acceleo.engine;bundle-version="3.2.2"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Export-Package: com.sysord.acceleo.tools,

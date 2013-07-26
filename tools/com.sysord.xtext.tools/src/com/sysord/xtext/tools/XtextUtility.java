@@ -181,7 +181,7 @@ public class XtextUtility {
 		if(hasCriticalError){
 			return DiagnosticFactory.createErrorDiagnostic("Xtext resource contains Errors", diagDescription.toString());
 		}else{
-			return DiagnosticFactory.createErrorDiagnostic("Xtext resource contains warnings", diagDescription.toString());
+			return DiagnosticFactory.createWarningDiagnostic("Xtext resource contains warnings", diagDescription.toString());
 		} 
 	}
 
