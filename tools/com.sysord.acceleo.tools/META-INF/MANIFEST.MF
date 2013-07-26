@@ -17,5 +17,6 @@ Require-Bundle: org.eclipse.core.runtime,
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Export-Package: com.sysord.acceleo.tools,
+ com.sysord.acceleo.tools.generator,
  com.sysord.acceleo.tools.module,
  com.sysord.acceleo.tools.module.emitter
