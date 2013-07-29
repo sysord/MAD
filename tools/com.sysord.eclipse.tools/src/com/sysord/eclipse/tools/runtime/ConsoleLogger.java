@@ -35,7 +35,6 @@ import com.sysord.eclipse.tools.swt.SWTUtil;
  * <li>{@link #NORMAL}</li>
  * <li>{@link #LOW}</li>
  * <li>{@link #VERY_LOW}</li>
- * <li></li>
  * </ul>
  * 
  * @author Fabien Vignal <vignalf@gmail.com>
@@ -168,7 +167,7 @@ public abstract class ConsoleLogger {
 	 * @param warning The warning to log.
 	 */
 	public void logWarning(String warning) {
-		logError(warning, NORMAL);
+		logWarning(warning, NORMAL);
 	}
 
 	/**
@@ -254,8 +253,10 @@ public abstract class ConsoleLogger {
 		case TERMINATED:
 			if (thread == messageThread) {
 				messageThread = thread = new StreamThread(this, getStream(getMessageColor()));
-			} else {
+			} else if (thread == errorThread) {
 				errorThread = thread = new StreamThread(this, getStream(getErrorColor()));
+			} else {
+				warningThread = thread = new StreamThread(this, getStream(getWarningColor()));
 			}
 			thread.putMessage(message);
 			break;
@@ -415,8 +416,8 @@ public abstract class ConsoleLogger {
 		 */
 		@SuppressWarnings("deprecation")
 		protected String createMessage(MessageData messageData) {
+			StringBuilder builder = new StringBuilder();
 			if (logger.showTime) {
-				StringBuilder builder = new StringBuilder();
 				builder.append('[');
 				if (messageData.getDate().getHours() < 10) {
 					builder.append('0');
@@ -433,10 +434,9 @@ public abstract class ConsoleLogger {
 				}
 				builder.append(messageData.getDate().getSeconds());
 				builder.append(']').append(' ');
-				builder.append(messageData.getMessage());
-				return builder.toString();
-			} // else
-			return null;
+			}
+			builder.append(messageData.getMessage());
+			return builder.toString();
 		}
 
 		private void lock() {
