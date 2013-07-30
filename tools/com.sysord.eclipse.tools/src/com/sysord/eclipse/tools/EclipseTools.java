@@ -68,6 +68,12 @@ import com.sysord.eclipse.tools.swt.ImageResource;
  */
 public class EclipseTools {
 
+	
+	/**
+	 * Scheme for platforms URI : {@value #PLATFORM_SCHEME}.<br>
+	 */
+	public static final String PLATFORM_SCHEME = "platform:/"; //$NON-NLS-1$
+
 	/**
 	 * Scheme for platform resources : {@value #PLATFORM_RESOURCE}.<br>
 	 * (without trailing slash)

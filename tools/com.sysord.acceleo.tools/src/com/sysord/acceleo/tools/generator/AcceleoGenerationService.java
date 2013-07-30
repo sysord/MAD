@@ -36,6 +36,7 @@ import org.eclipse.acceleo.engine.internal.utils.AcceleoEngineRegistry;
 import org.eclipse.acceleo.engine.internal.utils.AcceleoListenerDescriptor;
 import org.eclipse.acceleo.engine.internal.utils.AcceleoTraceabilityRegistryListenerUils;
 import org.eclipse.acceleo.engine.internal.utils.DefaultEngineSelector;
+import org.eclipse.acceleo.engine.service.AcceleoService;
 import org.eclipse.acceleo.model.mtl.Module;
 import org.eclipse.acceleo.model.mtl.ModuleElement;
 import org.eclipse.acceleo.model.mtl.Query;
@@ -56,7 +57,10 @@ import org.eclipse.emf.ecore.EObject;
 /**
  * This class provides utility methods to launch the generation of an Acceleo template.
  * 
- * @author <a href="mailto:laurent.goubet@obeo.fr">Laurent Goubet</a>
+ * Adapted from {@link AcceleoService}
+ * 
+ * - Add EvaluateQuery capability.
+ * 
  * 
  */
 public class AcceleoGenerationService {
@@ -309,40 +313,7 @@ public class AcceleoGenerationService {
 	 */
 	public Map<String, String> doGenerate(Module module, String templateName, EObject model,
 			List<? extends Object> arguments, File generationRoot, Monitor monitor) {
-
-//		this.addListener(new IAcceleoTextGenerationListener() {
-//			
-//			@Override
-//			public void textGenerated(AcceleoTextGenerationEvent event) {
-//				System.out.println("textGenerated:" 
-//						+ "bloc:" + event.getBlock() + " " 
-//						+ "text:" + event.getText() + " "
-//						+ "source:" + event.getSource() + " " 
-//				);
-//			}
-//			
-//			@Override
-//			public boolean listensToGenerationEnd() {
-//				return true;
-//			}
-//			
-//			@Override
-//			public void generationEnd(AcceleoTextGenerationEvent event) {
-//				System.out.println("generationEnd:" + event.getBlock());
-//			}
-//			
-//			@Override
-//			public void filePathComputed(AcceleoTextGenerationEvent event) {
-//				System.out.println("filePathComputed:" + event);
-//			}
-//			
-//			@Override
-//			public void fileGenerated(AcceleoTextGenerationEvent event) {
-//				System.out.println("fileGenerated:" + event);
-//			}
-//		});
-		
-		
+		//DIFF
 		// Start
 		boolean shouldNotify = false;
 		if (!this.generationIsOccurring) {
@@ -784,12 +755,15 @@ public class AcceleoGenerationService {
 	 * Instantiates the engine that will be used by this service for the generation.
 	 */
 	private void createEngine() {
-		if (EMFPlugin.IS_ECLIPSE_RUNNING) {
-			generationEngine = (IAcceleoEngine2) new DefaultEngineSelector().selectEngine(AcceleoEngineRegistry.getRegisteredCreators());
-		}
-		if (generationEngine == null) {
-			generationEngine = new AcceleoEngine();
-		}
+		//fix AcceleoEngine to AcceleoEngine2 (provide generation context access using CurrentAcceleoEvaluationContext.
+		generationEngine = (IAcceleoEngine2) new AcceleoEngine2();
+		//Original code:
+		// if (EMFPlugin.IS_ECLIPSE_RUNNING) {
+		//	generationEngine = (IAcceleoEngine2) new DefaultEngineSelector().selectEngine(AcceleoEngineRegistry.getRegisteredCreators());
+		// }
+		// if (generationEngine == null) {
+		//	generationEngine = new AcceleoEngine();
+		// }
 	}
 
 	/**

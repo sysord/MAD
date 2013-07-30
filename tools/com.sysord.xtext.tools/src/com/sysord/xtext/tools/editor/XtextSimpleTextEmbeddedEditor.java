@@ -128,11 +128,8 @@ public class XtextSimpleTextEmbeddedEditor extends AbstractXtextEmbeddedEditor{
 		return true;
 	}
 
-
-	
-	
-
-	
+	public void reparse() {
+	}
 	
 	
 }

@@ -156,7 +156,12 @@ public class AcceleoTools {
         } else {
             uri.append(ext);
         }
-        return URI.createPlatformResourceURI(uri.toString(), true);
+        String strUri = uri.toString();
+        if(strUri.startsWith(EclipseTools.PLATFORM_SCHEME)){
+            return URI.createURI(strUri, true);        	
+        }else{
+            return URI.createPlatformResourceURI(strUri, true);        	        	
+        }
     }
 
     /**

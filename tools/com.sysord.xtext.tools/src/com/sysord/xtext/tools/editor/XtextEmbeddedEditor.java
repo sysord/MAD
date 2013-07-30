@@ -106,13 +106,7 @@ public class XtextEmbeddedEditor extends AbstractXtextEmbeddedEditor{
 	}
 	
 	public EObject getEditedElement() {
-		try {
-			String newText = editedElementConfiguration.textBefore + sourceViewer.getTextWidget().getText() + editedElementConfiguration.textAfter;
-			xtextEditedResource.reparse(newText);
-			XtextUtility.validateXtextResource(xtextEditedResource);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		reparse();
 		return xtextEditedResource.getEObject(editedElementConfiguration.fragmentUri);
 	}
 
@@ -141,6 +135,15 @@ public class XtextEmbeddedEditor extends AbstractXtextEmbeddedEditor{
 	}
 
 
+	public void reparse() {
+		try {
+			String newText = editedElementConfiguration.textBefore + sourceViewer.getTextWidget().getText() + editedElementConfiguration.textAfter;
+			xtextEditedResource.reparse(newText);
+			XtextUtility.validateXtextResource(xtextEditedResource);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 	
 	
 

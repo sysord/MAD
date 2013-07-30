@@ -169,10 +169,10 @@ public class XtextUtility {
 					//syntax error
 					hasCriticalError = true;
 					diagDescription.append("GRAVE:");
-					//System.out.println("GRAVE:" + diagnostic.getLine() + " " + diagnostic.toString());						
+					System.out.println("GRAVE:" + diagnostic.getLine() + " " + diagnostic.toString());						
 				}else{
 					diagDescription.append("WARNING:");
-					//System.out.println("WARNING:" + diagnostic.getLine() + " " + diagnostic.toString());						
+					System.out.println("WARNING:" + diagnostic.getLine() + " " + diagnostic.toString());						
 				}
 				diagDescription.append(" (Line").append(diagnostic.getLine()).append(") ").append(diagnostic.toString()).append("\n");
 			}					
@@ -208,6 +208,29 @@ public class XtextUtility {
 		}else{
 			System.err.println("dumpElement failed for " + element);
 			return "dumpElement failed for " + element;
+		}
+	}
+
+	/**
+	 * Returns the number of tabs characters before the element.
+	 * @param element
+	 * @return
+	 */
+	public static int getIdentLevel(EObject element){
+		ICompositeNode compositeNode = NodeModelUtils.findActualNodeFor(element);
+		if(compositeNode != null){
+			String dump = compositeNode.getText();
+			int deltaOffset = compositeNode.getOffset() - compositeNode.getTotalOffset();
+			int nbTabs = 0;
+			int i = deltaOffset - 1;
+			while(i >= 0 && dump.charAt(i) == '\t'){
+				nbTabs++;
+				i--;
+			}
+			return nbTabs;
+		}else{
+			System.err.println("getIdentLevel failed for " + element);
+			return -1;
 		}
 	}
 

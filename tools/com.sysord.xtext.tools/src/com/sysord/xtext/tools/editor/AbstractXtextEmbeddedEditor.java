@@ -11,6 +11,7 @@
  ****************************************************************************/
 package com.sysord.xtext.tools.editor;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.eclipse.core.internal.content.Activator;
@@ -79,8 +80,15 @@ public abstract class AbstractXtextEmbeddedEditor {
 	 * @return
 	 */
 	public boolean isContentValid(){
+		//force reparse;
+		reparse();
+		//System.out.println(xtextEditedResource.getSerializer().serialize(xtextEditedResource.getContents().get(0)));
 		return (XtextUtility.validateXtextResource(xtextEditedResource).getLevel() != DIAGNOSTIC_LEVEL.ERROR);
 	}
+	
+	public abstract void reparse();
+
+	
 	
 	/**
 	 * restore the model in before edition state
@@ -129,7 +137,9 @@ public abstract class AbstractXtextEmbeddedEditor {
 		//editorBuilder.processIssuesBy(createValidationIssueProcessor());
 		
 		handle = editorBuilder.showErrorAndWarningAnnotations().withParent(parent);
-		partialEditor = handle.createPartialEditor(false);
+		//partialEditor = handle.createPartialEditor(false);
+		partialEditor = handle.createPartialEditor(true);
+		
 		sourceViewer = handle.getViewer();
 		
 	}
