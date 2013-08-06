@@ -23,6 +23,7 @@ import com.sysord.mad.evaluator.impl.AbstractQueryEvaluator;
 import com.sysord.mad.evaluator.impl.QueryEvaluatorUtil;
 import com.sysord.mad.functionparser.FunctionProcessingException;
 import com.sysord.mad.model.EditedModel;
+import com.sysord.mad.model.cache.ModelCache;
 import com.sysord.mad.model.provider.ModelExtensionManager;
 
 public class ModelExtensionEvaluator extends AbstractQueryEvaluator {
@@ -175,7 +176,10 @@ public class ModelExtensionEvaluator extends AbstractQueryEvaluator {
 			
 			//fill analyze
 			fillAnalyze(result);
-					
+			
+			//save if change occurs
+			saveModelIfModified(contextEObject);
+			
 			return result;
 
 		} catch (QueryEvaluatorException e) {
@@ -235,7 +239,10 @@ public class ModelExtensionEvaluator extends AbstractQueryEvaluator {
 			
 			//fill analyze
 			fillAnalyze(result);
-						
+
+			//save if change occurs
+			saveModelIfModified(contextEObject);
+
 			return result;
 
 		} catch (QueryEvaluatorException e) {
@@ -261,16 +268,41 @@ public class ModelExtensionEvaluator extends AbstractQueryEvaluator {
 	 */
 	protected ModelExtensionManager getModelExtensionManager(EObject contextObject) throws QueryEvaluatorException{
 		//Get Model from cache
+		EditedModel model = getEditedModel(contextObject);
+		//model must provide an extension manager
+		if(model.getExtensionManager() == null){
+			throw createEvaluatorQueryException("ModelExtensionEvaluator: " + model.getModelResource().getURI() + " have not extension manager. Can't execute query.");
+		}
+		return model.getExtensionManager();
+	}
+	
+	/**
+	 * Returns the {@link EditedModel} owning the contextObject from the {@link ModelCache}
+	 * @param contextObject
+	 * @return
+	 * @throws QueryEvaluatorException if no model exists in cache for this contextObject.
+	 */
+	protected EditedModel getEditedModel(EObject contextObject) throws QueryEvaluatorException{
+		//Get Model from cache
 		EditedModel model = getModelCache().getModel(contextObject.eResource().getURI());			
 		//model must be available
 		if(model == null){
-			throw createEvaluatorQueryException("can't find the context model, can't find Extension manager for the model.");
+			throw createEvaluatorQueryException("ModelExtensionEvaluator: can't find the context model " +  contextObject.eResource().getURI() + ".");
 		}
-		//model must provide an extension manager
-		if(model.getExtensionManager() == null){
-			throw createEvaluatorQueryException(model.getModelResource().getURI() + " have not extension manager. Can't execute query.");
+		return model;
+	}
+	
+
+	/**
+	 * If resource have been flagged as modified
+	 * request the {@link ModelCache} for saving the model
+	 * @param contextObject
+	 */
+	protected void saveModelIfModified(EObject contextObject){
+		if(contextObject.eResource().isModified()){
+			getModelCache().persistModel(contextObject.eResource().getURI());
+			contextObject.eResource().setModified(false);
 		}
-		return model.getExtensionManager();
 	}
 
 	@Override
@@ -278,9 +310,5 @@ public class ModelExtensionEvaluator extends AbstractQueryEvaluator {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-
-
-	
 	
 }

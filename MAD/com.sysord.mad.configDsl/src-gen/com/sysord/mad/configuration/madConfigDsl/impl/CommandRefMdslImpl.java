@@ -1,7 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
  */
 package com.sysord.mad.configuration.madConfigDsl.impl;
 

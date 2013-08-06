@@ -49,7 +49,9 @@ public abstract class AbstractModelProvider implements ModelProvider {
 	protected ModelSynchronizerFactory modelSynchronizerFactory;
 	protected ModelExtensionManager extensionManager;
 	protected XtextLanguageDescription dslDescription;
-		
+	
+	protected boolean isAutoreloadEnabled = false;
+	
 	public AbstractModelProvider() {
 		super();		
 	}
@@ -61,6 +63,11 @@ public abstract class AbstractModelProvider implements ModelProvider {
 		this.dslDescription = dslDescription;
 	}
 
+	@Override
+	public void setAutoReload(boolean enabled) {
+		isAutoreloadEnabled = enabled;
+	}
+	
 	@Override
 	public void setModelSynchronizerFactory(ModelSynchronizerFactory modelSynchronizerFactory) {
 		this.modelSynchronizerFactory = modelSynchronizerFactory;
@@ -84,6 +91,8 @@ public abstract class AbstractModelProvider implements ModelProvider {
 		EditedModel model = modelCache.getModel(modelResourceUri);		
 		//Model since provided
 		if(model != null){
+			//if configuration change: apply autoreload option on the model
+			model.setAutoReloadAllowed(isAutoreloadEnabled);
 			return model;
 		}else{
 			//try to load the model
@@ -94,41 +103,60 @@ public abstract class AbstractModelProvider implements ModelProvider {
 	
 		
 	protected EditedModel _loadModel(EObject contextObject, String strResourceUri){
-		int storeOptions;
+		int storeOptions = ModelCache.NONE_OPTION;
 
 		Resource modelResource = null;
 		Resource masterModelResource = contextObject.eResource();
-		
+
+
 		//load model resource
 		if(dslDescription != null){
 			//xtext model: use Xtext specific resourceset
-			modelResource = loadXtextModelResource(contextObject, strResourceUri);
+			modelResource = loadXtextModelResource(contextObject, strResourceUri, true);
 			//xtext model used in memory (avoid model reload with different version)
-			storeOptions = ModelCache.DISABLE_AUTO_RELOAD;
+			//storeOptions = ModelCache.DISABLE_AUTO_RELOAD;
 		}else{
 			//standard Emf resource
 			modelResource = loadModelResource(contextObject, strResourceUri);
 			//storeOptions = ModelCache.NONE_OPTION;
-			storeOptions = ModelCache.DISABLE_AUTO_RELOAD;
+			//storeOptions = ModelCache.DISABLE_AUTO_RELOAD;
 		}
+		
 		
 		if(modelResource == null){
 			logger.logError("ModelProvider: Model '" + strResourceUri + "' not found.");
 			return null;
-		}else if(modelResource.getContents().isEmpty()){
-			logger.logError("ModelProvider: Model '" + strResourceUri + "' is empty.");
-			return null;
 		}else{
 			//Synchronizer for the model
-			ModelSynchronizer modelSynchronizer = createSynchronizer(masterModelResource, modelResource);
+			ModelSynchronizer modelSynchronizer = createSynchronizer();
+			if(modelSynchronizer == null){
+				logger.logError("ModelProvider: No model synchronizer found for Model '" + strResourceUri + ".");				
+			}
+			//model resource is empty, synchronizer must create model
+			if(modelResource.getContents().isEmpty()){
+				logger.logWarning("ModelProvider: Model '" + strResourceUri + "' is empty. Model synchronizer must create root element.");
+				if(!modelSynchronizer.initializeModel(masterModelResource, modelResource)){
+					logger.logError("ModelProvider: Model '" + strResourceUri + "' is empty.");
+					return null;
+				}else{
+					logger.log("ModelProvider: ModelSynchronizer have initialized " + strResourceUri  + " model.");
+				}
+			}
+			configureSynchronizer(modelSynchronizer, masterModelResource, modelResource);
 			modelSynchronizer.setAutoSave(PreferenceHelper.getAutoSave());
+
 
 			//create the modelwrapper
 			EditedModel providedModel = new EditedModelImpl(modelResource, masterModelResource, modelSynchronizer, extensionManager, dslDescription);
 			//declare link between mastermodel resource and the model
-			//providedModel.setLinkedToMasterModel(Activator.USE_RESOURCES_LINK);
 			providedModel.setLinkedToMasterModel(true);
-			
+			providedModel.setAutoReloadAllowed(isAutoreloadEnabled);
+
+			if(!isAutoreloadEnabled){
+				//avoid model reload with a different version
+				storeOptions = ModelCache.DISABLE_AUTO_RELOAD;			
+			}
+
 			//store model in model cache
 			modelCache.storeModel(providedModel, storeOptions);
 						
@@ -159,7 +187,7 @@ public abstract class AbstractModelProvider implements ModelProvider {
 	 * @param strResourceUri
 	 * @return
 	 */
-	protected Resource loadXtextModelResource(EObject contextObject, String strResourceUri){
+	protected Resource loadXtextModelResource(EObject contextObject, String strResourceUri, boolean createIfNotExists){
 		
 		if(getResourcesManager().isManagedResource(strResourceUri)){
 			return getResourcesManager().getResource(strResourceUri);
@@ -175,13 +203,16 @@ public abstract class AbstractModelProvider implements ModelProvider {
 			Map<URI, Resource> uriResourceMap = new HashMap<URI, Resource>();
 			uriResourceMap.put(contextObject.eResource().getURI(), contextObject.eResource());
 			xtextResourceSet.setURIResourceMap(uriResourceMap);
-			
+
+			//load xtext resource
+			//xtextResource = (XtextResource) xtextResourceSet.getResource(URI.createURI(strResourceUri), false);
+			xtextResource = (XtextResource) xtextResourceSet.createResource(URI.createURI(strResourceUri));
+
 			try {
 				//load xtext resource
-				xtextResource = (XtextResource) xtextResourceSet.getResource(URI.createURI(strResourceUri), true);
+				xtextResource.load(null);
 			} catch (Exception e) {
-				//TODO: add to logger
-				//e.printStackTrace();
+				e.printStackTrace();
 			}
 			
 		}
@@ -189,18 +220,20 @@ public abstract class AbstractModelProvider implements ModelProvider {
 	}
 	
 
-	protected ModelSynchronizer createSynchronizer(Resource masterResource, Resource slaveResource){
+	protected ModelSynchronizer createSynchronizer(){
 		ModelSynchronizer modelSynchronizer = null;
 		if(modelSynchronizerFactory != null){
 			modelSynchronizer = modelSynchronizerFactory.createModelSynchronizer();
-			if(ExtensionModelSynchronizer.class.isAssignableFrom(modelSynchronizer.getClass())){
-				((ExtensionModelSynchronizer)modelSynchronizer).setExtensionManager(extensionManager);
-			}
-			modelSynchronizer.configure(masterResource, slaveResource);
 		}
 		return modelSynchronizer;
 	}
 	
+	protected void configureSynchronizer(ModelSynchronizer modelSynchronizer, Resource masterResource, Resource slaveResource){
+		if(ExtensionModelSynchronizer.class.isAssignableFrom(modelSynchronizer.getClass())){
+			((ExtensionModelSynchronizer)modelSynchronizer).setExtensionManager(extensionManager);
+		}
+		modelSynchronizer.configure(masterResource, slaveResource);
+	}
 	
 
 

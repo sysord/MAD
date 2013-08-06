@@ -32,6 +32,9 @@ public interface EditedModel {
 	public Resource getModelResource();
 	public void setModelResource(Resource modelResource);
 
+	public boolean isAutoReloadAllowed();
+	public void setAutoReloadAllowed(boolean allow);
+
 	public boolean isDirty();
 	public void setDirty(boolean dirty);
 	

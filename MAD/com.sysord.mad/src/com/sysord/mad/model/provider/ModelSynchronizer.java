@@ -38,6 +38,14 @@ public interface ModelSynchronizer extends ModelObserver{
 //	 */
 //	public void setSlaveResource(Resource slaveResource);
 	
+	/**
+	 * When slave resource is empty, {@link ModelSynchronizer} can initialize
+	 * the model by creating the root element.
+	 * 
+	 * @param modelResource
+	 * @return true if model have been initialized, false otherwise.
+	 */
+	boolean initializeModel(Resource masterResource, Resource slaveResource); 
 
 	/**
 	 * Define master resource to be observed and the slave resource to be synchronized

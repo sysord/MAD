@@ -1,7 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
  */
 package com.sysord.mad.configuration.madConfigDsl.impl;
 
@@ -902,9 +899,9 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getForeignModelMdsl_SynchronizerFactoryClass()
+  public EAttribute getForeignModelMdsl_AutoReloadEnabled()
   {
-    return (EReference)foreignModelMdslEClass.getEStructuralFeatures().get(4);
+    return (EAttribute)foreignModelMdslEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -912,7 +909,7 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getForeignModelMdsl_ExtensionManagerClass()
+  public EReference getForeignModelMdsl_SynchronizerFactoryClass()
   {
     return (EReference)foreignModelMdslEClass.getEStructuralFeatures().get(5);
   }
@@ -922,7 +919,7 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getForeignModelMdsl_DslReference()
+  public EReference getForeignModelMdsl_ExtensionManagerClass()
   {
     return (EReference)foreignModelMdslEClass.getEStructuralFeatures().get(6);
   }
@@ -932,9 +929,19 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getForeignModelMdsl_RelocatorQuery()
+  public EReference getForeignModelMdsl_DslReference()
   {
     return (EReference)foreignModelMdslEClass.getEStructuralFeatures().get(7);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getForeignModelMdsl_RelocatorQuery()
+  {
+    return (EReference)foreignModelMdslEClass.getEStructuralFeatures().get(8);
   }
 
   /**
@@ -2573,6 +2580,7 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
     createEAttribute(foreignModelMdslEClass, FOREIGN_MODEL_MDSL__LABEL);
     createEAttribute(foreignModelMdslEClass, FOREIGN_MODEL_MDSL__DESCRIPTION);
     createEReference(foreignModelMdslEClass, FOREIGN_MODEL_MDSL__PROVIDER);
+    createEAttribute(foreignModelMdslEClass, FOREIGN_MODEL_MDSL__AUTO_RELOAD_ENABLED);
     createEReference(foreignModelMdslEClass, FOREIGN_MODEL_MDSL__SYNCHRONIZER_FACTORY_CLASS);
     createEReference(foreignModelMdslEClass, FOREIGN_MODEL_MDSL__EXTENSION_MANAGER_CLASS);
     createEReference(foreignModelMdslEClass, FOREIGN_MODEL_MDSL__DSL_REFERENCE);
@@ -2891,6 +2899,7 @@ public class MadConfigDslPackageImpl extends EPackageImpl implements MadConfigDs
     initEAttribute(getForeignModelMdsl_Label(), ecorePackage.getEString(), "label", null, 0, 1, ForeignModelMdsl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getForeignModelMdsl_Description(), ecorePackage.getEString(), "description", null, 0, 1, ForeignModelMdsl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getForeignModelMdsl_Provider(), this.getModelProviderMdsl(), null, "provider", null, 0, 1, ForeignModelMdsl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getForeignModelMdsl_AutoReloadEnabled(), ecorePackage.getEBoolean(), "autoReloadEnabled", null, 0, 1, ForeignModelMdsl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getForeignModelMdsl_SynchronizerFactoryClass(), this.getClassDescriptorMdsl(), null, "synchronizerFactoryClass", null, 0, 1, ForeignModelMdsl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getForeignModelMdsl_ExtensionManagerClass(), this.getClassDescriptorMdsl(), null, "extensionManagerClass", null, 0, 1, ForeignModelMdsl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getForeignModelMdsl_DslReference(), this.getXtextLanguageReference(), null, "dslReference", null, 0, 1, ForeignModelMdsl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

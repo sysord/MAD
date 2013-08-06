@@ -14,12 +14,15 @@ package com.sysord.xtext.tools;
 import java.io.IOException;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.EcoreUtil2;
 import org.eclipse.xtext.nodemodel.ICompositeNode;
 import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
+import org.eclipse.xtext.resource.SaveOptions;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.resource.XtextResourceSet;
 import org.eclipse.xtext.resource.XtextSyntaxDiagnostic;
@@ -50,8 +53,7 @@ public class XtextUtility {
 			Class<? extends BundleActivator> activatorClass = EclipseTools.findClass(bundleId, activatorClassName);
 			if(activatorClass == null){
 				return null;
-			}
-			
+			}			
 			Method instanceAccessMethod = activatorClass.getMethod("getInstance");			
 			BundleActivator activator = (BundleActivator) instanceAccessMethod.invoke(null);
 			if(activator == null){
@@ -126,6 +128,16 @@ public class XtextUtility {
 		return resource;
 	}
 	
+	public static void saveXtextResource(XtextResource xtextResource, boolean format) throws IOException{
+		Map<Object,Object>  options =  new HashMap<Object, Object>();
+		SaveOptions.Builder optionsBuilder = SaveOptions.newBuilder();
+		if(format){
+			optionsBuilder.format();
+		}
+		optionsBuilder.getOptions().addTo(options);
+		xtextResource.save(options);
+
+	}
 	
 	public static class LanguageProperties{
 		@Inject

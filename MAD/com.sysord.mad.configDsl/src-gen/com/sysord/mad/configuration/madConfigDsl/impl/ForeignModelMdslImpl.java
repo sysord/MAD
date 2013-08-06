@@ -1,7 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
  */
 package com.sysord.mad.configuration.madConfigDsl.impl;
 
@@ -31,6 +28,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link com.sysord.mad.configuration.madConfigDsl.impl.ForeignModelMdslImpl#getLabel <em>Label</em>}</li>
  *   <li>{@link com.sysord.mad.configuration.madConfigDsl.impl.ForeignModelMdslImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link com.sysord.mad.configuration.madConfigDsl.impl.ForeignModelMdslImpl#getProvider <em>Provider</em>}</li>
+ *   <li>{@link com.sysord.mad.configuration.madConfigDsl.impl.ForeignModelMdslImpl#isAutoReloadEnabled <em>Auto Reload Enabled</em>}</li>
  *   <li>{@link com.sysord.mad.configuration.madConfigDsl.impl.ForeignModelMdslImpl#getSynchronizerFactoryClass <em>Synchronizer Factory Class</em>}</li>
  *   <li>{@link com.sysord.mad.configuration.madConfigDsl.impl.ForeignModelMdslImpl#getExtensionManagerClass <em>Extension Manager Class</em>}</li>
  *   <li>{@link com.sysord.mad.configuration.madConfigDsl.impl.ForeignModelMdslImpl#getDslReference <em>Dsl Reference</em>}</li>
@@ -111,6 +109,26 @@ public class ForeignModelMdslImpl extends MADConfigElementImpl implements Foreig
    * @ordered
    */
   protected ModelProviderMdsl provider;
+
+  /**
+   * The default value of the '{@link #isAutoReloadEnabled() <em>Auto Reload Enabled</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isAutoReloadEnabled()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean AUTO_RELOAD_ENABLED_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isAutoReloadEnabled() <em>Auto Reload Enabled</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isAutoReloadEnabled()
+   * @generated
+   * @ordered
+   */
+  protected boolean autoReloadEnabled = AUTO_RELOAD_ENABLED_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getSynchronizerFactoryClass() <em>Synchronizer Factory Class</em>}' containment reference.
@@ -288,6 +306,29 @@ public class ForeignModelMdslImpl extends MADConfigElementImpl implements Foreig
     }
     else if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, MadConfigDslPackage.FOREIGN_MODEL_MDSL__PROVIDER, newProvider, newProvider));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public boolean isAutoReloadEnabled()
+  {
+    return autoReloadEnabled;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setAutoReloadEnabled(boolean newAutoReloadEnabled)
+  {
+    boolean oldAutoReloadEnabled = autoReloadEnabled;
+    autoReloadEnabled = newAutoReloadEnabled;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MadConfigDslPackage.FOREIGN_MODEL_MDSL__AUTO_RELOAD_ENABLED, oldAutoReloadEnabled, autoReloadEnabled));
   }
 
   /**
@@ -524,6 +565,8 @@ public class ForeignModelMdslImpl extends MADConfigElementImpl implements Foreig
         return getDescription();
       case MadConfigDslPackage.FOREIGN_MODEL_MDSL__PROVIDER:
         return getProvider();
+      case MadConfigDslPackage.FOREIGN_MODEL_MDSL__AUTO_RELOAD_ENABLED:
+        return isAutoReloadEnabled();
       case MadConfigDslPackage.FOREIGN_MODEL_MDSL__SYNCHRONIZER_FACTORY_CLASS:
         return getSynchronizerFactoryClass();
       case MadConfigDslPackage.FOREIGN_MODEL_MDSL__EXTENSION_MANAGER_CLASS:
@@ -557,6 +600,9 @@ public class ForeignModelMdslImpl extends MADConfigElementImpl implements Foreig
         return;
       case MadConfigDslPackage.FOREIGN_MODEL_MDSL__PROVIDER:
         setProvider((ModelProviderMdsl)newValue);
+        return;
+      case MadConfigDslPackage.FOREIGN_MODEL_MDSL__AUTO_RELOAD_ENABLED:
+        setAutoReloadEnabled((Boolean)newValue);
         return;
       case MadConfigDslPackage.FOREIGN_MODEL_MDSL__SYNCHRONIZER_FACTORY_CLASS:
         setSynchronizerFactoryClass((ClassDescriptorMdsl)newValue);
@@ -596,6 +642,9 @@ public class ForeignModelMdslImpl extends MADConfigElementImpl implements Foreig
       case MadConfigDslPackage.FOREIGN_MODEL_MDSL__PROVIDER:
         setProvider((ModelProviderMdsl)null);
         return;
+      case MadConfigDslPackage.FOREIGN_MODEL_MDSL__AUTO_RELOAD_ENABLED:
+        setAutoReloadEnabled(AUTO_RELOAD_ENABLED_EDEFAULT);
+        return;
       case MadConfigDslPackage.FOREIGN_MODEL_MDSL__SYNCHRONIZER_FACTORY_CLASS:
         setSynchronizerFactoryClass((ClassDescriptorMdsl)null);
         return;
@@ -630,6 +679,8 @@ public class ForeignModelMdslImpl extends MADConfigElementImpl implements Foreig
         return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
       case MadConfigDslPackage.FOREIGN_MODEL_MDSL__PROVIDER:
         return provider != null;
+      case MadConfigDslPackage.FOREIGN_MODEL_MDSL__AUTO_RELOAD_ENABLED:
+        return autoReloadEnabled != AUTO_RELOAD_ENABLED_EDEFAULT;
       case MadConfigDslPackage.FOREIGN_MODEL_MDSL__SYNCHRONIZER_FACTORY_CLASS:
         return synchronizerFactoryClass != null;
       case MadConfigDslPackage.FOREIGN_MODEL_MDSL__EXTENSION_MANAGER_CLASS:
@@ -659,6 +710,8 @@ public class ForeignModelMdslImpl extends MADConfigElementImpl implements Foreig
     result.append(label);
     result.append(", description: ");
     result.append(description);
+    result.append(", autoReloadEnabled: ");
+    result.append(autoReloadEnabled);
     result.append(')');
     return result.toString();
   }

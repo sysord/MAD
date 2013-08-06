@@ -63,6 +63,11 @@ public class ExtensionModelSynchronizerImpl extends AbstractModelObserver implem
 	}
 	
 	@Override
+	public boolean initializeModel(Resource masterResource, Resource slaveResource) {
+		return false;
+	}
+	
+	@Override
 	public void setExtensionManager(ModelExtensionManager extensionManager) {
 		this.extensionManager = extensionManager;
 	}

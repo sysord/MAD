@@ -1,7 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
  */
 package com.sysord.mad.configuration.madConfigDsl.impl;
 
@@ -34,7 +31,7 @@ public class MadConfigDslFactoryImpl extends EFactoryImpl implements MadConfigDs
   {
     try
     {
-      MadConfigDslFactory theMadConfigDslFactory = (MadConfigDslFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.sysord.com/mad/configuration/MadConfigDsl"); 
+      MadConfigDslFactory theMadConfigDslFactory = (MadConfigDslFactory)EPackage.Registry.INSTANCE.getEFactory(MadConfigDslPackage.eNS_URI);
       if (theMadConfigDslFactory != null)
       {
         return theMadConfigDslFactory;

@@ -110,6 +110,15 @@ public class ModelCacheImpl implements ModelCache {
 	}
 
 	@Override
+	public EditedModel persistModel(URI modelResourceUri) {
+		EditedModel editedModel = getModel(modelResourceUri);
+		if(editedModel != null){
+			_saveModel(editedModel);
+		}
+		return editedModel;
+	}
+	
+	@Override
 	public void evict(URI modelResourceUri) {
 		_processEvictModel(models.get(modelResourceUri));
 	}

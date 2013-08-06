@@ -7,7 +7,7 @@ Bundle-Activator: com.sysord.xtext.tools.XtextToolsActivator
 Bundle-Vendor: SYSORD
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
- org.eclipse.xtext.ui;bundle-version="2.3.1",
+ org.eclipse.xtext.ui;bundle-version="2.3.1";visibility:=reexport,
  org.eclipse.xtext.ui.shared;bundle-version="2.3.1",
  com.sysord.eclipse.tools;bundle-version="1.0.0",
  com.sysord.emf.tools;bundle-version="1.0.0",
@@ -20,4 +20,5 @@ Require-Bundle: org.eclipse.ui,
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Export-Package: com.sysord.xtext.tools,
- com.sysord.xtext.tools.editor
+ com.sysord.xtext.tools.editor,
+ com.sysord.xtext.tools.ui
