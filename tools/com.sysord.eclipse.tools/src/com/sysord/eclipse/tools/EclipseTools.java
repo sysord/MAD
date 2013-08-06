@@ -68,9 +68,10 @@ import com.sysord.eclipse.tools.swt.ImageResource;
  */
 public class EclipseTools {
 
-	
 	/**
 	 * Scheme for platforms URI : {@value #PLATFORM_SCHEME}.<br>
+	 * 
+	 * @since 1.2
 	 */
 	public static final String PLATFORM_SCHEME = "platform:/"; //$NON-NLS-1$
 
@@ -78,19 +79,18 @@ public class EclipseTools {
 	 * Scheme for platform resources : {@value #PLATFORM_RESOURCE}.<br>
 	 * (without trailing slash)
 	 */
-	public static final String PLATFORM_RESOURCE = "platform:/resource"; //$NON-NLS-1$
+	public static final String PLATFORM_RESOURCE = PLATFORM_SCHEME + "resource"; //$NON-NLS-1$
 
 	/**
 	 * Scheme for platform plug-ins : {@value #PLATFORM_PLUGIN}.<br>
 	 * (without trailing slash)
 	 */
-	public static final String PLATFORM_PLUGIN = "platform:/plugin"; //$NON-NLS-1$
+	public static final String PLATFORM_PLUGIN = PLATFORM_SCHEME + "plugin"; //$NON-NLS-1$
 
 	private static String fileSeparatorRegex;
 
 	// Suppresses default constructor, ensuring non-instantiability.
-	private EclipseTools() {
-	}
+	private EclipseTools() {}
 
 	/**
 	 * Returns the class with the specified class name.
