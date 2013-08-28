@@ -1,7 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
  */
 package com.sysord.mad.configuration.madConfigDsl;
 
@@ -487,13 +484,22 @@ public interface MadConfigDslPackage extends EPackage
   int FOREIGN_MODEL_MDSL__PROVIDER = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 3;
 
   /**
+   * The feature id for the '<em><b>Auto Reload Enabled</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOREIGN_MODEL_MDSL__AUTO_RELOAD_ENABLED = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 4;
+
+  /**
    * The feature id for the '<em><b>Synchronizer Factory Class</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FOREIGN_MODEL_MDSL__SYNCHRONIZER_FACTORY_CLASS = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 4;
+  int FOREIGN_MODEL_MDSL__SYNCHRONIZER_FACTORY_CLASS = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Extension Manager Class</b></em>' containment reference.
@@ -502,7 +508,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FOREIGN_MODEL_MDSL__EXTENSION_MANAGER_CLASS = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 5;
+  int FOREIGN_MODEL_MDSL__EXTENSION_MANAGER_CLASS = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Dsl Reference</b></em>' containment reference.
@@ -511,7 +517,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FOREIGN_MODEL_MDSL__DSL_REFERENCE = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 6;
+  int FOREIGN_MODEL_MDSL__DSL_REFERENCE = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Relocator Query</b></em>' containment reference.
@@ -520,7 +526,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FOREIGN_MODEL_MDSL__RELOCATOR_QUERY = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 7;
+  int FOREIGN_MODEL_MDSL__RELOCATOR_QUERY = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 8;
 
   /**
    * The number of structural features of the '<em>Foreign Model Mdsl</em>' class.
@@ -529,7 +535,7 @@ public interface MadConfigDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FOREIGN_MODEL_MDSL_FEATURE_COUNT = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 8;
+  int FOREIGN_MODEL_MDSL_FEATURE_COUNT = MAD_CONFIG_ELEMENT_FEATURE_COUNT + 9;
 
   /**
    * The meta object id for the '{@link com.sysord.mad.configuration.madConfigDsl.impl.ModelProviderMdslImpl <em>Model Provider Mdsl</em>}' class.
@@ -2770,6 +2776,17 @@ public interface MadConfigDslPackage extends EPackage
   EReference getForeignModelMdsl_Provider();
 
   /**
+   * Returns the meta object for the attribute '{@link com.sysord.mad.configuration.madConfigDsl.ForeignModelMdsl#isAutoReloadEnabled <em>Auto Reload Enabled</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Auto Reload Enabled</em>'.
+   * @see com.sysord.mad.configuration.madConfigDsl.ForeignModelMdsl#isAutoReloadEnabled()
+   * @see #getForeignModelMdsl()
+   * @generated
+   */
+  EAttribute getForeignModelMdsl_AutoReloadEnabled();
+
+  /**
    * Returns the meta object for the containment reference '{@link com.sysord.mad.configuration.madConfigDsl.ForeignModelMdsl#getSynchronizerFactoryClass <em>Synchronizer Factory Class</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -4809,6 +4826,14 @@ public interface MadConfigDslPackage extends EPackage
      * @generated
      */
     EReference FOREIGN_MODEL_MDSL__PROVIDER = eINSTANCE.getForeignModelMdsl_Provider();
+
+    /**
+     * The meta object literal for the '<em><b>Auto Reload Enabled</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FOREIGN_MODEL_MDSL__AUTO_RELOAD_ENABLED = eINSTANCE.getForeignModelMdsl_AutoReloadEnabled();
 
     /**
      * The meta object literal for the '<em><b>Synchronizer Factory Class</b></em>' containment reference feature.

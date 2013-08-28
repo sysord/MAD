@@ -76,7 +76,8 @@ public class MadConfigDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getForeignModelMdslAccess().getGroup_6(), "rule__ForeignModelMdsl__Group_6__0");
 					put(grammarAccess.getForeignModelMdslAccess().getGroup_8(), "rule__ForeignModelMdsl__Group_8__0");
 					put(grammarAccess.getForeignModelMdslAccess().getGroup_9(), "rule__ForeignModelMdsl__Group_9__0");
-					put(grammarAccess.getForeignModelMdslAccess().getGroup_11(), "rule__ForeignModelMdsl__Group_11__0");
+					put(grammarAccess.getForeignModelMdslAccess().getGroup_10(), "rule__ForeignModelMdsl__Group_10__0");
+					put(grammarAccess.getForeignModelMdslAccess().getGroup_12(), "rule__ForeignModelMdsl__Group_12__0");
 					put(grammarAccess.getURIExtensionModelProviderMdslAccess().getGroup(), "rule__URIExtensionModelProviderMdsl__Group__0");
 					put(grammarAccess.getURIModelProviderMdslAccess().getGroup(), "rule__URIModelProviderMdsl__Group__0");
 					put(grammarAccess.getCustomModelProviderMdslAccess().getGroup(), "rule__CustomModelProviderMdsl__Group__0");
@@ -186,10 +187,11 @@ public class MadConfigDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getForeignModelMdslAccess().getLabelAssignment_5(), "rule__ForeignModelMdsl__LabelAssignment_5");
 					put(grammarAccess.getForeignModelMdslAccess().getDescriptionAssignment_6_1(), "rule__ForeignModelMdsl__DescriptionAssignment_6_1");
 					put(grammarAccess.getForeignModelMdslAccess().getProviderAssignment_7(), "rule__ForeignModelMdsl__ProviderAssignment_7");
-					put(grammarAccess.getForeignModelMdslAccess().getSynchronizerFactoryClassAssignment_8_2(), "rule__ForeignModelMdsl__SynchronizerFactoryClassAssignment_8_2");
-					put(grammarAccess.getForeignModelMdslAccess().getExtensionManagerClassAssignment_9_2(), "rule__ForeignModelMdsl__ExtensionManagerClassAssignment_9_2");
-					put(grammarAccess.getForeignModelMdslAccess().getDslReferenceAssignment_10(), "rule__ForeignModelMdsl__DslReferenceAssignment_10");
-					put(grammarAccess.getForeignModelMdslAccess().getRelocatorQueryAssignment_11_1(), "rule__ForeignModelMdsl__RelocatorQueryAssignment_11_1");
+					put(grammarAccess.getForeignModelMdslAccess().getAutoReloadEnabledAssignment_8_1(), "rule__ForeignModelMdsl__AutoReloadEnabledAssignment_8_1");
+					put(grammarAccess.getForeignModelMdslAccess().getSynchronizerFactoryClassAssignment_9_2(), "rule__ForeignModelMdsl__SynchronizerFactoryClassAssignment_9_2");
+					put(grammarAccess.getForeignModelMdslAccess().getExtensionManagerClassAssignment_10_2(), "rule__ForeignModelMdsl__ExtensionManagerClassAssignment_10_2");
+					put(grammarAccess.getForeignModelMdslAccess().getDslReferenceAssignment_11(), "rule__ForeignModelMdsl__DslReferenceAssignment_11");
+					put(grammarAccess.getForeignModelMdslAccess().getRelocatorQueryAssignment_12_1(), "rule__ForeignModelMdsl__RelocatorQueryAssignment_12_1");
 					put(grammarAccess.getURIExtensionModelProviderMdslAccess().getUriExtensionAssignment_1(), "rule__URIExtensionModelProviderMdsl__UriExtensionAssignment_1");
 					put(grammarAccess.getURIModelProviderMdslAccess().getModelUriAssignment_1(), "rule__URIModelProviderMdsl__ModelUriAssignment_1");
 					put(grammarAccess.getCustomModelProviderMdslAccess().getClassDescriptorAssignment_1(), "rule__CustomModelProviderMdsl__ClassDescriptorAssignment_1");

@@ -19,6 +19,12 @@ import com.sysord.mad.model.EditedModel;
 public interface ModelProvider {
 
 	/**
+	 * Defines if model must be automatically reloaded when chanes occurs outside of MAD
+	 * @param enabled
+	 */
+	public void setAutoReload(boolean enabled);
+
+	/**
 	 * load and return the for the context
 	 *  
 	 * @param contextObject
@@ -48,5 +54,8 @@ public interface ModelProvider {
 	 * @param dslDescription
 	 */
 	public void setDslDescription(XtextLanguageDescription dslDescription);
+	
+	
+	
 	
 }

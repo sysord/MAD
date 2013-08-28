@@ -11,12 +11,13 @@
  ****************************************************************************/
 package com.sysord.mad.model.provider;
 
+
 public interface ExtensionModelSynchronizer extends ModelSynchronizer {
 
 	/**
 	 * Set extension manager for synchronize the ExtensionModel
 	 * @param extensionManager
 	 */
-	void setExtensionManager(ModelExtensionManager extensionManager);
+	public void setExtensionManager(ModelExtensionManager extensionManager);
 
 }

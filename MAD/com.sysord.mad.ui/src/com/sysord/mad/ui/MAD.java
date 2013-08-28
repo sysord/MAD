@@ -304,6 +304,19 @@ public class MAD extends ViewPart {
 
             @Override
             public void onModelChangedOutside(EditedModel model) {
+            	//if auto reload is allowed: evic the model, it will be reloaded silently
+            	boolean evictModel = model.isAutoReloadAllowed() || requestForApplyChanges(model);
+                if(evictModel){
+                	modelCache.evict(model.getModelResource().getURI());
+                }                
+            }
+
+            /**
+             * Requests to user for evicting managed model.
+             * @param model
+             * @return
+             */
+            protected boolean requestForApplyChanges(EditedModel model){
                 if (parent != null && !parent.isDisposed()) {
                     MessageBox messageBox = new MessageBox(parent.getShell(), SWT.ICON_WARNING | SWT.YES | SWT.NO
                             | SWT.RESIZE);
@@ -311,11 +324,12 @@ public class MAD extends ViewPart {
                     String modelURI = model.getModelResource().getURI().toString();
                     messageBox.setMessage(Lbl.bind(Lbl.msgExternModelChanged, modelURI));
                     int result = messageBox.open();
-                    if (result == SWT.YES) {
-                        modelCache.evict(model.getModelResource().getURI());
-                    }
+                    return result == SWT.YES;
                 }
+                return false;
             }
+            
+            
         });
     }
 

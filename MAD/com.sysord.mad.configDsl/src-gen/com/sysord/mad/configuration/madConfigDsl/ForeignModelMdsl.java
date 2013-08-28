@@ -1,7 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
  */
 package com.sysord.mad.configuration.madConfigDsl;
 
@@ -18,6 +15,7 @@ package com.sysord.mad.configuration.madConfigDsl;
  *   <li>{@link com.sysord.mad.configuration.madConfigDsl.ForeignModelMdsl#getLabel <em>Label</em>}</li>
  *   <li>{@link com.sysord.mad.configuration.madConfigDsl.ForeignModelMdsl#getDescription <em>Description</em>}</li>
  *   <li>{@link com.sysord.mad.configuration.madConfigDsl.ForeignModelMdsl#getProvider <em>Provider</em>}</li>
+ *   <li>{@link com.sysord.mad.configuration.madConfigDsl.ForeignModelMdsl#isAutoReloadEnabled <em>Auto Reload Enabled</em>}</li>
  *   <li>{@link com.sysord.mad.configuration.madConfigDsl.ForeignModelMdsl#getSynchronizerFactoryClass <em>Synchronizer Factory Class</em>}</li>
  *   <li>{@link com.sysord.mad.configuration.madConfigDsl.ForeignModelMdsl#getExtensionManagerClass <em>Extension Manager Class</em>}</li>
  *   <li>{@link com.sysord.mad.configuration.madConfigDsl.ForeignModelMdsl#getDslReference <em>Dsl Reference</em>}</li>
@@ -134,6 +132,32 @@ public interface ForeignModelMdsl extends MADConfigElement
    * @generated
    */
   void setProvider(ModelProviderMdsl value);
+
+  /**
+   * Returns the value of the '<em><b>Auto Reload Enabled</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Auto Reload Enabled</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Auto Reload Enabled</em>' attribute.
+   * @see #setAutoReloadEnabled(boolean)
+   * @see com.sysord.mad.configuration.madConfigDsl.MadConfigDslPackage#getForeignModelMdsl_AutoReloadEnabled()
+   * @model
+   * @generated
+   */
+  boolean isAutoReloadEnabled();
+
+  /**
+   * Sets the value of the '{@link com.sysord.mad.configuration.madConfigDsl.ForeignModelMdsl#isAutoReloadEnabled <em>Auto Reload Enabled</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Auto Reload Enabled</em>' attribute.
+   * @see #isAutoReloadEnabled()
+   * @generated
+   */
+  void setAutoReloadEnabled(boolean value);
 
   /**
    * Returns the value of the '<em><b>Synchronizer Factory Class</b></em>' containment reference.

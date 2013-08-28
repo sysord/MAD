@@ -465,6 +465,7 @@ public class MadConfigDslSemanticSequencer extends AbstractDelegatingSemanticSeq
 	 *         label=STRING 
 	 *         description=STRING? 
 	 *         provider=ModelProviderMdsl 
+	 *         autoReloadEnabled?='AUTO_RELOAD'? 
 	 *         synchronizerFactoryClass=ClassDescriptorMdsl? 
 	 *         extensionManagerClass=ClassDescriptorMdsl? 
 	 *         dslReference=XtextLanguageReference? 

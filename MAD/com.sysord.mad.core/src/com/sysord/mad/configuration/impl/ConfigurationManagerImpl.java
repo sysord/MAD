@@ -635,8 +635,11 @@ public class ConfigurationManagerImpl implements ConfigurationManager{
 																	customModelProviderDsl.getClassDescriptor().getClassName(),
 																	customModelProviderDsl.getParameters().toArray());			
 		}
-		
+				
 		if(modelProvider != null){
+			//set the autoReload option
+			modelProvider.setAutoReload(foreignModelDecl.isAutoReloadEnabled());
+			
 			//Try to obtains the defined Synchronizer
 			ModelSynchronizerFactory synchronizerFactory = createModelSynchronizerFactory(foreignModelDecl);
 			modelProvider.setModelSynchronizerFactory(synchronizerFactory);

@@ -21,6 +21,7 @@ public class MadConfigDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected MadConfigDslGrammarAccess grammarAccess;
 	protected AbstractElementAlias match_CommandDefinitionMdsl_OnErrorKeyword_6_0_q;
 	protected AbstractElementAlias match_CommandDefinitionMdsl_OnSuccessKeyword_5_0_q;
+	protected AbstractElementAlias match_ForeignModelMdsl_OptionsKeyword_8_0_q;
 	protected AbstractElementAlias match_LayerMdsl___SubKeyword_7_0_LayersKeyword_7_1_LeftCurlyBracketKeyword_7_2_RightCurlyBracketKeyword_7_4__q;
 	protected AbstractElementAlias match_WidgetConfigurationMdsl_FlexibleTemplateKeyword_12_0_0_or_TargetTemplateKeyword_12_0_1;
 	protected AbstractElementAlias match_WidgetConfigurationMdsl_ValidatorsKeyword_16_0_q;
@@ -30,6 +31,7 @@ public class MadConfigDslSyntacticSequencer extends AbstractSyntacticSequencer {
 		grammarAccess = (MadConfigDslGrammarAccess) access;
 		match_CommandDefinitionMdsl_OnErrorKeyword_6_0_q = new TokenAlias(false, true, grammarAccess.getCommandDefinitionMdslAccess().getOnErrorKeyword_6_0());
 		match_CommandDefinitionMdsl_OnSuccessKeyword_5_0_q = new TokenAlias(false, true, grammarAccess.getCommandDefinitionMdslAccess().getOnSuccessKeyword_5_0());
+		match_ForeignModelMdsl_OptionsKeyword_8_0_q = new TokenAlias(false, true, grammarAccess.getForeignModelMdslAccess().getOptionsKeyword_8_0());
 		match_LayerMdsl___SubKeyword_7_0_LayersKeyword_7_1_LeftCurlyBracketKeyword_7_2_RightCurlyBracketKeyword_7_4__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getLayerMdslAccess().getSubKeyword_7_0()), new TokenAlias(false, false, grammarAccess.getLayerMdslAccess().getLayersKeyword_7_1()), new TokenAlias(false, false, grammarAccess.getLayerMdslAccess().getLeftCurlyBracketKeyword_7_2()), new TokenAlias(false, false, grammarAccess.getLayerMdslAccess().getRightCurlyBracketKeyword_7_4()));
 		match_WidgetConfigurationMdsl_FlexibleTemplateKeyword_12_0_0_or_TargetTemplateKeyword_12_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getWidgetConfigurationMdslAccess().getFlexibleTemplateKeyword_12_0_0()), new TokenAlias(false, false, grammarAccess.getWidgetConfigurationMdslAccess().getTargetTemplateKeyword_12_0_1()));
 		match_WidgetConfigurationMdsl_ValidatorsKeyword_16_0_q = new TokenAlias(false, true, grammarAccess.getWidgetConfigurationMdslAccess().getValidatorsKeyword_16_0());
@@ -51,6 +53,8 @@ public class MadConfigDslSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_CommandDefinitionMdsl_OnErrorKeyword_6_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_CommandDefinitionMdsl_OnSuccessKeyword_5_0_q.equals(syntax))
 				emit_CommandDefinitionMdsl_OnSuccessKeyword_5_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_ForeignModelMdsl_OptionsKeyword_8_0_q.equals(syntax))
+				emit_ForeignModelMdsl_OptionsKeyword_8_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_LayerMdsl___SubKeyword_7_0_LayersKeyword_7_1_LeftCurlyBracketKeyword_7_2_RightCurlyBracketKeyword_7_4__q.equals(syntax))
 				emit_LayerMdsl___SubKeyword_7_0_LayersKeyword_7_1_LeftCurlyBracketKeyword_7_2_RightCurlyBracketKeyword_7_4__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_WidgetConfigurationMdsl_FlexibleTemplateKeyword_12_0_0_or_TargetTemplateKeyword_12_0_1.equals(syntax))
@@ -79,6 +83,14 @@ public class MadConfigDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
+	 *     'options:'?
+	 */
+	protected void emit_ForeignModelMdsl_OptionsKeyword_8_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Syntax:
 	 *     ('Sub' 'layers' '{' '}')?
 	 */
 	protected void emit_LayerMdsl___SubKeyword_7_0_LayersKeyword_7_1_LeftCurlyBracketKeyword_7_2_RightCurlyBracketKeyword_7_4__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
@@ -87,7 +99,7 @@ public class MadConfigDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     'target template:' | 'flexible template:'
+	 *     'flexible template:' | 'target template:'
 	 */
 	protected void emit_WidgetConfigurationMdsl_FlexibleTemplateKeyword_12_0_0_or_TargetTemplateKeyword_12_0_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);

@@ -73,6 +73,7 @@ ForeignModelMdsl:
 	'label:'label = STRING
 	('description:' description = STRING)?
 	provider = ModelProviderMdsl
+	('options:' (autoReloadEnabled ?='AUTO_RELOAD')? )?
 	('synchronizer factory' ':' synchronizerFactoryClass = ClassDescriptorMdsl)?	//implementation for synchronize master model. (master model listener).
 	('extension manager' ':' extensionManagerClass = ClassDescriptorMdsl)? //implementation for provide master model extensions using MAD_EXTENSION Queries
 	(dslReference =  XtextLanguageReference)?

@@ -78,6 +78,13 @@ public interface ModelCache {
 	public EditedModel getModel(URI modelResourceUri);
 
 	/**
+	 * Save a cached model by its resource URI
+	 * @param modelResourceUri
+	 * @return the persisted model or null if not present
+	 */
+	public EditedModel persistModel(URI modelResourceUri);
+
+	/**
 	 * remove a model from the cahce
 	 * @param modelResourceUri
 	 */

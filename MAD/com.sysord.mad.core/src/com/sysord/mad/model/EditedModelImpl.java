@@ -31,6 +31,7 @@ public class EditedModelImpl implements EditedModel {
 	protected XtextLanguageDescription dslDescription;
 	protected URI masterModelURI;
 	protected boolean linkedToMasterModel;
+	protected boolean isAutoReloadAllowed; //if true: when changes occurs outside of MAD, the model is silently reloaded.
 	
 	public EditedModelImpl(Resource modelResource, Resource masterModelResource, ModelSynchronizer synchronizer, ModelExtensionManager extensionManager,
 			XtextLanguageDescription dslDescription) {
@@ -42,6 +43,15 @@ public class EditedModelImpl implements EditedModel {
 		this.dslDescription = dslDescription;
 	}
 
+	@Override
+	public boolean isAutoReloadAllowed() {
+		return isAutoReloadAllowed;
+	}
+
+	@Override
+	public void setAutoReloadAllowed(boolean allow) {
+		isAutoReloadAllowed = allow;
+	}
 	@Override
 	public boolean isDirty() {
 		return dirty;
@@ -147,6 +157,8 @@ public class EditedModelImpl implements EditedModel {
 	public void setLinkedToMasterModel(boolean linkedToMasterModel){
 		this.linkedToMasterModel = linkedToMasterModel;
 	}
+
+
 
 
 

@@ -958,53 +958,72 @@ ruleForeignModelMdsl returns [EObject current=null]
 	    }
 
 )
-)(	otherlv_9='synchronizer factory' 
+)(	otherlv_9='options:' 
     {
-    	newLeafNode(otherlv_9, grammarAccess.getForeignModelMdslAccess().getSynchronizerFactoryKeyword_8_0());
+    	newLeafNode(otherlv_9, grammarAccess.getForeignModelMdslAccess().getOptionsKeyword_8_0());
     }
-	otherlv_10=':' 
+(
+(
+		lv_autoReloadEnabled_10_0=	'AUTO_RELOAD' 
     {
-    	newLeafNode(otherlv_10, grammarAccess.getForeignModelMdslAccess().getColonKeyword_8_1());
+        newLeafNode(lv_autoReloadEnabled_10_0, grammarAccess.getForeignModelMdslAccess().getAutoReloadEnabledAUTO_RELOADKeyword_8_1_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getForeignModelMdslRule());
+	        }
+       		setWithLastConsumed($current, "autoReloadEnabled", true, "AUTO_RELOAD");
+	    }
+
+)
+)?)?(	otherlv_11='synchronizer factory' 
+    {
+    	newLeafNode(otherlv_11, grammarAccess.getForeignModelMdslAccess().getSynchronizerFactoryKeyword_9_0());
+    }
+	otherlv_12=':' 
+    {
+    	newLeafNode(otherlv_12, grammarAccess.getForeignModelMdslAccess().getColonKeyword_9_1());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getForeignModelMdslAccess().getSynchronizerFactoryClassClassDescriptorMdslParserRuleCall_8_2_0()); 
+	        newCompositeNode(grammarAccess.getForeignModelMdslAccess().getSynchronizerFactoryClassClassDescriptorMdslParserRuleCall_9_2_0()); 
 	    }
-		lv_synchronizerFactoryClass_11_0=ruleClassDescriptorMdsl		{
+		lv_synchronizerFactoryClass_13_0=ruleClassDescriptorMdsl		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getForeignModelMdslRule());
 	        }
        		set(
        			$current, 
        			"synchronizerFactoryClass",
-        		lv_synchronizerFactoryClass_11_0, 
+        		lv_synchronizerFactoryClass_13_0, 
         		"ClassDescriptorMdsl");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-))?(	otherlv_12='extension manager' 
+))?(	otherlv_14='extension manager' 
     {
-    	newLeafNode(otherlv_12, grammarAccess.getForeignModelMdslAccess().getExtensionManagerKeyword_9_0());
+    	newLeafNode(otherlv_14, grammarAccess.getForeignModelMdslAccess().getExtensionManagerKeyword_10_0());
     }
-	otherlv_13=':' 
+	otherlv_15=':' 
     {
-    	newLeafNode(otherlv_13, grammarAccess.getForeignModelMdslAccess().getColonKeyword_9_1());
+    	newLeafNode(otherlv_15, grammarAccess.getForeignModelMdslAccess().getColonKeyword_10_1());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getForeignModelMdslAccess().getExtensionManagerClassClassDescriptorMdslParserRuleCall_9_2_0()); 
+	        newCompositeNode(grammarAccess.getForeignModelMdslAccess().getExtensionManagerClassClassDescriptorMdslParserRuleCall_10_2_0()); 
 	    }
-		lv_extensionManagerClass_14_0=ruleClassDescriptorMdsl		{
+		lv_extensionManagerClass_16_0=ruleClassDescriptorMdsl		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getForeignModelMdslRule());
 	        }
        		set(
        			$current, 
        			"extensionManagerClass",
-        		lv_extensionManagerClass_14_0, 
+        		lv_extensionManagerClass_16_0, 
         		"ClassDescriptorMdsl");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -1013,46 +1032,46 @@ ruleForeignModelMdsl returns [EObject current=null]
 ))?(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getForeignModelMdslAccess().getDslReferenceXtextLanguageReferenceParserRuleCall_10_0()); 
+	        newCompositeNode(grammarAccess.getForeignModelMdslAccess().getDslReferenceXtextLanguageReferenceParserRuleCall_11_0()); 
 	    }
-		lv_dslReference_15_0=ruleXtextLanguageReference		{
+		lv_dslReference_17_0=ruleXtextLanguageReference		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getForeignModelMdslRule());
 	        }
        		set(
        			$current, 
        			"dslReference",
-        		lv_dslReference_15_0, 
+        		lv_dslReference_17_0, 
         		"XtextLanguageReference");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)?(	otherlv_16='model locator:' 
+)?(	otherlv_18='model locator:' 
     {
-    	newLeafNode(otherlv_16, grammarAccess.getForeignModelMdslAccess().getModelLocatorKeyword_11_0());
+    	newLeafNode(otherlv_18, grammarAccess.getForeignModelMdslAccess().getModelLocatorKeyword_12_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getForeignModelMdslAccess().getRelocatorQueryQueryParserRuleCall_11_1_0()); 
+	        newCompositeNode(grammarAccess.getForeignModelMdslAccess().getRelocatorQueryQueryParserRuleCall_12_1_0()); 
 	    }
-		lv_relocatorQuery_17_0=ruleQuery		{
+		lv_relocatorQuery_19_0=ruleQuery		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getForeignModelMdslRule());
 	        }
        		set(
        			$current, 
        			"relocatorQuery",
-        		lv_relocatorQuery_17_0, 
+        		lv_relocatorQuery_19_0, 
         		"Query");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-))?	otherlv_18='}' 
+))?	otherlv_20='}' 
     {
-    	newLeafNode(otherlv_18, grammarAccess.getForeignModelMdslAccess().getRightCurlyBracketKeyword_12());
+    	newLeafNode(otherlv_20, grammarAccess.getForeignModelMdslAccess().getRightCurlyBracketKeyword_13());
     }
 )
 ;
@@ -4906,6 +4925,8 @@ ruleQUERY_OPTIMISATION_LEVEL returns [Enumerator current=null]
 
 
 
+RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')* ('.' '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*)*;
+
 RULE_INT : ('0'..'9')+;
 
 RULE_STRING : ('"' ('\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|'\''|'\\')|~(('\\'|'"')))* '"'|'\'' ('\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|'\''|'\\')|~(('\\'|'\'')))* '\'');
@@ -4917,7 +4938,5 @@ RULE_SL_COMMENT : '//' ~(('\n'|'\r'))* ('\r'? '\n')?;
 RULE_WS : (' '|'\t'|'\r'|'\n')+;
 
 RULE_ANY_OTHER : .;
-
-RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')* ('.' '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*)*;
 
 
