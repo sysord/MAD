@@ -11,26 +11,8 @@
  ****************************************************************************/
 package com.sysord.xtext.tools.editor;
 
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
-import org.eclipse.core.resources.IProject;
-import org.eclipse.core.resources.IProjectDescription;
-import org.eclipse.core.resources.ResourcesPlugin;
-import org.eclipse.core.runtime.CoreException;
-import org.eclipse.core.runtime.NullProgressMonitor;
-import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.compare.diff.metamodel.DiffElement;
-import org.eclipse.emf.compare.diff.metamodel.DiffGroup;
-import org.eclipse.emf.compare.diff.metamodel.DiffModel;
-import org.eclipse.emf.compare.diff.service.DiffService;
-import org.eclipse.emf.compare.match.metamodel.MatchModel;
-import org.eclipse.emf.compare.match.service.MatchService;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.text.BadLocationException;
 import org.eclipse.jface.text.source.ISourceViewer;
@@ -48,9 +30,7 @@ import org.eclipse.ui.IEditorSite;
 import org.eclipse.xtext.nodemodel.ICompositeNode;
 import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
 import org.eclipse.xtext.parser.IParseResult;
-import org.eclipse.xtext.resource.IResourceFactory;
 import org.eclipse.xtext.resource.XtextResource;
-import org.eclipse.xtext.resource.XtextResourceSet;
 import org.eclipse.xtext.ui.editor.CompoundXtextEditorCallback;
 import org.eclipse.xtext.ui.editor.XtextEditor;
 import org.eclipse.xtext.ui.editor.model.IXtextDocument;
@@ -175,33 +155,33 @@ public abstract class AbstractXtextEmbeddedEditorV2 {
 		}
 	}
 
-	protected List<DiffElement> getChanges(EObject oldRootObject, EObject newRootObject) throws InterruptedException {
-		// use EMF compare in order to find changes
-		// between oldRootObject tree and newRootObject tree
-		Map<String, Object> options = new HashMap<String, Object>();
-		MatchModel matchModel = MatchService.doMatch(newRootObject, oldRootObject, options);
-		DiffModel diffModel = DiffService.doDiff(matchModel);
-		List<DiffElement> changes = collectChanges(diffModel);
-		return changes;
-	}
-
-	protected List<DiffElement> collectChanges(DiffModel diffModel) {
-		ArrayList<DiffElement> changes = new ArrayList<DiffElement>();
-		for (DiffElement diffElement : diffModel.getOwnedElements()) {
-			collectChanges(changes, diffElement);
-		}
-		return changes;
-	}
-
-	protected void collectChanges(List<DiffElement> changes, DiffElement diffElement) {
-		if (diffElement.getSubDiffElements().size() == 0 && !(diffElement instanceof DiffGroup)) {
-			changes.add(diffElement);
-		} else {
-			for (DiffElement elem : diffElement.getSubDiffElements()) {
-				collectChanges(changes, elem);
-			}
-		}
-	}
+//	protected List<DiffElement> getChanges(EObject oldRootObject, EObject newRootObject) throws InterruptedException {
+//		// use EMF compare in order to find changes
+//		// between oldRootObject tree and newRootObject tree
+//		Map<String, Object> options = new HashMap<String, Object>();
+//		MatchModel matchModel = MatchService.doMatch(newRootObject, oldRootObject, options);
+//		DiffModel diffModel = DiffService.doDiff(matchModel);
+//		List<DiffElement> changes = collectChanges(diffModel);
+//		return changes;
+//	}
+//
+//	protected List<DiffElement> collectChanges(DiffModel diffModel) {
+//		ArrayList<DiffElement> changes = new ArrayList<DiffElement>();
+//		for (DiffElement diffElement : diffModel.getOwnedElements()) {
+//			collectChanges(changes, diffElement);
+//		}
+//		return changes;
+//	}
+//
+//	protected void collectChanges(List<DiffElement> changes, DiffElement diffElement) {
+//		if (diffElement.getSubDiffElements().size() == 0 && !(diffElement instanceof DiffGroup)) {
+//			changes.add(diffElement);
+//		} else {
+//			for (DiffElement elem : diffElement.getSubDiffElements()) {
+//				collectChanges(changes, elem);
+//			}
+//		}
+//	}
 
 	protected abstract void applyChanges(EObject newRootObject);
 
