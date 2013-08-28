@@ -13,6 +13,7 @@ package com.sysord.mad.model.cache;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 
 import com.google.common.cache.CacheLoader;
 import com.sysord.mad.model.EditedModel;
@@ -37,6 +38,11 @@ public interface ModelCache {
 	 */
 	public static final int DISABLE_AUTO_RELOAD = 1;
 	
+	/**
+	 * Returns the unique {@link ResourceSet} holds by the {@link ModelCache}
+	 * @return
+	 */
+	public ResourceSet getCacheResourceSet();
 		
 	/**
 	 * add a cache listener {@link ModelCacheListener} 

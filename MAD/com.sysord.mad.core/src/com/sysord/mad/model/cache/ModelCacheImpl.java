@@ -22,6 +22,9 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.xtext.resource.XtextResource;
 
 import com.google.inject.Inject;
 import com.sysord.eclipse.tools.runtime.ConsoleLogger;
@@ -30,14 +33,19 @@ import com.sysord.emf.tools.model.EContentAdapter2;
 import com.sysord.emf.tools.resource.ResourcesManager;
 import com.sysord.emf.tools.resource.ResourcesManagerListener;
 import com.sysord.mad.model.EditedModel;
+import com.sysord.xtext.tools.XtextUtility;
 
 public class ModelCacheImpl implements ModelCache {
 
 	protected static final boolean TRACE_EVENTS = false;
 	
+	protected static final boolean SINGLE_RESOURCESET_ENABLED = true;
+	
 	@Inject
 	protected ConsoleLogger logger;
 
+	protected ResourceSet singleResourceSet = new ResourceSetImpl();
+	
 	/**
 	 * models storage
 	 */
@@ -53,6 +61,15 @@ public class ModelCacheImpl implements ModelCache {
 		}
 	}
 
+	@Override
+	public ResourceSet getCacheResourceSet() {
+		if(SINGLE_RESOURCESET_ENABLED){
+			return singleResourceSet;			
+		}else{
+			return new ResourceSetImpl();
+		}
+	}
+	
 	@Override
 	public void addListener(ModelCacheListener listener) {
 		listeners.add(listener);
@@ -166,14 +183,25 @@ public class ModelCacheImpl implements ModelCache {
 		try {
 			System.out.println("Cache Save model:" + model.getModelResource().getURI());
 			model.setSaving(true);
-			model.getModelResource().save(null);
+			//Specific save with validation for XtextResource: 
+			//when invalid Xtext model is saved if an the text file is cleared.
+			if(model.getModelResource() instanceof XtextResource){
+				XtextUtility.saveXtextResource((XtextResource) model.getModelResource(), true);
+			}else{
+				model.getModelResource().save(null);				
+			}
 			model.setDirty(false);
-		} catch (IOException e) {
+		} catch (Exception e) {
+			logger.logError("Save model " + model.getModelResource().getURI() + " fails.");
+			logger.logError(e);
+			_processEvictModel(model);
 			//TODO: throw exception on fail
 			e.printStackTrace();
 		}finally{
 		}
 	}
+	
+	
 
 	protected void _processEvictModel(EditedModel model){
 		if(model != null){
@@ -233,6 +261,9 @@ public class ModelCacheImpl implements ModelCache {
 					//unset saving flag
 					cachedModel.setSaving(false);										
 				}
+			}else if(event == RESOURCE_EVENT.RELOADED){
+				//When model has been reloaded its resource instance have changed: so evict model from cache
+				_processEvictModel(cachedModel);
 				
 			}else if(event == RESOURCE_EVENT.LINKED_RESOURCE_TO_BE_SAVED){
 				//tag model as saving on control (ie: saved by our application)

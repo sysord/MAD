@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.URI;
@@ -34,8 +35,8 @@ import com.google.inject.Injector;
 import com.google.inject.name.Named;
 import com.sysord.eclipse.tools.EclipseTools;
 import com.sysord.eclipse.tools.diagnostic.Diagnostic;
-import com.sysord.eclipse.tools.diagnostic.DiagnosticFactory;
 import com.sysord.eclipse.tools.diagnostic.Diagnostic.DIAGNOSTIC_LEVEL;
+import com.sysord.eclipse.tools.diagnostic.DiagnosticFactory;
 
 public class XtextUtility {
 
@@ -128,14 +129,46 @@ public class XtextUtility {
 		return resource;
 	}
 	
-	public static void saveXtextResource(XtextResource xtextResource, boolean format) throws IOException{
-		Map<Object,Object>  options =  new HashMap<Object, Object>();
-		SaveOptions.Builder optionsBuilder = SaveOptions.newBuilder();
-		if(format){
-			optionsBuilder.format();
+	/**
+	 * Save the Xtext resource, a validation is done before saving for avoid lost of file content on error
+	 * if validation fails, an exception is thrown
+	 * @param xtextResource
+	 * @param format
+	 * @throws IOException
+	 */
+	public static void saveXtextResource(XtextResource xtextResource, boolean format) throws XtextToolsException{
+		try {
+			
+			//Resource validation
+			Diagnostic validationDiagnostic = validateXtextResource(xtextResource);
+			if(validationDiagnostic.getLevel() == DIAGNOSTIC_LEVEL.ERROR){
+				throw new XtextToolsException("Invalid XtextResource " + xtextResource.getURI() + " " + validationDiagnostic.getDescription());				
+			}
+			
+			//try serialize for discovering syntax errors
+			try{
+				xtextResource.getSerializer().serialize(xtextResource.getContents().get(0));			
+			}catch(Exception e){
+				throw new XtextToolsException("Invalid XtextResource " + xtextResource.getURI() + " " + e.getMessage());				
+			}
+
+
+			//Define save options
+			Map<Object,Object>  options =  new HashMap<Object, Object>();
+			SaveOptions.Builder optionsBuilder = SaveOptions.newBuilder();
+			if(format){
+				optionsBuilder.format();
+			}
+			optionsBuilder.getOptions().addTo(options);
+			//Save
+			xtextResource.save(options);
+			
+		} catch (XtextToolsException e) {
+			throw e;
+		} catch (Exception e) {			
+			e.printStackTrace();
+			throw new XtextToolsException("Fail to save the XtextResource", e);
 		}
-		optionsBuilder.getOptions().addTo(options);
-		xtextResource.save(options);
 
 	}
 	
@@ -161,10 +194,12 @@ public class XtextUtility {
 	}
 	
 	public static Diagnostic validateXtextResource(XtextResource xtextResource){
-		
-		//warnings: reference error
+				
 		EcoreUtil2.resolveLazyCrossReferences(xtextResource, defaultCancelIndicator());
 		boolean hasError = !xtextResource.getErrors().isEmpty();
+		
+
+		
 		if(!hasError){
 			return DiagnosticFactory.createNoErrorsDiagnostic();
 		}

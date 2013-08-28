@@ -171,6 +171,11 @@ public class ModelExtensionEvaluator extends AbstractQueryEvaluator {
 			String extensionTypeName =  arguments.size() >= 2 ? (String) arguments.get(1) : null;
 			String discriminator = 		arguments.size() >= 3 ? (String) arguments.get(1) : null;
 			
+			
+			if(extendedElement == null){
+				throw createInvalidQueryException(evaluationContext.getQuery().toString(), "Extended element is null.");
+			}
+			
 			//delegate search and create if not exists to extension manager.
 			EObject result =  extensionManager.getElementExtension(contextEObject, extendedElement, extensionTypeName, discriminator, true);
 			

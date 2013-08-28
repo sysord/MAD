@@ -304,7 +304,7 @@ public class MAD extends ViewPart {
 
             @Override
             public void onModelChangedOutside(EditedModel model) {
-            	//if auto reload is allowed: evic the model, it will be reloaded silently
+            	//if auto reload is allowed: evict the model, it will be reloaded silently
             	boolean evictModel = model.isAutoReloadAllowed() || requestForApplyChanges(model);
                 if(evictModel){
                 	modelCache.evict(model.getModelResource().getURI());

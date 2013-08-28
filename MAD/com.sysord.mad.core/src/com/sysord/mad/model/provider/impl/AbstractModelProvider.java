@@ -176,7 +176,7 @@ public abstract class AbstractModelProvider implements ModelProvider {
 	 */
 	protected Resource loadModelResource(EObject contextObject, String strResourceUri){
 		//load model by uri				
-		Resource resource = getResourcesManager().getResource(strResourceUri, true);
+		Resource resource = getResourcesManager().getResource(modelCache.getCacheResourceSet(), strResourceUri, true);
 		return resource;
 	}
 	

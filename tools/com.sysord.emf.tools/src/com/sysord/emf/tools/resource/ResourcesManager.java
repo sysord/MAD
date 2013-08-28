@@ -53,6 +53,7 @@ public class ResourcesManager {
 	
 	protected class ManagedResource{
 		protected Resource resource;
+		protected ResourceSet resourceSet;
 		protected int ManagementOptions = NONE_OPTION;
 		public ManagedResource(Resource resource, int managementOptions) {
 			super();
@@ -136,7 +137,11 @@ public class ResourcesManager {
 	 * @return
 	 */
 	public Resource getResource(String resourceName){
-		return getResource(resourceName, null, null);
+		return getResource(null, resourceName, null, null);
+	}
+
+	public Resource getResource(ResourceSet resourceSet, String resourceName){
+		return getResource(resourceSet, resourceName, null, null);
 	}
 
 	/**
@@ -150,7 +155,11 @@ public class ResourcesManager {
 	 * @return
 	 */
 	public Resource getResource(String resourceName, String linkedMasterResourceName){
-		return getResource(resourceName, null, linkedMasterResourceName);
+		return getResource(null, resourceName, null, linkedMasterResourceName);
+	}
+
+	public Resource getResource(ResourceSet resourceSet, String resourceName, String linkedMasterResourceName){
+		return getResource(resourceSet, resourceName, null, linkedMasterResourceName);
 	}
 
 	/**
@@ -163,11 +172,11 @@ public class ResourcesManager {
 	 * @return
 	 */
 	public Resource getResource(String resourceName, ResourcesManagerListener listener){
-		return getResource(resourceName, listener, null);
+		return getResource(null, resourceName, listener, null);
 	}
 
 	/**
-	 * provide resource by name
+	 * provides resource by name
 	 * if resource exists in cache resource is returned
 	 * otherwise resource is loaded and added to the cache
 	 * Install the resource listener and create link between the linkedMasterResourceName 
@@ -178,19 +187,43 @@ public class ResourcesManager {
 	 * @param linkedMasterResourceName
 	 * @return
 	 */
-	public Resource getResource(String resourceName, ResourcesManagerListener listener, String linkedMasterResourceName){
-		
-		Resource resource = _getCachedResource(resourceName);
-		
-		if(resource == null){
-			resource = _loadResource(resourceName);
-		}
-		
-		_installListeners(resource, listener, linkedMasterResourceName);
-		
-		return resource;
+	public Resource getResource(String resourceName, ResourcesManagerListener listener, String linkedMasterResourceName){				
+		return getResource(null, resourceName, listener, linkedMasterResourceName);
 	}
 
+	public Resource getResource(ResourceSet resourceSet, String resourceName, ResourcesManagerListener listener, String linkedMasterResourceName){		
+		Resource resource = _getCachedResource(resourceName);		
+		if(resource == null){
+			resource = _loadResource(resourceSet, resourceName);
+		}		
+		_installListeners(resource, listener, linkedMasterResourceName);		
+		return resource;
+	}
+	
+	/**
+	 * provide resource by name
+	 * if resource exists in cache resource is returned
+	 * otherwise resource is loaded and added to the cache
+	 * if createIfNotExist is true, when resource not exists a new 
+	 * resource is created and persisted
+	 * 
+	 * @param resourceName
+	 * @param createIfNotExist if true, when resource not exists a new resource is created and persisted
+	 * 
+	 * @return
+	 */
+	public Resource getResource(String resourceName, boolean createIfNotExist){
+		return getResource(null, resourceName, createIfNotExist);
+	}
+
+	public Resource getResource(ResourceSet resourceSet, String resourceName, boolean createIfNotExist){
+		Resource resource = getResource(resourceSet, resourceName);
+		//resource not found: create a new resource and persist it
+		if(resource == null && createIfNotExist){
+			_createResource(resourceSet, resourceName, true);
+		}
+		return resource;
+	}
 	
 	public void manageResource(Resource resource){
 		manageResource(resource, null, null, NONE_OPTION);
@@ -433,27 +466,9 @@ public class ResourcesManager {
 		listeners.remove(listener);
 	}
 	
-	/**
-	 * provide resource by name
-	 * if resource exists in cache resource is returned
-	 * otherwise resource is loaded and added to the cache
-	 * if createIfNotExist is true, when resource not exists a new 
-	 * resource is created and persisted
-	 * 
-	 * @param resourceName
-	 * @param createIfNotExist if true, when resource not exists a new resource is created and persisted
-	 * 
-	 * @return
-	 */
-	public Resource getResource(String resourceName, boolean createIfNotExist){
-		Resource resource = getResource(resourceName);
-		//resource not found: create a new resource and persist it
-		if(resource == null && createIfNotExist){
-			_createResource(resourceName, true);
-		}
-		return resource;
-	}
 
+
+	
 	public void reloadResource(String resourceName){
 		_reloadResource(resourceName);
 	}
@@ -493,8 +508,10 @@ public class ResourcesManager {
 	 * @param resourceName
 	 * @return
 	 */
-	protected Resource _loadResource(String resourceName){
-		ResourceSet resourceSet = new ResourceSetImpl();
+	protected Resource _loadResource(ResourceSet resourceSet, String resourceName){
+		if(resourceSet == null){
+			resourceSet = new ResourceSetImpl();			
+		}
 		Resource resource = null;
 		try {
     		resource = resourceSet.getResource(URI.createURI(resourceName, true), true);
@@ -509,11 +526,19 @@ public class ResourcesManager {
 	}
 
 	protected Resource _reloadResource(String resourceName){
-		return _loadResource(resourceName);
+		Resource orgResource = _getCachedResource(resourceName);
+		if(resourceName != null && orgResource != null){
+			orgResource.getResourceSet().getResources().remove(orgResource);
+			return _loadResource(orgResource.getResourceSet(), resourceName);			
+		}else{
+			return null; //_loadResource(null, resourceName);						
+		}
 	}
 
-	protected Resource _createResource(String resourceName, boolean persist){
-		ResourceSet resourceSet = new ResourceSetImpl();
+	protected Resource _createResource(ResourceSet resourceSet, String resourceName, boolean persist){
+		if(resourceSet == null){
+			resourceSet = new ResourceSetImpl();
+		}
 		Resource resource =  resourceSet.createResource(URI.createURI(resourceName, true));
 		if(persist){
 			try {
@@ -577,7 +602,9 @@ public class ResourcesManager {
 		//remove links
 		unlinkResources(resourceName);
 		unlinkResource(resourceName);
-		
+		//unload resource
+		resource.getResourceSet().getResources().remove(resource);
+		//resource.unload();
 	}
 	
 	
