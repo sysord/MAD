@@ -355,10 +355,11 @@ public abstract class ConsoleLogger {
 		String errorMessage;
 		if (o instanceof Exception) {
 			Exception exception = (Exception) o;
-			StringBuilder err = new StringBuilder(((Exception) o).getMessage());
+			StringBuilder err = new StringBuilder();
+			err.append(((Exception) o).getMessage());
 			Throwable throwable = exception.getCause();
 			while (throwable != null) {
-				err.append('\n').append("Caused by : " + throwable.getMessage());
+				err.append("\n\t").append("Caused by : " + throwable.getMessage());
 				throwable = throwable.getCause();
 			}
 			errorMessage = err.toString();
