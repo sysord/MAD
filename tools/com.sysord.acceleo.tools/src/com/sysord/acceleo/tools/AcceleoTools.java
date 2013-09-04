@@ -201,7 +201,6 @@ public class AcceleoTools {
         return protoBuilder.create();
     }
 
-        
     /**
      * Creates an {@link AcceleoSourceContent} for the given {@link IFile file} or
      * {@code null} if it could not be created.
