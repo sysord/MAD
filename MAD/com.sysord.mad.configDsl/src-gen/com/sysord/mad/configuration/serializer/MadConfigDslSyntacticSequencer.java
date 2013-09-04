@@ -99,7 +99,7 @@ public class MadConfigDslSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     'flexible template:' | 'target template:'
+	 *     'target template:' | 'flexible template:'
 	 */
 	protected void emit_WidgetConfigurationMdsl_FlexibleTemplateKeyword_12_0_0_or_TargetTemplateKeyword_12_0_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
