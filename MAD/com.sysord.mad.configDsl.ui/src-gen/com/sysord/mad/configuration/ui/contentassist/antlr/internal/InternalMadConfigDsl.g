@@ -15024,12 +15024,12 @@ rule__TypeConfigurationMdsl__LayoutElementsAssignment_9_1
     }
 :
 (
-{ before(grammarAccess.getTypeConfigurationMdslAccess().getLayoutElementsWidgetConfigurationMdslCrossReference_9_1_0()); }
+{ before(grammarAccess.getTypeConfigurationMdslAccess().getLayoutElementsTypeConfigurationTemplateElementCrossReference_9_1_0()); }
 (
-{ before(grammarAccess.getTypeConfigurationMdslAccess().getLayoutElementsWidgetConfigurationMdslIDTerminalRuleCall_9_1_0_1()); }
-	RULE_ID{ after(grammarAccess.getTypeConfigurationMdslAccess().getLayoutElementsWidgetConfigurationMdslIDTerminalRuleCall_9_1_0_1()); }
+{ before(grammarAccess.getTypeConfigurationMdslAccess().getLayoutElementsTypeConfigurationTemplateElementIDTerminalRuleCall_9_1_0_1()); }
+	RULE_ID{ after(grammarAccess.getTypeConfigurationMdslAccess().getLayoutElementsTypeConfigurationTemplateElementIDTerminalRuleCall_9_1_0_1()); }
 )
-{ after(grammarAccess.getTypeConfigurationMdslAccess().getLayoutElementsWidgetConfigurationMdslCrossReference_9_1_0()); }
+{ after(grammarAccess.getTypeConfigurationMdslAccess().getLayoutElementsTypeConfigurationTemplateElementCrossReference_9_1_0()); }
 )
 
 ;

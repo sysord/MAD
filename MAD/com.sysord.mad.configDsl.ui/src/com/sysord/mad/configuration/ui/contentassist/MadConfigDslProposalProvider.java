@@ -24,6 +24,7 @@ import com.sysord.mad.configuration.extension.ExternalQueryConfigurationServiceP
 import com.sysord.mad.configuration.madConfigDsl.ExternalQueryCallMdsl;
 import com.sysord.mad.configuration.madConfigDsl.QueryDefinitionMdsl;
 import com.sysord.mad.configuration.madConfigDsl.TypeConfigurationMdsl;
+import com.sysord.mad.configuration.madConfigDsl.TypeConfigurationTemplateElement;
 import com.sysord.mad.configuration.madConfigDsl.WidgetConfigurationMdsl;
 /**
  * see http://www.eclipse.org/Xtext/documentation/latest/xtext.html#contentAssist on how to customize content assistant
@@ -69,13 +70,15 @@ public class MadConfigDslProposalProvider extends AbstractMadConfigDslProposalPr
 		
 		//filter layouts element proposal for exclude widgets since in layout
 		final TypeConfigurationMdsl typeConfig = (TypeConfigurationMdsl) model;
-		final List<WidgetConfigurationMdsl> definedLayoutElements = typeConfig.getLayoutElements();
+		final List<TypeConfigurationTemplateElement> definedLayoutElements = typeConfig.getLayoutElements();
 		
 		Predicate<IEObjectDescription> filter = new Predicate<IEObjectDescription>() {			
 			@Override
 			public boolean apply(IEObjectDescription elementDescription) {
-				WidgetConfigurationMdsl widgetConfig = (WidgetConfigurationMdsl) elementDescription.getEObjectOrProxy();
-				widgetConfig = (WidgetConfigurationMdsl) EcoreUtil.resolve(widgetConfig, typeConfig.eResource());
+//				WidgetConfigurationMdsl widgetConfig = (WidgetConfigurationMdsl) elementDescription.getEObjectOrProxy();
+//				widgetConfig = (WidgetConfigurationMdsl) EcoreUtil.resolve(widgetConfig, typeConfig.eResource());
+				TypeConfigurationTemplateElement widgetConfig = (TypeConfigurationTemplateElement) elementDescription.getEObjectOrProxy();
+				widgetConfig = (TypeConfigurationTemplateElement) EcoreUtil.resolve(widgetConfig, typeConfig.eResource());
 				return !definedLayoutElements.contains(widgetConfig);
 			}
 		};

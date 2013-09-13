@@ -40002,17 +40002,17 @@ public class InternalMadConfigDslParser extends AbstractInternalContentAssistPar
             // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15026:1: ( ( RULE_ID ) )
             // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15027:1: ( RULE_ID )
             {
-             before(grammarAccess.getTypeConfigurationMdslAccess().getLayoutElementsWidgetConfigurationMdslCrossReference_9_1_0()); 
+             before(grammarAccess.getTypeConfigurationMdslAccess().getLayoutElementsTypeConfigurationTemplateElementCrossReference_9_1_0()); 
             // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15028:1: ( RULE_ID )
             // ../com.sysord.mad.configDsl.ui/src-gen/com/sysord/mad/configuration/ui/contentassist/antlr/internal/InternalMadConfigDsl.g:15029:1: RULE_ID
             {
-             before(grammarAccess.getTypeConfigurationMdslAccess().getLayoutElementsWidgetConfigurationMdslIDTerminalRuleCall_9_1_0_1()); 
+             before(grammarAccess.getTypeConfigurationMdslAccess().getLayoutElementsTypeConfigurationTemplateElementIDTerminalRuleCall_9_1_0_1()); 
             match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__TypeConfigurationMdsl__LayoutElementsAssignment_9_130312); 
-             after(grammarAccess.getTypeConfigurationMdslAccess().getLayoutElementsWidgetConfigurationMdslIDTerminalRuleCall_9_1_0_1()); 
+             after(grammarAccess.getTypeConfigurationMdslAccess().getLayoutElementsTypeConfigurationTemplateElementIDTerminalRuleCall_9_1_0_1()); 
 
             }
 
-             after(grammarAccess.getTypeConfigurationMdslAccess().getLayoutElementsWidgetConfigurationMdslCrossReference_9_1_0()); 
+             after(grammarAccess.getTypeConfigurationMdslAccess().getLayoutElementsTypeConfigurationTemplateElementCrossReference_9_1_0()); 
 
             }
 
