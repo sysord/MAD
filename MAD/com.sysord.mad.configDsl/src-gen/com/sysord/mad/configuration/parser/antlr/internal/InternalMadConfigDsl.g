@@ -2345,7 +2345,7 @@ ruleTypeConfigurationMdsl returns [EObject current=null]
         }
 	otherlv_16=RULE_ID
 	{
-		newLeafNode(otherlv_16, grammarAccess.getTypeConfigurationMdslAccess().getLayoutElementsWidgetConfigurationMdslCrossReference_9_1_0()); 
+		newLeafNode(otherlv_16, grammarAccess.getTypeConfigurationMdslAccess().getLayoutElementsTypeConfigurationTemplateElementCrossReference_9_1_0()); 
 	}
 
 )

@@ -96,7 +96,8 @@ public class MadConfigDslScopeProvider extends AbstractDeclarativeScopeProvider 
 		}		
 		Collection<TypeConfigurationTemplateElement>  widgetConfigElements = Collections2.filter(templateElements, new Predicate<TypeConfigurationTemplateElement>() {
 													public boolean apply(TypeConfigurationTemplateElement input) {
-														return WidgetConfigurationMdsl.class.isAssignableFrom(input.getClass());
+														//return WidgetConfigurationMdsl.class.isAssignableFrom(input.getClass());
+														return true;
 													}
 												}
 		);

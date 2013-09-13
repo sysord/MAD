@@ -545,7 +545,9 @@ public class ConfigurationManagerImpl implements ConfigurationManager{
 		}
 		includedTemplatevalueQueries.addAll(MadConfigDslUtil.resolveQueryUsage(includeTemplateElementMdsl.getValueQuery()));
 		
-		//include elements
+		//include elements (name conflict problem)
+		//List<TypeConfigurationTemplateElement> incudedElements = MadConfigDslUtil.loadWidgetsConfigurationForTypeConfigMdsl(madConfig, includedTypeConfigMdsl);
+		//loadConfiguration(typeConfiguration, incudedElements, madConfig, processedTemplates, includedTemplatevalueQueries);
 		loadConfiguration(typeConfiguration, includedTypeConfigMdsl.getTemplateElements(), madConfig, processedTemplates, includedTemplatevalueQueries);
 	}
 	

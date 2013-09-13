@@ -5511,7 +5511,7 @@ public class InternalMadConfigDslParser extends AbstractInternalAntlrParser {
                     	            
                     	    otherlv_16=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleTypeConfigurationMdsl4954); 
 
-                    	    		newLeafNode(otherlv_16, grammarAccess.getTypeConfigurationMdslAccess().getLayoutElementsWidgetConfigurationMdslCrossReference_9_1_0()); 
+                    	    		newLeafNode(otherlv_16, grammarAccess.getTypeConfigurationMdslAccess().getLayoutElementsTypeConfigurationTemplateElementCrossReference_9_1_0()); 
                     	    	
 
                     	    }

@@ -186,7 +186,7 @@ TypeConfigurationMdsl:
 		templateElements += TypeConfigurationTemplateElement*		
 	
 	(layoutDefined?='layout:' 
-		layoutElements += [WidgetConfigurationMdsl]*
+		layoutElements += [TypeConfigurationTemplateElement]*
 	)?
 	 
 	'}'	

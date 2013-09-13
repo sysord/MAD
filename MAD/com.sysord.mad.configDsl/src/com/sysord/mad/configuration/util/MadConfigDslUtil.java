@@ -239,7 +239,7 @@ public class MadConfigDslUtil {
 		}
 		
 		List<TypeConfigurationTemplateElement> layoutedTemplate = new ArrayList<TypeConfigurationTemplateElement>();		
-		for(WidgetConfigurationMdsl layoutElement : typeConfigMdsl.getLayoutElements()){
+		for(TypeConfigurationTemplateElement layoutElement : typeConfigMdsl.getLayoutElements()){
 			for(TypeConfigurationTemplateElement templateElement : templateElements){
 				if(layoutElement.getName().equals(templateElement.getName())){
 					layoutedTemplate.add(templateElement);

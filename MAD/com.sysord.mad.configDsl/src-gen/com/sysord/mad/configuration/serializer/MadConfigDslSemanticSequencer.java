@@ -808,7 +808,7 @@ public class MadConfigDslSemanticSequencer extends AbstractDelegatingSemanticSeq
 	 *         (i18NLabelProvider?='I18N'? labelProviderExpression=FormatExpr)? 
 	 *         (useExplicitExtends?='extends:' superConfigurations+=[TypeConfigurationMdsl|ID] superConfigurations+=[TypeConfigurationMdsl|ID]*)? 
 	 *         templateElements+=TypeConfigurationTemplateElement* 
-	 *         (layoutDefined?='layout:' layoutElements+=[WidgetConfigurationMdsl|ID]*)?
+	 *         (layoutDefined?='layout:' layoutElements+=[TypeConfigurationTemplateElement|ID]*)?
 	 *     )
 	 */
 	protected void sequence_TypeConfigurationMdsl(EObject context, TypeConfigurationMdsl semanticObject) {

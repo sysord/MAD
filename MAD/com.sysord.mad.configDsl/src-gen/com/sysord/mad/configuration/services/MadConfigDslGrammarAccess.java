@@ -1389,8 +1389,8 @@ public class MadConfigDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cLayoutDefinedAssignment_9_0 = (Assignment)cGroup_9.eContents().get(0);
 		private final Keyword cLayoutDefinedLayoutKeyword_9_0_0 = (Keyword)cLayoutDefinedAssignment_9_0.eContents().get(0);
 		private final Assignment cLayoutElementsAssignment_9_1 = (Assignment)cGroup_9.eContents().get(1);
-		private final CrossReference cLayoutElementsWidgetConfigurationMdslCrossReference_9_1_0 = (CrossReference)cLayoutElementsAssignment_9_1.eContents().get(0);
-		private final RuleCall cLayoutElementsWidgetConfigurationMdslIDTerminalRuleCall_9_1_0_1 = (RuleCall)cLayoutElementsWidgetConfigurationMdslCrossReference_9_1_0.eContents().get(1);
+		private final CrossReference cLayoutElementsTypeConfigurationTemplateElementCrossReference_9_1_0 = (CrossReference)cLayoutElementsAssignment_9_1.eContents().get(0);
+		private final RuleCall cLayoutElementsTypeConfigurationTemplateElementIDTerminalRuleCall_9_1_0_1 = (RuleCall)cLayoutElementsTypeConfigurationTemplateElementCrossReference_9_1_0.eContents().get(1);
 		private final Keyword cRightCurlyBracketKeyword_10 = (Keyword)cGroup.eContents().get(10);
 		
 		////----------------------------------
@@ -1401,14 +1401,14 @@ public class MadConfigDslGrammarAccess extends AbstractGrammarElementFinder {
 		//	(i18NLabelProvider?="I18N"? "label provider:" labelProviderExpression=FormatExpr)? //default label provider for the element
 		//	(useExplicitExtends?="extends:" superConfigurations+=[TypeConfigurationMdsl] (","
 		//	superConfigurations+=[TypeConfigurationMdsl])*)? "template:" templateElements+=TypeConfigurationTemplateElement*
-		//	(layoutDefined?="layout:" layoutElements+=[WidgetConfigurationMdsl]*)? "}";
+		//	(layoutDefined?="layout:" layoutElements+=[TypeConfigurationTemplateElement]*)? "}";
 		public ParserRule getRule() { return rule; }
 
 		//defaultConfiguration?="DEFAULT"? "Configuration" name=ID ("for" type=[metamodel::EClass])? "{"
 		//(i18NLabelProvider?="I18N"? "label provider:" labelProviderExpression=FormatExpr)? //default label provider for the element
 		//(useExplicitExtends?="extends:" superConfigurations+=[TypeConfigurationMdsl] (","
 		//superConfigurations+=[TypeConfigurationMdsl])*)? "template:" templateElements+=TypeConfigurationTemplateElement*
-		//(layoutDefined?="layout:" layoutElements+=[WidgetConfigurationMdsl]*)? "}"
+		//(layoutDefined?="layout:" layoutElements+=[TypeConfigurationTemplateElement]*)? "}"
 		public Group getGroup() { return cGroup; }
 
 		//defaultConfiguration?="DEFAULT"?
@@ -1505,7 +1505,7 @@ public class MadConfigDslGrammarAccess extends AbstractGrammarElementFinder {
 		//TypeConfigurationTemplateElement
 		public RuleCall getTemplateElementsTypeConfigurationTemplateElementParserRuleCall_8_0() { return cTemplateElementsTypeConfigurationTemplateElementParserRuleCall_8_0; }
 
-		//(layoutDefined?="layout:" layoutElements+=[WidgetConfigurationMdsl]*)?
+		//(layoutDefined?="layout:" layoutElements+=[TypeConfigurationTemplateElement]*)?
 		public Group getGroup_9() { return cGroup_9; }
 
 		//layoutDefined?="layout:"
@@ -1514,14 +1514,14 @@ public class MadConfigDslGrammarAccess extends AbstractGrammarElementFinder {
 		//"layout:"
 		public Keyword getLayoutDefinedLayoutKeyword_9_0_0() { return cLayoutDefinedLayoutKeyword_9_0_0; }
 
-		//layoutElements+=[WidgetConfigurationMdsl]*
+		//layoutElements+=[TypeConfigurationTemplateElement]*
 		public Assignment getLayoutElementsAssignment_9_1() { return cLayoutElementsAssignment_9_1; }
 
-		//[WidgetConfigurationMdsl]
-		public CrossReference getLayoutElementsWidgetConfigurationMdslCrossReference_9_1_0() { return cLayoutElementsWidgetConfigurationMdslCrossReference_9_1_0; }
+		//[TypeConfigurationTemplateElement]
+		public CrossReference getLayoutElementsTypeConfigurationTemplateElementCrossReference_9_1_0() { return cLayoutElementsTypeConfigurationTemplateElementCrossReference_9_1_0; }
 
 		//ID
-		public RuleCall getLayoutElementsWidgetConfigurationMdslIDTerminalRuleCall_9_1_0_1() { return cLayoutElementsWidgetConfigurationMdslIDTerminalRuleCall_9_1_0_1; }
+		public RuleCall getLayoutElementsTypeConfigurationTemplateElementIDTerminalRuleCall_9_1_0_1() { return cLayoutElementsTypeConfigurationTemplateElementIDTerminalRuleCall_9_1_0_1; }
 
 		//"}"
 		public Keyword getRightCurlyBracketKeyword_10() { return cRightCurlyBracketKeyword_10; }
@@ -3762,7 +3762,7 @@ public class MadConfigDslGrammarAccess extends AbstractGrammarElementFinder {
 	//	(i18NLabelProvider?="I18N"? "label provider:" labelProviderExpression=FormatExpr)? //default label provider for the element
 	//	(useExplicitExtends?="extends:" superConfigurations+=[TypeConfigurationMdsl] (","
 	//	superConfigurations+=[TypeConfigurationMdsl])*)? "template:" templateElements+=TypeConfigurationTemplateElement*
-	//	(layoutDefined?="layout:" layoutElements+=[WidgetConfigurationMdsl]*)? "}";
+	//	(layoutDefined?="layout:" layoutElements+=[TypeConfigurationTemplateElement]*)? "}";
 	public TypeConfigurationMdslElements getTypeConfigurationMdslAccess() {
 		return (pTypeConfigurationMdsl != null) ? pTypeConfigurationMdsl : (pTypeConfigurationMdsl = new TypeConfigurationMdslElements());
 	}

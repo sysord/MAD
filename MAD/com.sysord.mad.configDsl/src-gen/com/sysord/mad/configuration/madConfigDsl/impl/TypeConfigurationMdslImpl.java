@@ -6,7 +6,6 @@ import com.sysord.mad.configuration.madConfigDsl.FormatExpr;
 import com.sysord.mad.configuration.madConfigDsl.MadConfigDslPackage;
 import com.sysord.mad.configuration.madConfigDsl.TypeConfigurationMdsl;
 import com.sysord.mad.configuration.madConfigDsl.TypeConfigurationTemplateElement;
-import com.sysord.mad.configuration.madConfigDsl.WidgetConfigurationMdsl;
 
 import java.util.Collection;
 
@@ -196,7 +195,7 @@ public class TypeConfigurationMdslImpl extends MADConfigElementImpl implements T
    * @generated
    * @ordered
    */
-  protected EList<WidgetConfigurationMdsl> layoutElements;
+  protected EList<TypeConfigurationTemplateElement> layoutElements;
 
   /**
    * <!-- begin-user-doc -->
@@ -458,11 +457,11 @@ public class TypeConfigurationMdslImpl extends MADConfigElementImpl implements T
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<WidgetConfigurationMdsl> getLayoutElements()
+  public EList<TypeConfigurationTemplateElement> getLayoutElements()
   {
     if (layoutElements == null)
     {
-      layoutElements = new EObjectResolvingEList<WidgetConfigurationMdsl>(WidgetConfigurationMdsl.class, this, MadConfigDslPackage.TYPE_CONFIGURATION_MDSL__LAYOUT_ELEMENTS);
+      layoutElements = new EObjectResolvingEList<TypeConfigurationTemplateElement>(TypeConfigurationTemplateElement.class, this, MadConfigDslPackage.TYPE_CONFIGURATION_MDSL__LAYOUT_ELEMENTS);
     }
     return layoutElements;
   }
@@ -562,7 +561,7 @@ public class TypeConfigurationMdslImpl extends MADConfigElementImpl implements T
         return;
       case MadConfigDslPackage.TYPE_CONFIGURATION_MDSL__LAYOUT_ELEMENTS:
         getLayoutElements().clear();
-        getLayoutElements().addAll((Collection<? extends WidgetConfigurationMdsl>)newValue);
+        getLayoutElements().addAll((Collection<? extends TypeConfigurationTemplateElement>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

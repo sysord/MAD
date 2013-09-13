@@ -141,7 +141,7 @@
         eType="#//TypeConfigurationTemplateElement" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="layoutDefined" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="layoutElements" unique="false"
-        upperBound="-1" eType="#//WidgetConfigurationMdsl"/>
+        upperBound="-1" eType="#//TypeConfigurationTemplateElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TypeConfigurationTemplateElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

@@ -249,7 +249,7 @@ public interface TypeConfigurationMdsl extends MADConfigElement
 
   /**
    * Returns the value of the '<em><b>Layout Elements</b></em>' reference list.
-   * The list contents are of type {@link com.sysord.mad.configuration.madConfigDsl.WidgetConfigurationMdsl}.
+   * The list contents are of type {@link com.sysord.mad.configuration.madConfigDsl.TypeConfigurationTemplateElement}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Layout Elements</em>' reference list isn't clear,
@@ -261,6 +261,6 @@ public interface TypeConfigurationMdsl extends MADConfigElement
    * @model
    * @generated
    */
-  EList<WidgetConfigurationMdsl> getLayoutElements();
+  EList<TypeConfigurationTemplateElement> getLayoutElements();
 
 } // TypeConfigurationMdsl
