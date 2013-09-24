@@ -232,25 +232,29 @@ public abstract class ConsoleLogger {
 	}
 
 	/**
-	 * Writes the given
+	 * Writes the given {@code message} into the console represented by the specified
+	 * {@link StreamThread}.
 	 * 
-	 * @param message
-	 * @param thread
+	 * @param message The message to write.
+	 * @param thread The thread of the console.
 	 */
 	protected void writeToConsole(final String message, StreamThread thread) {
 		thread.putMessage(message);
 
 		switch (thread.getState()) {
 		case WAITING:
+			// Notifying the sleeping thread
 			synchronized (thread) {
 				thread.wakeUpIsNeeded = true;
 				thread.notify();
 			}
 			break;
 		case NEW:
+			// Start the newly created thread
 			thread.start();
 			break;
 		case TERMINATED:
+			// Create a new StreamThread for the corresponding console
 			if (thread == messageThread) {
 				messageThread = thread = new StreamThread(this, getStream(getMessageColor()));
 			} else if (thread == errorThread) {
@@ -259,6 +263,9 @@ public abstract class ConsoleLogger {
 				warningThread = thread = new StreamThread(this, getStream(getWarningColor()));
 			}
 			thread.putMessage(message);
+			break;
+		default:
+			// Do nothing
 			break;
 		}
 	}
@@ -371,7 +378,6 @@ public abstract class ConsoleLogger {
 
 	private void changeStreamColor(final MessageConsoleStream stream, final int colorCode) {
 		Display.getDefault().syncExec(new Runnable() {
-
 			@Override
 			public void run() {
 				stream.setColor(ColorRegistry.get(colorCode));
