@@ -12,6 +12,7 @@
 package com.sysord.mad.model.provider;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EStructuralFeature;
 
 /**
  * Base method used by MAD_EXTENSION query langauge
@@ -31,6 +32,19 @@ public interface ModelExtensionManager {
 	 */
 	public boolean elementSupportExtension(EObject model, EObject element);
 
+	
+	/**
+	 * Called for notify when an extended element have changed
+	 * 
+	 * @param extensionModel TODO
+	 * @param extendedElement
+	 * @param changedFeature
+	 * @param oldValue
+	 * @param newValue
+	 * @return return true if the extension model have been changed
+	 */
+	public boolean onExtendedElementChange(EObject extensionModel, EObject extendedElement, EStructuralFeature changedFeature, Object oldValue, Object newValue);
+	
 	/**
 	 * Retrieve and return the extension model element that should contain an extension of the type extensionType for the element.
 	 * 

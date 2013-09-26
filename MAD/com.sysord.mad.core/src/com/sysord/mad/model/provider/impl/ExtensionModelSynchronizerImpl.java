@@ -110,6 +110,13 @@ public class ExtensionModelSynchronizerImpl extends AbstractModelObserver implem
 	@Override
 	public void elementChanged(EObject element, EStructuralFeature feature, Object oldValue, Object newValue) {
 		//TODO rename extension or else ...
+		System.out.println("elementChanged:" + element + " " + feature + " " + oldValue + " " + newValue);
+		if(extensionManager.elementSupportExtension(getExtensionModel(), element)){
+			extensionManager.onExtendedElementChange(getExtensionModel(), element, feature, oldValue, newValue); 
+			if(isAutoSaveEnabled){
+				_doAutosave();
+			}			
+		}
 	}
 
 	@Override
