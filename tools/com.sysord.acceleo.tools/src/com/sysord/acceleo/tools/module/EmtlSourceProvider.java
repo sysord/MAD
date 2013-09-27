@@ -1,9 +1,8 @@
 package com.sysord.acceleo.tools.module;
 
-import java.io.BufferedReader;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.LinkedHashMap;
@@ -85,21 +84,21 @@ public class EmtlSourceProvider {
 	 * @param moduleURL
 	 * @return
 	 */
-	public static String getModuleSource(URL moduleURL){
-	    StringBuilder moduleSource = new StringBuilder();
+	public static String getModuleSource(URL moduleURL) {
+		String moduleSource = null;
 		try {
-		    //url = new URL("platform:/plugin/de.vogella.rcp.plugin.filereader/files/test.txt");
-		    InputStream inputStream = moduleURL.openConnection().getInputStream();
-		    BufferedReader in = new BufferedReader(new InputStreamReader(inputStream));
-		    String inputLine;
-		    while ((inputLine = in.readLine()) != null) {
-		    	moduleSource.append(inputLine).append("\n");
-		    }		 
-		    in.close();		 
+			final InputStream inputStream = moduleURL.openConnection().getInputStream();
+			final ByteArrayOutputStream output = new ByteArrayOutputStream();
+			byte[] buffer = new byte[512];
+			int len;
+			while ((len = inputStream.read(buffer)) > 0) {
+				output.write(buffer, 0, len);
+			}
+			moduleSource = output.toString();
 		} catch (IOException e) {
-		    e.printStackTrace();
-		}	
-	    return moduleSource.toString();
+			e.printStackTrace();
+		}
+		return moduleSource;
 	}
 	
 	
