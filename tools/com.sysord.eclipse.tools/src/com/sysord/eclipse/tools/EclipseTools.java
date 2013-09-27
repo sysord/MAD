@@ -650,12 +650,12 @@ public class EclipseTools {
 	 */
 	public static File getFileFromBundle(Bundle bundle, String filePath) {
 		URL url = FileLocator.find(bundle, new Path(filePath), null);
-		JarFile jarFile = null;
 		try {
 			if (url != null) {
 				url = FileLocator.resolve(url);
 				if (url.getProtocol().startsWith("jar")) {//$NON-NLS-1$
-					jarFile = new JarFile(FileLocator.getBundleFile(bundle));
+					@SuppressWarnings("resource") // The jar file is used in FileTemp
+					JarFile jarFile = new JarFile(FileLocator.getBundleFile(bundle));
 					filePath = filePath.startsWith("/") ? filePath.substring(1) : filePath;
 					JarEntry bundleEntry = jarFile.getJarEntry(filePath);
 					File tempFile = bundle.getDataFile(filePath);
@@ -679,14 +679,6 @@ public class EclipseTools {
 			EclipseToolsPlugin.log(e);
 		} catch (URISyntaxException e) {
 			EclipseToolsPlugin.log(e);
-		} finally {
-			try {
-				if (jarFile != null) {
-					jarFile.close();
-				}
-			} catch (IOException e) {
-				// Ignore
-			}
 		}
 		return null;
 	}
