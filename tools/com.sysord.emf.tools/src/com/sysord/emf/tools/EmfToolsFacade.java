@@ -11,9 +11,18 @@
  ****************************************************************************/
 package com.sysord.emf.tools;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
 
-import org.eclipse.emf.ecore.*;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EClassifier;
+import org.eclipse.emf.ecore.EDataType;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.ocl.ecore.AnyType;
 import org.eclipse.ocl.ecore.CollectionType;
@@ -254,6 +263,19 @@ public class EmfToolsFacade {
 		}
 	}
 
+    @SuppressWarnings("unchecked")
+	public <T> Collection<T>  getParents(EObject current, EClass searchedEClass){
+    	Collection<T> parents = new ArrayList<T>();
+    	while(current != null){
+    		if(searchedEClass.equals(current.eClass())){
+    			parents.add((T) current);
+    		}    		
+			current = current.eContainer();
+    	}
+    	return parents;
+	}
+
+    
     @SuppressWarnings("unchecked")
 	public  <T> T getAssignableParent(EObject current, Class<T> searchedClass){
 		if(searchedClass.isAssignableFrom(current.getClass())){
