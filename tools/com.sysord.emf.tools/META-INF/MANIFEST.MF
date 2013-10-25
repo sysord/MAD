@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Tools
 Bundle-SymbolicName: com.sysord.emf.tools;singleton:=true
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 1.1.0.qualifier
 Bundle-Activator: com.sysord.emf.tools.Activator
 Bundle-Vendor: SYSORD
 Require-Bundle: org.eclipse.emf.transaction;bundle-version="1.4.0",

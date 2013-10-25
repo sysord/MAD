@@ -263,6 +263,16 @@ public class EmfToolsFacade {
 		}
 	}
 
+	/**
+	 * Returns all the parents of the given {@link EObject} having the specified
+	 * {@link EClass}.
+	 * 
+	 * @param current The EObject for which to search the parents.
+	 * @param searchedEClass The EClass of the parents to search.
+	 * @return all the parents of the given {@link EObject} having the specified
+	 *         {@link EClass}.
+	 * @since 1.1
+	 */
     @SuppressWarnings("unchecked")
 	public <T> Collection<T>  getParents(EObject current, EClass searchedEClass){
     	Collection<T> parents = new ArrayList<T>();
