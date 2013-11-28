@@ -433,16 +433,16 @@ public class LoadWidgetValueVisitor extends AbstractWidgetVisitor<Boolean> {
 		String flexibleTemplateLabelProviderExpr = null;
 
 		// Configure the flexible widget's prototype (fail if the list is empty or if the elements are null)
-		if (flexibleTemplate == null) {
-			getComposedWidgetConfigurer().configure(flexibleWidget, collflexibleWidgetValues);
-		}
+//		if (flexibleTemplate == null) {
+//			getComposedWidgetConfigurer().configure(flexibleWidget, collflexibleWidgetValues);
+//		}
 
 		//For each flexible value create composed with valued element.
 		for(Object composedItem : collflexibleWidgetValues){
 			ValuedSemanticElement composedValuedElement = new ValuedSemanticElementImpl((EObject)composedItem,
 															isForeignModelElement((EObject)composedItem, analyze)
 															,ACCESS_CATEGORY.NONE, null, (EObject)composedItem);
-			
+						
 			ComposedWidget<T> composedWidget = flexibleWidget.createComposedWidget(composedValuedElement);
 			Boolean existsLabelProviderForFlexibleTemplate = null;
 			//Label
@@ -470,6 +470,13 @@ public class LoadWidgetValueVisitor extends AbstractWidgetVisitor<Boolean> {
 				}
 
 			}
+			
+			//if dynamic template: template retrieve from value type
+			//Create widgets configuration for value type
+			if(flexibleTemplate == null){
+				getComposedWidgetConfigurer().configureComposedWidget(composedWidget);
+			}
+
 
 			//fill value for composed widget
 			visit(composedWidget);

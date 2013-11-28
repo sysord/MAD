@@ -527,7 +527,7 @@ public class ResourcesManager {
 
 	protected Resource _reloadResource(String resourceName){
 		Resource orgResource = _getCachedResource(resourceName);
-		if(resourceName != null && orgResource != null){
+		if(resourceName != null && orgResource != null && orgResource.getResourceSet() != null){
 			orgResource.getResourceSet().getResources().remove(orgResource);
 			return _loadResource(orgResource.getResourceSet(), resourceName);			
 		}else{
