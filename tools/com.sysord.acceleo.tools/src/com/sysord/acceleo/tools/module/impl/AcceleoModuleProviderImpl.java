@@ -11,6 +11,7 @@
  ****************************************************************************/
 package com.sysord.acceleo.tools.module.impl;
 
+import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -61,13 +62,6 @@ import com.sysord.eclipse.tools.EclipseTools;
 @SuppressWarnings("restriction")
 public class AcceleoModuleProviderImpl implements AcceleoModuleProvider {
 
-	private static final AcceleoModuleProviderImpl INSTANCE;
-
-	static {
-		INSTANCE = new AcceleoModuleProviderImpl();
-		INSTANCE.initialize();
-	}
-
 	private Map<URI, Module> moduleCache = Collections.synchronizedMap(new HashMap<URI, Module>());
 
 	private ResourceSet resourceSet;
@@ -79,17 +73,15 @@ public class AcceleoModuleProviderImpl implements AcceleoModuleProvider {
 	/**
 	 * Creates a new {@code AcceleoModuleProviderImpl}.
 	 */
-	private AcceleoModuleProviderImpl() {
-		// Singleton
-	}
+	private AcceleoModuleProviderImpl() {}
 
 	/**
-	 * Returns the unique instance of {@link AcceleoModuleProvider}.
+	 * Returns a new instance of {@link AcceleoModuleProvider}.
 	 * 
-	 * @return the unique instance of {@link AcceleoModuleProvider}.
+	 * @return a new instance of {@link AcceleoModuleProvider}.
 	 */
 	public static AcceleoModuleProvider getInstance() {
-		return INSTANCE;
+		return new AcceleoModuleProviderImpl();
 	}
 
 	/**
@@ -99,13 +91,10 @@ public class AcceleoModuleProviderImpl implements AcceleoModuleProvider {
 	 */
 	public static void registerBasePackages(ResourceSet resourceSet) {
 		resourceSet.getPackageRegistry().put(EcorePackage.eINSTANCE.getNsURI(), EcorePackage.eINSTANCE);
-
 		resourceSet.getPackageRegistry().put(org.eclipse.ocl.ecore.EcorePackage.eINSTANCE.getNsURI(),
 				org.eclipse.ocl.ecore.EcorePackage.eINSTANCE);
 		resourceSet.getPackageRegistry().put(ExpressionsPackage.eINSTANCE.getNsURI(), ExpressionsPackage.eINSTANCE);
-
 		resourceSet.getPackageRegistry().put(MtlPackage.eINSTANCE.getNsURI(), MtlPackage.eINSTANCE);
-
 		resourceSet.getPackageRegistry().put("http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore", //$NON-NLS-1$
 				getOCLStdLibPackage());
 	}
@@ -271,30 +260,7 @@ public class AcceleoModuleProviderImpl implements AcceleoModuleProvider {
 	 * changes.
 	 */
 	private void registerResourceListener() {
-		listener = new IResourceChangeListener() {
-			@Override
-			public void resourceChanged(IResourceChangeEvent event) {
-				final ResourceSet resourceSet = AcceleoModuleProviderImpl.this.resourceSet;
-				final IResourceDelta delta = event.getDelta();
-				final ArrayList<URI> toDelete = new ArrayList<URI>(1);
-				synchronized (moduleCache) {
-					for (final URI uri : moduleCache.keySet()) {
-						if (delta.findMember(new Path(uri.toPlatformString(true))) != null) {
-							// Delete the resource from the resource set, it will be
-							// reloaded on the next call for the module
-							Resource resource = moduleCache.get(uri).eResource();
-							if (resource != null) {
-								resourceSet.getResources().remove(resource);
-								toDelete.add(uri);
-							}
-						}
-					}
-					for (int i = 0; i < toDelete.size(); i++) {
-						moduleCache.remove(toDelete.get(i));
-					}
-				}
-			}
-		};
+		listener = new ModuleProviderResourceListener(this);
 		EclipseTools.getCurrentWorkspace().addResourceChangeListener(listener, IResourceChangeEvent.POST_CHANGE);
 	}
 
@@ -315,6 +281,44 @@ public class AcceleoModuleProviderImpl implements AcceleoModuleProvider {
 		if (resourceSet != null) {
 			synchronized (moduleCache) {
 				resourceSet.getResources().clear();
+			}
+		}
+	}
+
+	private static class ModuleProviderResourceListener implements IResourceChangeListener {
+
+		private final WeakReference<AcceleoModuleProviderImpl> moduleProvider;
+
+		public ModuleProviderResourceListener(AcceleoModuleProviderImpl moduleProvider) {
+			this.moduleProvider = new WeakReference<AcceleoModuleProviderImpl>(moduleProvider);
+		}
+
+		@Override
+		public void resourceChanged(IResourceChangeEvent event) {
+			AcceleoModuleProviderImpl moduleProvider = this.moduleProvider.get();
+			if (moduleProvider != null) {
+				final ResourceSet resourceSet = moduleProvider.resourceSet;
+				final IResourceDelta delta = event.getDelta();
+				final ArrayList<URI> toDelete = new ArrayList<URI>(1);
+				final Map<URI, Module> moduleCache = moduleProvider.moduleCache;
+				synchronized (moduleCache) {
+					for (final URI uri : moduleCache.keySet()) {
+						if (delta.findMember(new Path(uri.toPlatformString(true))) != null) {
+							// Delete the resource from the resource set, it will be
+							// reloaded on the next call for the module
+							Resource resource = moduleCache.get(uri).eResource();
+							if (resource != null) {
+								resourceSet.getResources().remove(resource);
+								toDelete.add(uri);
+							}
+						}
+					}
+					for (int i = 0; i < toDelete.size(); i++) {
+						moduleCache.remove(toDelete.get(i));
+					}
+				}
+			} else {
+				EclipseTools.getCurrentWorkspace().removeResourceChangeListener(this);
 			}
 		}
 	}

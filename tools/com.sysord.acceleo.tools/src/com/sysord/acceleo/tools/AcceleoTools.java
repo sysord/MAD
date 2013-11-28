@@ -47,9 +47,9 @@ public class AcceleoTools {
     }
 
     /**
-     * Returns the singleton instance of {@link AcceleoModuleProvider}.
+     * Returns a new instance of {@link AcceleoModuleProvider}.
      * 
-     * @return the singleton instance of {@link AcceleoModuleProvider}.
+     * @return a new instance of {@link AcceleoModuleProvider}.
      */
     public static AcceleoModuleProvider getModuleProvider() {
         return AcceleoModuleProviderImpl.getInstance();
