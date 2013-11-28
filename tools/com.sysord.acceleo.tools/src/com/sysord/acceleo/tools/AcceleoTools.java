@@ -52,7 +52,7 @@ public class AcceleoTools {
      * @return the created {@link AcceleoModuleProvider}.
      */
     public static AcceleoModuleProvider getModuleProvider() {
-        return new AcceleoModuleProviderImpl();
+        return AcceleoModuleProviderImpl.getInstance();
     }
 
     /**
