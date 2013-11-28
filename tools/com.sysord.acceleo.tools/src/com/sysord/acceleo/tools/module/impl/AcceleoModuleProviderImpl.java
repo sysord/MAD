@@ -144,7 +144,6 @@ public class AcceleoModuleProviderImpl implements AcceleoModuleProvider {
 	 * @param ePackageClass The EPackage class we need to take into account.
 	 * @return <code>true</code> if the given class has been loaded from a dynamically
 	 *         installed bundle, <code>false</code> otherwise.
-	 * @since 3.1
 	 */
 	public static boolean isInWorkspace(Class<? extends EPackage> ePackageClass) {
 		return EMFPlugin.IS_ECLIPSE_RUNNING && AcceleoWorkspaceUtil.INSTANCE.isInDynamicBundle(ePackageClass);
