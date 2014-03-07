@@ -13,9 +13,9 @@ package com.sysord.eclipse.tools.runtime;
 
 import java.io.IOException;
 import java.util.Date;
-import java.util.Stack;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.LinkedBlockingQueue;
 
-import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.console.MessageConsole;
 import org.eclipse.ui.console.MessageConsoleStream;
 
@@ -242,13 +242,6 @@ public abstract class ConsoleLogger {
 		thread.putMessage(message);
 
 		switch (thread.getState()) {
-		case WAITING:
-			// Notifying the sleeping thread
-			synchronized (thread) {
-				thread.wakeUpIsNeeded = true;
-				thread.notify();
-			}
-			break;
 		case NEW:
 			// Start the newly created thread
 			thread.start();
@@ -316,9 +309,12 @@ public abstract class ConsoleLogger {
 	}
 
 	/**
-	 * Returns a MAD console {@link MessageConsoleStream}.
+	 * Returns the {@link MessageConsole} or creates a new one.
+	 * <p>
+	 * The console is created with the ID given by {@link ConsoleLogger#getConsoleId()
+	 * getConsoleId()}.
 	 * 
-	 * @return a MAD console {@link MessageConsoleStream}.
+	 * @return the {@link MessageConsole} or creates a new one.
 	 */
 	protected MessageConsole getConsole() {
 		if (console == null) {
@@ -338,7 +334,7 @@ public abstract class ConsoleLogger {
 	protected abstract String getConsoleId();
 
 	/**
-	 * Create a {@link MessageConsoleStream} with the given color code.
+	 * Creates a {@link MessageConsoleStream} with the given color code.
 	 * 
 	 * @param colorCode Color code of the text to flush in the stream.
 	 * @return the created {@link MessageConsoleStream}.
@@ -377,7 +373,7 @@ public abstract class ConsoleLogger {
 	}
 
 	private void changeStreamColor(final MessageConsoleStream stream, final int colorCode) {
-		Display.getDefault().syncExec(new Runnable() {
+		SWTUtil.getDisplay().asyncExec(new Runnable() {
 			@Override
 			public void run() {
 				stream.setColor(ColorRegistry.get(colorCode));
@@ -391,28 +387,30 @@ public abstract class ConsoleLogger {
 
 		private MessageConsoleStream stream;
 
-		private Stack<MessageData> messages;
+		private BlockingQueue<MessageData> messages;
 
-		private boolean wakeUpIsNeeded;
+		private boolean stopped;
 
 		public StreamThread(ConsoleLogger logger, MessageConsoleStream stream) {
 			this.logger = logger;
 			this.stream = stream;
-			messages = new Stack<MessageData>();
+			messages = new LinkedBlockingQueue<MessageData>();
+			setPriority(MIN_PRIORITY);
 		}
 
 		@Override
 		public final void run() {
-			while (!messages.isEmpty()) {
-				while (!messages.isEmpty()) {
-					write(createMessage(messages.pop()), stream);
+			try {
+				while (!stopped) {
+					write(createMessage(messages.take()), stream);
 				}
-				lock();
+			} catch (InterruptedException ignored) {
+				// Stopping the thread
 			}
 		}
 
 		public void putMessage(String message) {
-			messages.push(new MessageData(new Date(), message == null ? "null" : message));
+			messages.offer(new MessageData(new Date(), message == null ? "null" : message));
 		}
 
 		/**
@@ -444,18 +442,6 @@ public abstract class ConsoleLogger {
 			}
 			builder.append(messageData.getMessage());
 			return builder.toString();
-		}
-
-		private void lock() {
-			wakeUpIsNeeded = false;
-			synchronized (this) {
-				try {
-					while (!wakeUpIsNeeded) {
-						wait();
-					}
-				} catch (InterruptedException e) {
-				}
-			}
 		}
 	}
 

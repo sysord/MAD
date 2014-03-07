@@ -584,9 +584,8 @@ public class EclipseTools {
 	 * @param uri The URI of the file.
 	 * @return a {@link File file} from the given {@link URI}.
 	 * @throws IOException
-	 * @throws URISyntaxException
 	 */
-	public static File getFileFromURI(URI uri) throws IOException, URISyntaxException {
+	public static File getFileFromURI(URI uri) throws IOException {
 		if (uri.getScheme() == null || !uri.getScheme().equals("platform")) { //$NON-NLS-1$
 			throw new IllegalArgumentException(L.error_onlyPlatformScheme);
 		}// else
@@ -654,7 +653,6 @@ public class EclipseTools {
 			if (url != null) {
 				url = FileLocator.resolve(url);
 				if (url.getProtocol().startsWith("jar")) {//$NON-NLS-1$
-					@SuppressWarnings("resource") // The jar file is used in FileTemp
 					JarFile jarFile = new JarFile(FileLocator.getBundleFile(bundle));
 					filePath = filePath.startsWith("/") ? filePath.substring(1) : filePath;
 					JarEntry bundleEntry = jarFile.getJarEntry(filePath);
