@@ -12,10 +12,8 @@
 package com.sysord.mad.model.cache;
 
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 
-import com.google.common.cache.CacheLoader;
 import com.sysord.mad.model.EditedModel;
 
 /**
