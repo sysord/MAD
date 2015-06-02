@@ -293,7 +293,7 @@ public class EclipseTools {
 	 * @return an absolute path for the specified workspace relative path.
 	 */
 	public static String getAbsolutePath(String workspaceRelativePath) {
-		if (workspaceRelativePath.charAt(0) == File.separatorChar) {
+		if (workspaceRelativePath.length() > 0 && workspaceRelativePath.charAt(0) == File.separatorChar) {
 			String[] pathSplit = workspaceRelativePath.split(getFileSeparator());
 			if (pathSplit.length >= 2) {
 				if (getCurrentWorkspace().getRoot().getProject(pathSplit[1]).exists()) {
