@@ -18,8 +18,8 @@ import org.eclipse.gmf.runtime.notation.Node;
 
 import com.sysord.modeling.modelselection.contributor.ModelSelectionContributor;
 
-import fr.obeo.dsl.viewpoint.DRepresentationElement;
-import fr.obeo.dsl.viewpoint.DSemanticDiagram;
+import org.eclipse.sirius.viewpoint.DRepresentationElement;
+import org.eclipse.sirius.diagram.DSemanticDiagram;
 
 /**
  * {@link ModelSelectionContributor} for <a
