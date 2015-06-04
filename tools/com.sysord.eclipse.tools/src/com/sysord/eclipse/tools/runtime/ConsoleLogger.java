@@ -275,7 +275,7 @@ public abstract class ConsoleLogger {
 	/**
 	 * Returns the color to use for errors.
 	 * <p>
-	 * This method do nothing and the color for errors is {@link #RED} by default;
+	 * This method does nothing and the color for errors is {@link #RED} by default;
 	 * override this method in subclasses to change the color of errors.
 	 * 
 	 * @return the color to use for errors.
@@ -285,12 +285,12 @@ public abstract class ConsoleLogger {
 	}
 
 	/**
-	 * Returns the color to use for errors.
+	 * Returns the color to use for warnings.
 	 * <p>
-	 * This method do nothing and the color for errors is {@link #RED} by default;
-	 * override this method in subclasses to change the color of errors.
+	 * This method does nothing and the color for warnings is {@link #ORANGE} by default;
+	 * override this method in subclasses to change the color of warnings.
 	 * 
-	 * @return the color to use for errors.
+	 * @return the color to use for warnings.
 	 */
 	protected int getWarningColor() {
 		return ORANGE;
@@ -299,7 +299,7 @@ public abstract class ConsoleLogger {
 	/**
 	 * Returns the color to use for messages.
 	 * <p>
-	 * This method do nothing and the color for messages is {@link #BLACK} by default;
+	 * This method does nothing and the color for messages is {@link #BLACK} by default;
 	 * override this method in subclasses to change the color of messages.
 	 * 
 	 * @return the color to use for messages.
