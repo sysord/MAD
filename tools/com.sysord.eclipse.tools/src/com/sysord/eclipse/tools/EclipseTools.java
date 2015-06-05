@@ -783,6 +783,31 @@ public class EclipseTools {
 		}
 	}
 
+	/** 
+	 * Returns a list of existing member files (that validate the file extension) in this resource.
+	 * @param container The container to browse for files with the given extension.
+	 * @param extension The file extension to browse for.
+	 * @return The List of files of the given extension contained by <code>container</code>.
+	 * @throws CoreException Thrown if we couldn't retrieve the children of <code>container</code>.
+	 */
+	public static List<IFile> members(IContainer container, String extension) throws CoreException {
+		List<IFile> output = new ArrayList<IFile>();
+		if (container != null && container.isAccessible()) {
+			IResource[] children = container.members();
+			if (children != null) {
+				for (int i = 0; i < children.length; ++i) {
+					IResource resource = children[i];
+					if (resource instanceof IFile && extension.equals(((IFile) resource).getFileExtension())) {
+						output.add((IFile) resource);
+					} else if (resource instanceof IContainer) {
+						output.addAll(members((IContainer) resource, extension));
+					}
+				}
+			}
+		}
+		return output;
+	}
+	
 	/**
 	 * Returns the project with the given name in the current workspace if exists,
 	 * {@code null} otherwise.
